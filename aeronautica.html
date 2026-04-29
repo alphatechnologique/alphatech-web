@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpha Tech Simulations | Professional Flight Training · Lima, Peru</title>
-  <meta name="description" content="Professional flight simulators with real ATC and active commercial pilots as instructors. Train where limits don't exist.">
+  <title>Alpha Tech Simulations | Entrenamiento Profesional de Vuelo · Lima, Perú</title>
+  <meta name="description" content="Simuladores de vuelo profesional con ATC real y pilotos comerciales activos como instructores. Entrena donde los límites no existen.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-96x96.png" sizes="96x96">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -227,7 +227,9 @@
       border-right: 1px solid rgba(255,255,255,0.18);
       margin-right: -14px;
     }
-    .nav__links .nav__back:hover { color: var(--white); }
+    .nav__links .nav__back:hover {
+      color: var(--white);
+    }
     .nav__links .nav__back .nav__back-arrow {
       font-size: 14px;
       line-height: 1;
@@ -773,7 +775,7 @@
       justify-content: flex-start;
     }
 
-    /* ── PROBLEM / METHOD / RESULT (light bg) ── */
+    /* ── PROBLEMA / MÉTODO / RESULTADO (fondo claro) ── */
     .pmr-light { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
     .pmr-light .pmr-row {
       display: grid;
@@ -1035,6 +1037,7 @@
         url('sim1.png') center/cover no-repeat;
       overflow: hidden;
     }
+    /* Soft orange wash on one corner to give visual movement */
     #booking::before {
       content: '';
       position: absolute;
@@ -1044,7 +1047,7 @@
     }
     #booking > .container { position: relative; z-index: 1; }
 
-    /* Split layout: photo left + Calendly right */
+    /* Split layout: photo left (sim1.png hero crop) + Calendly right */
     .booking__split {
       display: grid;
       grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.1fr);
@@ -1534,32 +1537,32 @@
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="aeronautics.html" class="nav-logo" aria-label="Alpha Tech Simulations">
+      <a href="aeronautica.html" class="nav-logo" aria-label="Alpha Tech Simulations">
         <img src="logo-simulations-v2.svg" alt="Alpha Tech Simulations" height="46" style="display:block;height:46px;width:auto">
       </a>
 
       <div class="nav__right">
         <ul class="nav__links">
-          <li><a href="en.html" class="nav__back" aria-label="Back to Alpha Tech Solutions">
+          <li><a href="index.html" class="nav__back" aria-label="Volver a Alpha Tech Solutions">
             <span class="nav__back-arrow" aria-hidden="true">&larr;</span> Alpha Tech Solutions
           </a></li>
-          <li><a href="#services">Programs</a></li>
-          <li><a href="#instructors">Instructors</a></li>
-          <li><a href="aeronautics.html" class="active">Aeronautics</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
-          <li><a href="#booking" class="nav-fly" aria-label="Try out simulator">
+          <li><a href="#services">Programas</a></li>
+          <li><a href="#instructors">Instructores</a></li>
+          <li><a href="aeronautica.html" class="active">Aeronáutica</a></li>
+          <li><a href="#contact" class="nav-cta">Contacto</a></li>
+          <li><a href="#booking" class="nav-fly" aria-label="Probar simulador">
             <svg class="nav-fly__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-            Try out
+            Probar
           </a></li>
         </ul>
         <div class="lang-switcher">
-          <a href="aeronautics.html" class="active">EN</a>
+          <a href="aeronautics.html">EN</a>
           <span>|</span>
-          <a href="aeronautica.html">ES</a>
+          <a href="aeronautica.html" class="active">ES</a>
         </div>
       </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -1568,26 +1571,26 @@
   </nav>
 
   <!-- MOBILE NAV OVERLAY -->
-  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <a href="en.html" onclick="closeMobileNav()">&larr; Alpha Tech Solutions</a>
-    <a href="#services" onclick="closeMobileNav()">Programs</a>
-    <a href="#instructors" onclick="closeMobileNav()">Instructors</a>
-    <a href="aeronautics.html" class="active" onclick="closeMobileNav()">Aeronautics</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="#booking" class="mobile-fly" onclick="closeMobileNav()" aria-label="Try out simulator">
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <a href="index.html" onclick="closeMobileNav()">&larr; Alpha Tech Solutions</a>
+    <a href="#services" onclick="closeMobileNav()">Programas</a>
+    <a href="#instructors" onclick="closeMobileNav()">Instructores</a>
+    <a href="aeronautica.html" class="active" onclick="closeMobileNav()">Aeronáutica</a>
+    <a href="#contact" onclick="closeMobileNav()">Contacto</a>
+    <a href="#booking" class="mobile-fly" onclick="closeMobileNav()" aria-label="Probar simulador">
       <svg class="nav-fly__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-      Try out
+      Probar
     </a>
     <div class="lang-switcher">
-      <a href="aeronautics.html" class="active">EN</a>
+      <a href="aeronautics.html">EN</a>
       <span>|</span>
-      <a href="aeronautica.html">ES</a>
+      <a href="aeronautica.html" class="active">ES</a>
     </div>
   </div>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero__bg" role="img" aria-label="Cockpit view from the pilot's perspective"></div>
+    <div class="hero__bg" role="img" aria-label="Vista de cabina de vuelo desde la perspectiva del piloto"></div>
     <div class="hero__overlay"></div>
 
     <!-- Parallax decorative layers (radar, contrail+aircraft, hex target) -->
@@ -1612,13 +1615,13 @@
       <!-- Contrail + commercial airliner (reusing logo geometry, scaled up) -->
       <svg class="hero__layer hero__layer--contrail" viewBox="0 0 1400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
         <defs>
-          <linearGradient id="contrailGradEn" x1="0" y1="0" x2="1" y2="0">
+          <linearGradient id="contrailGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%"   stop-color="#FE5000" stop-opacity="0"/>
             <stop offset="35%"  stop-color="#FE5000" stop-opacity="0.55"/>
             <stop offset="100%" stop-color="#FE5000" stop-opacity="0.95"/>
           </linearGradient>
         </defs>
-        <path d="M 20,140 Q 700,40 1320,140" stroke="url(#contrailGradEn)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M 20,140 Q 700,40 1320,140" stroke="url(#contrailGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
         <g transform="translate(1335,140) rotate(7) scale(2.4)">
           <path d="M 14,0 C 13.4,-0.6 12,-1 9,-1.3 L 5,-1.5 L -2,-9.5 L -5,-9 L -5,-1.8 L -9,-1.5 L -11,-1.3 L -13,-4.8 L -14.5,-4.5 L -14.2,-0.7 L -15,0 L -14.2,0.7 L -14.5,4.5 L -13,4.8 L -11,1.3 L -9,1.5 L -5,1.8 L -5,9 L -2,9.5 L 5,1.5 C 12,1 13.4,0.6 14,0 Z" fill="#FE5000"/>
           <ellipse cx="-1" cy="-5.2" rx="2.6" ry="0.75" fill="#FE5000"/>
@@ -1635,45 +1638,49 @@
         <circle cx="40" cy="40" r="2.6" fill="#FFFFFF"/>
       </svg>
     </div>
+
     <div class="container">
       <div class="hero__content">
-        <span class="eyebrow">PROFESSIONAL FLIGHT TRAINING</span>
+        <span class="eyebrow">ENTRENAMIENTO PROFESIONAL DE VUELO</span>
         <h1 class="hero__h1">Alpha Tech Simulations</h1>
-        <p class="hero__tagline">Train where limits don't exist.</p>
-        <p class="hero__desc">Not for everyone. For those who feel aviation in their bones. Train with active professionals, fly with real ATC, and become part of a club where passion for flying is the only requirement.</p>
-        <a href="#contact" class="btn btn-primary">Join the Program</a>
+        <p class="hero__tagline">Entrena donde los límites no existen.</p>
+        <p class="hero__desc">No es para todos. Es para quienes sienten la aviación. Entrena con profesionales activos, vuela con ATC real y forma parte de un club donde la pasión por volar es el único requisito.</p>
+        <a href="#contact" class="btn btn-primary">Únete al Club</a>
 
-        <div class="hero__stats" aria-label="Key features">
-          <span>Real ATC</span>
+        <div class="hero__stats" aria-label="Características clave">
+          <span>ATC Real</span>
           <span class="hero__stats-dot" aria-hidden="true">·</span>
-          <span>Active Pilots</span>
+          <span>Pilotos Activos</span>
           <span class="hero__stats-dot" aria-hidden="true">·</span>
-          <span>Full-Cockpit Simulators</span>
+          <span>Simuladores de Cabina</span>
           <span class="hero__stats-dot" aria-hidden="true">·</span>
-          <span>Lima, Peru</span>
+          <span>Lima, Perú</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY / SIMULATORS -->
+  <!-- GALLERY / SIMULADORES -->
   <section id="simuladores" class="section-pad">
     <!-- Real radar: 3 concentric rings + 24 outer ticks + N/E/S/W + rotating sweep arm + blips -->
     <svg class="simuladores__deco-radar" viewBox="0 0 200 200" aria-hidden="true">
       <defs>
-        <radialGradient id="radarBgEn" cx="50%" cy="50%" r="50%">
+        <radialGradient id="radarBg" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#FE5000" stop-opacity="0.05"/>
           <stop offset="80%" stop-color="#FE5000" stop-opacity="0"/>
         </radialGradient>
-        <linearGradient id="sweepGradEn" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+        <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
           <stop offset="0%" stop-color="#FE5000" stop-opacity="0"/>
           <stop offset="100%" stop-color="#FE5000" stop-opacity="0.55"/>
         </linearGradient>
       </defs>
-      <circle cx="100" cy="100" r="95" fill="url(#radarBgEn)"/>
+      <!-- Background glow -->
+      <circle cx="100" cy="100" r="95" fill="url(#radarBg)"/>
+      <!-- Concentric rings (3 only, no crossing lines through center) -->
       <circle cx="100" cy="100" r="95" fill="none" stroke="#FE5000" stroke-width="1"/>
       <circle cx="100" cy="100" r="65" fill="none" stroke="#FE5000" stroke-width="0.7" stroke-dasharray="2 3"/>
       <circle cx="100" cy="100" r="35" fill="none" stroke="#FE5000" stroke-width="0.7" stroke-dasharray="2 3"/>
+      <!-- 24 tick marks around outer ring (every 15°) -->
       <g stroke="#FE5000" stroke-width="1.2" stroke-linecap="round">
         <line x1="100" y1="3"  x2="100" y2="11"/>
         <line x1="100" y1="3"  x2="100" y2="9"  transform="rotate(15 100 100)"/>
@@ -1700,32 +1707,36 @@
         <line x1="100" y1="3"  x2="100" y2="9"  transform="rotate(330 100 100)"/>
         <line x1="100" y1="3"  x2="100" y2="9"  transform="rotate(345 100 100)"/>
       </g>
+      <!-- Cardinal labels -->
       <g fill="#FE5000" font-family="-apple-system,Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle">
         <text x="100" y="20">N</text>
         <text x="180" y="103">E</text>
         <text x="100" y="188">S</text>
         <text x="20" y="103">W</text>
       </g>
+      <!-- Stationary radar blips (a few "aircraft" detected) -->
       <g fill="#FE5000">
         <circle class="radar-blip"           cx="135" cy="58" r="2.2"/>
         <circle class="radar-blip radar-blip--2" cx="62"  cy="138" r="1.8"/>
         <circle class="radar-blip radar-blip--3" cx="148" cy="135" r="1.6"/>
       </g>
+      <!-- Rotating sweep arm with fading wedge -->
       <g class="radar-sweep">
-        <path d="M100 100 L100 5 A95 95 0 0 1 167 33 Z" fill="url(#sweepGradEn)"/>
+        <path d="M100 100 L100 5 A95 95 0 0 1 167 33 Z" fill="url(#sweepGrad)"/>
         <line x1="100" y1="100" x2="100" y2="5" stroke="#FE5000" stroke-width="1.4"/>
       </g>
+      <!-- Center -->
       <circle cx="100" cy="100" r="3.5" fill="#FE5000"/>
     </svg>
 
     <!-- Faint orange grid overlay -->
     <svg class="simuladores__deco-grid" viewBox="0 0 600 600" aria-hidden="true">
       <defs>
-        <pattern id="aero-grid-en" width="60" height="60" patternUnits="userSpaceOnUse">
+        <pattern id="aero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
           <path d="M60 0 L0 0 0 60" fill="none" stroke="#FE5000" stroke-width="0.6"/>
         </pattern>
       </defs>
-      <rect width="600" height="600" fill="url(#aero-grid-en)"/>
+      <rect width="600" height="600" fill="url(#aero-grid)"/>
       <circle cx="300" cy="300" r="240" fill="none" stroke="#FE5000" stroke-width="1" stroke-dasharray="3 6"/>
       <circle cx="300" cy="300" r="160" fill="none" stroke="#FE5000" stroke-width="1" stroke-dasharray="3 6"/>
     </svg>
@@ -1733,21 +1744,29 @@
     <!-- Top-down airliner silhouette in orange -->
     <svg class="simuladores__deco-plane" viewBox="0 0 320 140" aria-hidden="true">
       <g fill="#FE5000">
+        <!-- Fuselage (long rounded body) -->
         <rect x="40" y="64" width="220" height="12" rx="6"/>
+        <!-- Nose cone -->
         <path d="M260 64 Q 290 70, 290 70 Q 290 70, 260 76 Z"/>
+        <!-- Tail end taper -->
         <path d="M40 64 Q 24 70, 24 70 Q 24 70, 40 76 Z"/>
+        <!-- Main wings (swept-back delta) -->
         <path d="M 145 64 L 90 14 L 135 18 L 188 64 Z"/>
         <path d="M 145 76 L 90 126 L 135 122 L 188 76 Z"/>
+        <!-- Tail horizontal stabilizers -->
         <path d="M 60 64 L 38 38 L 70 44 L 80 64 Z"/>
         <path d="M 60 76 L 38 102 L 70 96 L 80 76 Z"/>
+        <!-- Vertical fin (small, centered on tail seen from above) -->
         <ellipse cx="55" cy="70" rx="14" ry="4"/>
+        <!-- Engines under wings (small ovals) -->
         <ellipse cx="155" cy="40" rx="6" ry="3"/>
         <ellipse cx="155" cy="100" rx="6" ry="3"/>
+        <!-- Cockpit highlight -->
         <ellipse cx="270" cy="70" rx="5" ry="2.5" fill="#FFFFFF" opacity="0.35"/>
       </g>
     </svg>
 
-    <!-- Runway-line dashed decoration -->
+    <!-- Runway-line dashed decoration (top-left + bottom-right) -->
     <svg class="runway-deco runway-deco--top-left" viewBox="0 0 200 4" aria-hidden="true">
       <line x1="0" y1="2" x2="200" y2="2" stroke="#FE5000" stroke-width="2" stroke-dasharray="14 8"/>
     </svg>
@@ -1756,35 +1775,35 @@
     </svg>
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">OUR SIMULATORS</span>
-        <h2 class="white">Professional Flight Simulators</h2>
-        <p>State-of-the-art simulation technology for comprehensive pilot training.</p>
+        <span class="eyebrow">NUESTROS SIMULADORES</span>
+        <h2 class="white">Simuladores de Vuelo Profesional</h2>
+        <p>Tecnología de simulación de última generación para entrenamiento integral de pilotos.</p>
       </div>
 
       <div class="gallery-grid">
         <div class="gallery-card" data-animate data-animate-delay="1">
-          <img src="sim1.png" alt="Professional Cockpit Simulator" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Professional Cockpit Simulator</div>
+          <img src="sim1.png" alt="Simulador Profesional de Cabina" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Simulador Profesional de Cabina</div>
         </div>
         <div class="gallery-card" data-animate data-animate-delay="2">
-          <img src="sim2.png" alt="Dual Pilot Configuration" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Dual Pilot Configuration</div>
+          <img src="sim2.png" alt="Configuración Dual Piloto" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Configuración Dual Piloto</div>
         </div>
         <div class="gallery-card" data-animate data-animate-delay="3">
-          <img src="controles.jpg" alt="Realistic Flight Controls" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Realistic Flight Controls</div>
+          <img src="controles.jpg" alt="Controles de Vuelo Realistas" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Controles de Vuelo Realistas</div>
         </div>
         <div class="gallery-card" data-animate data-animate-delay="4">
-          <img src="instruments.png" alt="Advanced Instrumentation" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Advanced Instrumentation</div>
+          <img src="instruments.png" alt="Instrumentación Avanzada" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Instrumentación Avanzada</div>
         </div>
         <div class="gallery-card" data-animate data-animate-delay="5">
-          <img src="immersive.png" alt="Immersive Environment" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Immersive Environment</div>
+          <img src="immersive.png" alt="Entorno Inmersivo" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Entorno Inmersivo</div>
         </div>
         <div class="gallery-card" data-animate data-animate-delay="6">
-          <img src="img6.jpg" alt="Full-Motion Cockpit" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Full-Motion Cockpit</div>
+          <img src="img6.jpeg" alt="Cabina Full-Motion" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Cabina Full-Motion</div>
         </div>
       </div>
     </div>
@@ -1796,25 +1815,25 @@
       <div class="services-storytelling-stage">
         <div class="container">
           <div class="services-storytelling-header section-header" data-animate>
-            <span class="eyebrow">PROGRAMS</span>
-            <h2 class="dark">Comprehensive Flight Training</h2>
-            <p style="color:#4B5563;">Services designed for all skill levels.</p>
+            <span class="eyebrow">PROGRAMAS</span>
+            <h2 class="dark">Entrenamiento Integral de Vuelo</h2>
+            <p style="color:#4B5563;">Servicios diseñados para todos los niveles de habilidad.</p>
             <span class="stage-eyebrow" aria-live="polite">
-              <span class="stage-eyebrow__label is-active" data-stage="1">Chapter 1 · Formal programs</span>
-              <span class="stage-eyebrow__label" data-stage="2">Chapter 2 · Total realism</span>
-              <span class="stage-eyebrow__label" data-stage="3">Chapter 3 · Intensive practice</span>
+              <span class="stage-eyebrow__label is-active" data-stage="1">Capítulo 1 · Programas formales</span>
+              <span class="stage-eyebrow__label" data-stage="2">Capítulo 2 · Realismo total</span>
+              <span class="stage-eyebrow__label" data-stage="3">Capítulo 3 · Práctica intensiva</span>
             </span>
           </div>
 
       <div class="services-grid">
-        <button type="button" class="services-arrow services-arrow--prev" aria-label="Previous chapter">
+        <button type="button" class="services-arrow services-arrow--prev" aria-label="Capítulo anterior">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <button type="button" class="services-arrow services-arrow--next" aria-label="Next chapter">
+        <button type="button" class="services-arrow services-arrow--next" aria-label="Siguiente capítulo">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
         <div class="services-track">
-        <!-- ═══ STAGE 1: FORMAL PROGRAMS ═══ -->
+        <!-- ═══ STAGE 1: PROGRAMAS FORMALES ═══ -->
         <div class="stage-pair is-active" data-stage="1">
         <!-- Card 1 -->
         <div class="card-light" data-animate data-animate-delay="1">
@@ -1826,11 +1845,11 @@
               <path d="M10 26h12M13 26l-1 3M19 26l1 3" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Piloting Courses</h3>
+          <h3>Cursos de Pilotaje</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Schools that teach in a classroom without reproducing the cockpit of a real aircraft.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Structured programs from Cessna 172 to Airbus A350, with full cockpit setup and certified displays.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Simulator hours that feel —and count— like real flight hours.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Escuelas que enseñan en aula teórica sin reproducir la cabina de un avión real.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Programas estructurados desde Cessna 172 hasta Airbus A350, con cabina completa y displays certificados.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Horas de simulador que se sienten —y cuentan— como horas reales de vuelo.</p></div>
           </div>
         </div>
 
@@ -1844,16 +1863,16 @@
               <path d="M13 14h6M13 18h4" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Real ATC Services</h3>
+          <h3>Servicios ATC Reales</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Silent radios, phraseology learned on YouTube and no real controller responding live.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>VATSIM/IVAO network with active ATCs —career controllers— responding in real time.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Fluent pilot-ATC comms and the confidence to work the radio on the real day.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Radios silenciosas, fraseología aprendida de YouTube y ningún control respondiendo en vivo.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Red VATSIM/IVAO con ATCs activos —controladores de carrera real— respondiendo en tiempo real.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Comunicación pilot-ATC fluida y la confianza para operar la radio el día real.</p></div>
           </div>
         </div>
         </div><!-- /stage-pair 1 -->
 
-        <!-- ═══ STAGE 2: TOTAL REALISM ═══ -->
+        <!-- ═══ STAGE 2: REALISMO TOTAL ═══ -->
         <div class="stage-pair" data-stage="2">
         <!-- Card 3 -->
         <div class="card-light" data-animate data-animate-delay="3">
@@ -1868,11 +1887,11 @@
               <line x1="24" y1="16" x2="28" y2="16" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Realistic Scenarios</h3>
+          <h3>Escenarios Realistas</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Perfect flights that never replicate the storm on approach or the engine-out on rotation.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Live emergencies, current METARs from Lima/Cusco/Arequipa and authentic airport traffic patterns.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Skills that hold up under pressure —not just in ideal conditions.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Vuelos perfectos que nunca replican la tormenta en aproximación o el engine-out en rotación.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Emergencias en tiempo real, METAR vigente de Lima/Cusco/Arequipa y tráfico auténtico de aeropuerto.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Habilidades que operan bajo presión —no solo en condiciones ideales.</p></div>
           </div>
         </div>
 
@@ -1887,16 +1906,16 @@
               <path d="M10 22l2 2 4-4" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Complete Procedures</h3>
+          <h3>Procedimientos Completos</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Simulators that drop you mid-cruise —no preflight, no briefing, no checklist.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Full loop: preflight, taxi, takeoff, cruise, approach, landing and post-flight the way the airline does it.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Professional operating habits from the very first session.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Simuladores que te sueltan en crucero —sin preflight, sin briefing, sin checklist.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Ciclo completo: preflight, taxi, despegue, crucero, aproximación, aterrizaje y post-flight como lo hace la aerolínea.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Hábitos de operación profesional desde la primera sesión.</p></div>
           </div>
         </div>
         </div><!-- /stage-pair 2 -->
 
-        <!-- ═══ STAGE 3: INTENSIVE PRACTICE ═══ -->
+        <!-- ═══ STAGE 3: PRÁCTICA INTENSIVA ═══ -->
         <div class="stage-pair" data-stage="3">
         <!-- Card 5 -->
         <div class="card-light" data-animate data-animate-delay="5">
@@ -1906,11 +1925,11 @@
               <path d="M16 9v7l4 4" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Free Practice Hours</h3>
+          <h3>Horas de Práctica Libre</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Expensive memberships that give you 2 hours a month and impossible booking windows.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Open simulator access for club members with flexible hours to practice at your own pace.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Real proficiency —because 20 hours of practice are not the same as 4.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Membresías caras que dan 2 horas al mes y reservas imposibles en horario útil.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Acceso libre al simulador para miembros del club, con horarios flexibles de práctica a tu ritmo.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Proficiencia real —porque 20 horas de práctica no equivalen a 4.</p></div>
           </div>
         </div>
 
@@ -1923,21 +1942,21 @@
               <path d="M13 22v4M19 22v4" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Expert Instruction</h3>
+          <h3>Instrucción Experta</h3>
           <div class="pmr-light">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Instructors who learned from videos and teach what they read yesterday.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Active commercial pilots and working ATCs as direct instructors.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>You learn from the person flying the real aircraft this week —not 15 years ago.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Instructores que aprendieron viendo videos y enseñan lo mismo que leyeron ayer.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Pilotos comerciales en ejercicio y ATCs activos como instructores directos.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Aprendes de quien vuela el avión real esta semana —no de quien lo voló hace 15 años.</p></div>
           </div>
         </div>
         </div><!-- /stage-pair 3 -->
         </div><!-- /services-track -->
       </div><!-- /services-grid -->
 
-          <div class="services-progress" role="tablist" aria-label="Program chapters">
-            <button type="button" class="services-progress__dot is-active" data-stage="1" aria-label="Formal programs"></button>
-            <button type="button" class="services-progress__dot" data-stage="2" aria-label="Total realism"></button>
-            <button type="button" class="services-progress__dot" data-stage="3" aria-label="Intensive practice"></button>
+          <div class="services-progress" role="tablist" aria-label="Capítulos del programa">
+            <button type="button" class="services-progress__dot is-active" data-stage="1" aria-label="Programas formales"></button>
+            <button type="button" class="services-progress__dot" data-stage="2" aria-label="Realismo total"></button>
+            <button type="button" class="services-progress__dot" data-stage="3" aria-label="Práctica intensiva"></button>
           </div>
         </div><!-- /container -->
       </div><!-- /services-storytelling-stage -->
@@ -1948,16 +1967,16 @@
   <section id="club" class="section-pad">
     <div class="container">
       <figure class="club__hero-frame" data-animate data-animate-reveal="diagonal">
-        <img src="img6.jpeg" alt="Full-motion simulator cabin" loading="lazy">
-        <figcaption class="club__hero-caption">Full-motion cabin · Lima, Peru</figcaption>
+        <img src="img6.jpeg" alt="Cabina full-motion del simulador" loading="lazy">
+        <figcaption class="club__hero-caption">Cabina full-motion · Lima, Perú</figcaption>
       </figure>
 
       <div data-animate>
-        <span class="eyebrow">THE CLUB</span>
-        <div class="club__h2-white">More than training.</div>
-        <div class="club__h2-orange">An Aeronautical Club.</div>
-        <p class="club__desc">Alpha Tech Simulations was born from a simple conviction: aviation enthusiasts deserve a place of their own.</p>
-        <p class="club__subdesc">Not a classroom. A club. A space where flying is not a lesson, but a way of life shared with those already inside the industry.</p>
+        <span class="eyebrow">EL CLUB</span>
+        <div class="club__h2-white">Más que entrenamiento.</div>
+        <div class="club__h2-orange">Un Club Aeronáutico.</div>
+        <p class="club__desc">Alpha Tech Simulations nació de una convicción simple: los apasionados de la aviación merecen un lugar propio.</p>
+        <p class="club__subdesc">No un aula. Un club. Un espacio donde volar no es una lección, sino una forma de vida compartida con quienes ya están adentro de la industria.</p>
       </div>
 
       <div class="club__features" data-animate>
@@ -1967,15 +1986,15 @@
             <circle cx="26" cy="14" r="5" stroke="#FE5000" stroke-width="1.8"/>
             <path d="M4 32c0-5.5 4.5-10 10-10h12c5.5 0 10 4.5 10 10" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <div class="club__feature-label">Community</div>
-          <div class="club__feature-desc">Connect with aviation enthusiasts</div>
+          <div class="club__feature-label">Comunidad</div>
+          <div class="club__feature-desc">Conecta con entusiastas de la aviación</div>
         </div>
         <div class="club__feature">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
             <polygon points="20,4 24,15 36,15 26,22 30,34 20,27 10,34 14,22 4,15 16,15" stroke="#FE5000" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
           </svg>
-          <div class="club__feature-label">Excellence</div>
-          <div class="club__feature-desc">Professional training standards</div>
+          <div class="club__feature-label">Excelencia</div>
+          <div class="club__feature-desc">Estándares de entrenamiento profesional</div>
         </div>
         <div class="club__feature">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -1983,8 +2002,8 @@
             <path d="M12 22l8-8 8 8" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 34h24" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <div class="club__feature-label">Growth</div>
-          <div class="club__feature-desc">Continuous skill development</div>
+          <div class="club__feature-label">Crecimiento</div>
+          <div class="club__feature-desc">Desarrollo continuo de habilidades</div>
         </div>
         <div class="club__feature">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -1992,8 +2011,8 @@
             <rect x="6" y="8" width="28" height="24" rx="1" stroke="#FE5000" stroke-width="1.8"/>
             <path d="M6 14h28" stroke="#FE5000" stroke-width="1.5" opacity=".5"/>
           </svg>
-          <div class="club__feature-label">Real Training</div>
-          <div class="club__feature-desc">Learn from active professionals</div>
+          <div class="club__feature-label">Entrenamiento Real</div>
+          <div class="club__feature-desc">Aprende de profesionales activos</div>
         </div>
       </div>
     </div>
@@ -2003,9 +2022,9 @@
   <section id="instructors" class="section-pad">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">INSTRUCTORS</span>
-        <h2 class="dark">Learn from Active Professionals</h2>
-        <p>Our instructors are not just teachers &mdash; they are actively working in aviation.</p>
+        <span class="eyebrow">INSTRUCTORES</span>
+        <h2 class="dark">Aprende de Profesionales Activos</h2>
+        <p>Nuestros instructores no son solo profesores &mdash; están trabajando activamente en aviación.</p>
       </div>
 
       <div class="services-grid">
@@ -2019,8 +2038,8 @@
               <path d="M10 24l-2 4M22 24l2 4" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Commercial Pilots</h3>
-          <p>Active airline pilots with thousands of flight hours across multiple aircraft types.</p>
+          <h3>Pilotos Comerciales</h3>
+          <p>Pilotos de aerolíneas activos con miles de horas de vuelo en múltiples tipos de aeronaves.</p>
         </div>
 
         <!-- Instructor 2 -->
@@ -2034,8 +2053,8 @@
               <circle cx="16" cy="14" r="2" fill="#FE5000" opacity=".5"/>
             </svg>
           </div>
-          <h3>Active ATCs</h3>
-          <p>Air Traffic Controllers currently working at major airports and control centers.</p>
+          <h3>ATCs Activos</h3>
+          <p>Controladores de Tráfico Aéreo trabajando actualmente en aeropuertos y centros de control principales.</p>
         </div>
 
         <!-- Instructor 3 -->
@@ -2047,8 +2066,8 @@
               <path d="M13 24v4M19 24v4" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Advanced Practitioners</h3>
-          <p>Final-stage ATC trainees and flight instructors bringing fresh perspectives and up-to-date methodologies.</p>
+          <h3>Practicantes Avanzados</h3>
+          <p>Practicantes ATC en fase final e instructores de vuelo aportando perspectivas frescas y metodologías actualizadas.</p>
         </div>
       </div>
     </div>
@@ -2058,28 +2077,28 @@
   <section id="testimonials" class="section-pad">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">TESTIMONIALS</span>
-        <h2 class="white">What our members say</h2>
+        <span class="eyebrow">TESTIMONIOS</span>
+        <h2 class="white">Lo que dicen nuestros miembros</h2>
       </div>
 
       <div class="testimonials-grid">
         <div class="testimonial-card" data-animate data-animate-delay="1">
           <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-          <p class="testimonial-card__text">After 50 hours in the Alpha Tech simulator, I arrived at my practical exam with a confidence I didn't expect. The real ATC is what makes all the difference.</p>
+          <p class="testimonial-card__text">Después de 50 horas en el simulador de Alpha Tech, llegué a mi examen práctico con una confianza que no esperaba. El ATC real es lo que marca la diferencia.</p>
           <div class="testimonial-card__author">Javier Ríos</div>
-          <div class="testimonial-card__role">Commercial Pilot Student, ATPL</div>
+          <div class="testimonial-card__role">Estudiante de Piloto Comercial, ATPL</div>
         </div>
         <div class="testimonial-card" data-animate data-animate-delay="2">
           <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-          <p class="testimonial-card__text">As an active pilot, the simulator lets me maintain proficiency on aircraft I no longer operate. The technical fidelity is remarkable.</p>
-          <div class="testimonial-card__author">Captain Andrea Solano</div>
-          <div class="testimonial-card__role">Airline Pilot, B737</div>
+          <p class="testimonial-card__text">Como piloto activo, el simulador me permite mantener competencias de aeronaves que ya no opero. La fidelidad técnica es sorprendente.</p>
+          <div class="testimonial-card__author">Capitán Andrea Solano</div>
+          <div class="testimonial-card__role">Piloto de Línea Aérea, B737</div>
         </div>
         <div class="testimonial-card" data-animate data-animate-delay="3">
           <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-          <p class="testimonial-card__text">I trained ATC communications here before my first real shift. The simulation network replicates Lima Control procedures exactly. Invaluable.</p>
+          <p class="testimonial-card__text">Entrené comunicaciones ATC aquí antes de mi primer turno real. La red de simulación replica exactamente los procedimientos de Lima Control. Invaluable.</p>
           <div class="testimonial-card__author">Miguel Torres</div>
-          <div class="testimonial-card__role">Air Traffic Controller, Lima ACC</div>
+          <div class="testimonial-card__role">Controlador de Tráfico Aéreo, Lima ACC</div>
         </div>
       </div>
     </div>
@@ -2089,19 +2108,19 @@
   <section id="booking" class="section-pad">
     <div class="container">
       <div class="section-header section-header--centered" data-animate>
-        <span class="eyebrow">BOOK YOUR SESSION</span>
-        <h2 class="white">Schedule a demo session</h2>
-        <p>Experience it before you join. A 30-minute session in our simulator &mdash; no commitment required.</p>
+        <span class="eyebrow">RESERVA TU SESIÓN</span>
+        <h2 class="white">Agenda una sesión de demostración</h2>
+        <p>Vive la experiencia antes de unirte. Una sesión de 30 minutos en nuestro simulador &mdash; sin compromiso.</p>
       </div>
 
       <div class="booking__split">
         <div class="booking__photo" data-animate data-animate-direction="left">
-          <img src="sim1.png" alt="Professional simulator cabin">
+          <img src="sim1.png" alt="Simulador profesional de cabina">
           <div class="booking__photo-overlay"></div>
           <div class="booking__photo-content">
-            <div class="booking__photo-eyebrow">Try-out session</div>
-            <div class="booking__photo-title">Sit. Take off. Decide.</div>
-            <p class="booking__photo-desc">30 minutes in a full cabin with an active instructor. Try the real controls before committing to a program.</p>
+            <div class="booking__photo-eyebrow">Sesión de prueba</div>
+            <div class="booking__photo-title">Siéntate. Despega. Decide.</div>
+            <p class="booking__photo-desc">30 minutos en cabina completa con instructor activo. Probás los controles reales antes de comprometerte con un programa.</p>
           </div>
         </div>
 
@@ -2115,36 +2134,36 @@
       </div>
 
       <p class="booking__direct">
-        Prefer to reach us directly? Email us at
+        ¿Prefieres contactarnos directamente? Escríbenos a
         <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a>
       </p>
     </div>
   </section>
 
   <!-- NEWS
-       HIDDEN SECTION (display:none) UNTIL REAL ARTICLES ARRIVE.
-       To activate: (1) remove style="display:none" from <section>, (2) replace each <article class="news-card">
-       with real content following the template below. Use inline SVG or <img src="..."> inside .news-card__thumb.
+       SECCIÓN OCULTA (display:none) HASTA RECIBIR ARTÍCULOS REALES.
+       Para activar: (1) quitar style="display:none" del <section>, (2) reemplazar cada <article class="news-card">
+       con el bloque real siguiendo la plantilla de abajo. Se puede usar SVG propio o <img src="..."> en .news-card__thumb.
 
-       CARD TEMPLATE (copy and fill inside .news-grid):
+       PLANTILLA DE TARJETA (copiar y rellenar dentro de .news-grid):
        <article class="news-card" data-animate data-animate-delay="1">
          <div class="news-card__thumb" aria-hidden="true">
-           <!-- <img src="path/image.jpg" alt="Description"> or inline SVG -->
+           <!-- <img src="ruta/imagen.jpg" alt="Descripción"> o SVG inline -->
          </div>
          <div class="news-card__body">
-           <span class="news-card__tag">[TAG]</span>
-           <div class="news-card__date">[MONTH YEAR]</div>
-           <h3>[ARTICLE HEADLINE]</h3>
-           <p>[1-2 SENTENCE DECK]</p>
-           <a href="[URL]" class="news-card__link">Read more &rarr;</a>
+           <span class="news-card__tag">[ETIQUETA]</span>
+           <div class="news-card__date">[MES AÑO]</div>
+           <h3>[TITULAR DEL ARTÍCULO]</h3>
+           <p>[BAJADA 1-2 FRASES]</p>
+           <a href="[URL]" class="news-card__link">Leer más &rarr;</a>
          </div>
        </article>
   -->
   <section id="news" class="section-pad" style="display:none">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">NEWS</span>
-        <h2 class="dark">Alpha Tech Simulations — Latest</h2>
+        <span class="eyebrow">NOTICIAS</span>
+        <h2 class="dark">Alpha Tech Simulations al día</h2>
       </div>
 
       <div class="news-grid">
@@ -2167,11 +2186,11 @@
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Industry</span>
-            <div class="news-card__date">April 2026</div>
-            <h3>Peru positions itself as an aeronautical training hub in Latin America</h3>
-            <p>Alpha Tech Simulations leads training infrastructure growth across the region, with world-class technology operating from Lima.</p>
-            <a href="#" class="news-card__link">Read more &rarr;</a>
+            <span class="news-card__tag">Industria</span>
+            <div class="news-card__date">Abril 2026</div>
+            <h3>Perú se posiciona como hub de entrenamiento aeronáutico en Latinoamérica</h3>
+            <p>Alpha Tech Simulations lidera el crecimiento de infraestructura de entrenamiento en la región, con tecnología de nivel mundial operando desde Lima.</p>
+            <a href="#" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
 
@@ -2194,11 +2213,11 @@
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Training</span>
-            <div class="news-card__date">March 2026</div>
-            <h3>The role of real ATC in training modern pilots</h3>
-            <p>Integrating active controllers into simulator training represents a qualitative leap in preparing pilots for the real world.</p>
-            <a href="#" class="news-card__link">Read more &rarr;</a>
+            <span class="news-card__tag">Formación</span>
+            <div class="news-card__date">Marzo 2026</div>
+            <h3>El rol del ATC real en la formación de pilotos modernos</h3>
+            <p>La integración de controladores activos en el entrenamiento de simulador representa un salto cualitativo en la preparación de pilotos para el mundo real.</p>
+            <a href="#" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
 
@@ -2221,11 +2240,11 @@
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Technology</span>
-            <div class="news-card__date">February 2026</div>
-            <h3>HoloLens in the cockpit: the next frontier of flight training</h3>
-            <p>Alpha Tech explores the integration of Augmented Reality into flight simulators, combining the best of both technology divisions.</p>
-            <a href="#" class="news-card__link">Read more &rarr;</a>
+            <span class="news-card__tag">Tecnología</span>
+            <div class="news-card__date">Febrero 2026</div>
+            <h3>HoloLens en cabina: la próxima frontera del entrenamiento de vuelo</h3>
+            <p>Alpha Tech explora la integración de Realidad Aumentada en los simuladores de vuelo, combinando lo mejor de ambas divisiones tecnológicas.</p>
+            <a href="#" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
       </div>
@@ -2245,18 +2264,21 @@
         <line x1="29" y1="29" x2="171" y2="171" stroke-width="0.5"/>
         <line x1="171" y1="29" x2="29" y2="171" stroke-width="0.5"/>
       </g>
+      <!-- Tick marks around outer ring -->
       <g stroke="#FE5000" stroke-width="1.4" opacity="0.35">
         <line x1="100" y1="6" x2="100" y2="14"/>
         <line x1="100" y1="186" x2="100" y2="194"/>
         <line x1="6" y1="100" x2="14" y2="100"/>
         <line x1="186" y1="100" x2="194" y2="100"/>
       </g>
+      <!-- Compass star -->
       <g>
         <polygon points="100,18 105,95 100,100 95,95" fill="#FE5000" opacity="0.55"/>
         <polygon points="100,182 95,105 100,100 105,105" fill="#FE5000" opacity="0.30"/>
         <polygon points="18,100 95,95 100,100 95,105" fill="#FE5000" opacity="0.40"/>
         <polygon points="182,100 105,105 100,100 105,95" fill="#FE5000" opacity="0.40"/>
       </g>
+      <!-- Cardinal letters -->
       <g font-family="Orbitron, sans-serif" font-size="9" font-weight="700" fill="#FE5000" opacity="0.55" text-anchor="middle">
         <text x="100" y="20">N</text>
         <text x="100" y="190">S</text>
@@ -2269,13 +2291,13 @@
       <div class="contact-grid">
         <!-- Left: Info -->
         <div class="contact-info" data-animate>
-          <span class="eyebrow">CONTACT</span>
-          <h2>Join the Program and Tell Us Your Goals</h2>
-          <p>Ready to start your aviation journey?</p>
+          <span class="eyebrow">CONTACTO</span>
+          <h2>Únete al Club y Cuéntanos tus Metas</h2>
+          <p>¿Listo para comenzar tu viaje en la aviación?</p>
 
           <div class="contact-detail">
             <div class="contact-detail__item">
-              <span class="contact-detail__label">Phone · WhatsApp</span>
+              <span class="contact-detail__label">Teléfono · WhatsApp</span>
               <span class="contact-detail__value">
                 <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a>
               </span>
@@ -2287,8 +2309,8 @@
               </span>
             </div>
             <div class="contact-detail__item">
-              <span class="contact-detail__label">Location</span>
-              <span class="contact-detail__value">Lima, Peru</span>
+              <span class="contact-detail__label">Ubicación</span>
+              <span class="contact-detail__value">Lima, Perú</span>
             </div>
             <div class="contact-detail__item">
               <span class="contact-detail__label">Web</span>
@@ -2298,7 +2320,7 @@
             </div>
           </div>
 
-          <p class="contact-response">We respond within 24 hours.</p>
+          <p class="contact-response">Respondemos en menos de 24 horas.</p>
         </div>
 
         <!-- Right: Form -->
@@ -2309,60 +2331,60 @@
                 id="contactForm">
 
             <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
-            <input type="hidden" name="redirect" value="https://alphatechnologique.com/thanks.html">
-            <input type="hidden" name="subject" value="New member - Alpha Tech Simulations">
+            <input type="hidden" name="redirect" value="https://alphatechnologique.com/gracias.html">
+            <input type="hidden" name="subject" value="Nuevo miembro - Alpha Tech Simulations">
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="nombre">Full Name *</label>
-                <input class="form-input" type="text" id="nombre" name="nombre" required placeholder="Your name">
+                <label class="form-label" for="nombre">Nombre Completo *</label>
+                <input class="form-input" type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
               </div>
               <div class="form-group">
                 <label class="form-label" for="email">Email *</label>
-                <input class="form-input" type="email" id="email" name="email" required placeholder="you@email.com">
+                <input class="form-input" type="email" id="email" name="email" required placeholder="tu@email.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="telefono">Phone</label>
+              <label class="form-label" for="telefono">Teléfono</label>
               <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999">
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="distrito">District / Zone *</label>
-              <input class="form-input" type="text" id="distrito" name="distrito" required placeholder="e.g: Miraflores, San Isidro, Breña...">
+              <label class="form-label" for="distrito">¿Desde qué distrito nos visitarías? *</label>
+              <input class="form-input" type="text" id="distrito" name="distrito" required placeholder="ej: Miraflores, San Isidro, Breña...">
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="horas">How many hours would you like to practice? *</label>
+                <label class="form-label" for="horas">¿Cuántas horas te gustaría practicar? *</label>
                 <select class="form-select" id="horas" name="horas" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="1-5">1–5 hrs/month</option>
-                  <option value="6-10">6–10 hrs/month</option>
-                  <option value="11-20">11–20 hrs/month</option>
-                  <option value="20+">20+ hrs/month</option>
-                  <option value="flexible">Flexible schedule</option>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="1-5">1-5 horas/mes</option>
+                  <option value="6-10">6-10 horas/mes</option>
+                  <option value="11-20">11-20 horas/mes</option>
+                  <option value="20+">20+ horas/mes</option>
+                  <option value="flexible">Horario flexible</option>
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label" for="nivel">Experience Level *</label>
+                <label class="form-label" for="nivel">Nivel de Experiencia *</label>
                 <select class="form-select" id="nivel" name="nivel" required>
-                  <option value="" disabled selected>Select your level</option>
-                  <option value="sin-experiencia">No experience — Complete beginner</option>
-                  <option value="basico">Basic — Some simulator experience</option>
-                  <option value="intermedio">Intermediate — Regular practice</option>
-                  <option value="avanzado">Advanced — Pilot student or higher</option>
+                  <option value="" disabled selected>Selecciona tu nivel</option>
+                  <option value="sin-experiencia">Sin experiencia - Principiante completo</option>
+                  <option value="basico">Básico - Algo de experiencia en simulador</option>
+                  <option value="intermedio">Intermedio - Práctica regular</option>
+                  <option value="avanzado">Avanzado - Estudiante de piloto o superior</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="metas">Goals / Objectives *</label>
-              <textarea class="form-textarea" id="metas" name="metas" required placeholder="What do you want to achieve?"></textarea>
+              <label class="form-label" for="metas">Cuéntanos tus metas en aviación *</label>
+              <textarea class="form-textarea" id="metas" name="metas" required placeholder="¿Qué quieres lograr?"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Join the Program</button>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Unirse al Club</button>
           </form>
         </div>
       </div>
@@ -2377,41 +2399,41 @@
         <div>
           <img src="icon-simulations.svg" alt="Alpha Tech Simulations" height="48" style="display:block;height:48px;width:auto">
 
-          <p class="footer__tagline">Train where limits don't exist.</p>
+          <p class="footer__tagline">Entrena donde los límites no existen.</p>
           <p class="footer__copy">© 2026 Alpha Tech Simulations.</p>
         </div>
 
         <!-- Col 2 -->
         <div>
-          <p class="footer__col-title">Navigation</p>
+          <p class="footer__col-title">Navegación</p>
           <ul class="footer__links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Programs</a></li>
-            <li><a href="#instructors">Instructors</a></li>
-            <li><a href="#booking">Try out</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#services">Programas</a></li>
+            <li><a href="#instructors">Instructores</a></li>
+            <li><a href="#booking">Probar</a></li>
+            <li><a href="#contact">Contacto</a></li>
           </ul>
         </div>
 
         <!-- Col 3 -->
         <div>
-          <p class="footer__col-title">Alpha Tech Group</p>
+          <p class="footer__col-title">Grupo Alpha Tech</p>
           <ul class="footer__links">
-            <li><a href="en.html">Alpha Tech Solutions</a></li>
-            <li><a href="aeronautics.html">Alpha Tech Simulations</a></li>
+            <li><a href="index.html">Alpha Tech Solutions</a></li>
+            <li><a href="aeronautica.html">Alpha Tech Simulations</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>© 2026 Alpha Tech Solutions S.A.C. All rights reserved.</p>
+        <p>© 2026 Alpha Tech Solutions S.A.C. Todos los derechos reservados.</p>
         <div class="footer__bottom-right">
           <div class="lang-switcher">
-            <a href="aeronautics.html" style="color:var(--orange);">EN</a>
+            <a href="aeronautics.html">EN</a>
             <span style="color:rgba(255,255,255,.2);">|</span>
-            <a href="aeronautica.html">ES</a>
+            <a href="aeronautica.html" style="color:var(--orange);">ES</a>
           </div>
-          <a href="en.html">Alpha Tech Solutions &rarr;</a>
+          <a href="index.html">Alpha Tech Solutions &rarr;</a>
         </div>
       </div>
     </div>
@@ -2423,7 +2445,7 @@
      id="whatsappBtn"
      target="_blank"
      rel="noopener noreferrer"
-     aria-label="Contact via WhatsApp">
+     aria-label="Contactar por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <path d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.56 4.07 1.54 5.77L2.5 25.5l5.9-1.52A11.47 11.47 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5z" fill="white"/>
       <path d="M14 4C8.48 4 4 8.48 4 14c0 2.07.59 3.99 1.61 5.62L4 24l4.5-1.58A9.95 9.95 0 0014 24c5.52 0 10-4.48 10-10S19.52 4 14 4z" fill="#25D366"/>
@@ -2515,9 +2537,10 @@
       function update() {
         const y = window.scrollY || window.pageYOffset;
         const heroH = hero.offsetHeight || window.innerHeight;
+        // Stop work when hero is well off-screen
         if (y > heroH * 1.3) { ticking = false; return; }
 
-        const t = Math.max(0, Math.min(1, y / heroH));
+        const t = Math.max(0, Math.min(1, y / heroH)); // 0..1 progress
 
         if (layers.bg)       layers.bg.style.transform       = 'translate3d(0,' + (y * 0.45) + 'px,0) scale(' + (1 + t * 0.06) + ')';
         if (layers.radar)    layers.radar.style.transform    = 'translate3d(' + (y * -0.18) + 'px,' + (y * 0.30) + 'px,0) rotate(' + (y * 0.04) + 'deg)';
@@ -2580,6 +2603,7 @@
       if (prevBtn) prevBtn.addEventListener('click', () => setStage(currentStage - 1));
       if (nextBtn) nextBtn.addEventListener('click', () => setStage(currentStage + 1));
 
+      // Keyboard arrows when section is in viewport
       document.addEventListener('keydown', (e) => {
         if (!isDesktop()) return;
         const rect = storytelling.getBoundingClientRect();

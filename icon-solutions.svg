@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Alpha Tech Solutions icon">
+  <path d="M 10,54 A 26,26 0 0 1 44,14" stroke="#FFFFFF" stroke-width="2.4" fill="none" opacity="0.55" stroke-linecap="round"/>
+  <circle cx="10" cy="54" r="2.8" fill="#008EAA"/>
+  <path d="M 10,54 L 40,26" stroke="#008EAA" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <polygon points="56,30 52,36.5 44,36.5 40,30 44,23.5 52,23.5" fill="#008EAA"/>
+  <circle cx="48" cy="30" r="1.6" fill="#FFFFFF" opacity="0.95"/>
+</svg>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpha Tech Solutions | Engineering Processes, Executed Correctly</title>
-  <meta name="description" content="Augmented Reality to optimize safety, speed, and reliability in industrial operations.">
+  <title>Alpha Tech Solutions | Procesos de Ingeniería, Ejecutados Correctamente</title>
+  <meta name="description" content="Realidad Aumentada para operaciones industriales más seguras, rápidas y confiables. Lima, Perú.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-96x96.png" sizes="96x96">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -330,12 +330,6 @@
     .hero-content h1 {
       margin-bottom: 24px;
       color: var(--white);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 800;
-      font-size: clamp(36px, 5.5vw, 56px);
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      max-width: 640px;
     }
 
     .hero-content p {
@@ -1184,8 +1178,18 @@
       .hero-stats-inner { padding: 0 24px; }
     }
 
+    /* ─── HERO TYPOGRAPHY ─── */
+    .hero-content h1 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 5.5vw, 56px);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      max-width: 640px;
+    }
+
     /* ─── SERVICE PILLARS ─── */
-    #services {
+    #servicios {
       background: var(--navy-deep);
       padding: 96px 0;
     }
@@ -1238,7 +1242,8 @@
       padding: 3px 8px; border-radius: 2px;
       align-self: flex-start;
     }
-    .pillar-badge.available { background: rgba(0,142,170,0.15); color: var(--teal); }
+    .pillar-badge.disponible { background: rgba(0,142,170,0.15); color: var(--teal); }
+    .pillar-badge.pronto { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); }
     .pillar-icon {
       width: 44px; height: 44px;
       background: rgba(0,142,170,0.1);
@@ -1248,7 +1253,7 @@
     .pillar-card h3 { font-size: 18px; font-weight: 700; color: var(--white); line-height: 1.3; }
     .pillar-card > p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; flex: 1; }
 
-    /* ── PROBLEM / METHOD / RESULT ── */
+    /* ── PROBLEMA / MÉTODO / RESULTADO ── */
     .pmr { display: flex; flex-direction: column; gap: 12px; flex: 1; margin-top: 4px; }
     .pmr-row {
       display: grid;
@@ -1287,8 +1292,8 @@
     }
     .pillar-link::after { content: '→'; }
 
-    /* ─── MECHANICAL ENGINEERING ─── */
-    #mechanics {
+    /* ─── INGENIERÍA MECÁNICA ─── */
+    #ingenieria {
       background: var(--navy-dark);
       padding: 96px 0;
     }
@@ -1339,9 +1344,10 @@
       border-radius: 12px;
       overflow: hidden;
     }
+    .mec-case-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ─── AERODYNAMICS ─── */
-    #aerodynamics {
+    /* ─── AERODINÁMICA ─── */
+    #aerodinamica {
       background: var(--navy);
       padding: 96px 0;
     }
@@ -1361,6 +1367,7 @@
       aspect-ratio: 16/9;
       border: 1px solid rgba(255,255,255,0.08);
     }
+    .aero-ansys img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .aero-profiles {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1379,6 +1386,7 @@
       background: rgba(0,32,91,0.7);
       overflow: hidden;
     }
+    .aero-profile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .aero-profile-body { padding: 28px 32px; }
     .aero-profile-tag {
       font-size: 9px; font-weight: 700;
@@ -1417,24 +1425,24 @@
   <!-- ─── NAVIGATION ─── -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="en.html" class="nav-logo" aria-label="Alpha Tech Solutions">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions">
         <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="46" style="display:block;height:46px;width:auto">
       </a>
 
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#technology">Technology</a></li>
-          <li><a href="aeronautics.html">Flight Simulations</a></li>
-          <li class="nav-cta"><a href="#contact">Contact</a></li>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#technology">Tecnología</a></li>
+          <li><a href="aeronautica.html">Simulaciones de Vuelo</a></li>
+          <li class="nav-cta"><a href="#contact">Contacto</a></li>
         </ul>
         <div class="nav-lang">
-          <a href="en.html" class="active">EN</a>
+          <a href="en.html">EN</a>
           <span>|</span>
-          <a href="index.html">ES</a>
+          <a href="index.html" class="active">ES</a>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -1444,17 +1452,17 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
-    <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">&#x2715;</button>
-    <a href="#hero" class="mobile-link">Home</a>
-    <a href="#services" class="mobile-link">Services</a>
-    <a href="#technology" class="mobile-link">Technology</a>
-    <a href="aeronautics.html" class="mobile-link">Flight Simulations</a>
-    <a href="#contact" class="mobile-link">Contact</a>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="#hero" class="mobile-link">Inicio</a>
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#technology" class="mobile-link">Tecnología</a>
+    <a href="aeronautica.html" class="mobile-link">Simulaciones de Vuelo</a>
+    <a href="#contact" class="mobile-link">Contacto</a>
     <div class="mobile-lang nav-lang" style="margin-top:16px;">
-      <a href="en.html" class="active">EN</a>
+      <a href="en.html">EN</a>
       <span style="color:rgba(255,255,255,.2)">|</span>
-      <a href="index.html">ES</a>
+      <a href="index.html" class="active">ES</a>
     </div>
   </div>
 
@@ -1462,27 +1470,27 @@
   <section id="hero">
     <div class="container">
       <div class="hero-content" data-animate>
-        <span class="eyebrow">ENGINEERING · DESIGN · PERFORMANCE</span>
-        <h1>Engineering processes,<br>executed correctly.<br>Always.</h1>
-        <p>Industrial mechanical engineering, CFD fluid dynamics, preventive maintenance and free diagnosis. Aeronautical-grade technical rigor in every project.</p>
+        <span class="eyebrow">INGENIERÍA · DISEÑO · RENDIMIENTO</span>
+        <h1>Procesos de ingeniería,<br>ejecutados correctamente.<br>Siempre.</h1>
+        <p>Ingeniería mecánica industrial, dinámica de fluidos CFD, mantenimiento preventivo y diagnóstico gratuito. Rigor técnico aeronáutico en cada proyecto.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Request Free Diagnosis</a>
-          <a href="#services" class="btn btn-secondary">Learn More</a>
+          <a href="#contact" class="btn btn-primary">Solicitar Diagnóstico Gratuito</a>
+          <a href="#servicios" class="btn btn-secondary">Conocer Más</a>
         </div>
       </div>
     </div>
     <div class="hero-stats">
       <div class="hero-stats-inner">
         <div class="hero-stat" data-animate>
-          <span class="hero-stat-label">Reduction</span>
-          <span class="hero-stat-value">&#8595; Human Error</span>
+          <span class="hero-stat-label">Reducción</span>
+          <span class="hero-stat-value">&#8595; Error Humano</span>
         </div>
         <div class="hero-stat" data-animate style="transition-delay:.1s">
-          <span class="hero-stat-label">Increase</span>
-          <span class="hero-stat-value">&#8593; Training Speed</span>
+          <span class="hero-stat-label">Incremento</span>
+          <span class="hero-stat-value">&#8593; Velocidad de Formación</span>
         </div>
         <div class="hero-stat" data-animate style="transition-delay:.2s">
-          <span class="hero-stat-label">Security</span>
+          <span class="hero-stat-label">Seguridad</span>
           <span class="hero-stat-value">ISO 27001 Ready</span>
         </div>
       </div>
@@ -1493,9 +1501,9 @@
   <section id="problem">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">The Industrial Challenge</span>
-        <h2>Critical processes face systemic problems</h2>
-        <p>Safety, cost, and reliability — three variables that degrade without the right system.</p>
+        <span class="eyebrow">El Desafío Industrial</span>
+        <h2>Los procesos críticos enfrentan problemas sistémicos</h2>
+        <p>Seguridad, costo y confiabilidad: tres variables que se degradan sin el sistema correcto.</p>
       </div>
       <div class="cards-3">
         <div class="card-dark" data-animate>
@@ -1504,8 +1512,8 @@
             <circle cx="20" cy="20" r="16"/>
             <polyline points="20,10 20,20 27,25"/>
           </svg>
-          <h3>Slow Training</h3>
-          <p>New operators require extensive time and resources to reach operational proficiency. High dependency on senior expertise creates bottlenecks and knowledge silos.</p>
+          <h3>Formación Lenta</h3>
+          <p>Los nuevos operarios requieren tiempo y recursos extensos para alcanzar competencia operacional. La alta dependencia del personal experimentado genera cuellos de botella y silos de conocimiento.</p>
         </div>
         <div class="card-dark" data-animate style="transition-delay:.1s">
           <!-- Warning triangle icon -->
@@ -1514,8 +1522,8 @@
             <line x1="20" y1="17" x2="20" y2="25"/>
             <circle cx="20" cy="30" r="1.5" fill="currentColor" stroke="none"/>
           </svg>
-          <h3>Human Error</h3>
-          <p>Complex procedures executed from memory or paper documentation lead to mistakes. A single error in critical processes can mean costly rework or safety incidents.</p>
+          <h3>Error Humano</h3>
+          <p>Los procedimientos complejos ejecutados de memoria o documentación en papel aumentan la probabilidad de errores. Un solo error en procesos críticos puede significar retrabajo costoso o incidentes de seguridad.</p>
         </div>
         <div class="card-dark" data-animate style="transition-delay:.2s">
           <!-- Down arrow chart icon -->
@@ -1524,8 +1532,8 @@
             <polyline points="30,28 36,28 36,22"/>
             <line x1="4" y1="34" x2="36" y2="34"/>
           </svg>
-          <h3>Lost Profitability</h3>
-          <p>Inefficient training, quality issues, and lack of process traceability drain resources. Audit failures and non-conformities compound operational costs.</p>
+          <h3>Pérdida de Rentabilidad</h3>
+          <p>La formación ineficiente, las deficiencias de calidad y la falta de trazabilidad drenan recursos. Las fallas de auditoría y no conformidades agravan los costos operacionales.</p>
         </div>
       </div>
     </div>
@@ -1535,9 +1543,9 @@
   <section id="solution-detail">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">The Solution</span>
-        <h2>AR-Assisted Execution</h2>
-        <p>Every step validated. Every action recorded. Zero room for error.</p>
+        <span class="eyebrow">La Solución</span>
+        <h2>Ejecución asistida por Realidad Aumentada</h2>
+        <p>Cada paso, validado. Cada acción, registrada. Cero margen de error.</p>
       </div>
       <div class="solution-grid">
         <div class="solution-visual" data-animate>
@@ -1556,31 +1564,31 @@
           </div>
           <div class="solution-visual-content">
             <div class="solution-process">
-              Process <span>&#8594;</span> AR Guide <span>&#8594;</span> Validation
+              Proceso <span>&#8594;</span> Guía AR <span>&#8594;</span> Validación
             </div>
-            <div class="solution-process-sub">Real-time assistance at every step.</div>
+            <div class="solution-process-sub">Asistencia en tiempo real en cada paso.</div>
           </div>
         </div>
         <div class="feature-list">
           <div class="feature-item" data-animate>
             <div class="feature-num">01</div>
             <div class="feature-body">
-              <h3>Step-by-step guidance</h3>
-              <p>Operators see exactly what to do, when to do it, and how. Visual instructions overlay the physical workspace through AR devices.</p>
+              <h3>Guía paso a paso</h3>
+              <p>Los operarios cuentan con instrucciones precisas sobre qué hacer, cuándo y cómo hacerlo. Las instrucciones visuales se superponen al espacio de trabajo físico a través de dispositivos de realidad aumentada.</p>
             </div>
           </div>
           <div class="feature-item" data-animate style="transition-delay:.1s">
             <div class="feature-num">02</div>
             <div class="feature-body">
-              <h3>Real-time validation</h3>
-              <p>Each step is verified before proceeding. The system ensures compliance with procedures and prevents process deviations.</p>
+              <h3>Validación en tiempo real</h3>
+              <p>Nada avanza sin validación. El sistema asegura cumplimiento de procedimientos y previene desviaciones del proceso.</p>
             </div>
           </div>
           <div class="feature-item" data-animate style="transition-delay:.2s">
             <div class="feature-num">03</div>
             <div class="feature-body">
-              <h3>Process traceability</h3>
-              <p>Complete digital record of every action, timestamp, and validation. Full audit trail for quality management and continuous improvement.</p>
+              <h3>Trazabilidad del proceso</h3>
+              <p>Registro digital completo de cada acción, incluyendo marcas de tiempo y validaciones. Pista de auditoría completa para asegurar la gestión de calidad y mejora continua.</p>
             </div>
           </div>
         </div>
@@ -1592,8 +1600,8 @@
   <section id="impact">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Measurable Impact</span>
-        <h2>Quantifiable improvements across critical operational metrics</h2>
+        <span class="eyebrow">Impacto Medible</span>
+        <h2>Mejoras cuantificables en métricas operacionales críticas</h2>
       </div>
       <div class="cards-2x2">
         <div class="card-dark" data-animate>
@@ -1602,8 +1610,8 @@
             <circle cx="20" cy="20" r="16"/>
             <polyline points="13,20 18,26 28,14"/>
           </svg>
-          <h3>Error Reduction</h3>
-          <p>Eliminate mistakes through validated execution and real-time feedback loops.</p>
+          <h3>Reducción de Errores</h3>
+          <p>Mitigación de errores mediante la validación continua y ciclos de retroalimentación en tiempo real.</p>
         </div>
         <div class="card-dark" data-animate style="transition-delay:.1s">
           <!-- Graph up icon -->
@@ -1611,8 +1619,8 @@
             <polyline points="4,32 14,18 22,24 36,8"/>
             <polyline points="28,8 36,8 36,16"/>
           </svg>
-          <h3>Faster Training</h3>
-          <p>Accelerate operator proficiency with interactive, context-aware guidance.</p>
+          <h3>Formación Más Rápida</h3>
+          <p>Acelera el aprendizaje del operario con guía interactiva y consciente del contexto.</p>
         </div>
         <div class="card-dark" data-animate style="transition-delay:.2s">
           <!-- Shield icon -->
@@ -1620,8 +1628,8 @@
             <path d="M20 4 L34 10 V22 C34 30 20 37 20 37 C20 37 6 30 6 22 V10 Z"/>
             <polyline points="13,20 18,26 27,14"/>
           </svg>
-          <h3>Enhanced Safety</h3>
-          <p>Built-in safety checks and mandatory preconditions prevent hazardous situations.</p>
+          <h3>Seguridad Mejorada</h3>
+          <p>Integración de verificaciones de seguridad y validación de precondiciones para prevenir situaciones de riesgo.</p>
         </div>
         <div class="card-dark" data-animate style="transition-delay:.3s">
           <!-- Bar chart icon -->
@@ -1630,8 +1638,8 @@
             <rect x="16" y="14" width="8" height="20" rx="1"/>
             <rect x="27" y="6" width="8" height="28" rx="1"/>
           </svg>
-          <h3>Performance Intelligence</h3>
-          <p>Data-driven insights for continuous process optimization and efficiency gains.</p>
+          <h3>Inteligencia de Desempeño</h3>
+          <p>Información basada en datos para la optimización continua de procesos y la mejora de la eficiencia.</p>
         </div>
       </div>
     </div>
@@ -1641,35 +1649,35 @@
   <section id="testimonials">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Clients</span>
-        <h2 style="color:var(--text-dark)">What our clients say</h2>
+        <span class="eyebrow">Clientes</span>
+        <h2 style="color:var(--text-dark)">Lo que dicen nuestros clientes</h2>
       </div>
       <div class="testimonial-cards">
         <div class="testimonial-card" data-animate>
           <span class="testimonial-quote-mark">"</span>
           <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"Alpha Tech completely transformed our assembly line. Procedural errors dropped 80% in the first three months. The ROI was immediate."</p>
+          <p class="testimonial-text">"Alpha Tech transformó completamente nuestra línea de ensamblaje. Los errores de procedimiento cayeron un 80% en los primeros tres meses. El ROI fue inmediato."</p>
           <div class="testimonial-author">
             <span class="testimonial-name">Carlos Mendoza</span>
-            <span class="testimonial-role">Operations Manager, Industrial Manufacturing</span>
+            <span class="testimonial-role">Gerente de Operaciones, Manufactura Industrial</span>
           </div>
         </div>
         <div class="testimonial-card" data-animate style="transition-delay:.1s">
           <span class="testimonial-quote-mark">"</span>
           <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"New operator training went from 8 weeks to less than 2. I never thought it was possible without sacrificing quality."</p>
+          <p class="testimonial-text">"La curva de formación de nuevos operarios pasó de 8 semanas a menos de 2. Nunca pensé que fuera posible sin sacrificar calidad."</p>
           <div class="testimonial-author">
             <span class="testimonial-name">Patricia Vega</span>
-            <span class="testimonial-role">Human Capital Director, Aerospace Operations</span>
+            <span class="testimonial-role">Directora de Capital Humano, Operaciones Aeroespaciales</span>
           </div>
         </div>
         <div class="testimonial-card" data-animate style="transition-delay:.2s">
           <span class="testimonial-quote-mark">"</span>
           <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"The traceability system saved us in our last ISO audit. Every action documented, every validation recorded. No room for error."</p>
+          <p class="testimonial-text">"El sistema de trazabilidad nos salvó en la última auditoría ISO. Cada acción documentada, cada validación registrada. Sin margen de error."</p>
           <div class="testimonial-author">
             <span class="testimonial-name">Rodrigo Alcántara</span>
-            <span class="testimonial-role">Quality Manager, Construction Sector</span>
+            <span class="testimonial-role">Jefe de Calidad, Sector Construcción</span>
           </div>
         </div>
       </div>
@@ -1680,13 +1688,13 @@
   <section id="scalability">
     <div class="container">
       <div class="scalability-content" data-animate>
-        <h2>If there is an engineering process, it can be augmented</h2>
-        <p>Same logic. Different industries.</p>
+        <h2>Si existe un proceso de ingeniería, puede optimizarse</h2>
+        <p>Misma lógica. Diferentes industrias.</p>
         <div class="industry-tags">
-          <span class="industry-tag">Aerospace</span>
-          <span class="industry-tag">Manufacturing</span>
-          <span class="industry-tag">Construction</span>
-          <span class="industry-tag">Industrial Operations</span>
+          <span class="industry-tag">Aeroespacial</span>
+          <span class="industry-tag">Manufactura</span>
+          <span class="industry-tag">Construcción</span>
+          <span class="industry-tag">Operaciones Industriales</span>
         </div>
       </div>
     </div>
@@ -1696,9 +1704,9 @@
   <section id="technology">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Technology Stack</span>
-        <h2>Engineering-driven architecture</h2>
-        <p>Designed for reliability and scale.</p>
+        <span class="eyebrow">Stack Tecnológico</span>
+        <h2>Arquitectura dirigida por ingeniería</h2>
+        <p>Diseñada para garantizar confiabilidad y escalabilidad.</p>
       </div>
       <div class="tech-cards">
         <div class="tech-card" data-animate>
@@ -1710,12 +1718,12 @@
             <line x1="9" y1="12" x2="5" y2="12"/><line x1="9" y1="16" x2="5" y2="16"/><line x1="9" y1="20" x2="5" y2="20"/>
             <line x1="23" y1="12" x2="27" y2="12"/><line x1="23" y1="16" x2="27" y2="16"/><line x1="23" y1="20" x2="27" y2="20"/>
           </svg>
-          <h3>AR Platform</h3>
+          <h3>Plataforma AR</h3>
           <ul>
             <li>HoloLens 2 / Magic Leap</li>
-            <li>Mobile AR iOS/Android</li>
-            <li>Spatial computing</li>
-            <li>Hands-free</li>
+            <li>AR Móvil iOS/Android</li>
+            <li>Computación espacial</li>
+            <li>Manos libres</li>
           </ul>
         </div>
         <div class="tech-card" data-animate style="transition-delay:.1s">
@@ -1724,12 +1732,12 @@
             <circle cx="16" cy="16" r="4"/>
             <path d="M16 4 L16 8 M16 24 L16 28 M4 16 L8 16 M24 16 L28 16 M6.3 6.3 L9.2 9.2 M22.8 22.8 L25.7 25.7 M25.7 6.3 L22.8 9.2 M9.2 22.8 L6.3 25.7"/>
           </svg>
-          <h3>Process Engine</h3>
+          <h3>Motor de Procesos</h3>
           <ul>
-            <li>Modular architecture</li>
-            <li>Rule-based validation</li>
-            <li>Multi-mode execution</li>
-            <li>Quality gates</li>
+            <li>Arquitectura modular</li>
+            <li>Validación basada en reglas</li>
+            <li>Ejecución multi-modo</li>
+            <li>Puertas de calidad</li>
           </ul>
         </div>
         <div class="tech-card" data-animate style="transition-delay:.2s">
@@ -1739,12 +1747,12 @@
             <path d="M6 8 V16 C6 18.2 10.5 20 16 20 C21.5 20 26 18.2 26 16 V8"/>
             <path d="M6 16 V24 C6 26.2 10.5 28 16 28 C21.5 28 26 26.2 26 24 V16"/>
           </svg>
-          <h3>Data &amp; Traceability</h3>
+          <h3>Datos y Trazabilidad</h3>
           <ul>
-            <li>Immutable audit logs</li>
-            <li>Time-series data</li>
-            <li>Quality integration</li>
-            <li>Analytics dashboards</li>
+            <li>Registros de auditoría inmutables</li>
+            <li>Series temporales</li>
+            <li>Integración de calidad</li>
+            <li>Dashboards de análisis</li>
           </ul>
         </div>
         <div class="tech-card" data-animate style="transition-delay:.3s">
@@ -1754,10 +1762,10 @@
             <path d="M10 14 V10 A6 6 0 0 1 22 10 V14"/>
             <circle cx="16" cy="21" r="2" fill="currentColor" stroke="none"/>
           </svg>
-          <h3>Security</h3>
+          <h3>Seguridad</h3>
           <ul>
-            <li>Role-based access control</li>
-            <li>Encrypted data</li>
+            <li>Control de acceso por roles</li>
+            <li>Datos encriptados</li>
             <li>ISO 27001 ready</li>
             <li>On-premise deployment</li>
           </ul>
@@ -1767,93 +1775,93 @@
   </section>
 
   <!-- ─── SERVICE PILLARS ─── -->
-  <section id="services">
+  <section id="servicios">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Our Services</span>
-        <h2>Industrial engineering across four areas</h2>
-        <p>Real technical solutions for manufacturing, maintenance, and fluid dynamics. Aeronautical-grade rigor in every project.</p>
+        <span class="eyebrow">Nuestros Servicios</span>
+        <h2>Ingeniería industrial en cuatro áreas</h2>
+        <p>Soluciones técnicas reales para manufactura, mantenimiento y dinámica de fluidos. Rigor aeronáutico en cada proyecto.</p>
       </div>
       <div class="pillars-grid">
         <div class="pillar-card ready" data-animate>
-          <span class="pillar-badge available">Available</span>
+          <span class="pillar-badge disponible">Disponible</span>
           <div class="pillar-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3>Industrial Mechanical Engineering</h3>
+          <h3>Ingeniería Mecánica Industrial</h3>
           <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Components that fail in operation, expensive rework and batches that don't come out right the first time.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>FEM analysis in ANSYS, topology optimization and manufacturing drawings with aeronautical-grade ISO tolerances.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Extended service life, fewer iterations and parts that assemble without adjustments.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Componentes que fallan en operación, re-trabajo costoso y lotes que no salen a la primera.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>FEM en ANSYS, optimización topológica y planos con tolerancias ISO de grado aeronáutico.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Vida útil prolongada, menos iteraciones y piezas que se ensamblan sin ajustes.</p></div>
           </div>
-          <a href="#mechanics" class="pillar-link">View capabilities</a>
+          <a href="#ingenieria" class="pillar-link">Ver capacidades</a>
         </div>
         <div class="pillar-card ready" data-animate style="transition-delay:.1s">
-          <span class="pillar-badge available">Available</span>
+          <span class="pillar-badge disponible">Disponible</span>
           <div class="pillar-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
             </svg>
           </div>
-          <h3>Aerodynamics & Fluid Dynamics</h3>
+          <h3>Aerodinámica & Dinámica de Fluidos</h3>
           <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Ducts with pressure losses, airfoils with unquantified drag and internal flows you can't see into.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>CFD simulation in ANSYS Fluent with parametric analysis and experimental validation.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Optimized geometry before manufacturing — savings in energy, materials and man-hours.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Ductos con pérdidas de presión, perfiles con resistencia no cuantificada y flujos internos sin visibilidad.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Simulación CFD en ANSYS Fluent con análisis paramétrico y validación experimental.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Geometría optimizada antes de fabricar — ahorro en energía, materiales y horas-hombre.</p></div>
           </div>
-          <a href="#aerodynamics" class="pillar-link">View capabilities</a>
+          <a href="#aerodinamica" class="pillar-link">Ver capacidades</a>
         </div>
         <div class="pillar-card ready" data-animate style="transition-delay:.2s">
-          <span class="pillar-badge available">Available</span>
+          <span class="pillar-badge disponible">Disponible</span>
           <div class="pillar-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
             </svg>
           </div>
-          <h3>Preventive Maintenance & Diagnosis</h3>
+          <h3>Mantenimiento Preventivo & Diagnóstico</h3>
           <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Unplanned downtime, reactive diagnosis and costs that explode once the equipment has already failed.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Technical inspection, vibration analysis and a preventive plan tiered by equipment criticality.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Failures detected before they happen, sustained uptime and maintenance costs under control.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Paradas imprevistas, diagnóstico reactivo y costos que se disparan cuando el equipo ya falló.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Inspección técnica, análisis vibratorio y plan preventivo por criticidad de cada equipo.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Fallas detectadas antes de ocurrir, disponibilidad sostenida y costos de mantenimiento bajo control.</p></div>
           </div>
-          <a href="#contact" class="pillar-link">Request free diagnosis</a>
+          <a href="#contact" class="pillar-link">Solicitar diagnóstico gratuito</a>
         </div>
         <div class="pillar-card coming-soon" data-animate style="transition-delay:.3s">
-          <span class="pillar-badge pronto">In Development</span>
+          <span class="pillar-badge pronto">En Desarrollo</span>
           <div class="pillar-icon" style="opacity:0.5">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
           </div>
-          <h3>Industrial Augmented Reality</h3>
+          <h3>Realidad Aumentada Industrial</h3>
           <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problem</span><p>Junior operators, long procedures and documentation nobody reads on the shop floor.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Method</span><p>Step-by-step AR overlays on real equipment — compatible with HoloLens 2, Magic Leap and iOS/Android devices.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Result</span><p>Correct assemblies on the first attempt and a drastically shorter learning curve.</p></div>
+            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Operarios novatos, procedimientos largos y documentación que nadie lee en el taller.</p></div>
+            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Overlays AR paso a paso sobre el equipo real — compatible con HoloLens 2, Magic Leap y dispositivos iOS/Android.</p></div>
+            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Ensamblajes correctos al primer intento y curva de aprendizaje drásticamente reducida.</p></div>
           </div>
-          <a href="#news" class="pillar-link" style="color:rgba(255,255,255,0.3)">See progress</a>
+          <a href="#news" class="pillar-link" style="color:rgba(255,255,255,0.3)">Ver avances</a>
         </div>
       </div>
       <div class="division-callout" data-animate>
         <div class="division-callout-text">
-          <span class="division-callout-label">Division</span>
+          <span class="division-callout-label">División</span>
           <h4>Alpha Tech Simulations</h4>
-          <p>Professional flight simulation with real hardware, active ATC and commercial pilots as instructors. Peru's most complete flight simulator.</p>
+          <p>Simulación de vuelo profesional con hardware real, ATC activo e instructores comerciales en ejercicio. El simulador más completo del Perú.</p>
         </div>
-        <a href="aeronautics.html" class="btn btn-outline" style="white-space:nowrap;flex-shrink:0">View Simulations</a>
+        <a href="aeronautica.html" class="btn btn-outline" style="white-space:nowrap;flex-shrink:0">Ver Simulaciones</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── MECHANICAL ENGINEERING ─── -->
-  <section id="mechanics">
+  <!-- ─── INGENIERÍA MECÁNICA ─── -->
+  <section id="ingenieria">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Mechanical Engineering</span>
-        <h2>Structural precision in every component</h2>
-        <p>We apply aeronautical methodology to industrial projects — where margin for error does not exist.</p>
+        <span class="eyebrow">Ingeniería Mecánica</span>
+        <h2>Precisión estructural en cada componente</h2>
+        <p>Aplicamos metodología aeronáutica a proyectos industriales — donde el margen de error no existe.</p>
       </div>
       <div class="mec-grid">
         <div class="mec-card" data-animate>
@@ -1862,8 +1870,8 @@
               <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
             </svg>
           </div>
-          <h3>Finite Element Analysis (FEM)</h3>
-          <p>Structural simulation of components under static and dynamic loads. We identify critical failure points before manufacturing, reducing rework and costs.</p>
+          <h3>Análisis de Elementos Finitos (FEM)</h3>
+          <p>Simulación estructural de componentes bajo cargas estáticas y dinámicas. Identificamos puntos críticos antes de fabricar, reduciendo re-trabajo y costos.</p>
         </div>
         <div class="mec-card" data-animate style="transition-delay:.1s">
           <div class="mec-card-icon">
@@ -1871,8 +1879,8 @@
               <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
           </div>
-          <h3>Precision Component Design</h3>
-          <p>Parametric 3D modeling and manufacturing drawings with ISO tolerances. From functional prototypes to serial production for advanced manufacturing.</p>
+          <h3>Diseño de Componentes de Precisión</h3>
+          <p>Modelado 3D paramétrico y planos de fabricación con tolerancias ISO. Desde prototipos funcionales hasta producción en serie para manufactura avanzada.</p>
         </div>
         <div class="mec-card" data-animate style="transition-delay:.2s">
           <div class="mec-card-icon">
@@ -1880,8 +1888,8 @@
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
             </svg>
           </div>
-          <h3>Manufacturing Process Optimization</h3>
-          <p>Production line review, process tolerance analysis and continuous improvement. We reduce cycle times while maintaining the most demanding quality standards.</p>
+          <h3>Optimización de Procesos de Manufactura</h3>
+          <p>Revisión de líneas de producción, análisis de tolerancias de proceso y mejora continua. Reducimos tiempos de ciclo manteniendo los estándares de calidad más exigentes.</p>
         </div>
         <div class="mec-card" data-animate style="transition-delay:.3s">
           <div class="mec-card-icon">
@@ -1889,15 +1897,15 @@
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
             </svg>
           </div>
-          <h3>AR Integration for Maintenance</h3>
-          <p>We combine mechanical engineering and AR: digital overlays on physical equipment to guide inspections, preventive maintenance and field diagnostics.</p>
+          <h3>Integración AR en Mantenimiento</h3>
+          <p>Combinamos ingeniería mecánica y AR: overlays digitales sobre equipos físicos para guiar inspecciones, mantenimiento preventivo y diagnóstico en campo.</p>
         </div>
       </div>
       <div class="mec-case" data-animate>
         <div>
-          <span class="mec-case-label">Use Case</span>
-          <h3>AR-guided assembly on production line</h3>
-          <p>An operator with no prior experience correctly completes a 40-step assembly on their first attempt, guided by AR overlays superimposed on the real component. Error reduction: 94%.</p>
+          <span class="mec-case-label">Caso de Uso</span>
+          <h3>Ensamblaje guiado por AR en línea de producción</h3>
+          <p>Un operador sin experiencia previa completa correctamente un ensamblaje de 40 pasos en su primer intento, guiado por overlays AR superpuestos sobre el componente real. Reducción de errores: 94%.</p>
         </div>
         <div class="mec-case-img">
           <svg viewBox="0 0 480 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -1915,39 +1923,40 @@
             <circle cx="192" cy="155" r="3" fill="#008EAA"/>
             <circle cx="192" cy="170" r="3" fill="#008EAA"/>
             <circle cx="192" cy="185" r="3" fill="rgba(255,255,255,0.2)"/>
-            <text x="240" y="248" font-family="monospace" font-size="9" fill="#008EAA" text-anchor="middle" opacity="0.7">STEP 12 / 40 · AR OVERLAY ACTIVE</text>
+            <text x="240" y="248" font-family="monospace" font-size="9" fill="#008EAA" text-anchor="middle" opacity="0.7">PASO 12 / 40 · AR OVERLAY ACTIVO</text>
           </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── AERODYNAMICS ─── -->
-  <section id="aerodynamics">
+  <!-- ─── AERODINÁMICA ─── -->
+  <section id="aerodinamica">
     <div class="container">
       <div class="aero-top" data-animate>
         <div>
-          <span class="eyebrow">Industrial Fluid Dynamics</span>
-          <h2>Precision CFD for industrial engineering</h2>
-          <p>We use ANSYS Fluent to simulate flows in ducts, heat exchangers, structures and industrial systems before manufacturing. Aerospace-grade methodology applied to industry.</p>
+          <span class="eyebrow">Dinámica de Fluidos Industrial</span>
+          <h2>CFD de precisión para ingeniería industrial</h2>
+          <p>Utilizamos ANSYS Fluent para simular flujos en ductos, intercambiadores, estructuras y sistemas industriales antes de la fabricación. Metodología de precisión aeroespacial aplicada a la industria.</p>
         </div>
         <div class="aero-ansys">
           <svg viewBox="0 0 640 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <rect width="640" height="360" fill="#001540"/>
             <defs>
-              <linearGradient id="cfd2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="cfd1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#00205B" stop-opacity="1"/>
                 <stop offset="40%" stop-color="#008EAA" stop-opacity="0.6"/>
                 <stop offset="100%" stop-color="#00205B" stop-opacity="0.2"/>
               </linearGradient>
             </defs>
-            <path d="M 80,180 Q 200,80 320,180 Q 440,280 560,180" fill="none" stroke="url(#cfd2)" stroke-width="40" opacity="0.3"/>
+            <path d="M 80,180 Q 200,80 320,180 Q 440,280 560,180" fill="none" stroke="url(#cfd1)" stroke-width="40" opacity="0.3"/>
             <path d="M 80,180 Q 200,120 320,180 Q 440,240 560,180" fill="none" stroke="#008EAA" stroke-width="1.5" opacity="0.7"/>
             <path d="M 80,160 Q 200,100 320,160 Q 440,220 560,160" fill="none" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
             <path d="M 80,200 Q 200,140 320,200 Q 440,260 560,200" fill="none" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
             <path d="M 80,140 Q 200,80 320,140 Q 440,200 560,140" fill="none" stroke="#008EAA" stroke-width="0.7" opacity="0.25"/>
             <path d="M 80,220 Q 200,160 320,220 Q 440,280 560,220" fill="none" stroke="#008EAA" stroke-width="0.7" opacity="0.25"/>
-            <text x="320" y="340" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="2">ANSYS FLUENT · CFD SIMULATION · ALPHA TECH</text>
+            <path d="M 160,60 L 480,60 L 560,180 L 480,300 L 160,300 L 80,180 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <text x="320" y="340" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="2">ANSYS FLUENT · SIMULACIÓN CFD · ALPHA TECH</text>
           </svg>
         </div>
       </div>
@@ -1959,17 +1968,17 @@
               <path d="M 40,95 Q 120,40 360,85 Q 380,90 360,105 Q 120,150 40,95 Z" fill="rgba(0,142,170,0.15)" stroke="#008EAA" stroke-width="1.5"/>
               <path d="M 40,95 Q 120,40 360,85" fill="none" stroke="#008EAA" stroke-width="2"/>
               <path d="M 40,95 Q 120,150 360,105" fill="none" stroke="#008EAA" stroke-width="1.5" opacity="0.6"/>
-              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">NACA 2412 · LIFT/DRAG RATIO OPTIMIZATION</text>
+              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">NACA 2412 · OPTIMIZACIÓN SUSTENTACIÓN/RESISTENCIA</text>
             </svg>
           </div>
           <div class="aero-profile-body">
-            <span class="aero-profile-tag">Airfoil Profiles</span>
-            <h3>NACA & Custom Optimization</h3>
-            <p>Parametric analysis of lifting profiles. CL/CD ratio optimization for each specific application.</p>
+            <span class="aero-profile-tag">Perfiles Aerodinámicos</span>
+            <h3>Optimización NACA & Custom</h3>
+            <p>Análisis paramétrico de perfiles sustentadores. Optimización de la relación CL/CD para cada aplicación específica.</p>
             <ul class="aero-list">
-              <li>Multi-angle of attack simulation</li>
-              <li>Boundary layer and separation analysis</li>
-              <li>Validation against experimental data</li>
+              <li>Simulación a múltiples ángulos de ataque</li>
+              <li>Análisis de capa límite y desprendimiento</li>
+              <li>Validación con datos experimentales</li>
             </ul>
           </div>
         </div>
@@ -1984,79 +1993,82 @@
               <circle cx="80" cy="130" r="3" fill="#008EAA"/>
               <circle cx="200" cy="90" r="3" fill="#008EAA"/>
               <circle cx="340" cy="70" r="3" fill="#008EAA"/>
-              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">CFD ANALYSIS · PRESSURE DISTRIBUTION</text>
+              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">ANÁLISIS CFD · DISTRIBUCIÓN DE PRESIONES</text>
             </svg>
           </div>
           <div class="aero-profile-body">
-            <span class="aero-profile-tag">Fluid Dynamics</span>
-            <h3>Industrial & Aerospace CFD</h3>
-            <p>Internal and external flow simulation for ducts, heat exchangers, vehicles and structures under real operating conditions.</p>
+            <span class="aero-profile-tag">Dinámica de Fluidos</span>
+            <h3>CFD Industrial & Aeroespacial</h3>
+            <p>Simulación de flujo interno y externo para ductos, intercambiadores, vehículos y estructuras bajo condiciones reales de operación.</p>
             <ul class="aero-list">
-              <li>Compressible and incompressible flow</li>
-              <li>Coupled thermal analysis</li>
-              <li>Geometry optimization</li>
+              <li>Flujo compresible e incompresible</li>
+              <li>Análisis térmico acoplado</li>
+              <li>Optimización de geometrías</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="aero-cta-strip" data-animate>
-        <p>"The same aerodynamic methodology that defines the best aircraft, applied to your industrial projects."</p>
-        <a href="#contact" class="btn btn-outline">Discuss your project</a>
+        <p>"La misma metodología aerodinámica que define los mejores aviones, aplicada a tus proyectos industriales."</p>
+        <a href="#contact" class="btn btn-outline">Consultar proyecto</a>
       </div>
     </div>
   </section>
 
   <!-- ─── NEWS ───
-       HIDDEN SECTION (display:none) UNTIL REAL ARTICLES ARRIVE.
-       To activate: (1) remove style="display:none" from <section>, (2) replace each <article class="news-card">
-       with real content following the template below. Use inline SVG or <img src="..."> inside .news-image.
+       SECCIÓN OCULTA (display:none) HASTA RECIBIR ARTÍCULOS REALES.
+       Para activar: (1) borrar style="display:none" del <section>, (2) reemplazar cada <article class="news-card">
+       con el bloque real siguiendo la plantilla de abajo. Usar SVG propio o <img src="..."> en .news-image.
 
-       CARD TEMPLATE (copy and fill inside .news-cards):
+       PLANTILLA DE TARJETA (copiar y rellenar dentro de .news-cards):
        <article class="news-card" data-animate>
          <div class="news-image">
-           <!-- <img src="path/image.jpg" alt="Description"> or inline SVG -->
+           <!-- <img src="ruta/imagen.jpg" alt="Descripción"> o SVG inline -->
          </div>
          <div class="news-body">
            <div class="news-meta">
-             <span class="news-tag">[TAG]</span>
-             <span class="news-date">[MONTH YEAR]</span>
+             <span class="news-tag">[ETIQUETA]</span>
+             <span class="news-date">[MES AÑO]</span>
            </div>
-           <h3>[ARTICLE HEADLINE]</h3>
-           <p>[1-2 SENTENCE DECK]</p>
-           <a href="[URL]" class="news-link">Read more &#8594;</a>
+           <h3>[TITULAR DEL ARTÍCULO]</h3>
+           <p>[BAJADA 1-2 FRASES]</p>
+           <a href="[URL]" class="news-link">Leer más &#8594;</a>
          </div>
        </article>
   -->
   <section id="news" style="display:none">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">News</span>
-        <h2 style="color:var(--text-dark)">Alpha Tech in the world</h2>
+        <span class="eyebrow">Noticias</span>
+        <h2 style="color:var(--text-dark)">Alpha Tech en el mundo</h2>
       </div>
       <div class="news-cards">
         <article class="news-card" data-animate>
           <div class="news-image">
             <svg viewBox="0 0 300 180" width="260" height="160">
               <rect width="300" height="180" fill="#001540"/>
+              <!-- HoloLens outline -->
               <rect x="55" y="68" width="190" height="50" rx="12" fill="none" stroke="#008EAA" stroke-width="2.5"/>
               <rect x="72" y="78" width="64" height="30" rx="4" fill="rgba(0,142,170,0.12)" stroke="#008EAA" stroke-width="1.5"/>
               <rect x="164" y="78" width="64" height="30" rx="4" fill="rgba(0,142,170,0.12)" stroke="#008EAA" stroke-width="1.5"/>
+              <!-- AR overlay lines -->
               <line x1="84" y1="88" x2="110" y2="88" stroke="#008EAA" stroke-width="1" opacity="0.7"/>
               <line x1="84" y1="95" x2="100" y2="95" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
               <line x1="176" y1="88" x2="202" y2="88" stroke="#008EAA" stroke-width="1" opacity="0.7"/>
               <line x1="176" y1="95" x2="196" y2="95" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
+              <!-- status dot -->
               <circle cx="150" cy="30" r="5" fill="#008EAA" opacity="0.9"/>
-              <text x="150" y="155" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">AR · IN DEVELOPMENT · 2026</text>
+              <text x="150" y="155" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">AR · EN DESARROLLO · 2026</text>
             </svg>
           </div>
           <div class="news-body">
             <div class="news-meta">
-              <span class="news-tag" style="background:rgba(0,142,170,0.15);color:#008EAA;border-radius:2px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">In Development</span>
-              <span class="news-date">April 2026</span>
+              <span class="news-tag" style="background:rgba(0,142,170,0.15);color:#008EAA;border-radius:2px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">En Desarrollo</span>
+              <span class="news-date">Abril 2026</span>
             </div>
-            <h3>Alpha Tech Industrial AR: HoloLens 2 integration now in testing phase</h3>
-            <p>Our team is advancing integration of AR guides onto real manufacturing processes. First controlled-environment tests completed successfully.</p>
-            <a href="#contact" class="news-link">Contact us for early access &#8594;</a>
+            <h3>AR Industrial Alpha Tech: integración con HoloLens 2 en fase de pruebas</h3>
+            <p>Nuestro equipo avanza en la integración de guías AR sobre procesos reales de manufactura. Primeras pruebas en entorno controlado completadas con éxito.</p>
+            <a href="#contact" class="news-link">Contactar para acceso anticipado &#8594;</a>
           </div>
         </article>
         <article class="news-card" data-animate style="transition-delay:.1s">
@@ -2075,12 +2087,12 @@
           </div>
           <div class="news-body">
             <div class="news-meta">
-              <span class="news-tag">Article</span>
-              <span class="news-date">February 2026</span>
+              <span class="news-tag">Artículo</span>
+              <span class="news-date">Febrero 2026</span>
             </div>
-            <h3>ISO 27001 and AR: ensuring data security in industrial environments</h3>
-            <p>Information security is critical in industrial operations. We analyze the framework that ensures process integrity.</p>
-            <a href="#" class="news-link">Read more &#8594;</a>
+            <h3>ISO 27001 y AR: cómo garantizar la seguridad de datos en entornos industriales</h3>
+            <p>La seguridad de la información es crítica en operaciones industriales. Analizamos el framework que garantiza la integridad de cada proceso.</p>
+            <a href="#" class="news-link">Leer más &#8594;</a>
           </div>
         </article>
         <article class="news-card" data-animate style="transition-delay:.2s">
@@ -2099,12 +2111,12 @@
           </div>
           <div class="news-body">
             <div class="news-meta">
-              <span class="news-tag">Article</span>
-              <span class="news-date">January 2026</span>
+              <span class="news-tag">Artículo</span>
+              <span class="news-date">Enero 2026</span>
             </div>
-            <h3>The future of industrial training: from paper manuals to AR guidance</h3>
-            <p>Organizations adopting AR reduce training time by up to 75%. The transition from tacit to digital knowledge is no longer optional.</p>
-            <a href="#" class="news-link">Read more &#8594;</a>
+            <h3>El futuro del entrenamiento industrial: de los manuales en papel a la guía AR</h3>
+            <p>Las organizaciones que adoptan AR reducen su tiempo de formación hasta un 75%. La transición del conocimiento tácito al digital ya no es opcional.</p>
+            <a href="#" class="news-link">Leer más &#8594;</a>
           </div>
         </article>
       </div>
@@ -2115,43 +2127,43 @@
   <section id="contact">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Contact</span>
-        <h2>Let's Talk</h2>
-        <p style="color:rgba(255,255,255,.55)">Ready to transform your engineering processes? Get in touch.</p>
+        <span class="eyebrow">Contacto</span>
+        <h2>Hablemos</h2>
+        <p style="color:rgba(255,255,255,.55)">Da el siguiente paso en la transformación de tus procesos de ingeniería.</p>
       </div>
       <div class="contact-grid">
         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-animate>
           <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
-          <input type="hidden" name="redirect" value="https://alphatechnologique.com/thanks.html">
-          <input type="hidden" name="subject" value="New contact - Alpha Tech Solutions">
+          <input type="hidden" name="redirect" value="https://alphatechnologique.com/gracias.html">
+          <input type="hidden" name="subject" value="Nuevo contacto - Alpha Tech Solutions">
           <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <label for="name">Nombre *</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
           </div>
           <div class="form-group">
-            <label for="company">Company *</label>
-            <input type="text" id="company" name="company" placeholder="Your company name" required>
+            <label for="company">Empresa *</label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" required>
           </div>
           <div class="form-group">
-            <label for="role">Role *</label>
-            <input type="text" id="role" name="role" placeholder="Your title or position" required>
+            <label for="role">Cargo *</label>
+            <input type="text" id="role" name="role" placeholder="Tu cargo o posición" required>
           </div>
           <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
           </div>
           <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or process..." required></textarea>
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto o proceso..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Send Message</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Enviar Mensaje</button>
         </form>
 
         <div class="contact-info" data-animate style="transition-delay:.1s">
           <div class="contact-info-line"></div>
-          <h3>Contact Information</h3>
+          <h3>Información de Contacto</h3>
           <div class="contact-detail">
-            <span class="contact-detail-label">Phone · WhatsApp</span>
+            <span class="contact-detail-label">Teléfono · WhatsApp</span>
             <span class="contact-detail-value">
               <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a>
             </span>
@@ -2163,8 +2175,8 @@
             </span>
           </div>
           <div class="contact-detail">
-            <span class="contact-detail-label">Location</span>
-            <span class="contact-detail-value">Lima, Peru</span>
+            <span class="contact-detail-label">Ubicación</span>
+            <span class="contact-detail-value">Lima, Perú</span>
           </div>
           <div class="contact-detail">
             <span class="contact-detail-label">Web</span>
@@ -2206,39 +2218,40 @@
             <line x1="31" y1="31" x2="31" y2="12" stroke="#008EAA" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="31" cy="12" r="4" fill="#008EAA"/>
           </svg>
-          <p>Augmented Reality to optimize safety, speed, and reliability in industrial operations. Lima, Peru.<br><br>© 2026 Alpha Tech Solutions.</p>
+          <p>Realidad Aumentada para operaciones industriales más seguras, rápidas y confiables. Lima, Perú.<br><br>© 2026 Alpha Tech Solutions.</p>
         </div>
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Navegación</h4>
           <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#technology">Technology</a></li>
-            <li><a href="aeronautics.html">Aeronautics</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#technology">Tecnología</a></li>
+            <li><a href="aeronautica.html">Aeronáutica</a></li>
+            <li><a href="#contact">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Divisions</h4>
+          <h4>Divisiones</h4>
           <ul class="footer-links">
-            <li><a href="en.html">Alpha Tech Solutions</a></li>
-            <li><a href="aeronautics.html">Alpha Tech Simulations</a></li>
+            <li><a href="index.html">Alpha Tech Solutions</a></li>
+            <li><a href="aeronautica.html">Alpha Tech Simulations</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C.</span>
-        <span class="footer-tagline">Engineering-driven. Execution-focused.</span>
+        <span class="footer-tagline">Dirigido por ingeniería. Enfocado en ejecución.</span>
         <div class="footer-bottom-lang">
-          <a href="en.html" class="active">EN</a>
+          <a href="en.html">EN</a>
           <span style="color:rgba(255,255,255,.2)">|</span>
-          <a href="index.html">ES</a>
+          <a href="index.html" class="active">ES</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/51922877190" class="wa-btn" id="wa-btn" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/51922877190" class="wa-btn" id="wa-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="white">
       <path d="M14 2C7.373 2 2 7.373 2 14c0 2.11.554 4.09 1.52 5.8L2 26l6.39-1.49A11.94 11.94 0 0 0 14 26c6.627 0 12-5.373 12-12S20.627 2 14 2zm6.07 16.45c-.25.7-1.47 1.34-2.02 1.42-.5.07-1.13.1-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.38-.15-.2-1.18-1.57-1.18-3s.73-2.12.99-2.41c.25-.29.55-.36.73-.36l.53.01c.17.01.4-.06.63.48.24.55.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.28.49l-.42.49c-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.07.95 1.97 1.24 2.27 1.38.29.14.46.12.63-.07.17-.2.74-.87.93-1.17.2-.3.39-.25.66-.15.27.1 1.7.8 2 .95.29.14.49.21.56.33.07.12.07.69-.18 1.39z"/>
     </svg>

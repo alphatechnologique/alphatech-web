@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 78" role="img" aria-label="Alpha Tech Solutions">
+  <!-- RADAR SCOPE: 3 concentric arcs (engineering classicism preserved) -->
+  <path d="M 38,20 A 36,36 0 1 1 9,70" stroke="#FFFFFF" stroke-width="1.4" fill="none" opacity="0.48" stroke-linecap="round"/>
+  <path d="M 38,32 A 24,24 0 1 1 17,70" stroke="#FFFFFF" stroke-width="1.1" fill="none" opacity="0.32" stroke-linecap="round"/>
+  <path d="M 38,44 A 12,12 0 1 1 27,65" stroke="#FFFFFF" stroke-width="0.9" fill="none" opacity="0.22" stroke-linecap="round"/>
+  <!-- Radar origin -->
+  <circle cx="38" cy="56" r="2.2" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Subtle crosshair (shorter than original, less noise) -->
+  <line x1="38" y1="48" x2="38" y2="64" stroke="#FFFFFF" stroke-width="0.6" opacity="0.2"/>
+  <line x1="30" y1="56" x2="46" y2="56" stroke="#FFFFFF" stroke-width="0.6" opacity="0.2"/>
+  <!-- Signal pulse: radar origin -> emitter -->
+  <line x1="38" y1="56" x2="65" y2="22" stroke="#008EAA" stroke-width="1.3" opacity="0.55" stroke-linecap="round"/>
+  <circle cx="62" cy="24" r="3.2" fill="#008EAA"/>
+  <!-- Trajectory curve to target -->
+  <path d="M 65,22 Q 200,6 336,22" stroke="#008EAA" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <!-- Precision target (clean, no corner ticks, no double outline) -->
+  <polygon points="358,30 352,39.5 341,39.5 335,30 341,20.5 352,20.5" fill="#008EAA"/>
+  <circle cx="346.5" cy="30" r="1.8" fill="#FFFFFF" opacity="0.95"/>
+  <!-- Wordmark -->
+  <text x="88" y="44" font-family="Orbitron,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" letter-spacing="1.8">ALPHA TECH</text>
+  <text x="89" y="64" font-family="Rajdhani,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.88)" letter-spacing="4.5">SOLUTIONS</text>
+</svg>
