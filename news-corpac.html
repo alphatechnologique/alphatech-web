@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future CORPAC Controllers: The Simulator as a Bridge to Real Airspace | Alpha Tech Simulations</title>
+  <meta name="description" content="Alpha Tech Simulations opens its doors to CORPAC CTA students, creating the space where controllers and pilots in training practice side by side.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #00205B; --navy-dark: #001540; --navy-deep: #06090F; --orange: #FE5000; --white: #FFFFFF; --max-w: 1100px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--white); background: var(--navy-deep); -webkit-font-smoothing: antialiased; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 72px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--navy-dark); }
+    .nav__inner { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav__links a { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s ease; }
+    .nav__links a:hover { color: var(--white); }
+    .nav__links .nav__back { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.55); padding-right: 18px; border-right: 1px solid rgba(255,255,255,0.18); margin-right: -14px; }
+    .nav__links .nav-fly { display: inline-flex; align-items: center; gap: 7px; background: var(--orange); color: var(--white) !important; border: 1px solid var(--orange); padding: 8px 16px; font-weight: 700; letter-spacing: 1.6px; white-space: nowrap; transition: transform 0.2s ease; box-shadow: 0 2px 0 rgba(0,0,0,0.18), 0 6px 20px -8px rgba(254,80,0,0.6); }
+    .nav__links .nav-fly:hover { background: #ff6a1a; transform: translateY(-1px); }
+    .nav-fly__icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav__right { display: flex; align-items: center; gap: 32px; }
+    .lang-switcher { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .lang-switcher a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s ease; }
+    .lang-switcher a:hover { color: var(--white); }
+    .lang-switcher a.active { color: var(--orange); }
+    .lang-switcher span { color: rgba(255,255,255,0.2); }
+    .article-hero { padding-top: 120px; padding-bottom: 60px; background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-deep) 100%); position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(254,80,0,0.07) 0%, transparent 70%); pointer-events: none; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .article-tag { display: inline-block; background: var(--orange); color: var(--white); font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; }
+    .article-date { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 1px; }
+    .article-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s ease; margin-left: auto; }
+    .article-back:hover { color: var(--white); }
+    .article-hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.15; color: var(--white); max-width: 800px; margin-bottom: 24px; }
+    .article-deck { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 680px; line-height: 1.7; border-left: 3px solid var(--orange); padding-left: 20px; }
+    .article-cover { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+    .article-cover-img-placeholder { width: 100%; aspect-ratio: 8/3; border-radius: 16px; background: var(--navy-dark); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 72px 48px 96px; }
+    .article-body h2 { font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); margin-top: 56px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(254,80,0,0.25); }
+    .article-body p { font-size: 17px; line-height: 1.85; color: rgba(255,255,255,0.78); margin-bottom: 28px; }
+    .article-body strong { color: var(--white); font-weight: 700; }
+    .article-img-inline-placeholder { width: 100%; border-radius: 12px; margin: 40px 0; aspect-ratio: 8/3; background: var(--navy); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .article-img-caption { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; margin-top: -28px; margin-bottom: 36px; }
+    .article-pullquote { border-left: 4px solid var(--orange); background: rgba(254,80,0,0.06); padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 40px 0; }
+    .article-pullquote p { font-size: 19px; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 0; line-height: 1.65; }
+    .article-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); border: 1px solid rgba(254,80,0,0.25); border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+    .article-cta h3 { font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .article-cta p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 28px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: background 0.2s ease, color 0.2s ease; }
+    .btn-primary { background: var(--orange); color: var(--white); border: 2px solid var(--orange); }
+    .btn-primary:hover { background: transparent; color: var(--orange); }
+    footer { background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer__tagline { font-family: 'Rajdhani', sans-serif; font-size: 13px; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-top: 16px; margin-bottom: 8px; }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer__col-title { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer__links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s ease; }
+    .footer__links a:hover { color: var(--white); }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 32px; flex-wrap: wrap; gap: 16px; }
+    .footer__bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer__bottom-right { display: flex; align-items: center; gap: 24px; }
+    .footer__bottom-right a { font-size: 12px; font-weight: 600; color: var(--orange); text-decoration: none; }
+    .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 500; transition: transform 0.2s ease; }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+    @media (max-width: 768px) { .container, .article-body, .article-cover { padding-left: 24px; padding-right: 24px; } .article-hero { padding-top: 100px; } .article-hero h1 { font-size: 26px; } .footer__grid { grid-template-columns: 1fr; gap: 32px; } .nav__right { display: none; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="aeronautics.html" class="nav-logo"><img src="logo-simulations-v2.svg" alt="Alpha Tech Simulations" height="46" style="display:block;height:46px;width:auto"></a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__back"><span aria-hidden="true">&larr;</span> Alpha Tech Solutions</a></li>
+          <li><a href="aeronautics.html#services">Programs</a></li>
+          <li><a href="aeronautics.html#instructors">Instructors</a></li>
+          <li><a href="aeronautics.html#contact">Contact</a></li>
+          <li><a href="aeronautics.html#booking" class="nav-fly"><svg class="nav-fly__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Try it</a></li>
+        </ul>
+        <div class="lang-switcher"><a href="news-corpac.html" class="active">EN</a><span>|</span><a href="noticia-corpac.html">ES</a></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-meta">
+        <span class="article-tag">Training</span>
+        <span class="article-date">March 2026</span>
+        <a href="aeronautics.html#news" class="article-back">&larr; Back to news</a>
+      </div>
+      <h1>Future CORPAC Controllers: The Simulator as a Bridge Between Theory and Real Airspace</h1>
+      <p class="article-deck">Alpha Tech Simulations opens its doors to CORPAC CTA students, creating the unique space where trainee controllers practice alongside real pilots — and both learn to see the sky from the other side of the microphone.</p>
+    </div>
+  </section>
+
+  <div class="article-cover" style="padding-top:0; margin-top:-20px;">
+    <div class="article-cover-img-placeholder">
+      <img src="corpac.png" alt="CORPAC CTA students training at Alpha Tech Simulations" style="width:100%;height:100%;object-fit:contain;border-radius:16px;" onerror="this.style.display='none';">
+    </div>
+  </div>
+
+  <main>
+    <article class="article-body">
+      <p>Air traffic control is one of the most demanding jobs on the planet. There are no dress rehearsals, no margin for hesitation, and the only way to truly learn is by doing — but making mistakes in real airspace carries consequences no student should face before they are ready. That is exactly where Alpha Tech Simulations comes in.</p>
+
+      <p>For the past several months, students from <strong>CORPAC's Air Traffic Controllers (CTA)</strong> have been coming to our facility. Not as visitors or special guests, but as part of their practical training — seated in front of radar screens, headsets on, coordinating real simulated traffic with pilots who are also training in our cockpit.</p>
+
+      <h2>The Gap No One Talks About in ATC Training</h2>
+
+      <p>Controller training programs are rigorous in theory. ICAO procedures, standard phraseology, minimum separation, emergency management — everything is in the manuals. But there is an enormous gap between knowing the theory and executing it in real time, under pressure, with multiple aircraft on frequency simultaneously and a pilot on the other end waiting for a clear, immediate response.</p>
+
+      <p>In traditional training models, that gap only closes once the student is already on the job. Alpha Tech Simulations offers a different path: close it beforehand, in an environment where making mistakes is part of the learning process and carries no operational consequences.</p>
+
+      <div class="article-pullquote">
+        <p>"The realistic ATC communication with real pilots is truly a particularly great experience." — Maria Grazia Paz, CTA Student, CORPAC</p>
+      </div>
+
+      <h2>Two Worlds That Need Each Other</h2>
+
+      <p>What makes training at Alpha Tech Simulations truly unique is not just the technology. It is that in the same session, a CORPAC CTA student can be controlling from their station while a flight student is flying the simulator cockpit. Two people in training, opposite roles, working together in real time.</p>
+
+      <p>The result is something textbooks cannot replicate: the controller learns to anticipate what information the pilot needs, when they need it, and with what level of precision. The pilot learns why the controller issued that particular heading, why they were asked to hold that altitude, and what is being managed on the other side of the frequency. Both leave the session with a deeper understanding of each other's work.</p>
+
+      <p>Those moments of mutual understanding are what build safe and efficient working teams. They are the bonds that make a pilot trust their controller and a controller understand the real workload of a cockpit. They are, ultimately, the foundations on which Peruvian aviation safety is built.</p>
+
+      <div class="article-img-inline-placeholder">
+        <img src="corpac.png" alt="Joint practice session — trainee controllers and pilots" style="width:100%;height:100%;object-fit:contain;border-radius:12px;" onerror="this.style.display='none';">
+      </div>
+      <p class="article-img-caption">Joint practice session between CORPAC CTA students and pilots in training.</p>
+
+      <h2>An Opportunity for Peru's Aeronautical Ecosystem</h2>
+
+      <p>CORPAC trains the controllers who manage one of the most complex airspaces in South America. Lima concentrates domestic and international traffic, continental connection routes, and military operations. Having future controllers arrive at their first real shift having already practiced in a high-fidelity environment, with real pilots on the other side of the frequency, is not a luxury — it is an investment in the safety of everyone who travels through Peruvian skies.</p>
+
+      <p>Alpha Tech Simulations is proud to be part of that training chain. Our doors are open to CORPAC students, to instructors who want to complement theory with real practice, and to any Peruvian aeronautical institution that understands that operational excellence is built before reaching the workstation.</p>
+
+      <p>Peruvian skies deserve the best. And the best train here.</p>
+
+      <div class="article-cta">
+        <h3>CTA Student or Pilot in Training?</h3>
+        <p>Book your session at Alpha Tech Simulations and practice in Lima's most realistic environment — with real ATC and real pilots.</p>
+        <a href="aeronautics.html#booking" class="btn btn-primary">Book a session &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer__grid">
+        <div><img src="icon-simulations.svg" alt="Alpha Tech Simulations" height="48" style="display:block;height:48px;width:auto"><p class="footer__tagline">Train where limits don't exist.</p><p class="footer__copy">© 2026 Alpha Tech Simulations.</p></div>
+        <div><p class="footer__col-title">Navigation</p><ul class="footer__links"><li><a href="aeronautics.html#hero">Home</a></li><li><a href="aeronautics.html#services">Programs</a></li><li><a href="aeronautics.html#instructors">Instructors</a></li><li><a href="aeronautics.html#booking">Try it</a></li><li><a href="aeronautics.html#contact">Contact</a></li></ul></div>
+        <div><p class="footer__col-title">Alpha Tech Group</p><ul class="footer__links"><li><a href="index.html">Alpha Tech Solutions</a></li><li><a href="aeronautics.html">Alpha Tech Simulations</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Alpha Tech Solutions S.A.C. All rights reserved.</p>
+        <div class="footer__bottom-right"><div class="lang-switcher"><a href="news-corpac.html" style="color:var(--orange);">EN</a><span style="color:rgba(255,255,255,.2);">|</span><a href="noticia-corpac.html">ES</a></div><a href="index.html">Alpha Tech Solutions &rarr;</a></div>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/51922877190" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2.333C7.557 2.333 2.333 7.557 2.333 14c0 2.046.527 3.97 1.449 5.638L2.333 25.667l6.19-1.423A11.6 11.6 0 0 0 14 25.667c6.443 0 11.667-5.224 11.667-11.667S20.443 2.333 14 2.333zm0 21.467a9.757 9.757 0 0 1-4.97-1.358l-.357-.213-3.675.845.875-3.563-.233-.369A9.757 9.757 0 0 1 4.167 14C4.167 8.57 8.57 4.167 14 4.167S23.833 8.57 23.833 14 19.43 23.8 14 23.8zm5.354-7.317c-.292-.147-1.73-.853-1.998-.95-.268-.096-.463-.147-.658.147-.195.293-.756.95-.928 1.146-.17.195-.341.22-.634.073-.292-.147-1.235-.455-2.353-1.452-.869-.776-1.456-1.735-1.627-2.028-.171-.292-.018-.45.128-.595.132-.131.293-.341.44-.512.146-.17.195-.293.292-.488.098-.195.049-.366-.024-.512-.073-.147-.658-1.587-.902-2.173-.237-.57-.479-.493-.658-.502l-.56-.01c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.832 1.195 3.027.147.195 2.065 3.152 5.001 4.418.699.301 1.244.481 1.669.615.701.223 1.34.191 1.845.116.562-.084 1.73-.707 1.974-1.39.244-.684.244-1.27.17-1.39-.072-.122-.268-.195-.56-.342z" fill="#fff"/></svg></a>
+</body>
+</html>

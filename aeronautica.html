@@ -1169,7 +1169,7 @@
 
     .news-card__thumb {
       background: var(--navy-dark);
-      height: 160px;
+      aspect-ratio: 8/3;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2090,15 +2090,15 @@
         </div>
         <div class="testimonial-card" data-animate data-animate-delay="2">
           <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-          <p class="testimonial-card__text">Como piloto activo, el simulador me permite mantener competencias de aeronaves que ya no opero. La fidelidad técnica es sorprendente.</p>
-          <div class="testimonial-card__author">Capitán Andrea Solano</div>
-          <div class="testimonial-card__role">Piloto de Línea Aérea, B737</div>
+          <p class="testimonial-card__text">El simulador de avión es buenazo. Se siente real y el profesor sabe mucho. Me sirvió para practicar antes de mi examen de piloto. Buen precio. Quisiera más turnos los sábados.</p>
+          <div class="testimonial-card__author">Alvaro Pérez</div>
+          <div class="testimonial-card__role">Estudiante de PSP</div>
         </div>
         <div class="testimonial-card" data-animate data-animate-delay="3">
           <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-          <p class="testimonial-card__text">Entrené comunicaciones ATC aquí antes de mi primer turno real. La red de simulación replica exactamente los procedimientos de Lima Control. Invaluable.</p>
-          <div class="testimonial-card__author">Miguel Torres</div>
-          <div class="testimonial-card__role">Controlador de Tráfico Aéreo, Lima ACC</div>
+          <p class="testimonial-card__text">La comunicación realista con ATC y pilotos reales es realmente una experiencia particularmente buena.</p>
+          <div class="testimonial-card__author">Maria Grazia Paz</div>
+          <div class="testimonial-card__role">Estudiante CTA, CORPAC</div>
         </div>
       </div>
     </div>
@@ -2140,26 +2140,7 @@
     </div>
   </section>
 
-  <!-- NEWS
-       SECCIÓN OCULTA (display:none) HASTA RECIBIR ARTÍCULOS REALES.
-       Para activar: (1) quitar style="display:none" del <section>, (2) reemplazar cada <article class="news-card">
-       con el bloque real siguiendo la plantilla de abajo. Se puede usar SVG propio o <img src="..."> en .news-card__thumb.
-
-       PLANTILLA DE TARJETA (copiar y rellenar dentro de .news-grid):
-       <article class="news-card" data-animate data-animate-delay="1">
-         <div class="news-card__thumb" aria-hidden="true">
-           <!-- <img src="ruta/imagen.jpg" alt="Descripción"> o SVG inline -->
-         </div>
-         <div class="news-card__body">
-           <span class="news-card__tag">[ETIQUETA]</span>
-           <div class="news-card__date">[MES AÑO]</div>
-           <h3>[TITULAR DEL ARTÍCULO]</h3>
-           <p>[BAJADA 1-2 FRASES]</p>
-           <a href="[URL]" class="news-card__link">Leer más &rarr;</a>
-         </div>
-       </article>
-  -->
-  <section id="news" class="section-pad" style="display:none">
+  <section id="news" class="section-pad">
     <div class="container">
       <div class="section-header" data-animate>
         <span class="eyebrow">NOTICIAS</span>
@@ -2170,81 +2151,72 @@
         <!-- Article 1 -->
         <article class="news-card" data-animate data-animate-delay="1">
           <div class="news-card__thumb" aria-hidden="true">
-            <svg viewBox="0 0 330 60" height="44" role="presentation">
-              <path d="M 55,14 A 28,28 0 1 1 7,14" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <polygon points="31,1 25,16 37,16" fill="#FE5000"/>
-              <circle cx="31" cy="31" r="19" fill="none" stroke="#FE5000" stroke-width="1.5" opacity=".4"/>
-              <path d="M 31,31 L 17,17 A 19,19 0 0 1 45,17 Z" fill="#FE5000" opacity=".14"/>
-              <line x1="31" y1="31" x2="17" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="45" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M 17,17 A 19,19 0 0 1 45,17" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="31" y2="12" stroke="#FE5000" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="31" cy="12" r="4" fill="#FE5000"/>
-              <text x="70" y="28" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="white" letter-spacing="2">ALPHA TECH</text>
-              <line x1="70" y1="35" x2="250" y2="35" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
-              <text x="71" y="48" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="#FE5000" letter-spacing="3.5">SIMULATIONS</text>
+            <img src="corpac.png" alt="Estudiantes CTA de CORPAC en entrenamiento de simulador" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <svg viewBox="0 0 330 60" height="44" role="presentation" style="display:none">
+              <rect x="8" y="14" width="46" height="34" rx="3" fill="none" stroke="#FE5000" stroke-width="1.5" opacity=".6"/>
+              <line x1="31" y1="14" x2="31" y2="48" stroke="#FE5000" stroke-width=".8" opacity=".4"/>
+              <line x1="8" y1="31" x2="54" y2="31" stroke="#FE5000" stroke-width=".8" opacity=".4"/>
+              <circle cx="20" cy="23" r="4" fill="none" stroke="#FE5000" stroke-width="1.2" opacity=".7"/>
+              <circle cx="42" cy="23" r="4" fill="none" stroke="#FE5000" stroke-width="1.2" opacity=".7"/>
+              <line x1="14" y1="39" x2="48" y2="39" stroke="#FE5000" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+              <text x="70" y="26" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1.5">CORPAC</text>
+              <line x1="70" y1="33" x2="250" y2="33" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
+              <text x="71" y="46" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#FE5000" letter-spacing="2.5">FORMACIÓN ATC</text>
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Industria</span>
-            <div class="news-card__date">Abril 2026</div>
-            <h3>Perú se posiciona como hub de entrenamiento aeronáutico en Latinoamérica</h3>
-            <p>Alpha Tech Simulations lidera el crecimiento de infraestructura de entrenamiento en la región, con tecnología de nivel mundial operando desde Lima.</p>
-            <a href="#" class="news-card__link">Leer más &rarr;</a>
+            <span class="news-card__tag">Formación</span>
+            <div class="news-card__date">Marzo 2026</div>
+            <h3>Futuros ATC de CORPAC: el simulador como puente entre la teoría y el espacio aéreo real</h3>
+            <p>Alpha Tech Simulations abre sus puertas a los estudiantes CTA de CORPAC, creando el espacio donde controladores y pilotos en formación practican juntos y aprenden a ver el cielo desde ambos lados.</p>
+            <a href="noticia-corpac.html" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
 
         <!-- Article 2 -->
         <article class="news-card" data-animate data-animate-delay="2">
           <div class="news-card__thumb" aria-hidden="true">
-            <svg viewBox="0 0 330 60" height="44" role="presentation">
-              <path d="M 55,14 A 28,28 0 1 1 7,14" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <polygon points="31,1 25,16 37,16" fill="#FE5000"/>
-              <circle cx="31" cy="31" r="19" fill="none" stroke="#FE5000" stroke-width="1.5" opacity=".4"/>
-              <path d="M 31,31 L 17,17 A 19,19 0 0 1 45,17 Z" fill="#FE5000" opacity=".14"/>
-              <line x1="31" y1="31" x2="17" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="45" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M 17,17 A 19,19 0 0 1 45,17" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="31" y2="12" stroke="#FE5000" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="31" cy="12" r="4" fill="#FE5000"/>
-              <text x="70" y="28" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="white" letter-spacing="2">ALPHA TECH</text>
-              <line x1="70" y1="35" x2="250" y2="35" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
-              <text x="71" y="48" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="#FE5000" letter-spacing="3.5">SIMULATIONS</text>
+            <img src="airshow.png" alt="Air Show Las Palmas 2026" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <svg viewBox="0 0 330 60" height="44" role="presentation" style="display:none">
+              <path d="M 10,36 L 38,20 L 54,28 L 38,32 Z" fill="#FE5000" opacity=".5"/>
+              <path d="M 38,20 L 54,28 L 46,28" fill="none" stroke="#FE5000" stroke-width="1" opacity=".6"/>
+              <line x1="10" y1="36" x2="54" y2="36" stroke="#FE5000" stroke-width=".8" opacity=".3"/>
+              <text x="70" y="26" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1.5">AIR SHOW</text>
+              <line x1="70" y1="33" x2="250" y2="33" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
+              <text x="71" y="46" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#FE5000" letter-spacing="2.5">LAS PALMAS · F-16</text>
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Formación</span>
-            <div class="news-card__date">Marzo 2026</div>
-            <h3>El rol del ATC real en la formación de pilotos modernos</h3>
-            <p>La integración de controladores activos en el entrenamiento de simulador representa un salto cualitativo en la preparación de pilotos para el mundo real.</p>
-            <a href="#" class="news-card__link">Leer más &rarr;</a>
+            <span class="news-card__tag">Eventos</span>
+            <div class="news-card__date">Abril 2026</div>
+            <h3>Air Show Las Palmas: el espíritu del piloto de caza que llevamos dentro</h3>
+            <p>El F-16 sobrevolando Lima emocionó a miles. Si ese momento te hizo soñar con la cabina, nuestros simuladores de realidad virtual son la forma más cercana de hacerlo realidad.</p>
+            <a href="noticia-airshow.html" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
 
         <!-- Article 3 -->
         <article class="news-card" data-animate data-animate-delay="3">
           <div class="news-card__thumb" aria-hidden="true">
-            <svg viewBox="0 0 330 60" height="44" role="presentation">
-              <path d="M 55,14 A 28,28 0 1 1 7,14" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <polygon points="31,1 25,16 37,16" fill="#FE5000"/>
-              <circle cx="31" cy="31" r="19" fill="none" stroke="#FE5000" stroke-width="1.5" opacity=".4"/>
-              <path d="M 31,31 L 17,17 A 19,19 0 0 1 45,17 Z" fill="#FE5000" opacity=".14"/>
-              <line x1="31" y1="31" x2="17" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="45" y2="17" stroke="#FE5000" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M 17,17 A 19,19 0 0 1 45,17" fill="none" stroke="#FE5000" stroke-width="3" stroke-linecap="round"/>
-              <line x1="31" y1="31" x2="31" y2="12" stroke="#FE5000" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="31" cy="12" r="4" fill="#FE5000"/>
-              <text x="70" y="28" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="white" letter-spacing="2">ALPHA TECH</text>
-              <line x1="70" y1="35" x2="250" y2="35" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
-              <text x="71" y="48" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="#FE5000" letter-spacing="3.5">SIMULATIONS</text>
+            <img src="ivao.png" alt="Red IVAO — pilotos y controladores conectados en tiempo real" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <svg viewBox="0 0 330 60" height="44" role="presentation" style="display:none">
+              <circle cx="31" cy="31" r="24" fill="none" stroke="#FE5000" stroke-width="1.2" opacity=".5"/>
+              <circle cx="31" cy="31" r="16" fill="none" stroke="#FE5000" stroke-width="1" opacity=".35"/>
+              <circle cx="31" cy="31" r="8"  fill="none" stroke="#FE5000" stroke-width="1" opacity=".5"/>
+              <line x1="31" y1="7"  x2="31" y2="55" stroke="#FE5000" stroke-width=".8" opacity=".4"/>
+              <line x1="7"  y1="31" x2="55" y2="31" stroke="#FE5000" stroke-width=".8" opacity=".4"/>
+              <polygon points="31,9 29,22 33,22" fill="#FE5000" opacity=".7"/>
+              <text x="70" y="26" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="2">IVAO</text>
+              <line x1="70" y1="33" x2="250" y2="33" stroke="#FE5000" stroke-width=".6" opacity=".85"/>
+              <text x="71" y="46" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#FE5000" letter-spacing="2.5">VIRTUAL AVIATION NETWORK</text>
             </svg>
           </div>
           <div class="news-card__body">
-            <span class="news-card__tag">Tecnología</span>
-            <div class="news-card__date">Febrero 2026</div>
-            <h3>HoloLens en cabina: la próxima frontera del entrenamiento de vuelo</h3>
-            <p>Alpha Tech explora la integración de Realidad Aumentada en los simuladores de vuelo, combinando lo mejor de ambas divisiones tecnológicas.</p>
-            <a href="#" class="news-card__link">Leer más &rarr;</a>
+            <span class="news-card__tag">Comunidad</span>
+            <div class="news-card__date">Abril 2026</div>
+            <h3>Alpha Tech Simulations & IVAO: cuando el cielo virtual une a la aviación del Perú</h3>
+            <p>Nuestra integración con la red IVAO conecta en tiempo real a pilotos y controladores peruanos, tejiendo los lazos fraternos que construyen el ecosistema aeronáutico del país.</p>
+            <a href="noticia-ivao.html" class="news-card__link">Leer más &rarr;</a>
           </div>
         </article>
       </div>
@@ -2620,3 +2592,4 @@
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
