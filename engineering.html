@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering | Alpha Tech Solutions — Ingeniería mecánica Lima, Perú</title>
+  <meta name="description" content="Ingeniería mecánica industrial en Lima: diseño CAD, análisis FEA, CFD, mantenimiento predictivo y fabricación de partes a medida. Rigor técnico de grado aeronáutico.">
+
+  <link rel="canonical" href="engineering.html">
+  <link rel="alternate" hreflang="es" href="engineering.html">
+  <link rel="alternate" hreflang="en" href="engineering-en.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Engineering | Alpha Tech Solutions">
+  <meta property="og:description" content="Ingeniería mecánica industrial en Lima: CAD, FEA, CFD, mantenimiento predictivo.">
+  <meta property="og:image" content="engineering-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Engineering — Alpha Tech Solutions",
+    "provider": { "@type": "Organization", "name": "Alpha Tech Solutions" },
+    "description": "Ingeniería mecánica industrial: diseño CAD, FEA, CFD, mantenimiento predictivo y fabricación de partes a medida en Lima, Perú.",
+    "areaServed": { "@type": "Place", "name": "Lima, Perú" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --max-w:     1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--teal); display: block; margin-bottom: 16px;
+    }
+
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(32px,4.5vw,54px); font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; }
+    h2 { font-size: clamp(26px,3.2vw,38px); font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+    h3 { font-size: 19px; font-weight: 700; line-height: 1.3; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 50px; padding: 0 32px;
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; cursor: pointer; transition: all 0.25s ease; border: 2px solid transparent;
+    }
+    .btn-primary  { background: var(--teal);   color: var(--white); border-color: var(--teal); }
+    .btn-primary:hover  { background: #006d87; border-color: #006d87; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,142,170,.35); }
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.35); }
+    .btn-secondary:hover { border-color: var(--white); }
+    .btn-orange   { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .btn-orange:hover { background: #e04400; border-color: #e04400; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,80,0,.35); }
+
+    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { [data-animate] { opacity:1; transform:none; transition:none; } }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      height:72px; display:flex; align-items:center;
+      background:transparent; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07); transition:background .3s ease, border-color .3s ease;
+    }
+    nav.scrolled { background:rgba(0,10,32,.94); border-bottom-color:rgba(255,255,255,.1); }
+    .nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 48px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.65); transition:color .2s ease; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-links a.active { color:var(--teal); }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-lang { display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:1px; }
+    .nav-lang a { color:rgba(255,255,255,.4); text-decoration:none; transition:color .2s; }
+    .nav-lang a:hover { color:var(--white); }
+    .nav-lang a.active { color:var(--teal); }
+    .nav-lang span { color:rgba(255,255,255,.2); }
+    .nav-cta-btn { display:inline-flex; align-items:center; height:38px; padding:0 20px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; background:var(--orange); color:var(--white); border-radius:6px; transition:background .2s, transform .2s; white-space:nowrap; }
+    .nav-cta-btn:hover { background:#e04400; transform:translateY(-1px); }
+    .nav-simulations-btn { display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 13px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(0,142,170,.3); color:var(--teal); border-radius:5px; transition:background .2s, border-color .2s; white-space:nowrap; }
+    .nav-simulations-btn:hover { background:rgba(0,142,170,.12); border-color:var(--teal); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--white); border-radius:1px; transition:all .3s; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--navy-deep); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.7); transition:color .2s; }
+    .mobile-menu a:hover { color:var(--white); }
+    .mobile-menu-close { position:absolute; top:24px; right:24px; background:none; border:none; cursor:pointer; color:var(--white); font-size:28px; line-height:1; }
+    .mobile-lang { display:flex; gap:12px; margin-top:4px; }
+    .mobile-cta { background:var(--orange) !important; color:var(--white) !important; padding:12px 32px; border-radius:8px; font-size:14px !important; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 88vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background-image: url('engineering-hero.png');
+      background-size:cover; background-position:center;
+      background-color: var(--navy);
+    }
+    .hero-bg::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(0,10,32,.92) 0%, rgba(0,21,64,.78) 55%, rgba(6,9,15,.9) 100%);
+    }
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(0,142,170,.06) 1px,transparent 1px), linear-gradient(90deg,rgba(0,142,170,.06) 1px,transparent 1px);
+      background-size:72px 72px; pointer-events:none;
+    }
+    .hero-deco {
+      position:absolute; right:-10px; top:0; bottom:0;
+      width:48%; pointer-events:none; z-index:1;
+    }
+    .hero-content { position:relative; z-index:2; max-width:680px; padding-top:80px; padding-bottom:80px; }
+    .hero-content h1 { margin-bottom:20px; }
+    .hero-content p { font-size:17px; color:rgba(255,255,255,.62); max-width:520px; line-height:1.7; margin-bottom:36px; }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+
+    /* ─── SECTION SHARED ─── */
+    .section-header { margin-bottom:56px; }
+    .section-header p { color:rgba(255,255,255,.52); max-width:520px; margin-top:14px; font-size:16px; line-height:1.7; }
+
+    /* ─── SERVICIOS ─── */
+    #servicios { background:var(--navy-dark); padding:104px 0; }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:24px;
+    }
+
+    .service-card {
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-top:2px solid var(--teal);
+      border-radius:12px;
+      padding:36px 28px;
+      transition:transform .25s ease, background .25s ease;
+    }
+    .service-card:hover { transform:translateY(-4px); background:rgba(255,255,255,.055); }
+
+    .service-icon {
+      width:44px; height:44px;
+      background:rgba(0,142,170,.1);
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px;
+    }
+
+    .service-card h3 { color:var(--white); margin-bottom:18px; }
+
+    .pmr { display:flex; flex-direction:column; gap:12px; }
+    .pmr-row { display:grid; grid-template-columns:64px 1fr; gap:12px; align-items:start; }
+    .pmr-tag {
+      font-size:8px; font-weight:700; letter-spacing:1.8px;
+      text-transform:uppercase; padding-top:3px; display:block;
+    }
+    .pmr-tag.p { color:rgba(255,255,255,.28); }
+    .pmr-tag.m { color:var(--teal); }
+    .pmr-tag.r { color:#7FD4C1; }
+    .pmr-row p { font-size:13px; line-height:1.6; color:rgba(255,255,255,.6); margin:0; }
+    .pmr-row.res p { color:rgba(255,255,255,.82); font-weight:500; }
+
+    /* ─── SECTORES ─── */
+    #sectores { background:var(--navy-deep); padding:104px 0; }
+    .sectores-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .sector-block {
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:14px;
+      padding:40px 32px;
+      transition:border-color .25s;
+    }
+    .sector-block:hover { border-color:rgba(0,142,170,.4); }
+    .sector-number {
+      font-family:'Orbitron', sans-serif;
+      font-size:11px; font-weight:800; letter-spacing:3px;
+      color:var(--teal); opacity:.5; margin-bottom:20px; display:block;
+    }
+    .sector-block h3 { color:var(--white); margin-bottom:12px; }
+    .sector-block p { font-size:14px; color:rgba(255,255,255,.55); line-height:1.7; margin-bottom:20px; }
+    .sector-case {
+      font-size:12px; font-style:italic; color:rgba(255,255,255,.38);
+      border-left:2px solid rgba(0,142,170,.3); padding-left:12px; line-height:1.6;
+    }
+
+    /* ─── PROCESO ─── */
+    #proceso { background:var(--navy-dark); padding:104px 0; }
+    .steps { display:flex; flex-direction:column; gap:0; margin-top:56px; }
+    .step {
+      display:grid; grid-template-columns:80px 1fr;
+      gap:0; padding:32px 0; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .step:last-child { border-bottom:none; }
+    .step-num {
+      font-family:'Orbitron', sans-serif;
+      font-size:28px; font-weight:800;
+      color:rgba(0,142,170,.25); line-height:1; padding-top:4px;
+    }
+    .step-body h3 { color:var(--white); margin-bottom:8px; }
+    .step-body p { font-size:14px; color:rgba(255,255,255,.55); line-height:1.7; max-width:640px; }
+    .step-tag {
+      display:inline-block; font-size:9px; font-weight:700; letter-spacing:2px;
+      text-transform:uppercase; color:var(--teal);
+      border:1px solid rgba(0,142,170,.3); border-radius:4px;
+      padding:3px 8px; margin-bottom:10px;
+    }
+
+    /* ─── CASOS ─── */
+    #casos { background:var(--navy); padding:104px 0; }
+    .casos-grid { display:flex; flex-direction:column; gap:48px; }
+
+    .caso {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:48px; align-items:center;
+      background:rgba(0,142,170,.04);
+      border:1px solid rgba(0,142,170,.18);
+      border-radius:16px;
+      padding:48px;
+    }
+    .caso.reverse { direction:rtl; }
+    .caso.reverse > * { direction:ltr; }
+
+    .caso-label { font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:12px; }
+    .caso h3 { font-size:24px; font-weight:700; color:var(--white); margin-bottom:14px; line-height:1.3; }
+    .caso > div > p { font-size:14px; color:rgba(255,255,255,.6); line-height:1.7; margin-bottom:24px; }
+
+    .caso-metrics { display:flex; gap:32px; flex-wrap:wrap; margin-bottom:24px; }
+    .caso-metric-value {
+      font-family:'Orbitron', sans-serif; font-size:28px; font-weight:800;
+      color:var(--teal); display:block; line-height:1;
+    }
+    .caso-metric-label { font-size:11px; color:rgba(255,255,255,.45); letter-spacing:1px; text-transform:uppercase; margin-top:4px; display:block; }
+
+    .caso-media {
+      aspect-ratio:4/3;
+      background:rgba(0,21,64,.7);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .caso-media video,
+    .caso-media img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* ─── CONTACT FORM ─── */
+    #contacto { background:var(--navy-deep); padding:104px 0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; margin-top:56px; align-items:start; }
+
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-group label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      color:var(--white); padding:12px 16px; border-radius:8px;
+      font-family:'Inter', sans-serif; font-size:15px;
+      outline:none; width:100%; transition:border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color:var(--teal); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color:rgba(255,255,255,.22); }
+    .form-group select option { background:var(--navy-dark); }
+    .form-group textarea { resize:vertical; min-height:120px; }
+    .form-submit { width:100%; margin-top:8px; }
+
+    .contact-info h3 { font-size:22px; color:var(--white); margin-bottom:24px; }
+    .contact-info p { font-size:15px; color:rgba(255,255,255,.55); line-height:1.7; margin-bottom:32px; }
+    .contact-channel { display:flex; gap:16px; align-items:flex-start; margin-bottom:20px; }
+    .contact-channel-icon {
+      width:40px; height:40px; flex-shrink:0;
+      background:rgba(0,142,170,.1); border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--teal);
+    }
+    .contact-channel-body dt { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:4px; }
+    .contact-channel-body dd a { color:rgba(255,255,255,.7); text-decoration:none; font-size:14px; transition:color .2s; }
+    .contact-channel-body dd a:hover { color:var(--teal); }
+
+    /* ─── FOOTER ─── */
+    footer { background:var(--navy-dark); border-top:1px solid rgba(255,255,255,.06); padding:72px 0 0; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.06); }
+    .footer-brand p { font-size:13px; color:rgba(255,255,255,.35); line-height:1.85; margin-top:18px; max-width:240px; }
+    .footer-col h4 { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:20px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-links a { font-size:13px; color:rgba(255,255,255,.48); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--white); }
+    .footer-col p { font-size:13px; color:rgba(255,255,255,.42); line-height:1.85; }
+    .footer-col a { color:rgba(255,255,255,.42); text-decoration:none; transition:color .2s; }
+    .footer-col a:hover { color:var(--teal); }
+    .footer-social { display:flex; gap:10px; margin-top:18px; }
+    .footer-social-link { width:36px; height:36px; border:1px solid rgba(255,255,255,.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); text-decoration:none; transition:border-color .2s, color .2s; }
+    .footer-social-link:hover { border-color:var(--teal); color:var(--teal); }
+    .footer-bottom { padding:20px 0; display:flex; align-items:center; justify-content:space-between; }
+    .footer-copyright { font-size:12px; color:rgba(255,255,255,.22); }
+    .footer-bottom-lang { display:flex; gap:12px; font-size:11px; font-weight:700; }
+    .footer-bottom-lang a { color:rgba(255,255,255,.32); text-decoration:none; transition:color .2s; }
+    .footer-bottom-lang a:hover { color:var(--white); }
+    .footer-bottom-lang a.active { color:var(--teal); }
+
+    /* ─── WHATSAPP ─── */
+    .wa-btn { position:fixed; bottom:24px; right:24px; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,.4); z-index:900; text-decoration:none; opacity:0; transform:scale(0.8); transition:opacity .4s ease, transform .4s ease; }
+    .wa-btn.visible { opacity:1; transform:scale(1); animation:wa-pulse 2.5s ease infinite; }
+    .wa-btn:hover { transform:scale(1.08) !important; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4);} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1);} }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width:1024px) {
+      .container,.nav-inner { padding:0 32px; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-grid { grid-template-columns:1fr 1fr; gap:36px; }
+      .hero-deco { display:none; }
+    }
+    @media (max-width:900px) {
+      .nav-links,.nav-lang,.nav-cta-btn,.nav-simulations-btn { display:none; }
+      .hamburger { display:flex; }
+      .sectores-grid { grid-template-columns:1fr; }
+      .caso,.caso.reverse { grid-template-columns:1fr; direction:ltr; }
+      .contact-grid { grid-template-columns:1fr; gap:48px; }
+    }
+    @media (max-width:640px) {
+      .container,.nav-inner { padding:0 24px; }
+      .services-grid { grid-template-columns:1fr; }
+      .hero-btns { flex-direction:column; }
+      .btn { width:100%; justify-content:center; }
+      .footer-grid { grid-template-columns:1fr; gap:32px; }
+      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+      #servicios,#sectores,#proceso,#casos,#contacto { padding:72px 0; }
+      .pmr-row { grid-template-columns:1fr; gap:4px; }
+      .step { grid-template-columns:1fr; gap:8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html" class="active">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="engineering-en.html">EN</a>
+          <span>|</span>
+          <a href="engineering.html" class="active">ES</a>
+        </div>
+        <a href="../Alpha tech S Web/aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="index.html">Inicio</a>
+    <a href="performance.html">Performance</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="intelligence.html">Intelligence</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="contacto.html" class="mobile-cta">Cotizar →</a>
+    <a href="../Alpha tech S Web/aeronautica.html" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;font-weight:700;letter-spacing:1.5px;border:1px solid rgba(0,142,170,.3);padding:10px 28px;border-radius:8px;text-transform:uppercase;text-decoration:none;">Simulations ↗</a>
+    <div class="mobile-lang">
+      <a href="engineering-en.html" style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;text-decoration:none">EN</a>
+      <span style="color:rgba(255,255,255,.18);font-size:13px">|</span>
+      <a href="engineering.html" style="color:var(--teal);font-size:13px;font-weight:700;text-decoration:none">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <!-- Blueprint decorative SVG -->
+    <svg class="hero-deco" viewBox="0 0 560 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="60"  y="80"  width="400" height="280" rx="2" fill="none" stroke="#008EAA" stroke-width="1" opacity=".18"/>
+      <line x1="60"  y1="153" x2="460" y2="153" stroke="#008EAA" stroke-width=".6" opacity=".14"/>
+      <line x1="60"  y1="220" x2="460" y2="220" stroke="#008EAA" stroke-width=".6" opacity=".14"/>
+      <line x1="60"  y1="290" x2="460" y2="290" stroke="#008EAA" stroke-width=".6" opacity=".14"/>
+      <line x1="193" y1="80"  x2="193" y2="360" stroke="#008EAA" stroke-width=".6" opacity=".14"/>
+      <line x1="327" y1="80"  x2="327" y2="360" stroke="#008EAA" stroke-width=".6" opacity=".14"/>
+      <circle cx="193" cy="153" r="4" fill="#008EAA" opacity=".3"/>
+      <circle cx="327" cy="220" r="4" fill="#008EAA" opacity=".3"/>
+      <circle cx="193" cy="290" r="4" fill="#008EAA" opacity=".3"/>
+      <line x1="60"  y1="360" x2="90"  y2="390" stroke="#008EAA" stroke-width=".7" opacity=".2"/>
+      <line x1="460" y1="360" x2="430" y2="390" stroke="#008EAA" stroke-width=".7" opacity=".2"/>
+      <line x1="90"  y1="390" x2="430" y2="390" stroke="#008EAA" stroke-width=".5" opacity=".15"/>
+      <text x="62" y="410" font-family="monospace" font-size="8.5" fill="#008EAA" fill-opacity=".22">DIM 400×280 · TOLERANCIA ±0.05mm · REV A</text>
+      <!-- dimension arrows -->
+      <line x1="60" y1="450" x2="460" y2="450" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="60" y1="445" x2="60"  y2="455" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="460" y1="445" x2="460" y2="455" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <!-- FEA mesh hint -->
+      <path d="M120 500 L200 480 L280 510 L360 490 L440 515" fill="none" stroke="#008EAA" stroke-width=".7" opacity=".15"/>
+      <path d="M120 530 L200 515 L280 545 L360 525 L440 550" fill="none" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <path d="M200 480 L200 515 M280 510 L280 545 M360 490 L360 525" stroke="#008EAA" stroke-width=".5" opacity=".1"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero-content" data-animate>
+        <span class="eyebrow">Alpha Tech · Engineering</span>
+        <h1>Ingeniería mecánica<br>para la industria peruana.</h1>
+        <p>CAD, FEA, CFD, mantenimiento predictivo y fabricación de partes a medida. Rigor de grado aeronáutico aplicado a manufactura, automotriz y construcción.</p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico gratuito</a>
+          <a href="#casos" class="btn btn-secondary">Ver casos de estudio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICIOS ─── -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Servicios</span>
+        <h2>Lo que hacemos — y cómo lo hacemos</h2>
+        <p>Cada servicio sigue la misma lógica: problema real, método técnico riguroso, resultado medible.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3>Diseño mecánico CAD</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Piezas que no se ajustan en ensamblaje, retrabajo costoso y proveedores que no cumplen tolerancias.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Modelado 3D paramétrico, planos de fabricación con tolerancias ISO y revisión de ensamblaje virtual.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Planos listos para fabricar, piezas que se ensamblan sin ajustes y documentación técnica completa.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.08s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Análisis estructural FEA</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Componentes que fallan en operación bajo cargas reales — con el costo de parada y retrabajo que eso implica.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Simulación por elementos finitos (FEM) en ANSYS bajo cargas estáticas, dinámicas y de fatiga.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Puntos críticos identificados antes de fabricar, vida útil extendida y menos iteraciones en campo.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.16s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+            </svg>
+          </div>
+          <h3>Modelización CFD</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Ductos con pérdidas de presión no cuantificadas, intercambiadores ineficientes o flujos internos sin visibilidad.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Simulación con ANSYS Fluent, análisis paramétrico de geometría y validación de condiciones reales de operación.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Geometría optimizada antes de fabricar — ahorro en energía, materiales y horas de ingeniería en campo.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.04s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Mantenimiento predictivo</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Paradas imprevistas, diagnóstico reactivo y costos que se disparan cuando el equipo ya falló.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Inspección técnica, análisis vibratorio y plan preventivo por nivel de criticidad de cada equipo.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Fallas detectadas antes de ocurrir, disponibilidad sostenida y costos de mantenimiento bajo control.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.12s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Fabricación de partes a medida</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Piezas fuera de catálogo, tiempos de importación largos o proveedores que no garantizan tolerancias.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Diseño completo + selección de proceso + supervisión de fabricación con control dimensional.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Pieza entregada en especificación, con documentación de trazabilidad y tiempo de entrega acordado.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.2s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Consultoría de procesos</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Líneas de producción lentas, retrabajo frecuente o variabilidad de proceso sin causa raíz identificada.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Análisis de tolerancias de proceso, VSM, identificación de cuellos de botella y plan de mejora continua.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Reducción de tiempos de ciclo y retrabajo, con estándares de calidad sostenidos en el tiempo.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTORES ─── -->
+  <section id="sectores">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Sectores objetivo</span>
+        <h2>Industrias donde operamos</h2>
+        <p>La misma metodología técnica, adaptada al lenguaje y las exigencias de cada sector.</p>
+      </div>
+      <div class="sectores-grid">
+
+        <div class="sector-block" data-animate>
+          <span class="sector-number">01</span>
+          <h3>Automotriz y transporte</h3>
+          <p>Diseño y análisis de componentes para vehículos ligeros, transporte pesado y equipos de construcción. Desde soportes estructurales hasta sistemas de suspensión y transmisión.</p>
+          <p class="sector-case">"Para un cliente entusiasta en Lima, diseñamos estructuralmente los guardafangos traseros de una Ford Raptor en fibra de carbono T700 — 4 pulgadas más anchos que el OEM — incluyendo análisis FEA y planificación de fabricación."</p>
+        </div>
+
+        <div class="sector-block" data-animate style="transition-delay:.1s">
+          <span class="sector-number">02</span>
+          <h3>Manufactura e industria</h3>
+          <p>Optimización de líneas de producción, diseño de utillaje, análisis de maquinaria y mejora de procesos. Aplicamos rigor de ingeniería aeronáutica a la manufactura industrial peruana.</p>
+          <p class="sector-case">"Para una empresa de corte de textiles automotrices, rediseñamos el sistema de transmisión de una cortadora láser cuya correa fallaba a las 3 horas — eliminando 2 operarios del proceso y recuperando la cadencia de producción."</p>
+        </div>
+
+        <div class="sector-block" data-animate style="transition-delay:.2s">
+          <span class="sector-number">03</span>
+          <h3>Construcción e infraestructura</h3>
+          <p>Análisis estructural de elementos metálicos, evaluación de uniones y consultoría técnica para proyectos de infraestructura que requieren validación de ingeniería independiente.</p>
+          <p class="sector-case">"Análisis de integridad estructural de estructuras metálicas bajo carga dinámica para proyectos de infraestructura en Lima Metropolitana."</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESO ─── -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Proceso técnico en 5 pasos</h2>
+        <p>Sin cajas negras. Cada fase tiene un entregable concreto y una validación explícita.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-animate>
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <span class="step-tag">Diagnóstico gratuito</span>
+            <h3>Diagnóstico inicial</h3>
+            <p>Levantamiento de información técnica del problema: dimensiones, materiales, cargas de operación, historial de fallas y objetivo de ingeniería. Sin compromiso de contratación.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <span class="step-tag">Propuesta técnica</span>
+            <h3>Alcance y metodología</h3>
+            <p>Documento técnico con el alcance exacto del trabajo, metodología propuesta (FEA/CFD/CAD), supuestos, entregables y cronograma. Sin letra pequeña.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <span class="step-tag">Ejecución</span>
+            <h3>Modelado y simulación</h3>
+            <p>Ejecución del análisis con revisiones intermedias. Modelos CAD paramétricos, simulaciones FEA/CFD con condiciones de contorno validadas, e iteraciones documentadas.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <span class="step-tag">Validación</span>
+            <h3>Revisión con el cliente</h3>
+            <p>Presentación de resultados con interpretación técnica clara — no solo datos, sino qué significan y qué decisión respaldan. Iteraciones hasta que el resultado sea accionable.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <span class="step-tag">Entrega</span>
+            <h3>Documentación completa</h3>
+            <p>Informe técnico final, archivos de modelo nativos, planos de fabricación (si aplica) y recomendaciones de implementación. Todo lo necesario para que el equipo del cliente pueda actuar sin intermediarios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CASOS DE ESTUDIO ─── -->
+  <section id="casos">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Casos documentados</span>
+        <h2>Trabajo real. Resultados medibles.</h2>
+        <p>No simulaciones de laboratorio. Proyectos ejecutados con clientes reales en Lima, Perú.</p>
+      </div>
+
+      <div class="casos-grid">
+
+        <!-- Caso 1: Cortadora láser textil -->
+        <div class="caso" data-animate>
+          <div>
+            <span class="caso-label">Caso 01 · Industrial · Manufactura textil</span>
+            <h3>Rediseño de sistema de transmisión en cortadora láser de textiles</h3>
+            <p>Una empresa de corte de material textil para alfombras automotrices operaba una cortadora láser cuya correa de transmisión ya no aguantaba más de 3 horas continuas. El fallo obligaba a tener dos operarios manteniendo la máquina manualmente, reduciendo la cadencia de casi 100 a apenas 40 piezas por turno. Rediseñamos el sistema completo: análisis de cargas, selección de cadena y piñones bajo estándares industriales y cálculo de la relación de transmisión óptima para recuperar la operación continua. Seguimiento de resultados en curso.</p>
+            <div class="caso-metrics">
+              <div>
+                <span class="caso-metric-value">−2 op.</span>
+                <span class="caso-metric-label">Operarios liberados del proceso</span>
+              </div>
+              <div>
+                <span class="caso-metric-value">3 h</span>
+                <span class="caso-metric-label">Límite anterior de operación continua</span>
+              </div>
+            </div>
+          </div>
+          <div class="caso-media">
+            <video autoplay muted loop playsinline width="960" height="720">
+              <source src="engineering-transmission.webm" type="video/webm">
+              <source src="engineering-transmission.mp4"  type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Caso 2: Ford Raptor Engineering -->
+        <div class="caso reverse" data-animate>
+          <div>
+            <span class="caso-label">Caso 02 · Automotriz · Ford Raptor</span>
+            <h3>Diseño estructural y fabricación — Ford Raptor</h3>
+            <p>Los guardafangos traseros de la Raptor debían ser 4 pulgadas más anchos que los originales. Contábamos con un molde base que requería modificación significativa para lograr el ensanche correcto. Utilizamos nuestros escáneres 3D para capturar con exactitud la geometría real de la carrocería y nuestras impresoras 3D para prototipar y validar las modificaciones del molde antes de pasar a la fabricación final en fibra de carbono — acortando tiempos y garantizando que el ajuste sobre la carrocería fuera exacto desde la primera pieza. El proyecto está en coordinación activa con el taller que realiza las modificaciones mecánicas del vehículo.</p>
+            <div class="caso-metrics">
+              <div>
+                <span class="caso-metric-value">+4 in.</span>
+                <span class="caso-metric-label">Ensanche sobre carrocería OEM</span>
+              </div>
+              <div>
+                <span class="caso-metric-value">3D</span>
+                <span class="caso-metric-label">Escaneo + prototipado antes de fabricar</span>
+              </div>
+            </div>
+          </div>
+          <div class="caso-media">
+            <img src="engineering-fender.png" alt="Diseño estructural FEA guardafangos Ford Raptor — Alpha Tech Engineering" loading="lazy" width="800" height="600"
+                 onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'caso-media-placeholder\'><svg viewBox=\'0 0 200 150\' width=\'120\' opacity=\'.15\'><path d=\'M20 75 C60 20 140 20 180 75 C140 130 60 130 20 75 Z\' fill=\'none\' stroke=\'%23008EAA\' stroke-width=\'2\'/><line x1=\'0\' y1=\'75\' x2=\'200\' y2=\'75\' stroke=\'%23008EAA\' stroke-width=\'.8\' opacity=\'.5\'/></svg></div>'">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ─── -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Diagnóstico gratuito</span>
+        <h2>Cuéntanos el problema.<br>Te respondemos en 24 h.</h2>
+      </div>
+      <div class="contact-grid">
+        <form action="https://api.web3forms.com/submit" method="POST" data-animate>
+          <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
+          <input type="hidden" name="redirect" value="gracias.html">
+          <input type="hidden" name="subject" value="Nuevo contacto — Engineering">
+          <input type="hidden" name="UN_origen" value="Engineering">
+
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="name" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo" placeholder="Tu cargo o posición">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio" name="servicio">
+              <option value="">Seleccionar...</option>
+              <option>Diseño mecánico CAD</option>
+              <option>Análisis estructural FEA</option>
+              <option>Modelización CFD</option>
+              <option>Mantenimiento predictivo</option>
+              <option>Fabricación de partes a medida</option>
+              <option>Consultoría de procesos</option>
+              <option>Otro / no sé aún</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Describe el problema *</label>
+            <textarea id="mensaje" name="message" placeholder="¿Qué falla? ¿Qué necesitas optimizar? Cuanto más detalle, mejor la propuesta." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Solicitar diagnóstico gratuito</button>
+        </form>
+
+        <div data-animate style="transition-delay:.15s">
+          <h3>¿Prefieres hablar directamente?</h3>
+          <p style="margin-bottom:32px">El diagnóstico inicial es gratuito y sin compromiso. Analizamos el problema, te decimos si podemos ayudarte y cómo, antes de cualquier propuesta económica.</p>
+
+          <dl>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/51922877190?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20mec%C3%A1nica." target="_blank" rel="noopener">+51 922 877 190</a></dd>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>Email</dt>
+                <dd><a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a></dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Ingeniería mecánica, aerodinámica,<br>IA industrial y realidad aumentada.<br>Lima, Perú.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="../Alpha tech S Web/aeronautica.html">Alpha Tech Simulations</a></li>
+            <li><a href="gracias.html">Gracias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Perú
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="engineering.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="engineering-en.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51922877190?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20mec%C3%A1nica."
+     class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
+    function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('animated'); observer.unobserve(e.target); } }), { threshold:0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    setTimeout(() => { const wa = document.getElementById('wa-btn'); if(wa) wa.classList.add('visible'); }, 3000);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(!t) return; e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth' }); }));
+  </script>
+</body>
+</html>

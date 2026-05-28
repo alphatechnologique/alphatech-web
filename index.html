@@ -3,25 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpha Tech Solutions | Procesos de Ingeniería, Ejecutados Correctamente</title>
-  <meta name="description" content="Realidad Aumentada para operaciones industriales más seguras, rápidas y confiables. Lima, Perú.">
+  <title>Alpha Tech Solutions | Ingeniería que se mueve. Lima, Perú.</title>
+  <meta name="description" content="Performance, Engineering e Intelligence: tres unidades con ADN técnico y una sola obsesión por el resultado. Ingeniería mecánica, aerodinámica e IA industrial en Lima, Perú.">
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="index.html">
+  <link rel="alternate" hreflang="es" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+
+  <!-- Favicons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-96x96.png" sizes="96x96">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alpha Tech Solutions | Ingeniería que se mueve">
+  <meta property="og:description" content="Performance, Engineering e Intelligence en Lima, Perú. Ingeniería mecánica, aerodinámica e IA industrial.">
+  <meta property="og:image" content="hero-solutions.png">
+  <meta property="og:url" content="index.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alpha Tech Solutions | Ingeniería que se mueve">
+  <meta name="twitter:description" content="Performance, Engineering e Intelligence en Lima, Perú.">
+  <meta name="twitter:image" content="hero-solutions.png">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #00205B;
-      --navy-dark: #001540;
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
       --navy-deep: #06090F;
-      --teal: #008EAA;
-      --orange: #FE5000;
-      --white: #FFFFFF;
-      --text-dark: #1F2937;
-      --max-w: 1100px;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --gray-mute: #4B5563;
+      --max-w:     1100px;
     }
 
     html { scroll-behavior: smooth; }
@@ -45,7 +71,8 @@
     }
 
     .eyebrow {
-      font-size: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -54,76 +81,60 @@
       margin-bottom: 16px;
     }
 
-    .eyebrow--muted {
-      color: rgba(255,255,255,.4);
-    }
-
-    h1 {
-      font-size: 60px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.08;
-    }
-
     h2 {
-      font-size: 40px;
+      font-size: clamp(28px, 3.5vw, 40px);
       font-weight: 700;
       letter-spacing: -0.3px;
       line-height: 1.2;
     }
 
-    h3 {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.1px;
-    }
-
+    /* ─── BUTTONS ─── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 48px;
-      padding: 0 28px;
+      height: 50px;
+      padding: 0 32px;
       font-family: 'Inter', sans-serif;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.25s ease;
       border: 2px solid transparent;
     }
 
     .btn-primary {
-      background: var(--teal);
+      background: var(--orange);
       color: var(--white);
-      border-color: var(--teal);
+      border-color: var(--orange);
     }
 
     .btn-primary:hover {
-      background: transparent;
-      color: var(--teal);
+      background: #e04400;
+      border-color: #e04400;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(254,80,0,.35);
     }
 
     .btn-secondary {
       background: transparent;
       color: var(--white);
-      border-color: rgba(255,255,255,.4);
+      border-color: rgba(255,255,255,.35);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--white);
-    }
+    .btn-secondary:hover { border-color: var(--white); }
 
-    .btn-outline {
+    .btn-outline-teal {
       background: transparent;
       color: var(--teal);
       border-color: var(--teal);
     }
 
-    .btn-outline:hover {
+    .btn-outline-teal:hover {
       background: var(--teal);
       color: var(--white);
     }
@@ -131,8 +142,8 @@
     /* ─── SCROLL ANIMATION ─── */
     [data-animate] {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
     [data-animate].animated {
@@ -140,12 +151,14 @@
       transform: translateY(0);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] { opacity: 1; transform: none; transition: none; }
+    }
+
     /* ─── NAVIGATION ─── */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
       height: 72px;
       display: flex;
@@ -158,7 +171,7 @@
     }
 
     nav.scrolled {
-      background: var(--navy-dark);
+      background: rgba(0,10,32,.94);
       border-bottom-color: rgba(255,255,255,.1);
     }
 
@@ -182,32 +195,26 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       text-decoration: none;
-      color: rgba(255,255,255,.75);
+      color: rgba(255,255,255,.65);
       transition: color 0.2s ease;
     }
 
     .nav-links a:hover { color: var(--white); }
 
-    .nav-links .nav-cta a {
-      border: 1px solid var(--teal);
-      padding: 8px 18px;
-      border-radius: 6px;
-      color: var(--teal);
-    }
-
-    .nav-links .nav-cta a:hover {
-      background: var(--teal);
-      color: var(--white);
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     .nav-lang {
@@ -220,7 +227,7 @@
     }
 
     .nav-lang a {
-      color: rgba(255,255,255,.5);
+      color: rgba(255,255,255,.4);
       text-decoration: none;
       transition: color 0.2s ease;
     }
@@ -229,13 +236,31 @@
     .nav-lang a.active { color: var(--teal); }
     .nav-lang span { color: rgba(255,255,255,.2); }
 
-    .nav-right {
-      display: flex;
+    .nav-cta-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 32px;
+      height: 38px;
+      padding: 0 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: var(--orange);
+      color: var(--white);
+      border-radius: 6px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
     }
 
-    /* Hamburger */
+    .nav-cta-btn:hover {
+      background: #e04400;
+      transform: translateY(-1px);
+    }
+    .nav-simulations-btn { display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 13px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(0,142,170,.3); color:var(--teal); border-radius:5px; transition:background .2s, border-color .2s; white-space:nowrap; }
+    .nav-simulations-btn:hover { background:rgba(0,142,170,.12); border-color:var(--teal); }
+
+    /* ─── HAMBURGER ─── */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -255,7 +280,7 @@
       border-radius: 1px;
     }
 
-    /* Mobile overlay */
+    /* ─── MOBILE MENU ─── */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -265,12 +290,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 28px;
     }
 
-    .mobile-menu.open {
-      display: flex;
-    }
+    .mobile-menu.open { display: flex; }
 
     .mobile-menu a {
       font-size: 20px;
@@ -278,7 +301,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       text-decoration: none;
-      color: rgba(255,255,255,.75);
+      color: rgba(255,255,255,.7);
       transition: color 0.2s ease;
     }
 
@@ -286,8 +309,7 @@
 
     .mobile-menu-close {
       position: absolute;
-      top: 24px;
-      right: 24px;
+      top: 24px; right: 24px;
       background: none;
       border: none;
       cursor: pointer;
@@ -296,10 +318,14 @@
       line-height: 1;
     }
 
-    .mobile-lang {
-      display: flex;
-      gap: 12px;
-      margin-top: 8px;
+    .mobile-lang { display: flex; gap: 12px; margin-top: 4px; }
+
+    .mobile-cta {
+      background: var(--orange) !important;
+      color: var(--white) !important;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 14px !important;
     }
 
     /* ─── HERO ─── */
@@ -308,51 +334,116 @@
       position: relative;
       display: flex;
       align-items: center;
-      background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=85');
-      background-size: cover;
-      background-position: center;
+      overflow: hidden;
     }
 
-    #hero::before {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero-solutions.png');
+      background-size: cover;
+      background-position: center;
+      background-color: var(--navy);
+    }
+
+    .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(6,9,15,.72);
+      background: linear-gradient(135deg, rgba(0,10,32,.9) 0%, rgba(0,21,64,.75) 55%, rgba(6,9,15,.88) 100%);
+    }
+
+    /* Blueprint grid overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,142,170,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,142,170,.055) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+
+    /* SVG decoratives */
+    .hero-deco {
+      position: absolute;
+      right: -20px;
+      top: 0; bottom: 0;
+      width: 52%;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 700px;
-      padding-bottom: 110px;
+      z-index: 2;
+      max-width: 680px;
+      padding-bottom: 128px;
+      padding-top: 72px;
     }
 
-    .hero-content h1 {
-      margin-bottom: 24px;
+    .hero-eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(0,142,170,.75);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    /* Tagline lines — animated in via JS */
+    .tagline-line {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(30px, 4.2vw, 52px);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
       color: var(--white);
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .hero-content p {
-      font-size: 18px;
-      color: rgba(255,255,255,.75);
-      margin-bottom: 36px;
-      max-width: 520px;
-      line-height: 1.65;
+    .tagline-line.revealed { opacity: 1; transform: translateY(0); }
+
+    .tagline-accent { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,.6);
+      max-width: 500px;
+      line-height: 1.7;
+      margin-top: 28px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
+    .hero-sub.revealed { opacity: 1; transform: translateY(0); }
 
     .hero-cta {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
+    .hero-cta.revealed { opacity: 1; transform: translateY(0); }
+
+    /* Stats strip */
     .hero-stats {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
       border-top: 1px solid var(--teal);
+      background: rgba(0,10,32,.72);
+      backdrop-filter: blur(10px);
     }
 
     .hero-stats-inner {
@@ -360,628 +451,332 @@
       margin: 0 auto;
       padding: 0 48px;
       display: flex;
-      gap: 0;
     }
 
     .hero-stat {
       flex: 1;
-      padding: 24px 0;
-      border-right: 1px solid rgba(255,255,255,.08);
+      padding: 20px 24px;
+      border-right: 1px solid rgba(255,255,255,.07);
     }
 
-    .hero-stat:last-child { border-right: none; }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat:last-child  { border-right: none; }
+
+    .hero-stat-value {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
 
     .hero-stat-label {
       display: block;
       font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 6px;
+      color: rgba(255,255,255,.4);
+      margin-top: 5px;
     }
 
-    .hero-stat-value {
-      display: block;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 1px;
-    }
-
-    /* ─── PROBLEM SECTION ─── */
-    #problem {
+    /* ─── MANIFIESTO ─── */
+    #manifiesto {
       background: var(--navy-dark);
-      padding: 96px 0;
+      padding: 100px 0;
     }
 
-    .section-header {
-      margin-bottom: 56px;
+    .manifiesto-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
+
+    .manifiesto-inner p {
+      font-size: clamp(18px, 2.4vw, 23px);
+      font-weight: 700;
+      line-height: 1.6;
+      color: rgba(255,255,255,.85);
+      letter-spacing: -0.2px;
+    }
+
+    .m-teal   { color: var(--teal); }
+    .m-orange { color: var(--orange); }
+
+    /* ─── UNIDADES DE NEGOCIO ─── */
+    #unidades {
+      background: var(--navy-deep);
+      padding: 104px 0;
+    }
+
+    .section-header { margin-bottom: 64px; }
 
     .section-header p {
-      color: rgba(255,255,255,.65);
-      max-width: 560px;
-      margin-top: 16px;
+      color: rgba(255,255,255,.5);
+      max-width: 520px;
+      margin-top: 14px;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
-    .cards-3 {
+    .un-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .card-dark {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-top: 2px solid var(--teal);
-      padding: 32px;
-      border-radius: 12px;
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-
-    .card-dark:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,.06);
-    }
-
-    .card-icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 20px;
-      color: var(--teal);
-    }
-
-    .card-dark h3 {
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-
-    .card-dark p {
-      font-size: 15px;
-      color: rgba(255,255,255,.6);
-      line-height: 1.7;
-    }
-
-    /* ─── SOLUTION SECTION (light) ─── */
-    #solution-detail {
-      background: var(--white);
-      padding: 96px 0;
-      color: var(--text-dark);
-    }
-
-    #solution-detail .eyebrow {
-      color: var(--teal);
-    }
-
-    #solution-detail h2 { color: var(--text-dark); }
-    #solution-detail p { color: #4B5563; }
-
-    .solution-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-      margin-top: 56px;
-    }
-
-    .solution-visual {
-      background: var(--navy-dark);
-      border-radius: 12px;
-      padding: 48px 40px;
-      position: relative;
+    .un-card {
+      border-radius: 14px;
       overflow: hidden;
-      min-height: 320px;
+      position: relative;
+      min-height: 520px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .solution-visual-bg {
+    .un-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 72px rgba(0,0,0,.45);
+    }
+
+    .un-card-bg {
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: .08;
-    }
-
-    .solution-visual-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .solution-process {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 1px;
-    }
-
-    .solution-process span {
-      color: var(--teal);
-    }
-
-    .solution-process-sub {
-      font-size: 13px;
-      color: rgba(255,255,255,.5);
-      margin-top: 12px;
-      letter-spacing: 0.5px;
-    }
-
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 20px;
-    }
-
-    .feature-num {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--teal);
-      flex-shrink: 0;
-      padding-top: 3px;
-      width: 28px;
-    }
-
-    .feature-body {
-      border-top: 1px solid rgba(0,0,0,.1);
-      padding-top: 16px;
-    }
-
-    .feature-body h3 {
-      font-size: 17px;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .feature-body p {
-      font-size: 15px;
-      color: #4B5563;
-      line-height: 1.7;
-    }
-
-    /* ─── BENEFITS SECTION ─── */
-    #impact {
-      background: var(--navy);
-      padding: 96px 0;
-    }
-
-    .cards-2x2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    /* ─── TESTIMONIALS ─── */
-    #testimonials {
-      background: #F8F9FA;
-      padding: 96px 0;
-    }
-
-    #testimonials .eyebrow { color: var(--teal); }
-    #testimonials h2 { color: var(--text-dark); }
-
-    .testimonial-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,.07);
-      box-shadow: 0 4px 24px rgba(0,0,0,.07);
-      padding: 32px;
-      border-radius: 12px;
-      transition: box-shadow 0.25s ease, transform 0.25s ease;
-    }
-
-    .testimonial-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,.13);
-      transform: translateY(-3px);
-    }
-
-    .testimonial-quote-mark {
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 16px;
-      display: block;
-      opacity: .6;
-    }
-
-    .testimonial-stars {
-      color: var(--teal);
-      font-size: 14px;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      color: #374151;
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 24px;
-    }
-
-    .testimonial-author {
-      border-top: 1px solid rgba(0,0,0,.08);
-      padding-top: 16px;
-    }
-
-    .testimonial-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-dark);
-      display: block;
-    }
-
-    .testimonial-role {
-      font-size: 12px;
-      color: #6B7280;
-      display: block;
-      margin-top: 2px;
-    }
-
-    /* ─── SCALABILITY ─── */
-    #scalability {
-      position: relative;
-      padding: 128px 0;
-      background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=85');
       background-size: cover;
       background-position: center;
-      text-align: center;
     }
 
-    #scalability::before {
-      content: '';
+    .un-card-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(6,9,15,.75);
+      background: linear-gradient(175deg, rgba(0,10,32,.45) 0%, rgba(0,10,32,.82) 55%, rgba(0,10,32,.97) 100%);
     }
 
-    .scalability-content {
-      position: relative;
+    /* Top border per UN */
+    .un-border-top {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      z-index: 2;
+    }
+
+    .un-card--performance .un-border-top  { background: var(--orange); }
+    .un-card--engineering .un-border-top,
+    .un-card--intelligence .un-border-top { background: var(--teal); }
+
+    .un-card-deco {
+      position: absolute;
+      top: 20px; right: 20px;
+      opacity: .22;
+      pointer-events: none;
       z-index: 1;
     }
 
-    #scalability h2 {
-      color: var(--white);
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    #scalability p {
-      color: rgba(255,255,255,.5);
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-
-    .industry-tags {
+    .un-card-content {
+      position: relative;
+      z-index: 1;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
+      flex-direction: column;
+      flex: 1;
+      padding: 36px 30px 32px;
     }
 
-    .industry-tag {
-      border: 1px solid var(--teal);
-      color: var(--teal);
-      padding: 8px 20px;
-      font-size: 11px;
+    .un-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      border-radius: 999px;
+      color: rgba(255,255,255,.35);
+      margin-bottom: 10px;
     }
 
-    /* ─── TECHNOLOGY ─── */
-    #technology {
-      background: var(--navy-dark);
-      padding: 96px 0;
-    }
-
-    #technology .section-header p {
-      color: rgba(255,255,255,.65);
-    }
-
-    .tech-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-
-    .tech-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-top: 2px solid var(--teal);
-      padding: 32px;
-      border-radius: 12px;
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-
-    .tech-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,.06);
-    }
-
-    .tech-icon {
-      width: 32px;
-      height: 32px;
-      color: var(--teal);
-      margin-bottom: 20px;
-    }
-
-    .tech-card h3 {
+    .un-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
       color: var(--white);
+      line-height: 1.1;
       margin-bottom: 16px;
     }
 
-    .tech-card ul {
-      list-style: none;
-    }
-
-    .tech-card ul li {
+    .un-positioning {
       font-size: 14px;
       color: rgba(255,255,255,.6);
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 28px;
+    }
+
+    .un-tags {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 8px;
+      margin-bottom: 28px;
     }
 
-    .tech-card ul li::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--teal);
-      flex-shrink: 0;
-    }
-
-    .tech-card ul li:last-child { border-bottom: none; }
-
-    /* ─── NEWS ─── */
-    #news {
-      background: var(--white);
-      padding: 96px 0;
-    }
-
-    #news .eyebrow { color: var(--teal); }
-    #news h2 { color: var(--text-dark); }
-
-    .news-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-
-    .news-card {
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,.07);
-      box-shadow: 0 4px 24px rgba(0,0,0,.07);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: box-shadow 0.25s ease, transform 0.25s ease;
-    }
-
-    .news-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,.13);
-      transform: translateY(-3px);
-    }
-
-    .news-image {
-      width: 100%;
-      height: 180px;
-      background: var(--navy-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .news-image svg {
-      opacity: .15;
-    }
-
-    .news-body {
-      padding: 24px;
-    }
-
-    .news-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .news-tag {
-      background: var(--teal);
-      color: var(--white);
+    .un-tag {
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 2px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid;
     }
 
-    .news-date {
-      font-size: 11px;
-      color: #9CA3AF;
-      letter-spacing: 0.5px;
+    .un-card--performance .un-tag {
+      color: var(--orange);
+      border-color: rgba(254,80,0,.3);
+      background: rgba(254,80,0,.07);
     }
 
-    .news-card h3 {
-      font-size: 16px;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .news-card p {
-      font-size: 14px;
-      color: #6B7280;
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-
-    .news-link {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .un-card--engineering .un-tag {
       color: var(--teal);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
+      border-color: rgba(0,142,170,.3);
+      background: rgba(0,142,170,.07);
     }
 
-    .news-link:hover { color: var(--navy); }
-
-    /* ─── CONTACT ─── */
-    #contact {
-      background: var(--navy-deep);
-      padding: 96px 0;
+    .un-card--intelligence .un-tag {
+      color: #7FD4C1;
+      border-color: rgba(127,212,193,.3);
+      background: rgba(127,212,193,.07);
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      margin-top: 56px;
-      align-items: start;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-group label {
+    .un-link {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .un-link::after { content: '→'; }
+
+    .un-card--performance .un-link  { color: var(--orange); }
+    .un-card--engineering .un-link  { color: var(--teal); }
+    .un-card--intelligence .un-link { color: #7FD4C1; }
+
+    /* ─── POR QUÉ ALPHA TECH ─── */
+    #porque {
+      background: var(--navy);
+      padding: 104px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 64px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .stat-block {
+      padding: 44px 32px;
+      border-right: 1px solid rgba(255,255,255,.06);
+      text-align: center;
+      background: rgba(255,255,255,.02);
+      transition: background 0.25s ease;
+    }
+
+    .stat-block:hover  { background: rgba(255,255,255,.04); }
+    .stat-block:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+      display: block;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: rgba(255,255,255,.5);
     }
 
-    .form-group input,
-    .form-group textarea {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
-      color: var(--white);
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.5;
-      transition: border-color 0.2s ease;
-      outline: none;
-      width: 100%;
+    .stat-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,.38);
+      margin-top: 10px;
+      line-height: 1.55;
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255,255,255,.25);
+    /* ─── CTA BAND ─── */
+    #cta-band {
+      background: var(--navy-dark);
+      padding: 104px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--teal);
+    #cta-band::before {
+      content: '';
+      position: absolute;
+      top: -60%; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(254,80,0,.09) 0%, transparent 65%);
+      pointer-events: none;
     }
 
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
+    .cta-band-inner { position: relative; z-index: 1; }
+
+    #cta-band .eyebrow { text-align: center; }
+
+    #cta-band h2 { max-width: 600px; margin: 0 auto 18px; }
+
+    #cta-band p {
+      color: rgba(255,255,255,.5);
+      font-size: 17px;
+      max-width: 460px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
     }
 
-    .contact-info {
-      padding-top: 8px;
-    }
-
-    .contact-info-line {
-      width: 2px;
-      height: 48px;
-      background: var(--teal);
-      margin-bottom: 32px;
-    }
-
-    .contact-info h3 {
-      font-size: 22px;
-      color: var(--white);
-      margin-bottom: 24px;
-    }
-
-    .contact-detail {
-      margin-bottom: 20px;
-    }
-
-    .contact-detail-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .contact-detail-value {
-      font-size: 15px;
-      color: rgba(255,255,255,.75);
-    }
-
-    .contact-detail-value a {
-      color: rgba(255,255,255,.75);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .contact-detail-value a:hover { color: var(--teal); }
-
-    .contact-icon-deco {
-      margin-top: 40px;
-      opacity: .12;
+    .cta-band-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     /* ─── FOOTER ─── */
     footer {
       background: var(--navy-dark);
-      padding: 64px 0 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 72px 0 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
       gap: 48px;
-      padding-bottom: 48px;
+      padding-bottom: 56px;
       border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,.35);
+      line-height: 1.85;
+      margin-top: 18px;
+      max-width: 240px;
     }
 
     .footer-col h4 {
@@ -989,15 +784,8 @@
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.35);
+      color: rgba(255,255,255,.28);
       margin-bottom: 20px;
-    }
-
-    .footer-col p {
-      font-size: 12px;
-      color: rgba(255,255,255,.4);
-      line-height: 1.8;
-      margin-top: 16px;
     }
 
     .footer-links {
@@ -1009,12 +797,49 @@
 
     .footer-links a {
       font-size: 13px;
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.48);
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .footer-links a:hover { color: var(--white); }
+
+    .footer-col p {
+      font-size: 13px;
+      color: rgba(255,255,255,.42);
+      line-height: 1.85;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,.42);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: var(--teal); }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .footer-social-link {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.38);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-social-link:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
 
     .footer-bottom {
       padding: 20px 0;
@@ -1023,13 +848,7 @@
       justify-content: space-between;
     }
 
-    .footer-tagline {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.25);
-    }
+    .footer-copyright { font-size: 12px; color: rgba(255,255,255,.22); }
 
     .footer-bottom-lang {
       display: flex;
@@ -1039,26 +858,19 @@
     }
 
     .footer-bottom-lang a {
-      color: rgba(255,255,255,.4);
+      color: rgba(255,255,255,.32);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.2s;
     }
 
     .footer-bottom-lang a:hover { color: var(--white); }
     .footer-bottom-lang a.active { color: var(--teal); }
 
-    .footer-copyright {
-      font-size: 12px;
-      color: rgba(255,255,255,.3);
-    }
-
-    /* ─── WHATSAPP BUTTON ─── */
+    /* ─── WHATSAPP ─── */
     .wa-btn {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
+      bottom: 24px; right: 24px;
+      width: 56px; height: 56px;
       border-radius: 50%;
       background: #25D366;
       display: flex;
@@ -1075,1128 +887,415 @@
     .wa-btn.visible {
       opacity: 1;
       transform: scale(1);
+      animation: wa-pulse 2.5s ease infinite;
     }
 
     .wa-btn:hover {
-      transform: scale(1.08);
+      transform: scale(1.08) !important;
       box-shadow: 0 6px 24px rgba(37,211,102,.55);
     }
 
     @keyframes wa-pulse {
       0%, 100% { box-shadow: 0 4px 16px rgba(37,211,102,.4); }
-      50% { box-shadow: 0 4px 32px rgba(37,211,102,.7), 0 0 0 8px rgba(37,211,102,.1); }
-    }
-
-    .wa-btn.visible {
-      animation: wa-pulse 2.5s ease infinite;
+      50%       { box-shadow: 0 4px 32px rgba(37,211,102,.7), 0 0 0 8px rgba(37,211,102,.1); }
     }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
-      .container { padding: 0 32px; }
-      .nav-inner { padding: 0 32px; }
-      h1 { font-size: 48px; }
-      h2 { font-size: 34px; }
+      .container   { padding: 0 32px; }
+      .nav-inner   { padding: 0 32px; }
+      .un-grid     { grid-template-columns: 1fr; gap: 20px; }
+      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .hero-deco   { display: none; }
     }
 
     @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-lang { display: none; }
-
-      .cards-3,
-      .testimonial-cards,
-      .news-cards {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .cards-2x2,
-      .tech-cards {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .solution-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-
-      .hero-stats-inner {
-        flex-direction: column;
-        padding: 0 24px;
-      }
-
-      .hero-stat {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,.08);
-        padding: 16px 0;
-      }
-
-      .hero-stat:last-child { border-bottom: none; }
+      .nav-links   { display: none; }
+      .nav-lang    { display: none; }
+      .nav-cta-btn { display: none; }
+      .nav-simulations-btn { display: none; }
+      .hamburger   { display: flex; }
     }
 
-    @media (max-width: 480px) {
-      .container { padding: 0 24px; }
-      .nav-inner { padding: 0 24px; }
-      h1 { font-size: 36px; }
-      h2 { font-size: 28px; }
-
-      #hero,
-      #problem,
-      #solution-detail,
-      #impact,
-      #testimonials,
-      #technology,
-      #news,
-      #contact {
-        padding-top: 64px;
-        padding-bottom: 64px;
-      }
-
-      #scalability { padding: 80px 0; }
-
-      .hero-cta { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-
-      .hero-stats-inner { padding: 0 24px; }
-    }
-
-    /* ─── HERO TYPOGRAPHY ─── */
-    .hero-content h1 {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 800;
-      font-size: clamp(36px, 5.5vw, 56px);
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      max-width: 640px;
-    }
-
-    /* ─── SERVICE PILLARS ─── */
-    #servicios {
-      background: var(--navy-deep);
-      padding: 96px 0;
-    }
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-    .pillar-card.coming-soon {
-      opacity: 0.65;
-      border-style: dashed;
-    }
-    .division-callout {
-      margin-top: 32px;
-      background: rgba(0,32,91,0.5);
-      border: 1px solid rgba(0,142,170,0.2);
-      border-radius: 12px;
-      padding: 28px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .division-callout-text { flex: 1; }
-    .division-callout-label {
-      font-size: 9px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--teal);
-      display: block; margin-bottom: 6px;
-    }
-    .division-callout h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-    .division-callout p { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
-    .pillar-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 40px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: border-color 0.2s;
-      position: relative;
-    }
-    .pillar-card.ready { border-color: rgba(0,142,170,0.25); }
-    .pillar-card.ready:hover { border-color: var(--teal); }
-    .pillar-card:not(.ready):hover { border-color: rgba(255,255,255,0.18); }
-    .pillar-badge {
-      font-size: 8px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      padding: 3px 8px; border-radius: 2px;
-      align-self: flex-start;
-    }
-    .pillar-badge.disponible { background: rgba(0,142,170,0.15); color: var(--teal); }
-    .pillar-badge.pronto { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); }
-    .pillar-icon {
-      width: 44px; height: 44px;
-      background: rgba(0,142,170,0.1);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .pillar-card h3 { font-size: 18px; font-weight: 700; color: var(--white); line-height: 1.3; }
-    .pillar-card > p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; flex: 1; }
-
-    /* ── PROBLEMA / MÉTODO / RESULTADO ── */
-    .pmr { display: flex; flex-direction: column; gap: 12px; flex: 1; margin-top: 4px; }
-    .pmr-row {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 14px;
-      align-items: start;
-      font-size: 13px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.62);
-    }
-    .pmr-tag {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      padding-top: 4px;
-      display: block;
-    }
-    .pmr-tag.problema { color: rgba(255,255,255,0.3); }
-    .pmr-tag.metodo { color: var(--teal); }
-    .pmr-tag.resultado { color: #7FD4C1; }
-    .pmr-row p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.68); margin: 0; }
-    .pmr-row.resultado p { color: rgba(255,255,255,0.82); font-weight: 500; }
-    .pillar-card.coming-soon .pmr-row { opacity: 0.72; }
     @media (max-width: 640px) {
-      .pmr-row { grid-template-columns: 1fr; gap: 4px; }
-      .pmr-tag { padding-top: 0; }
-    }
-
-    .pillar-link {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--teal); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 4px;
-    }
-    .pillar-link::after { content: '→'; }
-
-    /* ─── INGENIERÍA MECÁNICA ─── */
-    #ingenieria {
-      background: var(--navy-dark);
-      padding: 96px 0;
-    }
-    .mec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .mec-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 36px 32px;
-      transition: border-color 0.2s;
-    }
-    .mec-card:hover { border-color: rgba(0,142,170,0.35); }
-    .mec-card-icon {
-      width: 40px; height: 40px;
-      background: rgba(0,142,170,0.1);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-    }
-    .mec-card h3 { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-    .mec-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; }
-    .mec-case {
-      margin-top: 56px;
-      background: rgba(0,142,170,0.06);
-      border: 1px solid rgba(0,142,170,0.2);
-      border-radius: 12px;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .mec-case-label {
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--teal); display: block; margin-bottom: 12px;
-    }
-    .mec-case h3 { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
-    .mec-case > div > p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
-    .mec-case-img {
-      aspect-ratio: 4/3;
-      background: rgba(0,32,91,0.6);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .mec-case-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    /* ─── AERODINÁMICA ─── */
-    #aerodinamica {
-      background: var(--navy);
-      padding: 96px 0;
-    }
-    .aero-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-    .aero-top h2 { margin-bottom: 16px; }
-    .aero-top > div > p { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7; }
-    .aero-ansys {
-      background: rgba(0,0,0,0.4);
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 16/9;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .aero-ansys img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .aero-profiles {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .aero-profile {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-    .aero-profile:hover { border-color: rgba(0,142,170,0.4); }
-    .aero-profile-img {
-      height: 190px;
-      background: rgba(0,32,91,0.7);
-      overflow: hidden;
-    }
-    .aero-profile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .aero-profile-body { padding: 28px 32px; }
-    .aero-profile-tag {
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--teal); display: block; margin-bottom: 10px;
-    }
-    .aero-profile h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-    .aero-profile > .aero-profile-body > p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; margin-bottom: 20px; }
-    .aero-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-    .aero-list li { font-size: 13px; color: rgba(255,255,255,0.6); padding-left: 16px; position: relative; }
-    .aero-list li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
-    .aero-cta-strip {
-      margin-top: 56px;
-      background: rgba(0,142,170,0.08);
-      border: 1px solid rgba(0,142,170,0.22);
-      border-radius: 12px;
-      padding: 32px 40px;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 24px;
-    }
-    .aero-cta-strip p { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.9); font-style: italic; }
-
-    /* ─── RESPONSIVE NEW SECTIONS ─── */
-    @media (max-width: 900px) {
-      .pillars-grid { grid-template-columns: 1fr; }
-      .mec-grid { grid-template-columns: 1fr; }
-      .mec-case { grid-template-columns: 1fr; }
-      .aero-top { grid-template-columns: 1fr; }
-      .aero-profiles { grid-template-columns: 1fr; }
-      .aero-cta-strip { flex-direction: column; text-align: center; }
+      .container        { padding: 0 24px; }
+      .nav-inner        { padding: 0 24px; }
+      .hero-stats-inner { flex-direction: column; padding: 0 24px; }
+      .hero-stat        { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .hero-stat:last-child { border-bottom: none; }
+      .hero-cta         { flex-direction: column; }
+      .btn              { width: 100%; justify-content: center; }
+      .stats-grid       { grid-template-columns: 1fr; border-radius: 10px; }
+      .stat-block       { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .stat-block:last-child { border-bottom: none; }
+      .footer-grid      { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom    { flex-direction: column; gap: 12px; text-align: center; }
+      #manifiesto, #unidades, #porque, #cta-band { padding: 72px 0; }
     }
   </style>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alpha Tech Solutions",
+    "url": "https://alphatechnologique.com",
+    "logo": "logo-solutions-v2.svg",
+    "description": "Ingeniería mecánica, aerodinámica, IA industrial y realidad aumentada en Lima, Perú.",
+    "telephone": "+51922877190",
+    "email": "contacto@alphatechnologique.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lima",
+      "addressCountry": "PE"
+    }
+  }
+  </script>
 </head>
 <body>
 
   <!-- ─── NAVIGATION ─── -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions">
-        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="46" style="display:block;height:46px;width:auto">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions — Inicio">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
       </a>
 
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#technology">Tecnología</a></li>
-          <li><a href="aeronautica.html">Simulaciones de Vuelo</a></li>
-          <li class="nav-cta"><a href="#contact">Contacto</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
         <div class="nav-lang">
           <a href="en.html">EN</a>
           <span>|</span>
           <a href="index.html" class="active">ES</a>
         </div>
+
+        <a href="../Alpha tech S Web/aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
+  <!-- ─── MOBILE MENU ─── -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
     <button class="mobile-menu-close" id="mobile-close" aria-label="Cerrar menú">&#x2715;</button>
-    <a href="#hero" class="mobile-link">Inicio</a>
-    <a href="#servicios" class="mobile-link">Servicios</a>
-    <a href="#technology" class="mobile-link">Tecnología</a>
-    <a href="aeronautica.html" class="mobile-link">Simulaciones de Vuelo</a>
-    <a href="#contact" class="mobile-link">Contacto</a>
-    <div class="mobile-lang nav-lang" style="margin-top:16px;">
-      <a href="en.html">EN</a>
-      <span style="color:rgba(255,255,255,.2)">|</span>
-      <a href="index.html" class="active">ES</a>
+    <a href="index.html">Inicio</a>
+    <a href="performance.html">Performance</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="intelligence.html">Intelligence</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="contacto.html" class="mobile-cta">Cotizar →</a>
+    <a href="../Alpha tech S Web/aeronautica.html" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;font-weight:700;letter-spacing:1.5px;border:1px solid rgba(0,142,170,.3);padding:10px 28px;border-radius:8px;text-transform:uppercase;text-decoration:none;">Simulations ↗</a>
+    <div class="mobile-lang">
+      <a href="en.html"      style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;letter-spacing:1px;text-decoration:none">EN</a>
+      <span style="color:rgba(255,255,255,.18);font-size:13px">|</span>
+      <a href="index.html"   style="color:var(--teal);font-size:13px;font-weight:700;letter-spacing:1px;text-decoration:none">ES</a>
     </div>
   </div>
 
   <!-- ─── HERO ─── -->
   <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <!-- SVG decoratives: 3 UN metaphors layered -->
+    <svg class="hero-deco" viewBox="0 0 580 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Performance: velocity lines -->
+      <line x1="60"  y1="90"  x2="460" y2="50"  stroke="#FE5000" stroke-width="1.2" opacity=".22"/>
+      <line x1="40"  y1="118" x2="520" y2="82"  stroke="#FE5000" stroke-width=".6"  opacity=".13"/>
+      <line x1="80"  y1="146" x2="440" y2="115" stroke="#FE5000" stroke-width=".6"  opacity=".09"/>
+      <path d="M340 46 L500 88 L468 134 Z" fill="#FE5000" fill-opacity=".04" stroke="#FE5000" stroke-width=".8" opacity=".18"/>
+      <!-- Engineering: CAD blueprint -->
+      <rect x="80" y="220" width="340" height="220" rx="2" fill="none" stroke="#008EAA" stroke-width=".9" opacity=".18"/>
+      <line x1="80"  y1="277" x2="420" y2="277" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="80"  y1="334" x2="420" y2="334" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="80"  y1="391" x2="420" y2="391" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="163" y1="220" x2="163" y2="440" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="250" y1="220" x2="250" y2="440" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <line x1="335" y1="220" x2="335" y2="440" stroke="#008EAA" stroke-width=".5" opacity=".12"/>
+      <circle cx="163" cy="277" r="3.5" fill="#008EAA" fill-opacity=".28"/>
+      <circle cx="250" cy="334" r="3.5" fill="#008EAA" fill-opacity=".28"/>
+      <circle cx="335" cy="391" r="3.5" fill="#008EAA" fill-opacity=".28"/>
+      <text x="82" y="460" font-family="monospace" font-size="8" fill="#008EAA" fill-opacity=".2">DIM 340×220 · TOL ±0.05mm</text>
+      <!-- Intelligence: neural network -->
+      <circle cx="140" cy="540" r="7"  fill="#008EAA" fill-opacity=".16" stroke="#008EAA" stroke-width=".9" opacity=".3"/>
+      <circle cx="270" cy="508" r="9"  fill="#008EAA" fill-opacity=".18" stroke="#008EAA" stroke-width=".9" opacity=".35"/>
+      <circle cx="390" cy="558" r="7"  fill="#008EAA" fill-opacity=".16" stroke="#008EAA" stroke-width=".9" opacity=".3"/>
+      <circle cx="180" cy="624" r="6"  fill="#7FD4C1" fill-opacity=".12" stroke="#7FD4C1" stroke-width=".8" opacity=".24"/>
+      <circle cx="310" cy="640" r="6"  fill="#7FD4C1" fill-opacity=".12" stroke="#7FD4C1" stroke-width=".8" opacity=".24"/>
+      <circle cx="440" cy="600" r="6"  fill="#7FD4C1" fill-opacity=".12" stroke="#7FD4C1" stroke-width=".8" opacity=".24"/>
+      <line x1="140" y1="540" x2="270" y2="508" stroke="#008EAA" stroke-width=".7" opacity=".2"/>
+      <line x1="270" y1="508" x2="390" y2="558" stroke="#008EAA" stroke-width=".7" opacity=".2"/>
+      <line x1="140" y1="540" x2="180" y2="624" stroke="#008EAA" stroke-width=".6" opacity=".16"/>
+      <line x1="270" y1="508" x2="310" y2="640" stroke="#008EAA" stroke-width=".6" opacity=".16"/>
+      <line x1="390" y1="558" x2="440" y2="600" stroke="#008EAA" stroke-width=".6" opacity=".16"/>
+      <line x1="180" y1="624" x2="310" y2="640" stroke="#7FD4C1" stroke-width=".6" opacity=".14"/>
+      <line x1="310" y1="640" x2="440" y2="600" stroke="#7FD4C1" stroke-width=".6" opacity=".14"/>
+    </svg>
+
     <div class="container">
-      <div class="hero-content" data-animate>
-        <span class="eyebrow">INGENIERÍA · DISEÑO · RENDIMIENTO</span>
-        <h1>Procesos de ingeniería,<br>ejecutados correctamente.<br>Siempre.</h1>
-        <p>Ingeniería mecánica industrial, dinámica de fluidos CFD, mantenimiento preventivo y diagnóstico gratuito. Rigor técnico aeronáutico en cada proyecto.</p>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Alpha Tech Solutions · Lima, Perú</span>
+
+        <div aria-label="Ingeniería que se mueve. Datos que deciden. Pasión que empuja.">
+          <span class="tagline-line">Ingeniería que se mueve.</span>
+          <span class="tagline-line">Datos que deciden.</span>
+          <span class="tagline-line"><span class="tagline-accent">Pasión</span> que empuja.</span>
+        </div>
+
+        <p class="hero-sub">Performance, Engineering e Intelligence: tres unidades con ADN técnico y una sola obsesión por el resultado.</p>
+
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Solicitar Diagnóstico Gratuito</a>
-          <a href="#servicios" class="btn btn-secondary">Conocer Más</a>
+          <a href="#unidades" class="btn btn-primary">Explorar capacidades</a>
+          <a href="contacto.html" class="btn btn-secondary">Cotizar proyecto</a>
         </div>
       </div>
     </div>
+
     <div class="hero-stats">
       <div class="hero-stats-inner">
-        <div class="hero-stat" data-animate>
-          <span class="hero-stat-label">Reducción</span>
-          <span class="hero-stat-value">&#8595; Error Humano</span>
+        <div class="hero-stat">
+          <span class="hero-stat-value">3</span>
+          <span class="hero-stat-label">Unidades de negocio</span>
         </div>
-        <div class="hero-stat" data-animate style="transition-delay:.1s">
-          <span class="hero-stat-label">Incremento</span>
-          <span class="hero-stat-value">&#8593; Velocidad de Formación</span>
+        <div class="hero-stat">
+          <span class="hero-stat-value">B2B + B2C</span>
+          <span class="hero-stat-label">Mercados atendidos</span>
         </div>
-        <div class="hero-stat" data-animate style="transition-delay:.2s">
-          <span class="hero-stat-label">Seguridad</span>
-          <span class="hero-stat-value">ISO 27001 Ready</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── PROBLEM SECTION ─── -->
-  <section id="problem">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">El Desafío Industrial</span>
-        <h2>Los procesos críticos enfrentan problemas sistémicos</h2>
-        <p>Seguridad, costo y confiabilidad: tres variables que se degradan sin el sistema correcto.</p>
-      </div>
-      <div class="cards-3">
-        <div class="card-dark" data-animate>
-          <!-- Clock icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="20" cy="20" r="16"/>
-            <polyline points="20,10 20,20 27,25"/>
-          </svg>
-          <h3>Formación Lenta</h3>
-          <p>Los nuevos operarios requieren tiempo y recursos extensos para alcanzar competencia operacional. La alta dependencia del personal experimentado genera cuellos de botella y silos de conocimiento.</p>
-        </div>
-        <div class="card-dark" data-animate style="transition-delay:.1s">
-          <!-- Warning triangle icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6 L36 34 H4 Z"/>
-            <line x1="20" y1="17" x2="20" y2="25"/>
-            <circle cx="20" cy="30" r="1.5" fill="currentColor" stroke="none"/>
-          </svg>
-          <h3>Error Humano</h3>
-          <p>Los procedimientos complejos ejecutados de memoria o documentación en papel aumentan la probabilidad de errores. Un solo error en procesos críticos puede significar retrabajo costoso o incidentes de seguridad.</p>
-        </div>
-        <div class="card-dark" data-animate style="transition-delay:.2s">
-          <!-- Down arrow chart icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4,8 14,18 20,12 36,28"/>
-            <polyline points="30,28 36,28 36,22"/>
-            <line x1="4" y1="34" x2="36" y2="34"/>
-          </svg>
-          <h3>Pérdida de Rentabilidad</h3>
-          <p>La formación ineficiente, las deficiencias de calidad y la falta de trazabilidad drenan recursos. Las fallas de auditoría y no conformidades agravan los costos operacionales.</p>
+        <div class="hero-stat">
+          <span class="hero-stat-value">Lima</span>
+          <span class="hero-stat-label">Base operativa · Perú</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── SOLUTION SECTION ─── -->
-  <section id="solution-detail">
+  <!-- ─── MANIFIESTO ─── -->
+  <section id="manifiesto">
+    <div class="container">
+      <div class="manifiesto-inner" data-animate>
+        <p>La ingeniería no es solo cálculo —&nbsp;es <span class="m-teal">obsesión por el detalle</span> que separa lo que funciona de lo que falla. En Alpha Tech, cada proyecto empieza con rigor técnico y termina con <span class="m-orange">resultados que se miden</span>. No vendemos soluciones integrales. Entregamos componentes que aguantan, procesos que no se rompen, y datos que dicen la verdad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── UNIDADES DE NEGOCIO ─── -->
+  <section id="unidades">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">La Solución</span>
-        <h2>Ejecución asistida por Realidad Aumentada</h2>
-        <p>Cada paso, validado. Cada acción, registrada. Cero margen de error.</p>
+        <span class="eyebrow">Unidades de Negocio</span>
+        <h2>Tres capacidades. Una sola obsesión técnica.</h2>
+        <p>Cada unidad tiene su audiencia, su lenguaje y su entregable — unidas por el mismo estándar de precisión.</p>
       </div>
-      <div class="solution-grid">
-        <div class="solution-visual" data-animate>
-          <div class="solution-visual-bg">
-            <svg viewBox="0 0 300 300" width="280" height="280">
-              <path d="M 205,54 A 108,108 0 1 1 27,54" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <polygon points="120,4 97,62 143,62" fill="#008EAA"/>
-              <circle cx="120" cy="120" r="73" fill="none" stroke="#008EAA" stroke-width="6" opacity=".4"/>
-              <path d="M 120,120 L 66,66 A 73,73 0 0 1 174,66 Z" fill="#008EAA" opacity=".14"/>
-              <line x1="120" y1="120" x2="66" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="174" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <path d="M 66,66 A 73,73 0 0 1 174,66" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="120" y2="47" stroke="#008EAA" stroke-width="9" stroke-linecap="round"/>
-              <circle cx="120" cy="47" r="15" fill="#008EAA"/>
+
+      <div class="un-grid">
+
+        <!-- ── Performance ── -->
+        <a href="performance.html" class="un-card un-card--performance" data-animate>
+          <div class="un-border-top"></div>
+          <div class="un-card-bg" style="background-image:url('performance-hero.png')">
+            <svg viewBox="0 0 400 520" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+                 xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;opacity:.5" aria-hidden="true">
+              <defs>
+                <linearGradient id="perfG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FE5000" stop-opacity=".5"/>
+                  <stop offset="100%" stop-color="#001540" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="520" fill="#001540"/>
+              <rect width="400" height="520" fill="url(#perfG)"/>
+              <line x1="0" y1="90"  x2="400" y2="55"  stroke="#FE5000" stroke-width="1.5" opacity=".4"/>
+              <line x1="0" y1="150" x2="400" y2="118" stroke="#FE5000" stroke-width="1"   opacity=".28"/>
+              <line x1="0" y1="210" x2="400" y2="183" stroke="#FE5000" stroke-width=".7"  opacity=".18"/>
+              <line x1="0" y1="270" x2="400" y2="248" stroke="#FE5000" stroke-width=".5"  opacity=".12"/>
+              <path d="M220 100 L400 58 L375 135 Z" fill="#FE5000" fill-opacity=".1"/>
             </svg>
           </div>
-          <div class="solution-visual-content">
-            <div class="solution-process">
-              Proceso <span>&#8594;</span> Guía AR <span>&#8594;</span> Validación
+          <div class="un-card-overlay"></div>
+          <div class="un-card-deco" aria-hidden="true">
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="#FE5000">
+              <path d="M8 56 L36 8 L64 56 Z" fill="none" stroke="#FE5000" stroke-width="1.5"/>
+              <line x1="8"  y1="56" x2="64" y2="56" stroke="#FE5000" stroke-width="1.5"/>
+              <line x1="22" y1="56" x2="36" y2="28" stroke="#FE5000" stroke-width="1"/>
+              <line x1="50" y1="56" x2="36" y2="28" stroke="#FE5000" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="un-card-content">
+            <span class="un-label">UN · 01</span>
+            <div class="un-name">Performance</div>
+            <p class="un-positioning">Aerodinámica, fibra de carbono y tuning de alto rendimiento. Diseñado en Lima, probado en pista. Para entusiastas y tuners que no aceptan compromisos.</p>
+            <div class="un-tags">
+              <span class="un-tag">Fibra de Carbono</span>
+              <span class="un-tag">CFD · Aerodinámica</span>
+              <span class="un-tag">Tuning B2C</span>
             </div>
-            <div class="solution-process-sub">Asistencia en tiempo real en cada paso.</div>
+            <span class="un-link">Ver capacidades</span>
           </div>
-        </div>
-        <div class="feature-list">
-          <div class="feature-item" data-animate>
-            <div class="feature-num">01</div>
-            <div class="feature-body">
-              <h3>Guía paso a paso</h3>
-              <p>Los operarios cuentan con instrucciones precisas sobre qué hacer, cuándo y cómo hacerlo. Las instrucciones visuales se superponen al espacio de trabajo físico a través de dispositivos de realidad aumentada.</p>
+        </a>
+
+        <!-- ── Engineering ── -->
+        <a href="engineering.html" class="un-card un-card--engineering" data-animate style="transition-delay:.15s">
+          <div class="un-border-top"></div>
+          <div class="un-card-bg" style="background-image:url('engineering-hero.png')">
+            <svg viewBox="0 0 400 520" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+                 xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;opacity:.5" aria-hidden="true">
+              <defs>
+                <linearGradient id="engG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#008EAA" stop-opacity=".45"/>
+                  <stop offset="100%" stop-color="#001540" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="520" fill="#001540"/>
+              <rect width="400" height="520" fill="url(#engG)"/>
+              <rect x="55"  y="80"  width="290" height="200" fill="none" stroke="#008EAA" stroke-width="1"/>
+              <line x1="55"  y1="147" x2="345" y2="147" stroke="#008EAA" stroke-width=".6" opacity=".5"/>
+              <line x1="55"  y1="214" x2="345" y2="214" stroke="#008EAA" stroke-width=".6" opacity=".5"/>
+              <line x1="152" y1="80"  x2="152" y2="280" stroke="#008EAA" stroke-width=".6" opacity=".5"/>
+              <line x1="250" y1="80"  x2="250" y2="280" stroke="#008EAA" stroke-width=".6" opacity=".5"/>
+              <circle cx="152" cy="147" r="3.5" fill="#008EAA" opacity=".6"/>
+              <circle cx="250" cy="214" r="3.5" fill="#008EAA" opacity=".6"/>
+              <text x="57" y="310" font-family="monospace" font-size="7.5" fill="#008EAA" fill-opacity=".4">DIM 290×200 · CAD/FEA</text>
+            </svg>
+          </div>
+          <div class="un-card-overlay"></div>
+          <div class="un-card-deco" aria-hidden="true">
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+              <rect x="8" y="8" width="56" height="56" stroke="#008EAA" stroke-width="1.5"/>
+              <line x1="8"  y1="27" x2="64" y2="27" stroke="#008EAA" stroke-width=".9"/>
+              <line x1="8"  y1="46" x2="64" y2="46" stroke="#008EAA" stroke-width=".9"/>
+              <line x1="27" y1="8"  x2="27" y2="64" stroke="#008EAA" stroke-width=".9"/>
+              <line x1="46" y1="8"  x2="46" y2="64" stroke="#008EAA" stroke-width=".9"/>
+              <circle cx="27" cy="27" r="3" fill="#008EAA"/>
+              <circle cx="46" cy="46" r="3" fill="#008EAA"/>
+            </svg>
+          </div>
+          <div class="un-card-content">
+            <span class="un-label">UN · 02</span>
+            <div class="un-name">Engineering</div>
+            <p class="un-positioning">Ingeniería mecánica industrial, CAD/FEA, manufactura y consultoría técnica. Rigor de grado aeronáutico para la industria peruana.</p>
+            <div class="un-tags">
+              <span class="un-tag">CAD · FEA</span>
+              <span class="un-tag">Manufactura</span>
+              <span class="un-tag">B2B Industrial</span>
             </div>
+            <span class="un-link">Ver capacidades</span>
           </div>
-          <div class="feature-item" data-animate style="transition-delay:.1s">
-            <div class="feature-num">02</div>
-            <div class="feature-body">
-              <h3>Validación en tiempo real</h3>
-              <p>Nada avanza sin validación. El sistema asegura cumplimiento de procedimientos y previene desviaciones del proceso.</p>
+        </a>
+
+        <!-- ── Intelligence ── -->
+        <a href="intelligence.html" class="un-card un-card--intelligence" data-animate style="transition-delay:.3s">
+          <div class="un-border-top"></div>
+          <div class="un-card-bg" style="background-image:url('intelligence-hero.png')">
+            <svg viewBox="0 0 400 520" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+                 xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;opacity:.5" aria-hidden="true">
+              <defs>
+                <linearGradient id="intG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#02C39A" stop-opacity=".35"/>
+                  <stop offset="100%" stop-color="#001540" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="520" fill="#001540"/>
+              <rect width="400" height="520" fill="url(#intG)"/>
+              <circle cx="100" cy="150" r="8"  fill="#008EAA" fill-opacity=".4"  stroke="#008EAA" stroke-width=".9" opacity=".5"/>
+              <circle cx="200" cy="100" r="10" fill="#008EAA" fill-opacity=".45" stroke="#008EAA" stroke-width=".9" opacity=".6"/>
+              <circle cx="300" cy="160" r="8"  fill="#008EAA" fill-opacity=".4"  stroke="#008EAA" stroke-width=".9" opacity=".5"/>
+              <circle cx="140" cy="250" r="7"  fill="#7FD4C1" fill-opacity=".3"  stroke="#7FD4C1" stroke-width=".8" opacity=".4"/>
+              <circle cx="260" cy="270" r="7"  fill="#7FD4C1" fill-opacity=".3"  stroke="#7FD4C1" stroke-width=".8" opacity=".4"/>
+              <circle cx="200" cy="360" r="9"  fill="#008EAA" fill-opacity=".4"  stroke="#008EAA" stroke-width=".9" opacity=".5"/>
+              <line x1="100" y1="150" x2="200" y2="100" stroke="#008EAA" stroke-width="1"   opacity=".3"/>
+              <line x1="200" y1="100" x2="300" y2="160" stroke="#008EAA" stroke-width="1"   opacity=".3"/>
+              <line x1="100" y1="150" x2="140" y2="250" stroke="#008EAA" stroke-width=".7"  opacity=".24"/>
+              <line x1="300" y1="160" x2="260" y2="270" stroke="#008EAA" stroke-width=".7"  opacity=".24"/>
+              <line x1="140" y1="250" x2="200" y2="360" stroke="#7FD4C1" stroke-width=".7"  opacity=".22"/>
+              <line x1="260" y1="270" x2="200" y2="360" stroke="#7FD4C1" stroke-width=".7"  opacity=".22"/>
+            </svg>
+          </div>
+          <div class="un-card-overlay"></div>
+          <div class="un-card-deco" aria-hidden="true">
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+              <circle cx="36" cy="18" r="8"  stroke="#7FD4C1" stroke-width="1.4"/>
+              <circle cx="14" cy="52" r="6"  stroke="#7FD4C1" stroke-width="1.2"/>
+              <circle cx="58" cy="52" r="6"  stroke="#7FD4C1" stroke-width="1.2"/>
+              <line x1="36" y1="26" x2="14" y2="46" stroke="#7FD4C1" stroke-width=".8"/>
+              <line x1="36" y1="26" x2="58" y2="46" stroke="#7FD4C1" stroke-width=".8"/>
+              <line x1="20" y1="52" x2="52" y2="52" stroke="#7FD4C1" stroke-width=".6"/>
+            </svg>
+          </div>
+          <div class="un-card-content">
+            <span class="un-label">UN · 03</span>
+            <div class="un-name">Intelligence</div>
+            <p class="un-positioning">IA industrial, mantenimiento predictivo, visión computacional y realidad aumentada. Detectamos fallos antes de que ocurran.</p>
+            <div class="un-tags">
+              <span class="un-tag">IA Industrial</span>
+              <span class="un-tag">Visión Computacional</span>
+              <span class="un-tag">AR · IoT</span>
             </div>
+            <span class="un-link">Ver capacidades</span>
           </div>
-          <div class="feature-item" data-animate style="transition-delay:.2s">
-            <div class="feature-num">03</div>
-            <div class="feature-body">
-              <h3>Trazabilidad del proceso</h3>
-              <p>Registro digital completo de cada acción, incluyendo marcas de tiempo y validaciones. Pista de auditoría completa para asegurar la gestión de calidad y mejora continua.</p>
-            </div>
-          </div>
-        </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- ─── BENEFITS / IMPACT ─── -->
-  <section id="impact">
+  <!-- ─── POR QUÉ ALPHA TECH ─── -->
+  <section id="porque">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="eyebrow">Impacto Medible</span>
-        <h2>Mejoras cuantificables en métricas operacionales críticas</h2>
+        <span class="eyebrow">Por qué Alpha Tech</span>
+        <h2>Rigor técnico en cada entrega</h2>
+        <p>Sin relleno, sin promesas vacías. Solo ingeniería que se sostiene con datos.</p>
       </div>
-      <div class="cards-2x2">
-        <div class="card-dark" data-animate>
-          <!-- Checkmark icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="20" cy="20" r="16"/>
-            <polyline points="13,20 18,26 28,14"/>
-          </svg>
-          <h3>Reducción de Errores</h3>
-          <p>Mitigación de errores mediante la validación continua y ciclos de retroalimentación en tiempo real.</p>
+
+      <div class="stats-grid">
+        <div class="stat-block" data-animate>
+          <span class="stat-number">3</span>
+          <span class="stat-label">Sectores activos</span>
+          <p class="stat-desc">Automotriz, manufactura e industria de procesos.</p>
         </div>
-        <div class="card-dark" data-animate style="transition-delay:.1s">
-          <!-- Graph up icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4,32 14,18 22,24 36,8"/>
-            <polyline points="28,8 36,8 36,16"/>
-          </svg>
-          <h3>Formación Más Rápida</h3>
-          <p>Acelera el aprendizaje del operario con guía interactiva y consciente del contexto.</p>
+        <div class="stat-block" data-animate style="transition-delay:.1s">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Marcas técnicas</span>
+          <p class="stat-desc">Solutions y Simulations — ADN compartido, mundos distintos.</p>
         </div>
-        <div class="card-dark" data-animate style="transition-delay:.2s">
-          <!-- Shield icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 4 L34 10 V22 C34 30 20 37 20 37 C20 37 6 30 6 22 V10 Z"/>
-            <polyline points="13,20 18,26 27,14"/>
-          </svg>
-          <h3>Seguridad Mejorada</h3>
-          <p>Integración de verificaciones de seguridad y validación de precondiciones para prevenir situaciones de riesgo.</p>
+        <div class="stat-block" data-animate style="transition-delay:.2s">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Proyectos en Lima</span>
+          <p class="stat-desc">Conocemos el mercado peruano. Trabajamos aquí.</p>
         </div>
-        <div class="card-dark" data-animate style="transition-delay:.3s">
-          <!-- Bar chart icon -->
-          <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="24" width="8" height="10" rx="1"/>
-            <rect x="16" y="14" width="8" height="20" rx="1"/>
-            <rect x="27" y="6" width="8" height="28" rx="1"/>
-          </svg>
-          <h3>Inteligencia de Desempeño</h3>
-          <p>Información basada en datos para la optimización continua de procesos y la mejora de la eficiencia.</p>
+        <div class="stat-block" data-animate style="transition-delay:.3s">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Buzzwords vacíos</span>
+          <p class="stat-desc">Resultados medibles o no es un proyecto terminado.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── TESTIMONIALS ─── -->
-  <section id="testimonials">
+  <!-- ─── CTA BAND ─── -->
+  <section id="cta-band">
     <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Clientes</span>
-        <h2 style="color:var(--text-dark)">Lo que dicen nuestros clientes</h2>
-      </div>
-      <div class="testimonial-cards">
-        <div class="testimonial-card" data-animate>
-          <span class="testimonial-quote-mark">"</span>
-          <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"Alpha Tech transformó completamente nuestra línea de ensamblaje. Los errores de procedimiento cayeron un 80% en los primeros tres meses. El ROI fue inmediato."</p>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Carlos Mendoza</span>
-            <span class="testimonial-role">Gerente de Operaciones, Manufactura Industrial</span>
-          </div>
-        </div>
-        <div class="testimonial-card" data-animate style="transition-delay:.1s">
-          <span class="testimonial-quote-mark">"</span>
-          <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"La curva de formación de nuevos operarios pasó de 8 semanas a menos de 2. Nunca pensé que fuera posible sin sacrificar calidad."</p>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Patricia Vega</span>
-            <span class="testimonial-role">Directora de Capital Humano, Operaciones Aeroespaciales</span>
-          </div>
-        </div>
-        <div class="testimonial-card" data-animate style="transition-delay:.2s">
-          <span class="testimonial-quote-mark">"</span>
-          <span class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="testimonial-text">"El sistema de trazabilidad nos salvó en la última auditoría ISO. Cada acción documentada, cada validación registrada. Sin margen de error."</p>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Rodrigo Alcántara</span>
-            <span class="testimonial-role">Jefe de Calidad, Sector Construcción</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── SCALABILITY ─── -->
-  <section id="scalability">
-    <div class="container">
-      <div class="scalability-content" data-animate>
-        <h2>Si existe un proceso de ingeniería, puede optimizarse</h2>
-        <p>Misma lógica. Diferentes industrias.</p>
-        <div class="industry-tags">
-          <span class="industry-tag">Aeroespacial</span>
-          <span class="industry-tag">Manufactura</span>
-          <span class="industry-tag">Construcción</span>
-          <span class="industry-tag">Operaciones Industriales</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── TECHNOLOGY ─── -->
-  <section id="technology">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Stack Tecnológico</span>
-        <h2>Arquitectura dirigida por ingeniería</h2>
-        <p>Diseñada para garantizar confiabilidad y escalabilidad.</p>
-      </div>
-      <div class="tech-cards">
-        <div class="tech-card" data-animate>
-          <!-- Chip icon -->
-          <svg class="tech-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="14" height="14" rx="1"/>
-            <line x1="12" y1="9" x2="12" y2="5"/><line x1="16" y1="9" x2="16" y2="5"/><line x1="20" y1="9" x2="20" y2="5"/>
-            <line x1="12" y1="23" x2="12" y2="27"/><line x1="16" y1="23" x2="16" y2="27"/><line x1="20" y1="23" x2="20" y2="27"/>
-            <line x1="9" y1="12" x2="5" y2="12"/><line x1="9" y1="16" x2="5" y2="16"/><line x1="9" y1="20" x2="5" y2="20"/>
-            <line x1="23" y1="12" x2="27" y2="12"/><line x1="23" y1="16" x2="27" y2="16"/><line x1="23" y1="20" x2="27" y2="20"/>
-          </svg>
-          <h3>Plataforma AR</h3>
-          <ul>
-            <li>HoloLens 2 / Magic Leap</li>
-            <li>AR Móvil iOS/Android</li>
-            <li>Computación espacial</li>
-            <li>Manos libres</li>
-          </ul>
-        </div>
-        <div class="tech-card" data-animate style="transition-delay:.1s">
-          <!-- Gear icon -->
-          <svg class="tech-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="16" r="4"/>
-            <path d="M16 4 L16 8 M16 24 L16 28 M4 16 L8 16 M24 16 L28 16 M6.3 6.3 L9.2 9.2 M22.8 22.8 L25.7 25.7 M25.7 6.3 L22.8 9.2 M9.2 22.8 L6.3 25.7"/>
-          </svg>
-          <h3>Motor de Procesos</h3>
-          <ul>
-            <li>Arquitectura modular</li>
-            <li>Validación basada en reglas</li>
-            <li>Ejecución multi-modo</li>
-            <li>Puertas de calidad</li>
-          </ul>
-        </div>
-        <div class="tech-card" data-animate style="transition-delay:.2s">
-          <!-- Database icon -->
-          <svg class="tech-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="16" cy="8" rx="10" ry="4"/>
-            <path d="M6 8 V16 C6 18.2 10.5 20 16 20 C21.5 20 26 18.2 26 16 V8"/>
-            <path d="M6 16 V24 C6 26.2 10.5 28 16 28 C21.5 28 26 26.2 26 24 V16"/>
-          </svg>
-          <h3>Datos y Trazabilidad</h3>
-          <ul>
-            <li>Registros de auditoría inmutables</li>
-            <li>Series temporales</li>
-            <li>Integración de calidad</li>
-            <li>Dashboards de análisis</li>
-          </ul>
-        </div>
-        <div class="tech-card" data-animate style="transition-delay:.3s">
-          <!-- Lock icon -->
-          <svg class="tech-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="6" y="14" width="20" height="14" rx="2"/>
-            <path d="M10 14 V10 A6 6 0 0 1 22 10 V14"/>
-            <circle cx="16" cy="21" r="2" fill="currentColor" stroke="none"/>
-          </svg>
-          <h3>Seguridad</h3>
-          <ul>
-            <li>Control de acceso por roles</li>
-            <li>Datos encriptados</li>
-            <li>ISO 27001 ready</li>
-            <li>On-premise deployment</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── SERVICE PILLARS ─── -->
-  <section id="servicios">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Nuestros Servicios</span>
-        <h2>Ingeniería industrial en cuatro áreas</h2>
-        <p>Soluciones técnicas reales para manufactura, mantenimiento y dinámica de fluidos. Rigor aeronáutico en cada proyecto.</p>
-      </div>
-      <div class="pillars-grid">
-        <div class="pillar-card ready" data-animate>
-          <span class="pillar-badge disponible">Disponible</span>
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <h3>Ingeniería Mecánica Industrial</h3>
-          <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Componentes que fallan en operación, re-trabajo costoso y lotes que no salen a la primera.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>FEM en ANSYS, optimización topológica y planos con tolerancias ISO de grado aeronáutico.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Vida útil prolongada, menos iteraciones y piezas que se ensamblan sin ajustes.</p></div>
-          </div>
-          <a href="#ingenieria" class="pillar-link">Ver capacidades</a>
-        </div>
-        <div class="pillar-card ready" data-animate style="transition-delay:.1s">
-          <span class="pillar-badge disponible">Disponible</span>
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
-            </svg>
-          </div>
-          <h3>Aerodinámica & Dinámica de Fluidos</h3>
-          <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Ductos con pérdidas de presión, perfiles con resistencia no cuantificada y flujos internos sin visibilidad.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Simulación CFD en ANSYS Fluent con análisis paramétrico y validación experimental.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Geometría optimizada antes de fabricar — ahorro en energía, materiales y horas-hombre.</p></div>
-          </div>
-          <a href="#aerodinamica" class="pillar-link">Ver capacidades</a>
-        </div>
-        <div class="pillar-card ready" data-animate style="transition-delay:.2s">
-          <span class="pillar-badge disponible">Disponible</span>
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3>Mantenimiento Preventivo & Diagnóstico</h3>
-          <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Paradas imprevistas, diagnóstico reactivo y costos que se disparan cuando el equipo ya falló.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Inspección técnica, análisis vibratorio y plan preventivo por criticidad de cada equipo.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Fallas detectadas antes de ocurrir, disponibilidad sostenida y costos de mantenimiento bajo control.</p></div>
-          </div>
-          <a href="#contact" class="pillar-link">Solicitar diagnóstico gratuito</a>
-        </div>
-        <div class="pillar-card coming-soon" data-animate style="transition-delay:.3s">
-          <span class="pillar-badge pronto">En Desarrollo</span>
-          <div class="pillar-icon" style="opacity:0.5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <h3>Realidad Aumentada Industrial</h3>
-          <div class="pmr">
-            <div class="pmr-row"><span class="pmr-tag problema">Problema</span><p>Operarios novatos, procedimientos largos y documentación que nadie lee en el taller.</p></div>
-            <div class="pmr-row"><span class="pmr-tag metodo">Método</span><p>Overlays AR paso a paso sobre el equipo real — compatible con HoloLens 2, Magic Leap y dispositivos iOS/Android.</p></div>
-            <div class="pmr-row resultado"><span class="pmr-tag resultado">Resultado</span><p>Ensamblajes correctos al primer intento y curva de aprendizaje drásticamente reducida.</p></div>
-          </div>
-          <a href="#news" class="pillar-link" style="color:rgba(255,255,255,0.3)">Ver avances</a>
-        </div>
-      </div>
-      <div class="division-callout" data-animate>
-        <div class="division-callout-text">
-          <span class="division-callout-label">División</span>
-          <h4>Alpha Tech Simulations</h4>
-          <p>Simulación de vuelo profesional con hardware real, ATC activo e instructores comerciales en ejercicio. El simulador más completo del Perú.</p>
-        </div>
-        <a href="aeronautica.html" class="btn btn-outline" style="white-space:nowrap;flex-shrink:0">Ver Simulaciones</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── INGENIERÍA MECÁNICA ─── -->
-  <section id="ingenieria">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Ingeniería Mecánica</span>
-        <h2>Precisión estructural en cada componente</h2>
-        <p>Aplicamos metodología aeronáutica a proyectos industriales — donde el margen de error no existe.</p>
-      </div>
-      <div class="mec-grid">
-        <div class="mec-card" data-animate>
-          <div class="mec-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
-            </svg>
-          </div>
-          <h3>Análisis de Elementos Finitos (FEM)</h3>
-          <p>Simulación estructural de componentes bajo cargas estáticas y dinámicas. Identificamos puntos críticos antes de fabricar, reduciendo re-trabajo y costos.</p>
-        </div>
-        <div class="mec-card" data-animate style="transition-delay:.1s">
-          <div class="mec-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <h3>Diseño de Componentes de Precisión</h3>
-          <p>Modelado 3D paramétrico y planos de fabricación con tolerancias ISO. Desde prototipos funcionales hasta producción en serie para manufactura avanzada.</p>
-        </div>
-        <div class="mec-card" data-animate style="transition-delay:.2s">
-          <div class="mec-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3>Optimización de Procesos de Manufactura</h3>
-          <p>Revisión de líneas de producción, análisis de tolerancias de proceso y mejora continua. Reducimos tiempos de ciclo manteniendo los estándares de calidad más exigentes.</p>
-        </div>
-        <div class="mec-card" data-animate style="transition-delay:.3s">
-          <div class="mec-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
-            </svg>
-          </div>
-          <h3>Integración AR en Mantenimiento</h3>
-          <p>Combinamos ingeniería mecánica y AR: overlays digitales sobre equipos físicos para guiar inspecciones, mantenimiento preventivo y diagnóstico en campo.</p>
-        </div>
-      </div>
-      <div class="mec-case" data-animate>
-        <div>
-          <span class="mec-case-label">Caso de Uso</span>
-          <h3>Ensamblaje guiado por AR en línea de producción</h3>
-          <p>Un operador sin experiencia previa completa correctamente un ensamblaje de 40 pasos en su primer intento, guiado por overlays AR superpuestos sobre el componente real. Reducción de errores: 94%.</p>
-        </div>
-        <div class="mec-case-img">
-          <svg viewBox="0 0 480 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <rect width="480" height="360" fill="#00205B"/>
-            <rect x="100" y="80" width="280" height="200" rx="4" fill="none" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
-            <rect x="116" y="96" width="248" height="168" rx="2" fill="rgba(0,142,170,0.06)"/>
-            <line x1="100" y1="80" x2="116" y2="96" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <line x1="380" y1="80" x2="364" y2="96" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <line x1="100" y1="280" x2="116" y2="264" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <line x1="380" y1="280" x2="364" y2="264" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <rect x="170" y="130" width="140" height="100" rx="2" fill="none" stroke="#008EAA" stroke-width="1.5"/>
-            <line x1="200" y1="155" x2="280" y2="155" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <line x1="200" y1="170" x2="260" y2="170" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <line x1="200" y1="185" x2="270" y2="185" stroke="#008EAA" stroke-width="1" opacity="0.5"/>
-            <circle cx="192" cy="155" r="3" fill="#008EAA"/>
-            <circle cx="192" cy="170" r="3" fill="#008EAA"/>
-            <circle cx="192" cy="185" r="3" fill="rgba(255,255,255,0.2)"/>
-            <text x="240" y="248" font-family="monospace" font-size="9" fill="#008EAA" text-anchor="middle" opacity="0.7">PASO 12 / 40 · AR OVERLAY ACTIVO</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── AERODINÁMICA ─── -->
-  <section id="aerodinamica">
-    <div class="container">
-      <div class="aero-top" data-animate>
-        <div>
-          <span class="eyebrow">Dinámica de Fluidos Industrial</span>
-          <h2>CFD de precisión para ingeniería industrial</h2>
-          <p>Utilizamos ANSYS Fluent para simular flujos en ductos, intercambiadores, estructuras y sistemas industriales antes de la fabricación. Metodología de precisión aeroespacial aplicada a la industria.</p>
-        </div>
-        <div class="aero-ansys">
-          <svg viewBox="0 0 640 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <rect width="640" height="360" fill="#001540"/>
-            <defs>
-              <linearGradient id="cfd1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#00205B" stop-opacity="1"/>
-                <stop offset="40%" stop-color="#008EAA" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#00205B" stop-opacity="0.2"/>
-              </linearGradient>
-            </defs>
-            <path d="M 80,180 Q 200,80 320,180 Q 440,280 560,180" fill="none" stroke="url(#cfd1)" stroke-width="40" opacity="0.3"/>
-            <path d="M 80,180 Q 200,120 320,180 Q 440,240 560,180" fill="none" stroke="#008EAA" stroke-width="1.5" opacity="0.7"/>
-            <path d="M 80,160 Q 200,100 320,160 Q 440,220 560,160" fill="none" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
-            <path d="M 80,200 Q 200,140 320,200 Q 440,260 560,200" fill="none" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
-            <path d="M 80,140 Q 200,80 320,140 Q 440,200 560,140" fill="none" stroke="#008EAA" stroke-width="0.7" opacity="0.25"/>
-            <path d="M 80,220 Q 200,160 320,220 Q 440,280 560,220" fill="none" stroke="#008EAA" stroke-width="0.7" opacity="0.25"/>
-            <path d="M 160,60 L 480,60 L 560,180 L 480,300 L 160,300 L 80,180 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <text x="320" y="340" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="2">ANSYS FLUENT · SIMULACIÓN CFD · ALPHA TECH</text>
-          </svg>
-        </div>
-      </div>
-      <div class="aero-profiles">
-        <div class="aero-profile" data-animate>
-          <div class="aero-profile-img">
-            <svg viewBox="0 0 400 190" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="190" fill="#00205B"/>
-              <path d="M 40,95 Q 120,40 360,85 Q 380,90 360,105 Q 120,150 40,95 Z" fill="rgba(0,142,170,0.15)" stroke="#008EAA" stroke-width="1.5"/>
-              <path d="M 40,95 Q 120,40 360,85" fill="none" stroke="#008EAA" stroke-width="2"/>
-              <path d="M 40,95 Q 120,150 360,105" fill="none" stroke="#008EAA" stroke-width="1.5" opacity="0.6"/>
-              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">NACA 2412 · OPTIMIZACIÓN SUSTENTACIÓN/RESISTENCIA</text>
-            </svg>
-          </div>
-          <div class="aero-profile-body">
-            <span class="aero-profile-tag">Perfiles Aerodinámicos</span>
-            <h3>Optimización NACA & Custom</h3>
-            <p>Análisis paramétrico de perfiles sustentadores. Optimización de la relación CL/CD para cada aplicación específica.</p>
-            <ul class="aero-list">
-              <li>Simulación a múltiples ángulos de ataque</li>
-              <li>Análisis de capa límite y desprendimiento</li>
-              <li>Validación con datos experimentales</li>
-            </ul>
-          </div>
-        </div>
-        <div class="aero-profile" data-animate style="transition-delay:.15s">
-          <div class="aero-profile-img">
-            <svg viewBox="0 0 400 190" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="190" fill="#001540"/>
-              <rect x="60" y="40" width="280" height="110" rx="3" fill="rgba(0,32,91,0.8)" stroke="rgba(0,142,170,0.3)" stroke-width="1"/>
-              <path d="M 80,95 L 340,95" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-              <path d="M 200,50 L 200,140" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-              <path d="M 80,130 Q 140,60 200,90 Q 260,120 340,70" fill="none" stroke="#008EAA" stroke-width="2"/>
-              <circle cx="80" cy="130" r="3" fill="#008EAA"/>
-              <circle cx="200" cy="90" r="3" fill="#008EAA"/>
-              <circle cx="340" cy="70" r="3" fill="#008EAA"/>
-              <text x="200" y="170" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">ANÁLISIS CFD · DISTRIBUCIÓN DE PRESIONES</text>
-            </svg>
-          </div>
-          <div class="aero-profile-body">
-            <span class="aero-profile-tag">Dinámica de Fluidos</span>
-            <h3>CFD Industrial & Aeroespacial</h3>
-            <p>Simulación de flujo interno y externo para ductos, intercambiadores, vehículos y estructuras bajo condiciones reales de operación.</p>
-            <ul class="aero-list">
-              <li>Flujo compresible e incompresible</li>
-              <li>Análisis térmico acoplado</li>
-              <li>Optimización de geometrías</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="aero-cta-strip" data-animate>
-        <p>"La misma metodología aerodinámica que define los mejores aviones, aplicada a tus proyectos industriales."</p>
-        <a href="#contact" class="btn btn-outline">Consultar proyecto</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── NEWS ───
-       SECCIÓN OCULTA (display:none) HASTA RECIBIR ARTÍCULOS REALES.
-       Para activar: (1) borrar style="display:none" del <section>, (2) reemplazar cada <article class="news-card">
-       con el bloque real siguiendo la plantilla de abajo. Usar SVG propio o <img src="..."> en .news-image.
-
-       PLANTILLA DE TARJETA (copiar y rellenar dentro de .news-cards):
-       <article class="news-card" data-animate>
-         <div class="news-image">
-           <!-- <img src="ruta/imagen.jpg" alt="Descripción"> o SVG inline -->
-         </div>
-         <div class="news-body">
-           <div class="news-meta">
-             <span class="news-tag">[ETIQUETA]</span>
-             <span class="news-date">[MES AÑO]</span>
-           </div>
-           <h3>[TITULAR DEL ARTÍCULO]</h3>
-           <p>[BAJADA 1-2 FRASES]</p>
-           <a href="[URL]" class="news-link">Leer más &#8594;</a>
-         </div>
-       </article>
-  -->
-  <section id="news" style="display:none">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Noticias</span>
-        <h2 style="color:var(--text-dark)">Alpha Tech en el mundo</h2>
-      </div>
-      <div class="news-cards">
-        <article class="news-card" data-animate>
-          <div class="news-image">
-            <svg viewBox="0 0 300 180" width="260" height="160">
-              <rect width="300" height="180" fill="#001540"/>
-              <!-- HoloLens outline -->
-              <rect x="55" y="68" width="190" height="50" rx="12" fill="none" stroke="#008EAA" stroke-width="2.5"/>
-              <rect x="72" y="78" width="64" height="30" rx="4" fill="rgba(0,142,170,0.12)" stroke="#008EAA" stroke-width="1.5"/>
-              <rect x="164" y="78" width="64" height="30" rx="4" fill="rgba(0,142,170,0.12)" stroke="#008EAA" stroke-width="1.5"/>
-              <!-- AR overlay lines -->
-              <line x1="84" y1="88" x2="110" y2="88" stroke="#008EAA" stroke-width="1" opacity="0.7"/>
-              <line x1="84" y1="95" x2="100" y2="95" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
-              <line x1="176" y1="88" x2="202" y2="88" stroke="#008EAA" stroke-width="1" opacity="0.7"/>
-              <line x1="176" y1="95" x2="196" y2="95" stroke="#008EAA" stroke-width="1" opacity="0.4"/>
-              <!-- status dot -->
-              <circle cx="150" cy="30" r="5" fill="#008EAA" opacity="0.9"/>
-              <text x="150" y="155" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">AR · EN DESARROLLO · 2026</text>
-            </svg>
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span class="news-tag" style="background:rgba(0,142,170,0.15);color:#008EAA;border-radius:2px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">En Desarrollo</span>
-              <span class="news-date">Abril 2026</span>
-            </div>
-            <h3>AR Industrial Alpha Tech: integración con HoloLens 2 en fase de pruebas</h3>
-            <p>Nuestro equipo avanza en la integración de guías AR sobre procesos reales de manufactura. Primeras pruebas en entorno controlado completadas con éxito.</p>
-            <a href="#contact" class="news-link">Contactar para acceso anticipado &#8594;</a>
-          </div>
-        </article>
-        <article class="news-card" data-animate style="transition-delay:.1s">
-          <div class="news-image">
-            <svg viewBox="0 0 300 180" width="260" height="160">
-              <path d="M 205,54 A 108,108 0 1 1 27,54" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <polygon points="120,4 97,62 143,62" fill="#008EAA"/>
-              <circle cx="120" cy="120" r="73" fill="none" stroke="#008EAA" stroke-width="6" opacity=".4"/>
-              <path d="M 120,120 L 66,66 A 73,73 0 0 1 174,66 Z" fill="#008EAA" opacity=".14"/>
-              <line x1="120" y1="120" x2="66" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="174" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <path d="M 66,66 A 73,73 0 0 1 174,66" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="120" y2="47" stroke="#008EAA" stroke-width="9" stroke-linecap="round"/>
-              <circle cx="120" cy="47" r="15" fill="#008EAA"/>
-            </svg>
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span class="news-tag">Artículo</span>
-              <span class="news-date">Febrero 2026</span>
-            </div>
-            <h3>ISO 27001 y AR: cómo garantizar la seguridad de datos en entornos industriales</h3>
-            <p>La seguridad de la información es crítica en operaciones industriales. Analizamos el framework que garantiza la integridad de cada proceso.</p>
-            <a href="#" class="news-link">Leer más &#8594;</a>
-          </div>
-        </article>
-        <article class="news-card" data-animate style="transition-delay:.2s">
-          <div class="news-image">
-            <svg viewBox="0 0 300 180" width="260" height="160">
-              <path d="M 205,54 A 108,108 0 1 1 27,54" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <polygon points="120,4 97,62 143,62" fill="#008EAA"/>
-              <circle cx="120" cy="120" r="73" fill="none" stroke="#008EAA" stroke-width="6" opacity=".4"/>
-              <path d="M 120,120 L 66,66 A 73,73 0 0 1 174,66 Z" fill="#008EAA" opacity=".14"/>
-              <line x1="120" y1="120" x2="66" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="174" y2="66" stroke="#008EAA" stroke-width="7" stroke-linecap="round"/>
-              <path d="M 66,66 A 73,73 0 0 1 174,66" fill="none" stroke="#008EAA" stroke-width="10" stroke-linecap="round"/>
-              <line x1="120" y1="120" x2="120" y2="47" stroke="#008EAA" stroke-width="9" stroke-linecap="round"/>
-              <circle cx="120" cy="47" r="15" fill="#008EAA"/>
-            </svg>
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span class="news-tag">Artículo</span>
-              <span class="news-date">Enero 2026</span>
-            </div>
-            <h3>El futuro del entrenamiento industrial: de los manuales en papel a la guía AR</h3>
-            <p>Las organizaciones que adoptan AR reducen su tiempo de formación hasta un 75%. La transición del conocimiento tácito al digital ya no es opcional.</p>
-            <a href="#" class="news-link">Leer más &#8594;</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CONTACT ─── -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <span class="eyebrow">Contacto</span>
-        <h2>Hablemos</h2>
-        <p style="color:rgba(255,255,255,.55)">Da el siguiente paso en la transformación de tus procesos de ingeniería.</p>
-      </div>
-      <div class="contact-grid">
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-animate>
-          <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
-          <input type="hidden" name="redirect" value="https://alphatechnologique.com/gracias.html">
-          <input type="hidden" name="subject" value="Nuevo contacto - Alpha Tech Solutions">
-          <div class="form-group">
-            <label for="name">Nombre *</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
-          </div>
-          <div class="form-group">
-            <label for="company">Empresa *</label>
-            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" required>
-          </div>
-          <div class="form-group">
-            <label for="role">Cargo *</label>
-            <input type="text" id="role" name="role" placeholder="Tu cargo o posición" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto o proceso..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Enviar Mensaje</button>
-        </form>
-
-        <div class="contact-info" data-animate style="transition-delay:.1s">
-          <div class="contact-info-line"></div>
-          <h3>Información de Contacto</h3>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Teléfono · WhatsApp</span>
-            <span class="contact-detail-value">
-              <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a>
-            </span>
-          </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Email</span>
-            <span class="contact-detail-value">
-              <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a>
-            </span>
-          </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Ubicación</span>
-            <span class="contact-detail-value">Lima, Perú</span>
-          </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Web</span>
-            <span class="contact-detail-value">
-              <a href="https://alphatechnologique.com" target="_blank" rel="noopener">alphatechnologique.com</a>
-            </span>
-          </div>
-          <div class="contact-icon-deco">
-            <svg viewBox="0 0 120 120" width="120" height="120">
-              <path d="M 82,22 A 43,43 0 1 1 11,22" fill="none" stroke="#008EAA" stroke-width="4" stroke-linecap="round"/>
-              <polygon points="48,2 39,25 57,25" fill="#008EAA"/>
-              <circle cx="48" cy="48" r="29" fill="none" stroke="#008EAA" stroke-width="2.5" opacity=".4"/>
-              <path d="M 48,48 L 26,26 A 29,29 0 0 1 70,26 Z" fill="#008EAA" opacity=".14"/>
-              <line x1="48" y1="48" x2="26" y2="26" stroke="#008EAA" stroke-width="3" stroke-linecap="round"/>
-              <line x1="48" y1="48" x2="70" y2="26" stroke="#008EAA" stroke-width="3" stroke-linecap="round"/>
-              <path d="M 26,26 A 29,29 0 0 1 70,26" fill="none" stroke="#008EAA" stroke-width="4" stroke-linecap="round"/>
-              <line x1="48" y1="48" x2="48" y2="19" stroke="#008EAA" stroke-width="3.5" stroke-linecap="round"/>
-              <circle cx="48" cy="19" r="6" fill="#008EAA"/>
-            </svg>
-          </div>
+      <div class="cta-band-inner" data-animate>
+        <span class="eyebrow">¿Tienes un proyecto?</span>
+        <h2>Cuéntanos qué necesitas.<br>Te respondemos en 24&nbsp;h.</h2>
+        <p>Engineering, Performance o Intelligence — sin importar la unidad, todo empieza con una conversación.</p>
+        <div class="cta-band-btns">
+          <a href="contacto.html" class="btn btn-primary">Iniciar proyecto →</a>
+          <a href="engineering.html" class="btn btn-secondary">Ver Engineering</a>
         </div>
       </div>
     </div>
@@ -2206,54 +1305,82 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <svg viewBox="0 0 60 60" height="48" role="img" aria-label="Alpha Tech Solutions icon">
-            <path d="M 55,14 A 28,28 0 1 1 7,14" fill="none" stroke="#008EAA" stroke-width="3" stroke-linecap="round"/>
-            <polygon points="31,1 25,16 37,16" fill="#008EAA"/>
-            <circle cx="31" cy="31" r="19" fill="none" stroke="#008EAA" stroke-width="1.5" opacity=".4"/>
-            <path d="M 31,31 L 17,17 A 19,19 0 0 1 45,17 Z" fill="#008EAA" opacity=".14"/>
-            <line x1="31" y1="31" x2="17" y2="17" stroke="#008EAA" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="31" y1="31" x2="45" y2="17" stroke="#008EAA" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M 17,17 A 19,19 0 0 1 45,17" fill="none" stroke="#008EAA" stroke-width="3" stroke-linecap="round"/>
-            <line x1="31" y1="31" x2="31" y2="12" stroke="#008EAA" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="31" cy="12" r="4" fill="#008EAA"/>
-          </svg>
-          <p>Realidad Aumentada para operaciones industriales más seguras, rápidas y confiables. Lima, Perú.<br><br>© 2026 Alpha Tech Solutions.</p>
+
+        <!-- Marca -->
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Ingeniería mecánica, aerodinámica,<br>IA industrial y realidad aumentada.<br>Lima, Perú.</p>
         </div>
+
+        <!-- Unidades -->
         <div class="footer-col">
-          <h4>Navegación</h4>
+          <h4>Unidades</h4>
           <ul class="footer-links">
-            <li><a href="#hero">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#technology">Tecnología</a></li>
-            <li><a href="aeronautica.html">Aeronáutica</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
           </ul>
         </div>
+
+        <!-- Empresa -->
         <div class="footer-col">
-          <h4>Divisiones</h4>
+          <h4>Empresa</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Alpha Tech Solutions</a></li>
-            <li><a href="aeronautica.html">Alpha Tech Simulations</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="../Alpha tech S Web/aeronautica.html">Alpha Tech Simulations</a></li>
+            <li><a href="gracias.html">Gracias</a></li>
           </ul>
         </div>
+
+        <!-- Contacto -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Perú
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C.</span>
-        <span class="footer-tagline">Dirigido por ingeniería. Enfocado en ejecución.</span>
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Todos los derechos reservados.</span>
         <div class="footer-bottom-lang">
-          <a href="en.html">EN</a>
-          <span style="color:rgba(255,255,255,.2)">|</span>
           <a href="index.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="en.html">EN</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp floating button -->
-  <a href="https://wa.me/51922877190" class="wa-btn" id="wa-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="white">
-      <path d="M14 2C7.373 2 2 7.373 2 14c0 2.11.554 4.09 1.52 5.8L2 26l6.39-1.49A11.94 11.94 0 0 0 14 26c6.627 0 12-5.373 12-12S20.627 2 14 2zm6.07 16.45c-.25.7-1.47 1.34-2.02 1.42-.5.07-1.13.1-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.38-.15-.2-1.18-1.57-1.18-3s.73-2.12.99-2.41c.25-.29.55-.36.73-.36l.53.01c.17.01.4-.06.63.48.24.55.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.28.49l-.42.49c-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.07.95 1.97 1.24 2.27 1.38.29.14.46.12.63-.07.17-.2.74-.87.93-1.17.2-.3.39-.25.66-.15.27.1 1.7.8 2 .95.29.14.49.21.56.33.07.12.07.69-.18 1.39z"/>
+  <!-- ─── WHATSAPP ─── -->
+  <a href="https://wa.me/51922877190?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa."
+     class="wa-btn"
+     id="wa-btn"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
 
@@ -2262,58 +1389,71 @@
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    }, { passive: true });
 
-    // ─── HAMBURGER MENU ───
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+    // ─── HAMBURGER ───
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobile-menu');
     const mobileClose = document.getElementById('mobile-close');
-    const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
 
-    function openMenu() {
+    hamburger.addEventListener('click', () => {
       mobileMenu.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-    }
+    });
 
-    function closeMenu() {
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+
+    function closeMobile() {
       mobileMenu.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', openMenu);
-    mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    // ─── HERO TAGLINE ANIMATION ───
+    document.addEventListener('DOMContentLoaded', () => {
+      const lines = document.querySelectorAll('.tagline-line');
+      const sub   = document.querySelector('.hero-sub');
+      const cta   = document.querySelector('.hero-cta');
+      const gap   = 240;
 
-    // ─── SMOOTH SCROLL ───
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      lines.forEach((line, i) => {
+        setTimeout(() => line.classList.add('revealed'), 180 + i * gap);
       });
+      setTimeout(() => sub && sub.classList.add('revealed'),  180 + lines.length * gap + 80);
+      setTimeout(() => cta && cta.classList.add('revealed'),  180 + lines.length * gap + 360);
     });
 
-    // ─── INTERSECTION OBSERVER / SCROLL ANIMATIONS ───
-    const animateEls = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          observer.unobserve(entry.target);
+    // ─── INTERSECTION OBSERVER ───
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('animated');
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
-    animateEls.forEach(el => observer.observe(el));
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-    // ─── WHATSAPP BUTTON ───
+    // ─── WHATSAPP FADE-IN (3s) ───
     setTimeout(() => {
-      document.getElementById('wa-btn').classList.add('visible');
+      const wa = document.getElementById('wa-btn');
+      if (wa) wa.classList.add('visible');
     }, 3000);
+
+    // ─── SMOOTH SCROLL con offset nav ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
   </script>
+
 </body>
 </html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance | Alpha Tech Solutions — Carbon fiber and aerodynamics Lima, Peru</title>
+  <meta name="description" content="Carbon fiber parts, aerodynamic kits and high-performance tuning consulting in Lima, Peru. CFD design, custom fabrication and track validation.">
+
+  <link rel="canonical" href="performance-en.html">
+  <link rel="alternate" hreflang="en" href="performance.html">
+  <link rel="alternate" hreflang="en" href="performance-en.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Performance | Alpha Tech Solutions">
+  <meta property="og:description" content="Carbon fiber, aerodynamics and high-performance tuning in Lima, Peru.">
+  <meta property="og:image" content="performance-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Performance — Alpha Tech Solutions",
+    "provider": { "@type": "Organization", "name": "Alpha Tech Solutions" },
+    "description": "Carbon fiber parts, aerodynamic kits, CFD design and high-performance tuning consulting in Lima, Peru.",
+    "areaServed": { "@type": "Place", "name": "Lima, Peru" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --max-w:     1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--orange); display: block; margin-bottom: 16px;
+    }
+
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(32px,4.5vw,54px); font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; }
+    h2 { font-size: clamp(26px,3.2vw,38px); font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+    h3 { font-size: 19px; font-weight: 700; line-height: 1.3; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 50px; padding: 0 32px;
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; cursor: pointer; transition: all 0.25s ease; border: 2px solid transparent;
+    }
+    .btn-primary  { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .btn-primary:hover  { background: #e04400; border-color: #e04400; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,80,0,.35); }
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.35); }
+    .btn-secondary:hover { border-color: var(--white); }
+    .btn-teal { background: var(--teal); color: var(--white); border-color: var(--teal); }
+    .btn-teal:hover { background: #006d87; border-color: #006d87; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,142,170,.35); }
+
+    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { [data-animate] { opacity:1; transform:none; transition:none; } }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      height:72px; display:flex; align-items:center;
+      background:transparent; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07); transition:background .3s ease, border-color .3s ease;
+    }
+    nav.scrolled { background:rgba(0,10,32,.94); border-bottom-color:rgba(255,255,255,.1); }
+    .nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 48px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.65); transition:color .2s ease; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-links a.active { color:var(--orange); }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-lang { display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:1px; }
+    .nav-lang a { color:rgba(255,255,255,.4); text-decoration:none; transition:color .2s; }
+    .nav-lang a:hover { color:var(--white); }
+    .nav-lang a.active { color:var(--orange); }
+    .nav-lang span { color:rgba(255,255,255,.2); }
+    .nav-cta-btn { display:inline-flex; align-items:center; height:38px; padding:0 20px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; background:var(--orange); color:var(--white); border-radius:6px; transition:background .2s, transform .2s; white-space:nowrap; }
+    .nav-cta-btn:hover { background:#e04400; transform:translateY(-1px); }
+    .nav-simulations-btn { display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 13px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(0,142,170,.3); color:var(--teal); border-radius:5px; transition:background .2s, border-color .2s; white-space:nowrap; }
+    .nav-simulations-btn:hover { background:rgba(0,142,170,.12); border-color:var(--teal); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--white); border-radius:1px; transition:all .3s; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--navy-deep); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.7); transition:color .2s; }
+    .mobile-menu a:hover { color:var(--white); }
+    .mobile-menu-close { position:absolute; top:24px; right:24px; background:none; border:none; cursor:pointer; color:var(--white); font-size:28px; line-height:1; }
+    .mobile-lang { display:flex; gap:12px; margin-top:4px; }
+    .mobile-cta { background:var(--orange) !important; color:var(--white) !important; padding:12px 32px; border-radius:8px; font-size:14px !important; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 88vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background-image: url('performance-hero.png');
+      background-size:cover; background-position:center;
+      background-color: var(--navy-dark);
+    }
+    .hero-bg::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(0,10,32,.93) 0%, rgba(0,21,64,.80) 55%, rgba(6,9,15,.92) 100%);
+    }
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(254,80,0,.05) 1px,transparent 1px), linear-gradient(90deg,rgba(254,80,0,.05) 1px,transparent 1px);
+      background-size:72px 72px; pointer-events:none;
+    }
+    .hero-deco {
+      position:absolute; right:-10px; top:0; bottom:0;
+      width:48%; pointer-events:none; z-index:1;
+    }
+    .hero-content { position:relative; z-index:2; max-width:680px; padding-top:80px; padding-bottom:80px; }
+    .hero-content h1 { margin-bottom:20px; }
+    .hero-content p { font-size:17px; color:rgba(255,255,255,.62); max-width:520px; line-height:1.7; margin-bottom:36px; }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+
+    /* ─── SECTION SHARED ─── */
+    .section-header { margin-bottom:56px; }
+    .section-header p { color:rgba(255,255,255,.52); max-width:520px; margin-top:14px; font-size:16px; line-height:1.7; }
+
+    /* ─── MANIFIESTO ─── */
+    #manifiesto { background:var(--navy); padding:104px 0; }
+    .manifiesto-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .manifiesto-text h2 { margin-bottom:24px; }
+    .manifiesto-text p { color:rgba(255,255,255,.58); font-size:16px; line-height:1.85; margin-bottom:18px; }
+    .manifiesto-stats { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+    .mstat {
+      background:rgba(254,80,0,.06);
+      border:1px solid rgba(254,80,0,.18);
+      border-radius:12px;
+      padding:28px 24px;
+    }
+    .mstat-value {
+      font-family:'Orbitron', sans-serif;
+      font-size:36px; font-weight:800;
+      color:var(--orange); display:block; line-height:1; margin-bottom:8px;
+    }
+    .mstat-label { font-size:12px; color:rgba(255,255,255,.45); letter-spacing:1px; text-transform:uppercase; line-height:1.4; }
+
+    /* ─── SERVICIOS ─── */
+    #servicios { background:var(--navy-dark); padding:104px 0; }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:24px;
+    }
+
+    .service-card {
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-top:2px solid var(--orange);
+      border-radius:12px;
+      padding:36px 28px;
+      transition:transform .25s ease, background .25s ease;
+    }
+    .service-card:hover { transform:translateY(-4px); background:rgba(255,255,255,.055); }
+
+    .service-icon {
+      width:44px; height:44px;
+      background:rgba(254,80,0,.1);
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px;
+    }
+
+    .service-card h3 { color:var(--white); margin-bottom:18px; }
+
+    .pmr { display:flex; flex-direction:column; gap:12px; }
+    .pmr-row { display:grid; grid-template-columns:64px 1fr; gap:12px; align-items:start; }
+    .pmr-tag {
+      font-size:8px; font-weight:700; letter-spacing:1.8px;
+      text-transform:uppercase; padding-top:3px; display:block;
+    }
+    .pmr-tag.p { color:rgba(255,255,255,.28); }
+    .pmr-tag.m { color:var(--orange); }
+    .pmr-tag.r { color:#FFAD8A; }
+    .pmr-row p { font-size:13px; line-height:1.6; color:rgba(255,255,255,.6); margin:0; }
+    .pmr-row.res p { color:rgba(255,255,255,.82); font-weight:500; }
+
+    /* ─── PROCESO ─── */
+    #proceso { background:var(--navy-deep); padding:104px 0; }
+    .steps { display:flex; flex-direction:column; gap:0; margin-top:56px; }
+    .step {
+      display:grid; grid-template-columns:80px 1fr;
+      gap:0; padding:32px 0; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .step:last-child { border-bottom:none; }
+    .step-num {
+      font-family:'Orbitron', sans-serif;
+      font-size:28px; font-weight:800;
+      color:rgba(254,80,0,.25); line-height:1; padding-top:4px;
+    }
+    .step-body h3 { color:var(--white); margin-bottom:8px; }
+    .step-body p { font-size:14px; color:rgba(255,255,255,.55); line-height:1.7; max-width:640px; }
+    .step-tag {
+      display:inline-block; font-size:9px; font-weight:700; letter-spacing:2px;
+      text-transform:uppercase; color:var(--orange);
+      border:1px solid rgba(254,80,0,.3); border-radius:4px;
+      padding:3px 8px; margin-bottom:10px;
+    }
+
+    /* ─── CASOS ─── */
+    #casos { background:var(--navy); padding:104px 0; }
+    .casos-grid { display:flex; flex-direction:column; gap:48px; }
+
+    .caso {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:48px; align-items:center;
+      background:rgba(254,80,0,.04);
+      border:1px solid rgba(254,80,0,.18);
+      border-radius:16px;
+      padding:48px;
+    }
+    .caso.reverse { direction:rtl; }
+    .caso.reverse > * { direction:ltr; }
+
+    .caso-label { font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--orange); display:block; margin-bottom:12px; }
+    .caso h3 { font-size:24px; font-weight:700; color:var(--white); margin-bottom:14px; line-height:1.3; }
+    .caso > div > p { font-size:14px; color:rgba(255,255,255,.6); line-height:1.7; margin-bottom:24px; }
+
+    .caso-metrics { display:flex; gap:32px; flex-wrap:wrap; margin-bottom:24px; }
+    .caso-metric-value {
+      font-family:'Orbitron', sans-serif; font-size:28px; font-weight:800;
+      color:var(--orange); display:block; line-height:1;
+    }
+    .caso-metric-label { font-size:11px; color:rgba(255,255,255,.45); letter-spacing:1px; text-transform:uppercase; margin-top:4px; display:block; }
+
+    .caso-media {
+      aspect-ratio:4/3;
+      background:rgba(0,21,64,.7);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .caso-media video,
+    .caso-media img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* caso-media placeholder when no image yet */
+    .caso-media-placeholder {
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    /* ─── CONTACT FORM ─── */
+    #contacto { background:var(--navy-dark); padding:104px 0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; margin-top:56px; align-items:start; }
+
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-group label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      color:var(--white); padding:12px 16px; border-radius:8px;
+      font-family:'Inter', sans-serif; font-size:15px;
+      outline:none; width:100%; transition:border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color:var(--orange); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color:rgba(255,255,255,.22); }
+    .form-group select option { background:var(--navy-dark); }
+    .form-group textarea { resize:vertical; min-height:120px; }
+    .form-submit { width:100%; margin-top:8px; }
+
+    .contact-info h3 { font-size:22px; color:var(--white); margin-bottom:24px; }
+    .contact-info p { font-size:15px; color:rgba(255,255,255,.55); line-height:1.7; margin-bottom:32px; }
+    .contact-channel { display:flex; gap:16px; align-items:flex-start; margin-bottom:20px; }
+    .contact-channel-icon {
+      width:40px; height:40px; flex-shrink:0;
+      background:rgba(254,80,0,.1); border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--orange);
+    }
+    .contact-channel-body dt { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:4px; }
+    .contact-channel-body dd a { color:rgba(255,255,255,.7); text-decoration:none; font-size:14px; transition:color .2s; }
+    .contact-channel-body dd a:hover { color:var(--orange); }
+
+    /* ─── FOOTER ─── */
+    footer { background:var(--navy-dark); border-top:1px solid rgba(255,255,255,.06); padding:72px 0 0; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.06); }
+    .footer-brand p { font-size:13px; color:rgba(255,255,255,.35); line-height:1.85; margin-top:18px; max-width:240px; }
+    .footer-col h4 { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:20px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-links a { font-size:13px; color:rgba(255,255,255,.48); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--white); }
+    .footer-col p { font-size:13px; color:rgba(255,255,255,.42); line-height:1.85; }
+    .footer-col a { color:rgba(255,255,255,.42); text-decoration:none; transition:color .2s; }
+    .footer-col a:hover { color:var(--orange); }
+    .footer-social { display:flex; gap:10px; margin-top:18px; }
+    .footer-social-link { width:36px; height:36px; border:1px solid rgba(255,255,255,.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); text-decoration:none; transition:border-color .2s, color .2s; }
+    .footer-social-link:hover { border-color:var(--orange); color:var(--orange); }
+    .footer-bottom { padding:20px 0; display:flex; align-items:center; justify-content:space-between; }
+    .footer-copyright { font-size:12px; color:rgba(255,255,255,.22); }
+    .footer-bottom-lang { display:flex; gap:12px; font-size:11px; font-weight:700; }
+    .footer-bottom-lang a { color:rgba(255,255,255,.32); text-decoration:none; transition:color .2s; }
+    .footer-bottom-lang a:hover { color:var(--white); }
+    .footer-bottom-lang a.active { color:var(--orange); }
+
+    /* ─── WHATSAPP ─── */
+    .wa-btn { position:fixed; bottom:24px; right:24px; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,.4); z-index:900; text-decoration:none; opacity:0; transform:scale(0.8); transition:opacity .4s ease, transform .4s ease; }
+    .wa-btn.visible { opacity:1; transform:scale(1); animation:wa-pulse 2.5s ease infinite; }
+    .wa-btn:hover { transform:scale(1.08) !important; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4);} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1);} }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width:1024px) {
+      .container,.nav-inner { padding:0 32px; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-grid { grid-template-columns:1fr 1fr; gap:36px; }
+      .hero-deco { display:none; }
+      .manifiesto-inner { grid-template-columns:1fr; gap:48px; }
+    }
+    @media (max-width:900px) {
+      .nav-links,.nav-lang,.nav-cta-btn,.nav-simulations-btn { display:none; }
+      .hamburger { display:flex; }
+      .caso,.caso.reverse { grid-template-columns:1fr; direction:ltr; }
+      .contact-grid { grid-template-columns:1fr; gap:48px; }
+    }
+    @media (max-width:640px) {
+      .container,.nav-inner { padding:0 24px; }
+      .services-grid { grid-template-columns:1fr; }
+      .hero-btns { flex-direction:column; }
+      .btn { width:100%; justify-content:center; }
+      .footer-grid { grid-template-columns:1fr; gap:32px; }
+      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+      #manifiesto,#servicios,#proceso,#casos,#contacto { padding:72px 0; }
+      .pmr-row { grid-template-columns:1fr; gap:4px; }
+      .step { grid-template-columns:1fr; gap:8px; }
+      .manifiesto-stats { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="en.html" class="nav-logo" aria-label="Alpha Tech Solutions">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="en.html">Home</a></li>
+          <li><a href="performance-en.html" class="active">Performance</a></li>
+          <li><a href="engineering-en.html">Engineering</a></li>
+          <li><a href="intelligence-en.html">Intelligence</a></li>
+          <li><a href="nosotros-en.html">About</a></li>
+          <li><a href="contacto-en.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="performance-en.html" class="active">EN</a>
+          <span>|</span>
+          <a href="performance.html">ES</a>
+        </div>
+        <a href="../Alpha tech S Web/aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
+        <a href="#contacto" class="nav-cta-btn">Quote a Part →</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">&#x2715;</button>
+    <a href="en.html">Home</a>
+    <a href="performance-en.html">Performance</a>
+    <a href="engineering-en.html">Engineering</a>
+    <a href="intelligence-en.html">Intelligence</a>
+    <a href="nosotros-en.html">About</a>
+    <a href="contacto-en.html">Contact</a>
+    <a href="#contacto" class="mobile-cta">Quote a Part →</a>
+    <a href="../Alpha tech S Web/aeronautica.html" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;font-weight:700;letter-spacing:1.5px;border:1px solid rgba(0,142,170,.3);padding:10px 28px;border-radius:8px;text-transform:uppercase;text-decoration:none;">Simulations ↗</a>
+    <div class="mobile-lang">
+      <a href="performance-en.html" style="color:var(--orange);font-size:13px;font-weight:700;text-decoration:none">EN</a>
+      <span style="color:rgba(255,255,255,.18);font-size:13px">|</span>
+      <a href="performance.html" style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;text-decoration:none">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <!-- Speed lines decorative SVG -->
+    <svg class="hero-deco" viewBox="0 0 560 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Speed lines -->
+      <line x1="560" y1="180" x2="120" y2="180" stroke="#FE5000" stroke-width="1.5" opacity=".22"/>
+      <line x1="560" y1="196" x2="80"  y2="196" stroke="#FE5000" stroke-width=".8" opacity=".12"/>
+      <line x1="560" y1="212" x2="180" y2="212" stroke="#FE5000" stroke-width=".6" opacity=".1"/>
+      <line x1="560" y1="228" x2="60"  y2="228" stroke="#FE5000" stroke-width="1.2" opacity=".16"/>
+      <line x1="560" y1="244" x2="150" y2="244" stroke="#FE5000" stroke-width=".7" opacity=".1"/>
+      <line x1="560" y1="260" x2="200" y2="260" stroke="#FE5000" stroke-width=".5" opacity=".08"/>
+      <line x1="560" y1="300" x2="100" y2="300" stroke="#FE5000" stroke-width="2"   opacity=".18"/>
+      <line x1="560" y1="316" x2="140" y2="316" stroke="#FE5000" stroke-width=".9" opacity=".12"/>
+      <line x1="560" y1="332" x2="90"  y2="332" stroke="#FE5000" stroke-width=".6" opacity=".08"/>
+      <!-- Wing cross-section outline -->
+      <path d="M480 350 C380 280 220 260 80 290 C60 295 55 305 80 310 C220 340 380 320 480 350 Z"
+            fill="none" stroke="#FE5000" stroke-width="1" opacity=".2"/>
+      <!-- Gradient accent lines top -->
+      <line x1="560" y1="100" x2="300" y2="100" stroke="#FE5000" stroke-width=".5" opacity=".1"/>
+      <line x1="560" y1="120" x2="260" y2="120" stroke="#FE5000" stroke-width=".7" opacity=".12"/>
+      <line x1="560" y1="140" x2="200" y2="140" stroke="#FE5000" stroke-width=".5" opacity=".08"/>
+      <!-- Carbon fiber weave hint (diagonal grid) -->
+      <line x1="420" y1="440" x2="500" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="400" y1="440" x2="480" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="380" y1="440" x2="460" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="360" y1="440" x2="440" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="340" y1="440" x2="420" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="500" y1="440" x2="420" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="480" y1="440" x2="400" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="460" y1="440" x2="380" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+      <line x1="440" y1="440" x2="360" y2="520" stroke="#FE5000" stroke-width=".5" opacity=".07"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero-content" data-animate>
+        <span class="eyebrow">Alpha Tech · Performance</span>
+        <h1>Carbon fiber.<br>Aerodynamics.<br>No compromise.</h1>
+        <p>High-performance parts designed with CFD, manufactured in composite materials and validated on track. For those who refuse to accept factory standard.</p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn btn-primary">Quote a Part</a>
+          <a href="#casos" class="btn btn-secondary">View case studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MANIFIESTO ─── -->
+  <section id="manifiesto">
+    <div class="container">
+      <div class="manifiesto-inner">
+        <div class="manifiesto-text" data-animate>
+          <span class="eyebrow">Why Performance</span>
+          <h2>The passion that drives,<br>the engineering that holds.</h2>
+          <p>In the world of competition and high-level tuning, the difference between winning and losing is measured in tenths of a second, grams of weight and millimeters of aerodynamic geometry. That can't be improvised — it must be designed.</p>
+          <p>Alpha Tech Performance was born from the convergence of aeronautical engineering rigor and a passion for motorsport. Every part we manufacture is backed by CFD analysis, structural simulation and process validation. This isn't visual tuning — it's engineering in motion.</p>
+        </div>
+        <div class="manifiesto-stats" data-animate style="transition-delay:.12s">
+          <div class="mstat">
+            <span class="mstat-value">CFD</span>
+            <span class="mstat-label">Simulated design before manufacturing</span>
+          </div>
+          <div class="mstat">
+            <span class="mstat-value">−38%</span>
+            <span class="mstat-label">Weight reduction vs. steel</span>
+          </div>
+          <div class="mstat">
+            <span class="mstat-value">T700</span>
+            <span class="mstat-label">Structural-grade carbon fiber</span>
+          </div>
+          <div class="mstat">
+            <span class="mstat-value">±0.1</span>
+            <span class="mstat-label">mm manufacturing tolerance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICIOS ─── -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Capabilities</span>
+        <h2>What we do — and how we do it</h2>
+        <p>Every service follows the same logic: real performance problem, rigorous technical method, measurable track result.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+            </svg>
+          </div>
+          <h3>Aerodynamic design</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Unwanted lift at high speed, instability in corners or insufficient downforce for the grip level needed.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>CFD simulation with ANSYS Fluent, surface pressure analysis and iterable parametric geometry until the downforce target is reached.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Optimized aerodynamic geometry with verified CL and CD data — before investing in manufacturing.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.08s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Carbon fiber manufacturing</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Plastic parts that can't handle engine heat, steel components that add unnecessary weight, or aftermarket catalogues that don't fit your vehicle.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Custom CAD design + manual T700 carbon fiber lamination + oven curing with temperature and pressure control.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Part to exact specification: minimum weight, validated structural resistance and exhibition-ready finish.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.16s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3>Custom body kits</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Generic kits that don't fit, accessories lacking aerodynamic coherence with each other, or aesthetics without technical foundation.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Full kit design (splitter, diffuser, side skirts, wing) with CFD-validated aerodynamic coherence and composite material manufacturing.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Coherent aerodynamic kit, custom-built for the specific vehicle model, with documented performance data.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.04s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Track validation</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Not knowing if the part works until it's already installed and on the track — without baseline data or comparison method.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Test protocol with basic instrumentation, before/after comparison and correlation with prior CFD simulation.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Validation data in real conditions: the client knows exactly what they gained and can adjust with technical criteria.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.12s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Installation and finishing</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Well-manufactured parts ruined by poor installation — irregular gaps, incorrect alignment or vibrating fasteners.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Installation supervised by the technical team, with dimensional verification after assembly and fine geometry adjustment.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Part installed to design level: no gaps, no vibrations and the geometry that guarantees projected performance.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.2s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Technical tuning consulting</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Investment in modifications without a clear technical roadmap — money spent on parts that don't complement each other or cancel out each other's benefit.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Comprehensive vehicle diagnosis, objective definition (grip, top speed, stability) and modification plan prioritized by impact.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Technical roadmap with ROI per modification — the client knows what to buy, in what order, and what to expect from each investment.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESO ─── -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">How we work</span>
+        <h2>From idea to track in 6 steps</h2>
+        <p>No surprises. Each phase has a concrete deliverable and an explicit approval point before proceeding.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-animate>
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <span class="step-tag">Free consultation</span>
+            <h3>Vehicle diagnosis and objective</h3>
+            <p>Technical assessment of the vehicle, definition of the performance objective (grip, downforce, weight) and feasibility analysis. No commitment. With criteria.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <span class="step-tag">3D Design</span>
+            <h3>CAD modeling and geometry proposal</h3>
+            <p>3D modeling of the part or kit with the vehicle CAD as reference. The client sees and approves the geometry before moving to simulation.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <span class="step-tag">CFD Simulation</span>
+            <h3>Aerodynamic analysis and optimization</h3>
+            <p>Simulation with ANSYS Fluent at speeds representative of real use. Geometry iterations until the downforce target and aerodynamic efficiency are reached.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <span class="step-tag">Manufacturing</span>
+            <h3>Lamination, curing and dimensional control</h3>
+            <p>Manufacturing in composite materials (T700 carbon fiber, kevlar or fiberglass as required). Dimensional control of each part before delivery.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <span class="step-tag">Quality control</span>
+            <h3>Inspection and surface finish</h3>
+            <p>Complete dimensional verification, visual inspection of lamination and surface finish per specification (raw carbon, paint, wrap). Zero defective parts leave the workshop.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">06</div>
+          <div class="step-body">
+            <span class="step-tag">Delivery and installation</span>
+            <h3>Supervised assembly and validation</h3>
+            <p>Supervised installation with geometric verification after assembly. Part documentation, technical sheet and maintenance protocol. Part ready for track.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CASOS DE ESTUDIO ─── -->
+  <section id="casos">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Active projects</span>
+        <h2>Real work. Unfiltered.</h2>
+        <p>Active projects with clients in Lima, Peru. We show them as they are — in planning, in data and in progress.</p>
+      </div>
+
+      <div class="casos-grid">
+
+        <!-- Caso 1: Ford Raptor Guardafangos -->
+        <div class="caso" data-animate>
+          <div>
+            <span class="caso-label">Case 01 · Composite materials · Ford Raptor</span>
+            <h3>Rear fenders in carbon fiber — Ford Raptor</h3>
+            <p>An enthusiast client wanted to take their Ford Raptor to the next level: exposed carbon fiber rear fenders, 4 inches wider than the originals. The main challenge was exact fitting — with no existing mold reference, we designed the parts from scratch in CAD, validated the body geometry and performed structural analysis to guarantee rigidity without adding unnecessary weight. The parts are planned with exposed carbon for combined track, off-road and aesthetic use. Project currently in planning and fabrication.</p>
+            <div class="caso-metrics">
+              <div>
+                <span class="caso-metric-value">+4 in.</span>
+                <span class="caso-metric-label">Widening over OEM body</span>
+              </div>
+              <div>
+                <span class="caso-metric-value">T700</span>
+                <span class="caso-metric-label">Structural-grade carbon fiber</span>
+              </div>
+            </div>
+          </div>
+          <div class="caso-media">
+            <img src="raptor-performance.png" alt="Carbon fiber rear fenders Ford Raptor — Alpha Tech Performance" loading="lazy" width="800" height="600"
+                 onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'caso-media-placeholder\'><svg viewBox=\'0 0 200 150\' width=\'120\' opacity=\'.15\'><path d=\'M20 75 C60 20 140 20 180 75 C140 130 60 130 20 75 Z\' fill=\'none\' stroke=\'%23FE5000\' stroke-width=\'2\'/><line x1=\'0\' y1=\'75\' x2=\'200\' y2=\'75\' stroke=\'%23FE5000\' stroke-width=\'.8\' opacity=\'.5\'/></svg></div>'">
+          </div>
+        </div>
+
+        <!-- Caso 2: Mercedes A35 - La Chutana -->
+        <div class="caso reverse" data-animate>
+          <div>
+            <span class="caso-label">Case 02 · Aerodynamics · CFD Study</span>
+            <h3>Aerodynamic wing study — Mercedes A35 / La Chutana</h3>
+            <p>An amateur Lima-based driver wanted to extract maximum cornering performance from their Mercedes A35 at the La Chutana circuit. We initiated the CFD study of the rear wing with the goal of maximizing downforce and reducing drag. This is the first module of a planned comprehensive aerodynamic analysis of the vehicle — wing, diffuser, splitter and full body configuration. Study in active development.</p>
+            <div class="caso-metrics">
+              <div>
+                <span class="caso-metric-value">CFD</span>
+                <span class="caso-metric-label">Active simulation in ANSYS Fluent</span>
+              </div>
+              <div>
+                <span class="caso-metric-value">Max DF</span>
+                <span class="caso-metric-label">Goal: maximum downforce in corners</span>
+              </div>
+            </div>
+          </div>
+          <div class="caso-media">
+            <img src="mercedes-performance.png" alt="CFD aerodynamic study Mercedes A35 La Chutana — Alpha Tech Performance" loading="lazy" width="800" height="600"
+                 onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'caso-media-placeholder\'><svg viewBox=\'0 0 200 150\' width=\'120\' opacity=\'.15\'><path d=\'M10 100 C70 40 130 40 190 100\' fill=\'none\' stroke=\'%23FE5000\' stroke-width=\'2\'/><path d=\'M10 110 C70 50 130 50 190 110\' fill=\'none\' stroke=\'%23FE5000\' stroke-width=\'.8\' opacity=\'.5\'/></svg></div>'">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ─── -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Quote a part</span>
+        <h2>Tell us what you want to achieve.<br>We'll respond in 24 h.</h2>
+      </div>
+      <div class="contact-grid">
+        <form action="https://api.web3forms.com/submit" method="POST" data-animate>
+          <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
+          <input type="hidden" name="redirect" value="gracias.html">
+          <input type="hidden" name="subject" value="New contact — Performance (EN)">
+          <input type="hidden" name="UN_origen" value="Performance">
+
+          <div class="form-group">
+            <label for="nombre">Name *</label>
+            <input type="text" id="nombre" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="vehiculo">Vehicle *</label>
+            <input type="text" id="vehiculo" name="vehiculo" placeholder="Make, model and year (e.g. Toyota GR86 2023)" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">WhatsApp / Phone</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+51 9XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label for="servicio">Service of interest</label>
+            <select id="servicio" name="servicio">
+              <option value="">Select...</option>
+              <option>Aerodynamic design (CFD)</option>
+              <option>Carbon fiber manufacturing</option>
+              <option>Custom body kit</option>
+              <option>Track validation</option>
+              <option>Installation and finishing</option>
+              <option>Technical tuning consulting</option>
+              <option>Not sure yet — I want a consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">What do you want to achieve? *</label>
+            <textarea id="mensaje" name="message" placeholder="More downforce, less weight, coherent aesthetics... The more detail, the better the proposal." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Quote a Part</button>
+        </form>
+
+        <div data-animate style="transition-delay:.15s">
+          <h3>Prefer to talk first?</h3>
+          <p style="margin-bottom:32px">The initial consultation is free and non-binding. You tell us about the project, we tell you whether we can help and what it would involve, before any budget.</p>
+
+          <dl>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/51922877190?text=Hello%2C%20I%20would%20like%20to%20quote%20a%20carbon%20fiber%20part." target="_blank" rel="noopener">+51 922 877 190</a></dd>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>Email</dt>
+                <dd><a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a></dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Mechanical engineering, aerodynamics,<br>industrial AI and augmented reality.<br>Lima, Peru.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Units</h4>
+          <ul class="footer-links">
+            <li><a href="performance-en.html">Performance</a></li>
+            <li><a href="engineering-en.html">Engineering</a></li>
+            <li><a href="intelligence-en.html">Intelligence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="nosotros-en.html">About</a></li>
+            <li><a href="contacto-en.html">Contact</a></li>
+            <li><a href="../Alpha tech S Web/aeronautica.html">Alpha Tech Simulations</a></li>
+            <li><a href="gracias.html">Thank you</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Peru
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions. All rights reserved.</span>
+        <div class="footer-bottom-lang">
+          <a href="performance-en.html" class="active">EN</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="performance.html">ES</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51922877190?text=Hello%2C%20I%20would%20like%20to%20quote%20a%20carbon%20fiber%20part."
+     class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
+    function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('animated'); observer.unobserve(e.target); } }), { threshold:0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    setTimeout(() => { const wa = document.getElementById('wa-btn'); if(wa) wa.classList.add('visible'); }, 3000);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(!t) return; e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth' }); }));
+  </script>
+</body>
+</html>

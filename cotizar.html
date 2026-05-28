@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizar | Alpha Tech Solutions — Lima, Perú</title>
+  <meta name="description" content="Solicita una cotización para ingeniería mecánica, fibra de carbono o IA industrial con Alpha Tech Solutions en Lima, Perú.">
+
+  <link rel="canonical" href="cotizar.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --mint:      #02C39A;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --max-w:     960px;
+      /* dynamic accent — changes with JS */
+      --accent:    #008EAA;
+      --accent-bg: rgba(0,142,170,.08);
+      --accent-border: rgba(0,142,170,.25);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--white); background: var(--navy-deep); overflow-x: hidden; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 16px; transition: color .3s; }
+
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(28px,3.8vw,44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; }
+    h2 { font-size: clamp(20px,2.4vw,26px); font-weight: 700; line-height: 1.2; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 36px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 8px; cursor: pointer; transition: all 0.25s ease; border: 2px solid transparent; font-family: 'Inter', sans-serif; }
+    .btn-accent { background: var(--accent); color: var(--navy-dark); border-color: var(--accent); }
+    .btn-accent:hover { opacity: .88; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.3); }
+
+    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { [data-animate] { opacity:1; transform:none; transition:none; } }
+
+    /* ─── NAV ─── */
+    nav { position:fixed; top:0; left:0; right:0; z-index:1000; height:72px; display:flex; align-items:center; background:transparent; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,.07); transition:background .3s ease; }
+    nav.scrolled { background:rgba(0,10,32,.94); border-bottom-color:rgba(255,255,255,.1); }
+    .nav-inner { max-width:1100px; margin:0 auto; padding:0 48px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.65); transition:color .2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-cta-btn { display:inline-flex; align-items:center; height:38px; padding:0 20px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; background:var(--orange); color:var(--white); border-radius:6px; transition:background .2s, transform .2s; }
+    .nav-cta-btn:hover { background:#e04400; transform:translateY(-1px); }
+    .nav-simulations-btn { display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 13px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(0,142,170,.3); color:var(--teal); border-radius:5px; transition:background .2s, border-color .2s; white-space:nowrap; }
+    .nav-simulations-btn:hover { background:rgba(0,142,170,.12); border-color:var(--teal); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--white); border-radius:1px; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--navy-deep); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.7); }
+    .mobile-menu-close { position:absolute; top:24px; right:24px; background:none; border:none; cursor:pointer; color:var(--white); font-size:28px; line-height:1; }
+    .mobile-cta-m { background:var(--orange) !important; color:var(--white) !important; padding:12px 32px; border-radius:8px; font-size:14px !important; }
+
+    /* ─── PAGE WRAPPER ─── */
+    #page { padding-top: 120px; padding-bottom: 96px; }
+
+    /* ─── STEP 1: UN SELECTOR ─── */
+    #step-un { margin-bottom: 56px; }
+    #step-un h2 { margin-bottom: 8px; }
+    #step-un .sub { font-size: 15px; color: rgba(255,255,255,.45); margin-bottom: 32px; }
+
+    .un-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .un-card {
+      position: relative;
+      background: rgba(255,255,255,.025);
+      border: 2px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 28px 24px;
+      cursor: pointer;
+      transition: border-color .25s, background .25s, transform .2s;
+      user-select: none;
+    }
+    .un-card:hover { transform: translateY(-3px); background: rgba(255,255,255,.045); }
+    .un-card.selected { transform: translateY(-3px); }
+    .un-card.perf.selected  { border-color: var(--orange); background: rgba(254,80,0,.07); }
+    .un-card.eng.selected   { border-color: var(--teal);   background: rgba(0,142,170,.07); }
+    .un-card.intel.selected { border-color: var(--mint);   background: rgba(2,195,154,.07); }
+
+    .un-card-check {
+      position: absolute; top: 14px; right: 14px;
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s;
+    }
+    .un-card.selected .un-card-check { border-color: transparent; }
+    .un-card.perf.selected  .un-card-check { background: var(--orange); }
+    .un-card.eng.selected   .un-card-check { background: var(--teal); }
+    .un-card.intel.selected .un-card-check { background: var(--mint); }
+    .un-card-check svg { opacity: 0; transition: opacity .15s; }
+    .un-card.selected .un-card-check svg { opacity: 1; }
+
+    .un-card-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .un-card.perf  .un-card-icon { background: rgba(254,80,0,.12); }
+    .un-card.eng   .un-card-icon { background: rgba(0,142,170,.12); }
+    .un-card.intel .un-card-icon { background: rgba(2,195,154,.1); }
+
+    .un-card h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .un-card-tagline { font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.5; margin-bottom: 16px; }
+    .un-card-services { display: flex; flex-direction: column; gap: 4px; }
+    .un-card-services span { font-size: 11px; color: rgba(255,255,255,.35); padding-left: 12px; position: relative; }
+    .un-card-services span::before { content: '·'; position: absolute; left: 0; }
+
+    /* ─── STEP 2: FORM ─── */
+    #step-form { display: none; }
+    #step-form.visible { display: block; animation: fadeUp .4s ease; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+    .form-header { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .form-header .un-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      background: var(--accent-bg); border: 1px solid var(--accent-border);
+      color: var(--accent); margin-bottom: 16px;
+      transition: background .3s, border-color .3s, color .3s;
+    }
+    .form-header h2 { margin-bottom: 6px; }
+    .form-header p { font-size: 15px; color: rgba(255,255,255,.45); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      color: var(--white); padding: 13px 16px; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 15px;
+      outline: none; width: 100%; transition: border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
+    .form-group select option { background: var(--navy-dark); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; gap: 16px; }
+    .form-footer-note { font-size: 12px; color: rgba(255,255,255,.28); line-height: 1.6; }
+
+    .btn-back { background: none; border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.5); border-radius: 8px; padding: 10px 20px; font-size: 12px; font-weight: 600; cursor: pointer; transition: border-color .2s, color .2s; font-family: 'Inter', sans-serif; }
+    .btn-back:hover { border-color: rgba(255,255,255,.4); color: var(--white); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,.06); padding: 56px 0 0; }
+    .footer-bottom-simple { padding: 20px 0; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copyright { font-size: 12px; color: rgba(255,255,255,.22); }
+    .footer-nav { display: flex; gap: 24px; }
+    .footer-nav a { font-size: 12px; color: rgba(255,255,255,.32); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: var(--white); }
+
+    /* ─── WHATSAPP ─── */
+    .wa-btn { position:fixed; bottom:24px; right:24px; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,.4); z-index:900; text-decoration:none; opacity:0; transform:scale(0.8); transition:opacity .4s ease, transform .4s ease; }
+    .wa-btn.visible { opacity:1; transform:scale(1); animation:wa-pulse 2.5s ease infinite; }
+    .wa-btn:hover { transform:scale(1.08) !important; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4);} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1);} }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width:900px) { .nav-links,.nav-cta-btn { display:none; } .hamburger { display:flex; } .un-selector { grid-template-columns:1fr; gap:12px; } .form-row { grid-template-columns:1fr; } }
+    @media (max-width:640px) { .container,.nav-inner { padding:0 24px; } #page { padding-top:100px; } .form-footer { flex-direction:column-reverse; align-items:stretch; } .btn-accent { width:100%; } }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="../Alpha tech S Web/aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
+        <a href="contacto.html" class="nav-cta-btn">Contacto →</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="index.html">Inicio</a>
+    <a href="performance.html">Performance</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="intelligence.html">Intelligence</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="contacto.html" class="mobile-cta-m">Contacto →</a>
+    <a href="../Alpha tech S Web/aeronautica.html" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;font-weight:700;letter-spacing:1.5px;border:1px solid rgba(0,142,170,.3);padding:10px 28px;border-radius:8px;text-transform:uppercase;text-decoration:none;">Simulations ↗</a>
+  </div>
+
+  <!-- ─── PAGE ─── -->
+  <div id="page">
+    <div class="container">
+
+      <div data-animate style="margin-bottom:48px">
+        <span class="eyebrow" id="page-eyebrow">Cotización</span>
+        <h1>¿Qué necesitas?</h1>
+      </div>
+
+      <!-- STEP 1: Selector de UN -->
+      <div id="step-un" data-animate>
+        <h2>Elige el área de tu proyecto</h2>
+        <p class="sub">Selecciona la unidad que mejor describe tu necesidad. El formulario se adapta automáticamente.</p>
+
+        <div class="un-selector" role="radiogroup" aria-label="Selecciona unidad de negocio">
+
+          <div class="un-card perf" data-un="performance" role="radio" aria-checked="false" tabindex="0">
+            <div class="un-card-check">
+              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="un-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FE5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+              </svg>
+            </div>
+            <h3>Performance</h3>
+            <p class="un-card-tagline">Fibra de carbono, aerodinámica y tuning técnico de alto rendimiento.</p>
+            <div class="un-card-services">
+              <span>Diseño aerodinámico CFD</span>
+              <span>Fabricación en carbono</span>
+              <span>Kits de carrocería a medida</span>
+              <span>Consultoría de tuning</span>
+            </div>
+          </div>
+
+          <div class="un-card eng" data-un="engineering" role="radio" aria-checked="false" tabindex="0">
+            <div class="un-card-check">
+              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="un-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+            </div>
+            <h3>Engineering</h3>
+            <p class="un-card-tagline">Ingeniería mecánica industrial: CAD, FEA, CFD y fabricación a medida.</p>
+            <div class="un-card-services">
+              <span>Diseño mecánico CAD</span>
+              <span>Análisis estructural FEA</span>
+              <span>Modelización CFD</span>
+              <span>Mantenimiento predictivo</span>
+            </div>
+          </div>
+
+          <div class="un-card intel" data-un="intelligence" role="radio" aria-checked="false" tabindex="0">
+            <div class="un-card-check">
+              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="un-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-3.92-7.47-5.28-12.08-5.28"/>
+              </svg>
+            </div>
+            <h3>Intelligence</h3>
+            <p class="un-card-tagline">IA industrial: visión por computadora, mantenimiento predictivo y análisis de datos.</p>
+            <div class="un-card-services">
+              <span>Visión por computadora</span>
+              <span>Mantenimiento predictivo IA</span>
+              <span>Análisis de datos de proceso</span>
+              <span>Modelos LLM internos</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STEP 2: Formulario dinámico -->
+      <div id="step-form">
+        <div class="form-header">
+          <div class="un-badge" id="form-badge">● Performance</div>
+          <h2 id="form-title">Cotizar pieza de fibra de carbono</h2>
+          <p id="form-sub">Cuéntanos el proyecto. Te respondemos con una propuesta en menos de 24 horas.</p>
+        </div>
+
+        <form action="https://api.web3forms.com/submit" method="POST" id="cotizar-form">
+          <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
+          <input type="hidden" name="redirect" value="gracias.html">
+          <input type="hidden" name="subject" id="form-subject" value="Nueva cotización — Performance">
+          <input type="hidden" name="UN_origen" id="form-un-origen" value="Performance">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-nombre">Nombre *</label>
+              <input type="text" id="f-nombre" name="name" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label for="f-email">Email *</label>
+              <input type="email" id="f-email" name="email" placeholder="tu@empresa.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-empresa">Empresa</label>
+              <input type="text" id="f-empresa" name="empresa" placeholder="Nombre de tu empresa">
+            </div>
+            <div class="form-group">
+              <label for="f-telefono">WhatsApp / Teléfono</label>
+              <input type="tel" id="f-telefono" name="telefono" placeholder="+51 9XX XXX XXX">
+            </div>
+          </div>
+
+          <!-- Campo dinámico según UN -->
+          <div class="form-group" id="campo-dinamico">
+            <label id="campo-label" for="campo-val">Vehículo *</label>
+            <input type="text" id="campo-val" name="detalle_especifico" placeholder="Marca, modelo y año (ej: Toyota GR86 2023)" required>
+          </div>
+
+          <div class="form-group">
+            <label for="f-servicio">Servicio de interés</label>
+            <select id="f-servicio" name="servicio">
+              <option value="">Seleccionar...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-mensaje">Describe el proyecto *</label>
+            <textarea id="f-mensaje" name="message" id="f-mensaje" placeholder="Cuéntanos el problema o lo que quieres lograr. Cuanto más detalle, mejor la propuesta." required></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="button" class="btn-back" id="btn-back">← Cambiar unidad</button>
+            <div>
+              <button type="submit" class="btn btn-accent" id="btn-submit">Enviar cotización</button>
+              <p class="form-footer-note" style="margin-top:10px;text-align:right">Respuesta en &lt; 24 h hábiles · Diagnóstico gratuito</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container" style="max-width:1100px">
+      <div class="footer-bottom-simple">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Lima, Perú.</span>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="gracias.html">Gracias</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51922877190?text=Hola%2C%20quisiera%20cotizar%20un%20proyecto%20con%20Alpha%20Tech%20Solutions."
+     class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // ─── NAV ───
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
+    function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+
+    // ─── ANIMATIONS ───
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('animated'); observer.unobserve(e.target); } }), { threshold:0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    setTimeout(() => { const wa = document.getElementById('wa-btn'); if(wa) wa.classList.add('visible'); }, 3000);
+
+    // ─── UN CONFIG ───
+    const unConfig = {
+      performance: {
+        accent:       '#FE5000',
+        accentBg:     'rgba(254,80,0,.08)',
+        accentBorder: 'rgba(254,80,0,.25)',
+        badge:        '● Performance',
+        formTitle:    'Cotizar pieza de Performance',
+        formSub:      'Cuéntanos el vehículo y qué quieres lograr. Te respondemos en menos de 24 horas.',
+        subject:      'Nueva cotización — Performance',
+        campoLabel:   'Vehículo *',
+        campoPlaceholder: 'Marca, modelo y año (ej: Toyota GR86 2023)',
+        campoRequired: true,
+        servicios: ['Diseño aerodinámico (CFD)', 'Fabricación en fibra de carbono', 'Kit de carrocería a medida', 'Validación en pista', 'Instalación y acabado', 'Consultoría de tuning técnico', 'No sé aún — quiero una consulta'],
+        btnLabel:     'Cotizar pieza',
+        waText:       'Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20fibra%20de%20carbono.'
+      },
+      engineering: {
+        accent:       '#008EAA',
+        accentBg:     'rgba(0,142,170,.08)',
+        accentBorder: 'rgba(0,142,170,.25)',
+        badge:        '● Engineering',
+        formTitle:    'Solicitar diagnóstico de Engineering',
+        formSub:      'Cuéntanos el problema técnico. El diagnóstico inicial es gratuito y sin compromiso.',
+        subject:      'Nueva cotización — Engineering',
+        campoLabel:   'Empresa / industria',
+        campoPlaceholder: 'Nombre de tu empresa y sector (ej: manufactura, automotriz...)',
+        campoRequired: false,
+        servicios: ['Diseño mecánico CAD', 'Análisis estructural FEA', 'Modelización CFD', 'Mantenimiento predictivo', 'Fabricación de partes a medida', 'Consultoría de procesos', 'No sé aún / otro'],
+        btnLabel:     'Solicitar diagnóstico gratuito',
+        waText:       'Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20mec%C3%A1nica.'
+      },
+      intelligence: {
+        accent:       '#02C39A',
+        accentBg:     'rgba(2,195,154,.08)',
+        accentBorder: 'rgba(2,195,154,.25)',
+        badge:        '● Intelligence',
+        formTitle:    'Agendar diagnóstico de IA',
+        formSub:      'El diagnóstico de 60 minutos es gratuito. Cuéntanos el proceso y el problema que quieres resolver.',
+        subject:      'Nueva cotización — Intelligence',
+        campoLabel:   'Sector / industria',
+        campoPlaceholder: 'Manufactura, minería, logística, agroindustria...',
+        campoRequired: false,
+        servicios: ['Visión por computadora', 'Mantenimiento predictivo con IA', 'Análisis de datos de proceso', 'OCR y extracción de documentos', 'Optimización de parámetros', 'Asistente interno con LLM', 'No sé aún — quiero una consulta'],
+        btnLabel:     'Agendar diagnóstico gratuito',
+        waText:       'Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20de%20IA%20industrial.'
+      }
+    };
+
+    // ─── UN SELECTION ───
+    const cards = document.querySelectorAll('.un-card');
+    const stepUn   = document.getElementById('step-un');
+    const stepForm = document.getElementById('step-form');
+    let selectedUN = null;
+
+    function selectUN(un) {
+      selectedUN = un;
+      const cfg = unConfig[un];
+
+      // Update CSS vars
+      document.documentElement.style.setProperty('--accent', cfg.accent);
+      document.documentElement.style.setProperty('--accent-bg', cfg.accentBg);
+      document.documentElement.style.setProperty('--accent-border', cfg.accentBorder);
+
+      // Update card states
+      cards.forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-checked', 'false');
+      });
+      const card = document.querySelector(`.un-card[data-un="${un}"]`);
+      card.classList.add('selected');
+      card.setAttribute('aria-checked', 'true');
+
+      // Populate form
+      document.getElementById('form-badge').textContent   = cfg.badge;
+      document.getElementById('form-badge').style.color   = cfg.accent;
+      document.getElementById('form-title').textContent   = cfg.formTitle;
+      document.getElementById('form-sub').textContent     = cfg.formSub;
+      document.getElementById('form-subject').value       = cfg.subject;
+      document.getElementById('form-un-origen').value     = un.charAt(0).toUpperCase() + un.slice(1);
+      document.getElementById('btn-submit').textContent   = cfg.btnLabel;
+
+      const campoLabel = document.getElementById('campo-label');
+      const campoVal   = document.getElementById('campo-val');
+      campoLabel.textContent = cfg.campoLabel;
+      campoVal.placeholder   = cfg.campoPlaceholder;
+      campoVal.required      = cfg.campoRequired;
+
+      const sel = document.getElementById('f-servicio');
+      sel.innerHTML = '<option value="">Seleccionar...</option>';
+      cfg.servicios.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s; opt.textContent = s;
+        sel.appendChild(opt);
+      });
+
+      // Update WA link
+      document.getElementById('wa-btn').href = `https://wa.me/51922877190?text=${cfg.waText}`;
+
+      // Show form
+      stepUn.style.display  = 'none';
+      stepForm.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => selectUN(card.dataset.un));
+      card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectUN(card.dataset.un); } });
+    });
+
+    document.getElementById('btn-back').addEventListener('click', () => {
+      stepForm.classList.remove('visible');
+      stepUn.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Pre-select via URL param: cotizar.html?un=engineering
+    const params = new URLSearchParams(window.location.search);
+    const preUN = params.get('un');
+    if (preUN && unConfig[preUN]) selectUN(preUN);
+  </script>
+</body>
+</html>

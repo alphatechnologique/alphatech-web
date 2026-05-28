@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligence | Alpha Tech Solutions — IA industrial Lima, Perú</title>
+  <meta name="description" content="Inteligencia artificial industrial en Lima: visión por computadora, mantenimiento predictivo con IA, análisis de datos de proceso y modelos productivos a medida. De la prueba de concepto a producción.">
+
+  <link rel="canonical" href="intelligence.html">
+  <link rel="alternate" hreflang="es" href="intelligence.html">
+  <link rel="alternate" hreflang="en" href="intelligence-en.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Intelligence | Alpha Tech Solutions">
+  <meta property="og:description" content="IA industrial en Lima: visión por computadora, mantenimiento predictivo con IA y análisis de datos de proceso.">
+  <meta property="og:image" content="intelligence-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Intelligence — Alpha Tech Solutions",
+    "provider": { "@type": "Organization", "name": "Alpha Tech Solutions" },
+    "description": "Inteligencia artificial industrial en Lima: visión por computadora, mantenimiento predictivo con IA, análisis de datos y modelos productivos a medida.",
+    "areaServed": { "@type": "Place", "name": "Lima, Perú" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --mint:      #02C39A;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --max-w:     1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--white);
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--mint); display: block; margin-bottom: 16px;
+    }
+
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(32px,4.5vw,54px); font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; }
+    h2 { font-size: clamp(26px,3.2vw,38px); font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+    h3 { font-size: 19px; font-weight: 700; line-height: 1.3; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 50px; padding: 0 32px;
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; cursor: pointer; transition: all 0.25s ease; border: 2px solid transparent;
+    }
+    .btn-primary  { background: var(--mint);   color: var(--navy-dark); border-color: var(--mint); }
+    .btn-primary:hover  { background: #01a882; border-color: #01a882; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(2,195,154,.3); }
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.35); }
+    .btn-secondary:hover { border-color: var(--white); }
+    .btn-orange { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .btn-orange:hover { background: #e04400; border-color: #e04400; transform: translateY(-2px); }
+
+    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { [data-animate] { opacity:1; transform:none; transition:none; } }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      height:72px; display:flex; align-items:center;
+      background:transparent; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07); transition:background .3s ease, border-color .3s ease;
+    }
+    nav.scrolled { background:rgba(0,10,32,.94); border-bottom-color:rgba(255,255,255,.1); }
+    .nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 48px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.65); transition:color .2s ease; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-links a.active { color:var(--mint); }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-lang { display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:1px; }
+    .nav-lang a { color:rgba(255,255,255,.4); text-decoration:none; transition:color .2s; }
+    .nav-lang a:hover { color:var(--white); }
+    .nav-lang a.active { color:var(--mint); }
+    .nav-lang span { color:rgba(255,255,255,.2); }
+    .nav-cta-btn { display:inline-flex; align-items:center; height:38px; padding:0 20px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; background:var(--orange); color:var(--white); border-radius:6px; transition:background .2s, transform .2s; white-space:nowrap; }
+    .nav-cta-btn:hover { background:#e04400; transform:translateY(-1px); }
+    .nav-simulations-btn { display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 13px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(0,142,170,.3); color:var(--teal); border-radius:5px; transition:background .2s, border-color .2s; white-space:nowrap; }
+    .nav-simulations-btn:hover { background:rgba(0,142,170,.12); border-color:var(--teal); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--white); border-radius:1px; transition:all .3s; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--navy-deep); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.7); transition:color .2s; }
+    .mobile-menu a:hover { color:var(--white); }
+    .mobile-menu-close { position:absolute; top:24px; right:24px; background:none; border:none; cursor:pointer; color:var(--white); font-size:28px; line-height:1; }
+    .mobile-lang { display:flex; gap:12px; margin-top:4px; }
+    .mobile-cta { background:var(--orange) !important; color:var(--white) !important; padding:12px 32px; border-radius:8px; font-size:14px !important; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 88vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background-image: url('intelligence-hero.png');
+      background-size:cover; background-position:center;
+      background-color: var(--navy-dark);
+    }
+    .hero-bg::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(0,10,32,.93) 0%, rgba(0,21,64,.80) 55%, rgba(6,9,15,.92) 100%);
+    }
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(2,195,154,.05) 1px,transparent 1px), linear-gradient(90deg,rgba(2,195,154,.05) 1px,transparent 1px);
+      background-size:72px 72px; pointer-events:none;
+    }
+    .hero-deco {
+      position:absolute; right:-10px; top:0; bottom:0;
+      width:48%; pointer-events:none; z-index:1;
+    }
+    .hero-content { position:relative; z-index:2; max-width:680px; padding-top:80px; padding-bottom:80px; }
+    .hero-content h1 { margin-bottom:20px; }
+    .hero-content p { font-size:17px; color:rgba(255,255,255,.62); max-width:520px; line-height:1.7; margin-bottom:36px; }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+
+    /* ─── SECTION SHARED ─── */
+    .section-header { margin-bottom:56px; }
+    .section-header p { color:rgba(255,255,255,.52); max-width:520px; margin-top:14px; font-size:16px; line-height:1.7; }
+
+    /* ─── MODELO POC ─── */
+    #modelo { background:var(--navy); padding:104px 0; }
+
+    .poc-phases { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:56px; position:relative; }
+    .poc-phases::before {
+      content:'';
+      position:absolute; top:48px; left:calc(16.67% + 24px); right:calc(16.67% + 24px);
+      height:1px; background:linear-gradient(90deg, rgba(2,195,154,.3) 0%, rgba(2,195,154,.6) 50%, rgba(2,195,154,.3) 100%);
+    }
+
+    .poc-phase {
+      padding:0 24px;
+      text-align:center;
+    }
+    .poc-phase-num {
+      width:48px; height:48px;
+      background:rgba(2,195,154,.1);
+      border:1px solid rgba(2,195,154,.3);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 24px;
+      font-family:'Orbitron', sans-serif; font-size:13px; font-weight:800;
+      color:var(--mint); position:relative; z-index:1;
+    }
+    .poc-phase-tag {
+      font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+      color:var(--mint); display:block; margin-bottom:10px;
+    }
+    .poc-phase h3 { font-size:18px; color:var(--white); margin-bottom:12px; }
+    .poc-phase p { font-size:13px; color:rgba(255,255,255,.5); line-height:1.7; margin-bottom:16px; }
+    .poc-phase ul { list-style:none; text-align:left; display:flex; flex-direction:column; gap:6px; }
+    .poc-phase ul li { font-size:12px; color:rgba(255,255,255,.45); padding-left:16px; position:relative; }
+    .poc-phase ul li::before { content:'→'; position:absolute; left:0; color:var(--mint); opacity:.5; font-size:11px; }
+    .poc-duration {
+      display:inline-block; font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+      background:rgba(2,195,154,.08); border:1px solid rgba(2,195,154,.2);
+      color:var(--mint); border-radius:4px; padding:3px 10px; margin-top:16px;
+    }
+
+    /* ─── CASOS DE USO ─── */
+    #usecases { background:var(--navy-dark); padding:104px 0; }
+    .usecases-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+    .usecase-card {
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-top:2px solid var(--mint);
+      border-radius:12px;
+      padding:32px 28px;
+      transition:transform .25s ease, background .25s ease;
+    }
+    .usecase-card:hover { transform:translateY(-4px); background:rgba(255,255,255,.055); }
+    .usecase-icon {
+      width:44px; height:44px;
+      background:rgba(2,195,154,.08);
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px;
+    }
+    .usecase-card h3 { color:var(--white); margin-bottom:10px; font-size:17px; }
+    .usecase-card p { font-size:13px; color:rgba(255,255,255,.52); line-height:1.65; margin-bottom:16px; }
+    .usecase-result {
+      font-size:11px; font-weight:600; color:var(--mint);
+      border-left:2px solid rgba(2,195,154,.3); padding-left:10px;
+      line-height:1.5;
+    }
+
+    /* ─── PROCESO ─── */
+    #proceso { background:var(--navy-deep); padding:104px 0; }
+    .steps { display:flex; flex-direction:column; gap:0; margin-top:56px; }
+    .step {
+      display:grid; grid-template-columns:80px 1fr;
+      gap:0; padding:32px 0; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .step:last-child { border-bottom:none; }
+    .step-num {
+      font-family:'Orbitron', sans-serif;
+      font-size:28px; font-weight:800;
+      color:rgba(2,195,154,.22); line-height:1; padding-top:4px;
+    }
+    .step-body h3 { color:var(--white); margin-bottom:8px; }
+    .step-body p { font-size:14px; color:rgba(255,255,255,.55); line-height:1.7; max-width:640px; }
+    .step-tag {
+      display:inline-block; font-size:9px; font-weight:700; letter-spacing:2px;
+      text-transform:uppercase; color:var(--mint);
+      border:1px solid rgba(2,195,154,.3); border-radius:4px;
+      padding:3px 8px; margin-bottom:10px;
+    }
+
+    /* ─── FAQ ─── */
+    #faq { background:var(--navy); padding:104px 0; }
+    .faq-list { display:flex; flex-direction:column; gap:0; margin-top:56px; max-width:780px; }
+    .faq-item {
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .faq-q {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:24px 0; cursor:pointer; gap:24px;
+      font-size:16px; font-weight:600; color:var(--white);
+      list-style:none; user-select:none;
+    }
+    .faq-q::marker { display:none; }
+    .faq-q::-webkit-details-marker { display:none; }
+    .faq-icon {
+      flex-shrink:0; width:24px; height:24px;
+      border:1px solid rgba(2,195,154,.3); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--mint); font-size:14px; transition:transform .25s, background .25s;
+    }
+    details[open] .faq-icon { transform:rotate(45deg); background:rgba(2,195,154,.1); }
+    .faq-a { padding:0 0 24px; font-size:14px; color:rgba(255,255,255,.55); line-height:1.8; max-width:660px; }
+
+    /* ─── CONTACTO ─── */
+    #contacto { background:var(--navy-dark); padding:104px 0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; margin-top:56px; align-items:start; }
+
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-group label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      color:var(--white); padding:12px 16px; border-radius:8px;
+      font-family:'Inter', sans-serif; font-size:15px;
+      outline:none; width:100%; transition:border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color:var(--mint); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color:rgba(255,255,255,.22); }
+    .form-group select option { background:var(--navy-dark); }
+    .form-group textarea { resize:vertical; min-height:120px; }
+    .form-submit { width:100%; margin-top:8px; }
+
+    .contact-info h3 { font-size:22px; color:var(--white); margin-bottom:24px; }
+    .contact-info p { font-size:15px; color:rgba(255,255,255,.55); line-height:1.7; margin-bottom:32px; }
+    .contact-channel { display:flex; gap:16px; align-items:flex-start; margin-bottom:20px; }
+    .contact-channel-icon {
+      width:40px; height:40px; flex-shrink:0;
+      background:rgba(2,195,154,.08); border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--mint);
+    }
+    .contact-channel-body dt { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:4px; }
+    .contact-channel-body dd a { color:rgba(255,255,255,.7); text-decoration:none; font-size:14px; transition:color .2s; }
+    .contact-channel-body dd a:hover { color:var(--mint); }
+
+    /* ─── FOOTER ─── */
+    footer { background:var(--navy-dark); border-top:1px solid rgba(255,255,255,.06); padding:72px 0 0; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.06); }
+    .footer-brand p { font-size:13px; color:rgba(255,255,255,.35); line-height:1.85; margin-top:18px; max-width:240px; }
+    .footer-col h4 { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:20px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-links a { font-size:13px; color:rgba(255,255,255,.48); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--white); }
+    .footer-col p { font-size:13px; color:rgba(255,255,255,.42); line-height:1.85; }
+    .footer-col a { color:rgba(255,255,255,.42); text-decoration:none; transition:color .2s; }
+    .footer-col a:hover { color:var(--mint); }
+    .footer-social { display:flex; gap:10px; margin-top:18px; }
+    .footer-social-link { width:36px; height:36px; border:1px solid rgba(255,255,255,.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); text-decoration:none; transition:border-color .2s, color .2s; }
+    .footer-social-link:hover { border-color:var(--mint); color:var(--mint); }
+    .footer-bottom { padding:20px 0; display:flex; align-items:center; justify-content:space-between; }
+    .footer-copyright { font-size:12px; color:rgba(255,255,255,.22); }
+    .footer-bottom-lang { display:flex; gap:12px; font-size:11px; font-weight:700; }
+    .footer-bottom-lang a { color:rgba(255,255,255,.32); text-decoration:none; transition:color .2s; }
+    .footer-bottom-lang a:hover { color:var(--white); }
+    .footer-bottom-lang a.active { color:var(--mint); }
+
+    /* ─── WHATSAPP ─── */
+    .wa-btn { position:fixed; bottom:24px; right:24px; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,.4); z-index:900; text-decoration:none; opacity:0; transform:scale(0.8); transition:opacity .4s ease, transform .4s ease; }
+    .wa-btn.visible { opacity:1; transform:scale(1); animation:wa-pulse 2.5s ease infinite; }
+    .wa-btn:hover { transform:scale(1.08) !important; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4);} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1);} }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width:1024px) {
+      .container,.nav-inner { padding:0 32px; }
+      .usecases-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-grid { grid-template-columns:1fr 1fr; gap:36px; }
+      .hero-deco { display:none; }
+      .poc-phases { grid-template-columns:1fr; gap:36px; }
+      .poc-phases::before { display:none; }
+    }
+    @media (max-width:900px) {
+      .nav-links,.nav-lang,.nav-cta-btn,.nav-simulations-btn { display:none; }
+      .hamburger { display:flex; }
+      .contact-grid { grid-template-columns:1fr; gap:48px; }
+    }
+    @media (max-width:640px) {
+      .container,.nav-inner { padding:0 24px; }
+      .usecases-grid { grid-template-columns:1fr; }
+      .hero-btns { flex-direction:column; }
+      .btn { width:100%; justify-content:center; }
+      .footer-grid { grid-template-columns:1fr; gap:32px; }
+      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+      #modelo,#usecases,#proceso,#faq,#contacto { padding:72px 0; }
+      .step { grid-template-columns:1fr; gap:8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html" class="active">Intelligence</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="intelligence-en.html">EN</a>
+          <span>|</span>
+          <a href="intelligence.html" class="active">ES</a>
+        </div>
+        <a href="../Alpha tech S Web/aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
+        <a href="#contacto" class="nav-cta-btn">Agendar →</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="index.html">Inicio</a>
+    <a href="performance.html">Performance</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="intelligence.html">Intelligence</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="#contacto" class="mobile-cta">Agendar diagnóstico →</a>
+    <a href="../Alpha tech S Web/aeronautica.html" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;font-weight:700;letter-spacing:1.5px;border:1px solid rgba(0,142,170,.3);padding:10px 28px;border-radius:8px;text-transform:uppercase;text-decoration:none;">Simulations ↗</a>
+    <div class="mobile-lang">
+      <a href="intelligence-en.html" style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;text-decoration:none">EN</a>
+      <span style="color:rgba(255,255,255,.18);font-size:13px">|</span>
+      <a href="intelligence.html" style="color:var(--mint);font-size:13px;font-weight:700;text-decoration:none">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <!-- Neural network decorative SVG -->
+    <svg class="hero-deco" viewBox="0 0 560 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Input layer -->
+      <circle cx="80"  cy="180" r="7" fill="#02C39A" opacity=".18"/>
+      <circle cx="80"  cy="240" r="7" fill="#02C39A" opacity=".18"/>
+      <circle cx="80"  cy="300" r="7" fill="#02C39A" opacity=".18"/>
+      <circle cx="80"  cy="360" r="7" fill="#02C39A" opacity=".18"/>
+      <circle cx="80"  cy="420" r="7" fill="#02C39A" opacity=".14"/>
+      <!-- Hidden layer 1 -->
+      <circle cx="220" cy="200" r="7" fill="#02C39A" opacity=".22"/>
+      <circle cx="220" cy="270" r="7" fill="#02C39A" opacity=".22"/>
+      <circle cx="220" cy="340" r="7" fill="#02C39A" opacity=".22"/>
+      <circle cx="220" cy="410" r="7" fill="#02C39A" opacity=".18"/>
+      <!-- Hidden layer 2 -->
+      <circle cx="360" cy="220" r="8" fill="#02C39A" opacity=".28"/>
+      <circle cx="360" cy="300" r="8" fill="#02C39A" opacity=".28"/>
+      <circle cx="360" cy="380" r="8" fill="#02C39A" opacity=".22"/>
+      <!-- Output layer -->
+      <circle cx="480" cy="260" r="9" fill="#02C39A" opacity=".35"/>
+      <circle cx="480" cy="340" r="9" fill="#02C39A" opacity=".35"/>
+      <!-- Connections input→h1 -->
+      <line x1="87" y1="180" x2="213" y2="200" stroke="#02C39A" stroke-width=".6" opacity=".1"/>
+      <line x1="87" y1="180" x2="213" y2="270" stroke="#02C39A" stroke-width=".6" opacity=".08"/>
+      <line x1="87" y1="240" x2="213" y2="200" stroke="#02C39A" stroke-width=".6" opacity=".1"/>
+      <line x1="87" y1="240" x2="213" y2="270" stroke="#02C39A" stroke-width=".8" opacity=".12"/>
+      <line x1="87" y1="240" x2="213" y2="340" stroke="#02C39A" stroke-width=".6" opacity=".08"/>
+      <line x1="87" y1="300" x2="213" y2="270" stroke="#02C39A" stroke-width=".8" opacity=".12"/>
+      <line x1="87" y1="300" x2="213" y2="340" stroke="#02C39A" stroke-width=".9" opacity=".14"/>
+      <line x1="87" y1="300" x2="213" y2="410" stroke="#02C39A" stroke-width=".6" opacity=".08"/>
+      <line x1="87" y1="360" x2="213" y2="340" stroke="#02C39A" stroke-width=".7" opacity=".1"/>
+      <line x1="87" y1="360" x2="213" y2="410" stroke="#02C39A" stroke-width=".8" opacity=".12"/>
+      <line x1="87" y1="420" x2="213" y2="340" stroke="#02C39A" stroke-width=".5" opacity=".07"/>
+      <line x1="87" y1="420" x2="213" y2="410" stroke="#02C39A" stroke-width=".7" opacity=".1"/>
+      <!-- Connections h1→h2 -->
+      <line x1="227" y1="200" x2="352" y2="220" stroke="#02C39A" stroke-width=".7" opacity=".12"/>
+      <line x1="227" y1="200" x2="352" y2="300" stroke="#02C39A" stroke-width=".6" opacity=".09"/>
+      <line x1="227" y1="270" x2="352" y2="220" stroke="#02C39A" stroke-width=".9" opacity=".14"/>
+      <line x1="227" y1="270" x2="352" y2="300" stroke="#02C39A" stroke-width=".8" opacity=".13"/>
+      <line x1="227" y1="270" x2="352" y2="380" stroke="#02C39A" stroke-width=".6" opacity=".09"/>
+      <line x1="227" y1="340" x2="352" y2="300" stroke="#02C39A" stroke-width=".9" opacity=".15"/>
+      <line x1="227" y1="340" x2="352" y2="380" stroke="#02C39A" stroke-width=".8" opacity=".13"/>
+      <line x1="227" y1="410" x2="352" y2="380" stroke="#02C39A" stroke-width=".7" opacity=".11"/>
+      <!-- Connections h2→output (brighter) -->
+      <line x1="368" y1="220" x2="471" y2="260" stroke="#02C39A" stroke-width="1.2" opacity=".2"/>
+      <line x1="368" y1="220" x2="471" y2="340" stroke="#02C39A" stroke-width=".8" opacity=".12"/>
+      <line x1="368" y1="300" x2="471" y2="260" stroke="#02C39A" stroke-width="1.4" opacity=".22"/>
+      <line x1="368" y1="300" x2="471" y2="340" stroke="#02C39A" stroke-width="1.2" opacity=".2"/>
+      <line x1="368" y1="380" x2="471" y2="260" stroke="#02C39A" stroke-width=".7" opacity=".1"/>
+      <line x1="368" y1="380" x2="471" y2="340" stroke="#02C39A" stroke-width="1" opacity=".16"/>
+      <!-- Data pulse dots -->
+      <circle cx="150" cy="256" r="2.5" fill="#02C39A" opacity=".4"/>
+      <circle cx="290" cy="286" r="2.5" fill="#02C39A" opacity=".4"/>
+      <circle cx="420" cy="280" r="3"   fill="#02C39A" opacity=".5"/>
+      <!-- Layer labels -->
+      <text x="60"  y="470" font-family="monospace" font-size="7" fill="#02C39A" fill-opacity=".18" text-anchor="middle">INPUT</text>
+      <text x="220" y="460" font-family="monospace" font-size="7" fill="#02C39A" fill-opacity=".18" text-anchor="middle">HIDDEN</text>
+      <text x="360" y="430" font-family="monospace" font-size="7" fill="#02C39A" fill-opacity=".18" text-anchor="middle">HIDDEN</text>
+      <text x="480" y="385" font-family="monospace" font-size="7" fill="#02C39A" fill-opacity=".18" text-anchor="middle">OUTPUT</text>
+    </svg>
+
+    <div class="container">
+      <div class="hero-content" data-animate>
+        <span class="eyebrow">Alpha Tech · Intelligence</span>
+        <h1>IA industrial.<br>Datos que deciden.</h1>
+        <p>Modelos de inteligencia artificial diseñados para la realidad de la industria peruana: visión por computadora, mantenimiento predictivo y análisis de proceso. Sin proyectos piloto eternos.</p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn btn-primary">Agendar diagnóstico</a>
+          <a href="#modelo" class="btn btn-secondary">Ver modelo PoC→Producción</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MODELO POC → PRODUCCIÓN ─── -->
+  <section id="modelo">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Metodología</span>
+        <h2>De la prueba de concepto a producción.<br>Sin riesgo de proyecto fantasma.</h2>
+        <p>Cada proyecto sigue tres fases bien definidas con entregables concretos. El cliente decide si continuar al final de cada fase — sin compromisos de largo plazo hasta que el valor esté demostrado.</p>
+      </div>
+
+      <div class="poc-phases">
+
+        <div class="poc-phase" data-animate>
+          <div class="poc-phase-num">01</div>
+          <span class="poc-phase-tag">Discovery</span>
+          <h3>Diagnóstico de datos y caso de uso</h3>
+          <p>Entendemos el proceso productivo, identificamos dónde existe un problema real resoluble con IA y validamos la disponibilidad y calidad de los datos necesarios.</p>
+          <ul>
+            <li>Mapeo del proceso y puntos de medición</li>
+            <li>Inventario de datos disponibles</li>
+            <li>Viabilidad técnica y económica</li>
+            <li>Definición de KPI de éxito</li>
+          </ul>
+          <span class="poc-duration">2–3 semanas</span>
+        </div>
+
+        <div class="poc-phase" data-animate style="transition-delay:.1s">
+          <div class="poc-phase-num">02</div>
+          <span class="poc-phase-tag">Pilot</span>
+          <h3>Prueba de concepto acotada</h3>
+          <p>Construimos un modelo funcional sobre un subconjunto real de datos, medimos el resultado contra el KPI definido y lo presentamos al equipo técnico y de negocio del cliente.</p>
+          <ul>
+            <li>Pipeline de datos y preprocesamiento</li>
+            <li>Entrenamiento del modelo base</li>
+            <li>Métricas de rendimiento en datos reales</li>
+            <li>Informe de resultados y recomendación</li>
+          </ul>
+          <span class="poc-duration">4–6 semanas</span>
+        </div>
+
+        <div class="poc-phase" data-animate style="transition-delay:.2s">
+          <div class="poc-phase-num">03</div>
+          <span class="poc-phase-tag">Producción</span>
+          <h3>Despliegue y transferencia</h3>
+          <p>Integramos el modelo al entorno productivo del cliente, documentamos la arquitectura y transferimos el conocimiento al equipo interno para operación autónoma.</p>
+          <ul>
+            <li>Integración con sistemas existentes</li>
+            <li>API / dashboard de monitoreo</li>
+            <li>Documentación técnica completa</li>
+            <li>Capacitación del equipo interno</li>
+          </ul>
+          <span class="poc-duration">6–10 semanas</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CASOS DE USO ─── -->
+  <section id="usecases">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Verticales de aplicación</span>
+        <h2>Áreas donde la IA genera impacto real</h2>
+        <p>Capacidades que construimos para generar valor medible en operaciones industriales, procesos productivos y gestión comercial. Empezamos siempre por el diagnóstico, no por la tecnología.</p>
+      </div>
+      <div class="usecases-grid">
+
+        <div class="usecase-card" data-animate>
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+            </svg>
+          </div>
+          <h3>Clasificación y estandarización de insumos</h3>
+          <p>IA para automatizar la identificación, categorización y estandarización de herramientas, insumos y componentes en taller o almacén. Sin búsquedas manuales ni etiquetado inconsistente entre áreas.</p>
+          <p class="usecase-result">Reducción del tiempo de búsqueda de insumos y trazabilidad completa del stock desde el momento del ingreso al sistema.</p>
+        </div>
+
+        <div class="usecase-card" data-animate style="transition-delay:.06s">
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </div>
+          <h3>Asistentes vocales para talleres y centros de trabajo</h3>
+          <p>Configuración de asistentes de voz que conectan las diferentes áreas de un taller — almacén, producción, administración — para consultar stock, registrar avances, generar alertas y acceder a información técnica sin soltar las herramientas.</p>
+          <p class="usecase-result">Comunicación fluida entre áreas sin fricción manual y registro automático de actividad operativa en tiempo real.</p>
+        </div>
+
+        <div class="usecase-card" data-animate style="transition-delay:.12s">
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Análisis de datos de proceso</h3>
+          <p>Identificación de las variables de proceso que más impactan en el resultado final (calidad, rendimiento, consumo energético). Correlaciones que no son visibles con análisis tradicional.</p>
+          <p class="usecase-result">Mapa de causa-efecto cuantificado entre parámetros de proceso y KPIs productivos — base para optimización continua.</p>
+        </div>
+
+        <div class="usecase-card" data-animate style="transition-delay:.04s; border-top-color:#02C39A; border-top-width:2px;">
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            </svg>
+          </div>
+          <h3>Realidad aumentada en producción <span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#02C39A;background:rgba(2,195,154,.1);border:1px solid rgba(2,195,154,.25);border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:middle;">I+D Interno</span></h3>
+          <p>Superposición de información digital sobre el proceso físico para guía de operario, control de ensamblaje y trazabilidad en tiempo real. Nuestra línea de investigación y desarrollo actualmente activa — aplicada primero en nuestros propios procesos antes de llevarla al cliente.</p>
+          <p class="usecase-result">Reducción de errores de ensamblaje y documentación automática del proceso productivo sin intervención manual.</p>
+        </div>
+
+        <div class="usecase-card" data-animate style="transition-delay:.1s">
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>Control de inventario y reabastecimiento inteligente</h3>
+          <p>Modelos que monitorean el consumo de insumos, proyectan necesidades de reabastecimiento y generan alertas antes de que los faltantes afecten la operación. Aplicable a talleres, almacenes y líneas de producción.</p>
+          <p class="usecase-result">Eliminación de paros por falta de material y reducción del capital inmovilizado en stock excesivo o mal clasificado.</p>
+        </div>
+
+        <div class="usecase-card" data-animate style="transition-delay:.16s">
+          <div class="usecase-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#02C39A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>IA para gestión y canales comerciales</h3>
+          <p>Automatización de procesos de gestión, análisis de pipeline de ventas, segmentación de clientes y optimización de canales. IA aplicada no solo a producción — también a cómo una empresa vende, atiende y crece.</p>
+          <p class="usecase-result">Mayor visibilidad del ciclo comercial con datos accionables para priorización de leads, retención y expansión de canales.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESO ─── -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Un diagnóstico antes de cualquier propuesta</h2>
+        <p>No vendemos IA — resolvemos problemas con IA. La diferencia es que empezamos por entender el problema, no por proponer una solución.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-animate>
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <span class="step-tag">Gratuito · 60 min</span>
+            <h3>Diagnóstico de datos y proceso</h3>
+            <p>Conversación estructurada de 60 minutos para mapear el proceso, identificar el problema concreto y evaluar la disponibilidad de datos. Al final tienes claridad sobre si IA tiene sentido para tu caso — aunque no trabajes con nosotros.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <span class="step-tag">Propuesta</span>
+            <h3>Propuesta técnica acotada</h3>
+            <p>Si el diagnóstico confirma viabilidad, presentamos una propuesta técnica con el alcance exacto del PoC, los datos necesarios, el KPI de éxito, el timeline y el costo. Sin compromisos de fases futuras.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <span class="step-tag">Discovery · 2-3 sem</span>
+            <h3>Exploración de datos y arquitectura</h3>
+            <p>Análisis exploratorio de los datos reales, limpieza, feature engineering y selección de arquitectura del modelo. El cliente tiene acceso completo a este proceso.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <span class="step-tag">Pilot · 4-6 sem</span>
+            <h3>Entrenamiento y validación del modelo</h3>
+            <p>Entrenamiento del modelo sobre datos reales, validación cruzada, análisis de errores y ajuste. Entrega de informe técnico con métricas de rendimiento y recomendación de despliegue.</p>
+          </div>
+        </div>
+        <div class="step" data-animate>
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <span class="step-tag">Producción · 6-10 sem</span>
+            <h3>Despliegue, integración y transferencia</h3>
+            <p>Integración al entorno productivo, dashboard de monitoreo, documentación técnica completa y capacitación del equipo. El objetivo es que el cliente opere el sistema de forma autónoma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Lo que nos preguntan antes de empezar</h2>
+      </div>
+      <div class="faq-list" data-animate>
+
+        <details>
+          <summary class="faq-q">
+            ¿Necesito mucho presupuesto para empezar con IA?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">No. El diagnóstico inicial es gratuito. Si hay viabilidad, la propuesta del PoC está diseñada para ser un proyecto acotado que demuestra valor antes de comprometer inversión mayor. El punto de partida es entender el problema — no firmar un proyecto de 6 meses.</p>
+        </details>
+
+        <details>
+          <summary class="faq-q">
+            ¿Mis datos son suficientes para entrenar un modelo?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">Depende del problema y del tipo de datos disponibles. En el diagnóstico evaluamos exactamente esto: qué datos tienes, qué calidad tienen, qué volumen se necesitaría y si hay alternativas cuando el historial es corto. En algunos casos, técnicas de transfer learning o data augmentation permiten trabajar con datasets más pequeños de lo esperado.</p>
+        </details>
+
+        <details>
+          <summary class="faq-q">
+            ¿Qué pasa si el PoC no da los resultados esperados?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">Es una posibilidad real y por eso cada fase tiene un punto de decisión explícito. Si el PoC no alcanza el KPI definido, entregamos un informe técnico honesto explicando por qué y qué se necesitaría para lograrlo. El cliente nunca está obligado a continuar si los resultados no justifican la inversión.</p>
+        </details>
+
+        <details>
+          <summary class="faq-q">
+            ¿El modelo funciona solo con nuestros datos o necesita datos externos?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">En la mayoría de casos industriales los modelos se entrenan exclusivamente sobre los datos internos del cliente, que son los que mejor reflejan la realidad operativa específica. Los datos nunca se comparten con terceros ni se usan para entrenar otros modelos.</p>
+        </details>
+
+        <details>
+          <summary class="faq-q">
+            ¿Qué equipo técnico necesitamos de nuestra parte?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">Para el diagnóstico y el PoC, solo necesitamos acceso a los datos y tiempo de una persona que conozca el proceso (no tiene que ser ingeniero de datos). Para producción, idealmente alguien con conocimientos básicos de Python o SQL para la operación diaria, aunque esto se define caso a caso.</p>
+        </details>
+
+        <details>
+          <summary class="faq-q">
+            ¿Cuánto tiempo toma ver los primeros resultados?
+            <span class="faq-icon">+</span>
+          </summary>
+          <p class="faq-a">El PoC entrega resultados medibles en 4 a 6 semanas desde que tenemos acceso a los datos. El despliegue completo en producción toma entre 3 y 5 meses en total, dependiendo de la complejidad de la integración con los sistemas existentes.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ─── -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="eyebrow">Diagnóstico gratuito</span>
+        <h2>60 minutos para saber<br>si la IA tiene sentido en tu proceso.</h2>
+      </div>
+      <div class="contact-grid">
+        <form action="https://api.web3forms.com/submit" method="POST" data-animate>
+          <input type="hidden" name="access_key" value="c21d9b9f-23c7-4194-b4fa-8c88abf20e97">
+          <input type="hidden" name="redirect" value="gracias.html">
+          <input type="hidden" name="subject" value="Nuevo contacto — Intelligence">
+          <input type="hidden" name="UN_origen" value="Intelligence">
+
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="name" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo" placeholder="Tu cargo o posición">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+          </div>
+          <div class="form-group">
+            <label for="sector">Sector / industria</label>
+            <select id="sector" name="sector">
+              <option value="">Seleccionar...</option>
+              <option>Manufactura</option>
+              <option>Minería</option>
+              <option>Logística y distribución</option>
+              <option>Agroindustria</option>
+              <option>Construcción</option>
+              <option>Automotriz / transporte</option>
+              <option>Retail / consumo masivo</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">¿Cuál es el problema que quieres resolver? *</label>
+            <textarea id="mensaje" name="message" placeholder="Describe el proceso, qué está fallando, qué datos tienes disponibles y qué resultado esperarías. Cuanto más contexto, mejor el diagnóstico." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Agendar diagnóstico gratuito</button>
+        </form>
+
+        <div data-animate style="transition-delay:.15s">
+          <h3>¿Prefieres hablar primero?</h3>
+          <p style="margin-bottom:32px">El diagnóstico de 60 minutos es completamente gratuito. No es una reunión de ventas — es una conversación técnica estructurada para entender tu proceso y decirte con honestidad si la IA puede ayudarte.</p>
+
+          <dl>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/51922877190?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20de%20IA%20industrial." target="_blank" rel="noopener">+51 922 877 190</a></dd>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-channel-body">
+                <dt>Email</dt>
+                <dd><a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a></dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Ingeniería mecánica, aerodinámica,<br>IA industrial y realidad aumentada.<br>Lima, Perú.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="../Alpha tech S Web/aeronautica.html">Alpha Tech Simulations</a></li>
+            <li><a href="gracias.html">Gracias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Perú
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="intelligence.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="intelligence-en.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51922877190?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20de%20IA%20industrial."
+     class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
+    function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('animated'); observer.unobserve(e.target); } }), { threshold:0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    setTimeout(() => { const wa = document.getElementById('wa-btn'); if(wa) wa.classList.add('visible'); }, 3000);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(!t) return; e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth' }); }));
+  </script>
+</body>
+</html>
