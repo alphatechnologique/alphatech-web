@@ -751,8 +751,113 @@
         <h2>60 minutos para saber<br>si la IA tiene sentido en tu proceso.</h2>
       </div>
       <div class="contact-grid">
-        <script src="https://js.hsforms.net/forms/embed/51517582.js" defer></script>
-              <div class="hs-form-frame" data-region="na1" data-form-id="44306564-d3ac-4ce0-901b-f53c7abc5ea6" data-portal-id="51517582"></div>
+        <form id="hs-custom-form" novalidate>
+          <input type="hidden" name="hs_form_id" value="44306564-d3ac-4ce0-901b-f53c7abc5ea6">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-firstname">Nombre</label>
+            <input id="f-firstname" name="firstname" type="text" placeholder="Carlos" required>
+          </div><div class="form-group">
+            <label for="f-lastname">Apellido</label>
+            <input id="f-lastname" name="lastname" type="text" placeholder="García" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-email">Correo electrónico</label>
+            <input id="f-email" name="email" type="email" placeholder="carlos@empresa.com" required>
+          </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-company">Empresa</label>
+            <input id="f-company" name="company" type="text" placeholder="Empresa S.A." required>
+          </div><div class="form-group">
+            <label for="f-jobtitle">Cargo</label>
+            <input id="f-jobtitle" name="jobtitle" type="text" placeholder="Director de Operaciones" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-industry">Sector / Industria</label>
+            <select id="f-industry" name="industry" required>
+              <option value="">Selecciona tu sector</option>
+              <option value="AEROSPACE">Aeroespacial</option>
+        <option value="AGRICULTURE">Agropecuario</option>
+        <option value="APPAREL">Moda</option>
+        <option value="BANKING">Banca</option>
+        <option value="BIOTECHNOLOGY">Biotecnología</option>
+        <option value="CHEMICALS">Química</option>
+        <option value="COMMUNICATIONS">Comunicaciones</option>
+        <option value="CONSTRUCTION">Construcción</option>
+        <option value="CONSULTING">Consultoría</option>
+        <option value="EDUCATION">Educación</option>
+        <option value="ELECTRONICS">Electrónica</option>
+        <option value="ENERGY">Energía</option>
+        <option value="ENGINEERING">Ingeniería</option>
+        <option value="ENTERTAINMENT">Entretenimiento</option>
+        <option value="ENVIRONMENTAL">Ambiental</option>
+        <option value="FINANCE">Finanzas</option>
+        <option value="FOOD_BEVERAGE">Alimentos y bebidas</option>
+        <option value="GOVERNMENT">Gobierno</option>
+        <option value="HEALTHCARE">Salud</option>
+        <option value="HOSPITALITY">Hospitalidad</option>
+        <option value="INSURANCE">Seguros</option>
+        <option value="LEGAL">Legal</option>
+        <option value="MACHINERY">Maquinaria</option>
+        <option value="MANUFACTURING">Manufactura</option>
+        <option value="MEDIA">Medios</option>
+        <option value="NOT_FOR_PROFIT">Sin fines de lucro</option>
+        <option value="RECREATION">Recreación</option>
+        <option value="RETAIL">Comercio minorista</option>
+        <option value="SHIPPING">Logística / envíos</option>
+        <option value="TECHNOLOGY">Tecnología</option>
+        <option value="TELECOMMUNICATIONS">Telecomunicaciones</option>
+        <option value="TRANSPORTATION">Transporte</option>
+        <option value="UTILITIES">Servicios públicos</option>
+        <option value="OTHER">Otro</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="f-message">Mensaje</label>
+            <textarea id="f-message" name="message" placeholder="Cuéntanos sobre tu proyecto…" rows="4" required></textarea>
+          </div>
+          <div class="form-group" id="form-status" style="display:none">
+            <p id="form-msg" style="font-size:14px;padding:12px;border-radius:6px;margin:0"></p>
+          </div>
+          <button type="submit" class="btn btn-mint form-submit">Enviar mensaje →</button>
+        </form>
+        <script>
+        (function(){
+          var form = document.getElementById('hs-custom-form');
+          if(!form) return;
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type=submit]');
+            var statusBox = document.getElementById('form-status');
+            var msg = document.getElementById('form-msg');
+            btn.disabled = true;
+            btn.textContent = 'Enviando…';
+            var fd = new FormData(form);
+            var fields = [];
+            fd.forEach(function(v,k){ if(k!=='hs_form_id' && v) fields.push({name:k,value:v}); });
+            fetch('https://api.hsforms.com/submissions/v3/integration/submit/51517582/44306564-d3ac-4ce0-901b-f53c7abc5ea6', {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify({fields:fields, context:{pageUri:window.location.href,pageName:document.title}})
+            })
+            .then(function(r){ return r.ok ? r : Promise.reject(r); })
+            .then(function(){
+              window.location.href = 'gracias.html';
+            })
+            .catch(function(){
+              statusBox.style.display='block';
+              msg.style.background='rgba(255,80,0,.15)';
+              msg.style.color='#ff6b35';
+              msg.textContent = 'Hubo un error. Por favor intenta de nuevo o escríbenos directamente.';
+              btn.disabled=false;
+              btn.textContent='Enviar mensaje →';
+            });
+          });
+        })();
+        </script>
 
         <div data-animate style="transition-delay:.15s">
           <h3>¿Prefieres hablar primero?</h3>

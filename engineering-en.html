@@ -372,6 +372,11 @@
       .pmr-row { grid-template-columns:1fr; gap:4px; }
       .step { grid-template-columns:1fr; gap:8px; }
     }
+  
+.btn-mint { background:var(--mint); color:var(--navy-dark); }
+.btn-mint:hover { background:#01a882; }
+.btn-teal { background:var(--teal); color:#fff; }
+.btn-teal:hover { background:#007a93; }
   </style>
 </head>
 <body>
@@ -723,8 +728,113 @@
         <h2>Tell us the problem.<br>We'll respond in 24 h.</h2>
       </div>
       <div class="contact-grid">
-        <script src="https://js.hsforms.net/forms/embed/51517582.js" defer></script>
-              <div class="hs-form-frame" data-region="na1" data-form-id="8a88d9dd-ece7-4829-ae84-dc7542d66b9e" data-portal-id="51517582"></div>
+        <form id="hs-custom-form" novalidate>
+          <input type="hidden" name="hs_form_id" value="8a88d9dd-ece7-4829-ae84-dc7542d66b9e">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-firstname">First name</label>
+            <input id="f-firstname" name="firstname" type="text" placeholder="Carlos" required>
+          </div><div class="form-group">
+            <label for="f-lastname">Last name</label>
+            <input id="f-lastname" name="lastname" type="text" placeholder="García" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="carlos@company.com" required>
+          </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" placeholder="Company Inc." required>
+          </div><div class="form-group">
+            <label for="f-jobtitle">Job title</label>
+            <input id="f-jobtitle" name="jobtitle" type="text" placeholder="Operations Director" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-industry">Industry</label>
+            <select id="f-industry" name="industry" required>
+              <option value="">Select your industry</option>
+              <option value="AEROSPACE">Aerospace</option>
+        <option value="AGRICULTURE">Agriculture</option>
+        <option value="APPAREL">Apparel</option>
+        <option value="BANKING">Banking</option>
+        <option value="BIOTECHNOLOGY">Biotechnology</option>
+        <option value="CHEMICALS">Chemicals</option>
+        <option value="COMMUNICATIONS">Communications</option>
+        <option value="CONSTRUCTION">Construction</option>
+        <option value="CONSULTING">Consulting</option>
+        <option value="EDUCATION">Education</option>
+        <option value="ELECTRONICS">Electronics</option>
+        <option value="ENERGY">Energy</option>
+        <option value="ENGINEERING">Engineering</option>
+        <option value="ENTERTAINMENT">Entertainment</option>
+        <option value="ENVIRONMENTAL">Environmental</option>
+        <option value="FINANCE">Finance</option>
+        <option value="FOOD_BEVERAGE">Food & Beverage</option>
+        <option value="GOVERNMENT">Government</option>
+        <option value="HEALTHCARE">Healthcare</option>
+        <option value="HOSPITALITY">Hospitality</option>
+        <option value="INSURANCE">Insurance</option>
+        <option value="LEGAL">Legal</option>
+        <option value="MACHINERY">Machinery</option>
+        <option value="MANUFACTURING">Manufacturing</option>
+        <option value="MEDIA">Media</option>
+        <option value="NOT_FOR_PROFIT">Non-profit</option>
+        <option value="RECREATION">Recreation</option>
+        <option value="RETAIL">Retail</option>
+        <option value="SHIPPING">Shipping</option>
+        <option value="TECHNOLOGY">Technology</option>
+        <option value="TELECOMMUNICATIONS">Telecommunications</option>
+        <option value="TRANSPORTATION">Transportation</option>
+        <option value="UTILITIES">Utilities</option>
+        <option value="OTHER">Other</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" placeholder="Tell us about your project…" rows="4" required></textarea>
+          </div>
+          <div class="form-group" id="form-status" style="display:none">
+            <p id="form-msg" style="font-size:14px;padding:12px;border-radius:6px;margin:0"></p>
+          </div>
+          <button type="submit" class="btn btn-teal form-submit">Send message →</button>
+        </form>
+        <script>
+        (function(){
+          var form = document.getElementById('hs-custom-form');
+          if(!form) return;
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type=submit]');
+            var statusBox = document.getElementById('form-status');
+            var msg = document.getElementById('form-msg');
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+            var fd = new FormData(form);
+            var fields = [];
+            fd.forEach(function(v,k){ if(k!=='hs_form_id' && v) fields.push({name:k,value:v}); });
+            fetch('https://api.hsforms.com/submissions/v3/integration/submit/51517582/8a88d9dd-ece7-4829-ae84-dc7542d66b9e', {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify({fields:fields, context:{pageUri:window.location.href,pageName:document.title}})
+            })
+            .then(function(r){ return r.ok ? r : Promise.reject(r); })
+            .then(function(){
+              window.location.href = 'gracias-en.html';
+            })
+            .catch(function(){
+              statusBox.style.display='block';
+              msg.style.background='rgba(255,80,0,.15)';
+              msg.style.color='#ff6b35';
+              msg.textContent = 'Something went wrong. Please try again or contact us directly.';
+              btn.disabled=false;
+              btn.textContent='Send message →';
+            });
+          });
+        })();
+        </script>
 
         <div data-animate style="transition-delay:.15s">
           <h3>Prefer to talk directly?</h3>

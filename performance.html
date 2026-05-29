@@ -375,6 +375,11 @@
       .step { grid-template-columns:1fr; gap:8px; }
       .manifiesto-stats { grid-template-columns:1fr; }
     }
+  
+.btn-mint { background:var(--mint); color:var(--navy-dark); }
+.btn-mint:hover { background:#01a882; }
+.btn-teal { background:var(--teal); color:#fff; }
+.btn-teal:hover { background:#007a93; }
   </style>
 </head>
 <body>
@@ -735,8 +740,73 @@
         <h2>Cuéntanos qué quieres lograr.<br>Te respondemos en 24 h.</h2>
       </div>
       <div class="contact-grid">
-        <script src="https://js.hsforms.net/forms/embed/51517582.js" defer></script>
-              <div class="hs-form-frame" data-region="na1" data-form-id="fcf4dc95-925d-4c4e-a141-8f67db7f48fc" data-portal-id="51517582"></div>
+        <form id="hs-custom-form" novalidate>
+          <input type="hidden" name="hs_form_id" value="fcf4dc95-925d-4c4e-a141-8f67db7f48fc">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-firstname">Nombre</label>
+            <input id="f-firstname" name="firstname" type="text" placeholder="Carlos" required>
+          </div><div class="form-group">
+            <label for="f-lastname">Apellido</label>
+            <input id="f-lastname" name="lastname" type="text" placeholder="García" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-email">Correo electrónico</label>
+            <input id="f-email" name="email" type="email" placeholder="carlos@empresa.com" required>
+          </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-company">Empresa</label>
+            <input id="f-company" name="company" type="text" placeholder="Empresa S.A." required>
+          </div><div class="form-group">
+            <label for="f-jobtitle">Cargo</label>
+            <input id="f-jobtitle" name="jobtitle" type="text" placeholder="Director de Operaciones" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-message">Mensaje</label>
+            <textarea id="f-message" name="message" placeholder="Cuéntanos sobre tu proyecto…" rows="4" required></textarea>
+          </div>
+          <div class="form-group" id="form-status" style="display:none">
+            <p id="form-msg" style="font-size:14px;padding:12px;border-radius:6px;margin:0"></p>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Enviar mensaje →</button>
+        </form>
+        <script>
+        (function(){
+          var form = document.getElementById('hs-custom-form');
+          if(!form) return;
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type=submit]');
+            var statusBox = document.getElementById('form-status');
+            var msg = document.getElementById('form-msg');
+            btn.disabled = true;
+            btn.textContent = 'Enviando…';
+            var fd = new FormData(form);
+            var fields = [];
+            fd.forEach(function(v,k){ if(k!=='hs_form_id' && v) fields.push({name:k,value:v}); });
+            fetch('https://api.hsforms.com/submissions/v3/integration/submit/51517582/fcf4dc95-925d-4c4e-a141-8f67db7f48fc', {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify({fields:fields, context:{pageUri:window.location.href,pageName:document.title}})
+            })
+            .then(function(r){ return r.ok ? r : Promise.reject(r); })
+            .then(function(){
+              window.location.href = 'gracias.html';
+            })
+            .catch(function(){
+              statusBox.style.display='block';
+              msg.style.background='rgba(255,80,0,.15)';
+              msg.style.color='#ff6b35';
+              msg.textContent = 'Hubo un error. Por favor intenta de nuevo o escríbenos directamente.';
+              btn.disabled=false;
+              btn.textContent='Enviar mensaje →';
+            });
+          });
+        })();
+        </script>
 
         <div data-animate style="transition-delay:.15s">
           <h3>¿Prefieres hablar primero?</h3>

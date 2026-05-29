@@ -183,6 +183,11 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width:900px) { .nav-links,.nav-cta-btn { display:none; } .hamburger { display:flex; } .un-selector { grid-template-columns:1fr; gap:12px; } .form-row { grid-template-columns:1fr; } }
     @media (max-width:640px) { .container,.nav-inner { padding:0 24px; } #page { padding-top:100px; } .form-footer { flex-direction:column-reverse; align-items:stretch; } .btn-accent { width:100%; } }
+  
+.btn-mint { background:var(--mint); color:var(--navy-dark); }
+.btn-mint:hover { background:#01a882; }
+.btn-teal { background:var(--teal); color:#fff; }
+.btn-teal:hover { background:#007a93; }
   </style>
 </head>
 <body>
@@ -307,8 +312,73 @@
           <p id="form-sub">Tell us about the project. We'll respond with a proposal in under 24 hours.</p>
         </div>
 
-        <script src="https://js.hsforms.net/forms/embed/51517582.js" defer></script>
-              <div class="hs-form-frame" data-region="na1" data-form-id="730a3c8c-0a7c-4c2a-a4e0-1e819a67d888" data-portal-id="51517582"></div>
+        <form id="hs-custom-form" novalidate>
+          <input type="hidden" name="hs_form_id" value="730a3c8c-0a7c-4c2a-a4e0-1e819a67d888">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-firstname">First name</label>
+            <input id="f-firstname" name="firstname" type="text" placeholder="Carlos" required>
+          </div><div class="form-group">
+            <label for="f-lastname">Last name</label>
+            <input id="f-lastname" name="lastname" type="text" placeholder="García" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="carlos@company.com" required>
+          </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-group">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" placeholder="Company Inc." required>
+          </div><div class="form-group">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+1 555 000 0000" >
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="f-message">Project / Requirements</label>
+            <textarea id="f-message" name="message" placeholder="Describe your project…" rows="4" required></textarea>
+          </div>
+          <div class="form-group" id="form-status" style="display:none">
+            <p id="form-msg" style="font-size:14px;padding:12px;border-radius:6px;margin:0"></p>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Request a quote →</button>
+        </form>
+        <script>
+        (function(){
+          var form = document.getElementById('hs-custom-form');
+          if(!form) return;
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type=submit]');
+            var statusBox = document.getElementById('form-status');
+            var msg = document.getElementById('form-msg');
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+            var fd = new FormData(form);
+            var fields = [];
+            fd.forEach(function(v,k){ if(k!=='hs_form_id' && v) fields.push({name:k,value:v}); });
+            fetch('https://api.hsforms.com/submissions/v3/integration/submit/51517582/730a3c8c-0a7c-4c2a-a4e0-1e819a67d888', {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify({fields:fields, context:{pageUri:window.location.href,pageName:document.title}})
+            })
+            .then(function(r){ return r.ok ? r : Promise.reject(r); })
+            .then(function(){
+              window.location.href = 'gracias-en.html';
+            })
+            .catch(function(){
+              statusBox.style.display='block';
+              msg.style.background='rgba(255,80,0,.15)';
+              msg.style.color='#ff6b35';
+              msg.textContent = 'Something went wrong. Please try again or contact us directly.';
+              btn.disabled=false;
+              btn.textContent='Request a quote →';
+            });
+          });
+        })();
+        </script>
       </div>
 
     </div>
