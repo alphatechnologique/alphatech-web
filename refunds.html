@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund Policy · Alpha Tech Solutions</title>
+  <meta name="description" content="Returns, refunds and warranty policy of Alpha Tech Solutions S.A.C.">
+
+  <link rel="canonical" href="refunds.html">
+  <link rel="alternate" hreflang="es" href="devoluciones.html">
+  <link rel="alternate" hreflang="en" href="refunds.html">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --gray-mute: #4B5563;
+      --max-w:     1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.1px;
+      color: var(--white);
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--teal);
+      display: block; margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800; letter-spacing: -0.8px;
+      line-height: 1.1; margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 700; letter-spacing: -0.3px;
+      line-height: 1.25; margin-top: 56px; margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    h3 {
+      font-size: 17px; font-weight: 700;
+      margin-top: 28px; margin-bottom: 10px;
+      color: var(--teal);
+      letter-spacing: 0.1px;
+    }
+
+    p, li {
+      font-size: 15px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.85;
+    }
+
+    p { margin-bottom: 14px; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+
+    a { color: var(--teal); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--orange); }
+
+    strong { color: var(--white); font-weight: 700; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 50px; padding: 0 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; cursor: pointer;
+      transition: all 0.25s ease; border: 2px solid transparent;
+    }
+
+    .btn-primary { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .btn-primary:hover { background: #e04400; border-color: #e04400; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,80,0,.35); }
+
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.35); }
+    .btn-secondary:hover { border-color: var(--white); }
+
+    /* ─── NAV (copia simplificada del index) ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 72px;
+      display: flex; align-items: center;
+      background: rgba(0,10,32,.94);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 48px; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; text-decoration: none;
+      color: rgba(255,255,255,.65); transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-lang { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .nav-lang a { color: rgba(255,255,255,.4); text-decoration: none; transition: color 0.2s ease; }
+    .nav-lang a:hover { color: var(--white); }
+    .nav-lang a.active { color: var(--teal); }
+    .nav-lang span { color: rgba(255,255,255,.2); }
+
+    .nav-cta-btn {
+      display: inline-flex; align-items: center; height: 38px; padding: 0 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; text-decoration: none;
+      background: var(--orange); color: var(--white);
+      border-radius: 6px; transition: background .2s, transform .2s; white-space: nowrap;
+    }
+    .nav-cta-btn:hover { background: #e04400; transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all .3s ease; border-radius: 1px; }
+
+    /* ─── HERO LEGAL ─── */
+    .legal-hero {
+      padding: 152px 0 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background:
+        radial-gradient(ellipse at top left, rgba(0,142,170,.10), transparent 55%),
+        var(--navy-dark);
+    }
+
+    .legal-hero .meta {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px; letter-spacing: 2px;
+      color: rgba(255,255,255,.45);
+      text-transform: uppercase; margin-top: 18px;
+    }
+
+    /* ─── LEGAL CONTENT ─── */
+    .legal-content {
+      padding: 56px 0 120px;
+    }
+    .legal-content article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    
+
+    .info-box {
+      border-left: 3px solid var(--orange);
+      background: rgba(254,80,0,.04);
+      padding: 18px 22px; margin: 20px 0;
+      font-size: 14px; color: rgba(255,255,255,.75);
+    }
+
+    .back-to-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 56px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--teal);
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 56px 0 0;
+    }
+
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-brand p {
+      font-size: 13px; color: rgba(255,255,255,.35);
+      line-height: 1.85; margin-top: 18px; max-width: 240px;
+    }
+
+    .footer-col h4 {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 20px;
+    }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.48); text-decoration: none; transition: color .2s ease; }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-col p { font-size: 13px; color: rgba(255,255,255,.42); line-height: 1.85; }
+    .footer-col a { color: rgba(255,255,255,.42); text-decoration: none; transition: color .2s ease; }
+    .footer-col a:hover { color: var(--teal); }
+
+    .footer-bottom { padding: 20px 0; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copyright { font-size: 12px; color: rgba(255,255,255,.22); }
+    .footer-bottom-lang { display: flex; gap: 12px; font-size: 11px; font-weight: 700; }
+    .footer-bottom-lang a { color: rgba(255,255,255,.32); text-decoration: none; transition: color .2s; }
+    .footer-bottom-lang a:hover { color: var(--white); }
+    .footer-bottom-lang a.active { color: var(--teal); }
+
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 32px; }
+      .nav-links { display: none; }
+      .nav-cta-btn { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner { padding: 0 24px; }
+      .container { padding: 0 24px; }
+      .legal-hero { padding: 120px 0 40px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    /* ─── FOOTER PAYMENTS + CULQI (v3 — Culqi compliance) ─── */
+    .footer-payments {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 18px; row-gap: 14px;
+    }
+    .footer-payments-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+    }
+    .footer-payments-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-payments-list span {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: .5px;
+      color: rgba(255,255,255,.7);
+    }
+    .footer-culqi {
+      margin-left: auto;
+      font-size: 11px; color: rgba(255,255,255,.42); font-style: italic;
+    }
+    .footer-culqi strong { color: var(--white); font-style: normal; }
+    @media (max-width: 700px) {
+      .footer-payments { flex-direction: column; align-items: flex-start; }
+      .footer-culqi { margin-left: 0; }
+    }
+
+  
+    /* Anchor scroll offset para no quedar debajo del navbar fijo */
+    section[id] { scroll-margin-top: 96px; }
+  
+    /* Back link en hero legal */
+    .legal-hero .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .legal-hero .back-link:hover {
+      color: var(--teal);
+      transform: translateX(-3px);
+    }
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions — Inicio">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="catalogo.html">Catalog</a></li>          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="refunds.html" class="active">EN</a><span>|</span><a href="devoluciones.html">ES</a>
+        </div>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+        <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="legal-hero">
+    <div class="container">
+      <a href="index.html" class="back-link" onclick="if(history.length>1){event.preventDefault();history.back();}">← Back</a>
+          <span class="eyebrow">Legal document</span>
+      <h1>Refund Policy</h1>
+      <p class="meta">Last updated: March 2026</p>
+    </div>
+  </header>
+
+  <!-- ─── CONTENT ─── -->
+  <main class="legal-content">
+    <div class="container">
+      <article>
+
+        <section id="s1">
+          <h2>1. Physical products</h2>
+          <p>Applies to HOTAS adapters, 3D scale models, strip holders, keychains, merchandise and any other physical product.</p>
+          <h3>Return window</h3>
+          <ul>
+            <li><strong>7 calendar days</strong> from receipt of the product.</li>
+            <li>Product must be unused, in original packaging and with all accessories.</li>
+            <li>Customer covers return shipping unless the issue is attributable to Alpha Tech.</li>
+          </ul>
+          <h3>Manufacturing defect warranty</h3>
+          <ul>
+            <li><strong>30 calendar days</strong> from receipt.</li>
+            <li>Covers defects not caused by misuse, impact, liquid exposure or improper handling.</li>
+            <li>Alpha Tech will repair, replace or refund.</li>
+          </ul>
+        </section>
+
+        <section id="s2">
+          <h2>2. Technical services</h2>
+          <ul>
+            <li><strong>Cancellation before start:</strong> 100% refund if requested at least 24 hours in advance.</li>
+            <li><strong>Once started:</strong> no refund for work already performed.</li>
+            <li><strong>Cancellation caused by Alpha Tech:</strong> 100% refund plus free rescheduling or store credit.</li>
+          </ul>
+        </section>
+
+        <section id="s3">
+          <h2>3. Courses and training</h2>
+          <ul>
+            <li><strong>Cancellation 7+ days before cohort start:</strong> 80% refund.</li>
+            <li><strong>Less than 7 days:</strong> no refund, but seat can be reassigned within 6 months.</li>
+            <li><strong>Once course starts:</strong> no refund.</li>
+            <li><strong>Course materials:</strong> not refundable.</li>
+          </ul>
+        </section>
+
+        <section id="s4">
+          <h2>4. Simulator sessions and experiences</h2>
+          <ul>
+            <li><strong>Cancellation 24+ hours before:</strong> free rescheduling.</li>
+            <li><strong>Less than 24 hours:</strong> session is charged.</li>
+            <li><strong>No-show:</strong> full charge, no refund or rescheduling.</li>
+            <li><strong>Documented force majeure:</strong> refund or rescheduling under evaluation.</li>
+            <li><strong>11-session package:</strong> 6 months validity from purchase. Non-refundable. Unused sessions are forfeited.</li>
+          </ul>
+        </section>
+
+        <section id="s5">
+          <h2>5. Aeronautical Club memberships</h2>
+          <ul>
+            <li>Memberships are <strong>cancellable month-by-month</strong> without penalty.</li>
+            <li>Customer must give at least 7 days' notice before next recurring charge.</li>
+            <li><strong>No refund</strong> for the current month once charged.</li>
+            <li><strong>Membership pause:</strong> up to once per year for up to 30 days at no cost.</li>
+            <li><strong>Annual membership:</strong> proportional refund deducting months consumed at the regular monthly price.</li>
+          </ul>
+        </section>
+
+        <section id="s6">
+          <h2>6. How to request a refund</h2>
+          <ol>
+            <li>Email <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a> or WhatsApp <a href="https://wa.me/51922877190">+51 922 877 190</a>.</li>
+            <li>Provide order number, reason for return and product photos if applicable.</li>
+            <li>Our team responds within <strong>48 business hours</strong>.</li>
+            <li>If approved, we coordinate pickup or return shipping.</li>
+            <li>After receipt and verification, we process the refund.</li>
+          </ol>
+        </section>
+
+        <section id="s7">
+          <h2>7. Refund timing</h2>
+          <p>Refunds are made through the same payment method:</p>
+          <ul>
+            <li><strong>Credit and debit cards:</strong> 5 to 7 business days.</li>
+            <li><strong>Yape and mobile wallets:</strong> 2 to 5 business days.</li>
+            <li><strong>Bank transfers:</strong> up to 7 business days.</li>
+          </ul>
+        </section>
+
+        <section id="s8">
+          <h2>8. Exclusions</h2>
+          <p>No refund applies in the following cases:</p>
+          <ul>
+            <li>Personalized products once produced.</li>
+            <li>Services or sessions already performed.</li>
+            <li>Opened or used training materials.</li>
+            <li>Products damaged by misuse.</li>
+            <li>Products without original packaging or with signs of use.</li>
+          </ul>
+          <div class="info-box">
+            This policy respects consumer rights under Peru's <strong>Consumer Protection Code</strong> (Law 29571). If you believe your rights were not respected, you may file a complaint in our complaints book.
+          </div>
+        </section>
+
+        <a href="index.html" class="back-to-home">← Back to home</a>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Peru.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Units</h4>
+          <ul class="footer-links">
+            <li><a href="performance-en.html">Performance</a></li>
+            <li><a href="engineering-en.html">Engineering</a></li>
+            <li><a href="intelligence-en.html">Intelligence</a></li>
+            <li><a href="aeronautics.html">Simulations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">            <li><a href="nosotros-en.html">About</a></li>
+<li><a href="contacto-en.html">Contact</a></li>
+            <li><a href="cotizar-en.html">Get a quote</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms and Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refunds.html">Refund Policy</a></li>
+            <li><a href="shipping.html">Shipping Policy</a></li>
+            <li><a href="reclamaciones.html">Complaints Book</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Peru
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-payments">
+        <span class="footer-payments-label">Accepted payment methods</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Payments processed securely by <strong>Culqi</strong>, a BCP group company.</span>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · All rights reserved.</span>
+        <div class="footer-bottom-lang">
+          <a href="devoluciones.html">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="refunds.html" class="active">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js" defer></script>
+
+
+</body>
+</html>

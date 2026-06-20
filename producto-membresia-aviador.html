@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Membresía Aviador · Club Aeronáutico Alpha Tech</title>
+  <meta name="description" content="Membresía mensual con acceso a simuladores de vuelo y ATC, descuentos en cursos, y la comunidad aeronáutica más activa de Lima.">
+  <link rel="canonical" href="producto-membresia-aviador.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#008EAA;--orange:#FE5000;--navy:#001540;--navy-dark:#000A20;--navy-deep:#06090F;--white:#FFF;--text-mute:rgba(255,255,255,.7);--max-w:1200px}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:var(--white);background:var(--navy-deep);overflow-x:hidden}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 48px}
+a{color:var(--teal);text-decoration:none;transition:color .2s}
+a:hover{color:var(--orange)}
+strong{color:var(--white)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;background:rgba(0,10,32,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 48px;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:32px;width:auto;display:block}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.nav-links a:hover{color:var(--white)}
+.nav-cta-btn{display:inline-flex;align-items:center;height:38px;padding:0 20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--orange);color:var(--white);border-radius:6px}
+.nav-cta-btn:hover{background:#e04400;color:var(--white)}
+
+.breadcrumb{padding:96px 0 0;font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.breadcrumb a{color:rgba(255,255,255,.4)}
+.breadcrumb a:hover{color:var(--teal)}
+.breadcrumb span{margin:0 8px;opacity:.4}
+
+.product-hero{padding:32px 0 80px;border-bottom:1px solid rgba(255,255,255,.05)}
+.product-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+.product-img{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--navy-deep));border:1px solid rgba(255,255,255,.06)}
+.product-img img{width:100%;height:100%;object-fit:cover}
+.product-img-badge{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(0,21,64,.85);border:1px solid rgba(0,142,170,.4);border-radius:100px;font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);backdrop-filter:blur(8px)}
+.product-img-badge.brand-sim{border-color:rgba(254,80,0,.45);color:#FFB082;background:rgba(254,80,0,.18)}
+
+.product-info{padding-top:8px}
+.product-eyebrow{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:block}
+.product-sku-line{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:1.5px;color:rgba(255,255,255,.4)}
+.product-sku-line strong{color:var(--white);font-weight:700}
+.product-info h1{font-family:'Orbitron',sans-serif;font-size:clamp(32px,4vw,46px);font-weight:800;letter-spacing:-.8px;line-height:1.1;margin-bottom:14px}
+.product-subtitle{font-size:16px;color:var(--text-mute);line-height:1.6;margin-bottom:24px}
+.product-price-block{padding:22px 24px;background:linear-gradient(135deg,rgba(254,80,0,.10),rgba(254,80,0,.04));border:1px solid rgba(254,80,0,.25);border-radius:12px;margin-bottom:24px}
+.product-price{font-family:'Orbitron',sans-serif;font-size:38px;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1;margin-bottom:6px}
+.product-price-note{font-size:13px;color:rgba(255,255,255,.6)}
+.product-delivery{display:flex;gap:18px;font-size:13px;color:rgba(255,255,255,.55);margin-top:10px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+
+.product-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 32px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:8px;cursor:pointer;transition:all .25s ease;border:2px solid transparent}
+.btn-primary{background:var(--orange);color:var(--white);border-color:var(--orange);flex:1;min-width:200px}
+.btn-primary:hover{background:#e04400;border-color:#e04400;transform:translateY(-2px);box-shadow:0 8px 24px rgba(254,80,0,.35);color:var(--white)}
+.btn-secondary{background:transparent;color:var(--white);border-color:rgba(255,255,255,.3)}
+.btn-secondary:hover{border-color:var(--white)}
+
+.product-intro{font-size:15px;color:rgba(255,255,255,.78);line-height:1.75}
+.product-intro p{margin-bottom:14px}
+
+.section{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.section h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.4px;margin-bottom:36px;display:flex;align-items:center;gap:16px}
+.section h2::before{content:'';display:block;width:32px;height:2px;background:var(--orange)}
+
+.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.spec-row{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.02)}
+.spec-row:hover{background:rgba(0,142,170,.04)}
+.spec-key{color:rgba(255,255,255,.55);font-size:13px;font-weight:500}
+.spec-val{color:var(--white);font-size:13px;font-weight:600;text-align:right}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature-card{padding:24px;background:linear-gradient(180deg,rgba(0,142,170,.04),rgba(0,142,170,.01));border:1px solid rgba(0,142,170,.15);border-radius:12px}
+.feature-card h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-.1px}
+.feature-card p{font-size:13px;color:var(--text-mute);line-height:1.6}
+
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-item summary{padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;color:var(--white);list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-family:'Orbitron',sans-serif;font-size:20px;color:var(--teal);transition:transform .25s ease;font-weight:300}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{padding:0 0 22px;color:var(--text-mute);font-size:14px;line-height:1.7}
+
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.related-card{padding:20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:var(--white);transition:all .2s ease;display:flex;flex-direction:column;gap:8px}
+.related-card:hover{border-color:rgba(0,142,170,.4);background:rgba(0,142,170,.04);transform:translateY(-2px);color:var(--white)}
+.related-cat{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.related-name{font-size:15px;font-weight:700;color:var(--white)}
+.related-price{font-family:'Orbitron',sans-serif;font-size:17px;font-weight:700;color:var(--orange);margin-top:auto}
+
+footer{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.06);padding:56px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.85;margin-top:18px;max-width:240px}
+.footer-col h4{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.48);text-decoration:none}
+.footer-links a:hover{color:var(--white)}
+.footer-col p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.85}
+.footer-col a{color:rgba(255,255,255,.42)}
+.footer-social{display:flex;gap:10px;margin-top:14px}
+.footer-social-link{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);border-radius:6px;color:rgba(255,255,255,.55)}
+.footer-social-link:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.footer-payments{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;gap:18px;row-gap:14px}
+.footer-payments-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.footer-payments-list{display:flex;flex-wrap:wrap;gap:10px}
+.footer-payments-list span{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7)}
+.footer-culqi{margin-left:auto;font-size:11px;color:rgba(255,255,255,.42);font-style:italic}
+.footer-culqi strong{color:var(--white);font-style:normal}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.footer-copyright{font-size:12px;color:rgba(255,255,255,.22)}
+
+@media (max-width:900px){
+  .nav-inner,.container{padding:0 32px}
+  .nav-links{display:none}
+  .product-grid{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .footer-culqi{margin-left:0}
+}
+@media (max-width:600px){
+  .nav-inner,.container{padding:0 24px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  
+    .product-promo-tag {
+      display: inline-block; background: var(--orange); color: var(--white);
+      font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 4px; margin-bottom: 14px; line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions"></a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="aeronautica.html">Simulations</a></li>
+          <li><a href="catalogo.html" style="color:var(--white)">Catálogo</a></li>
+        </ul>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> <span>›</span> <a href="catalogo.html">Catálogo</a> <span>›</span> Membresía Aviador
+    </div>
+  </div>
+
+  <section class="product-hero">
+    <div class="container">
+      <div class="product-grid">
+        <div class="product-img">
+          <img src="producto-membresia-aviador.png" alt="Membresía Aviador">
+          <span class="product-img-badge brand-sim">Alpha Tech Simulations</span>
+        </div>
+        <div class="product-info">
+          <span class="product-eyebrow">Membresía</span>
+          <div class="product-sku-line">SKU <strong>CLB-MB-002</strong></div>
+          <h1>Membresía Aviador</h1>
+          <p class="product-subtitle">El equivalente a S/. 18 por sesión de simulador. Sin comparación en Lima.</p>
+
+          <div class="product-price-block">
+            <div class="product-promo-tag">Promoción por apertura</div>
+            <div class="product-price">S/. 149/mes</div>
+            <div class="product-price-note">cancelas cuando querás · sin costo de afiliación</div>
+            <div class="product-delivery">
+              <span>📦 <strong style="color:rgba(255,255,255,.85)">Activación inmediata</strong></span>
+            </div>
+          </div>
+
+          <div class="product-cta-row">
+            <button class="btn btn-primary" data-add-to-cart="CLB-MB-002" data-nombre="Membresía Aviador" data-marca="Simulations" data-categoria="Membresía" data-precio="149" data-img="producto-membresia-aviador.png" data-modelo="Suscripción" data-recurrence="/mes">Agregar al carrito →</button>
+            <a href="producto-bautismo.html" class="btn btn-secondary">Probar antes con bautismo</a>
+          </div>
+
+          <div class="product-intro">
+            <p>La Membresía Aviador te da acceso a los 2 simuladores del Club (vuelo + control de tránsito aéreo) con hasta 12 sesiones por mes. Hacé los números: <strong>una sesión suelta de simulador de vuelo en Lima cuesta entre S/. 95 (SimPilot) y S/. 245 (Century Flight Academy)</strong>. Con Aviador, una sesión te sale S/. 18 efectivo.</p>
+            <p>Además: 10% de descuento en todos los cursos del Club, acceso prioritario a eventos exclusivos, y conexión directa con la comunidad aeronáutica más activa de Lima — pilotos en formación, controladores y entusiastas serios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Especificaciones</h2>
+      <div class="specs-grid"><div class="spec-row"><span class="spec-key">Sesiones de simulador de vuelo</span><span class="spec-val">Incluidas — hasta 12 al mes</span></div><div class="spec-row"><span class="spec-key">Sesiones de simulador ATC</span><span class="spec-val">Incluidas — hasta 12 al mes</span></div><div class="spec-row"><span class="spec-key">Despacho de vuelo (futuro)</span><span class="spec-val">Incluido cuando se lance</span></div><div class="spec-row"><span class="spec-key">Descuento en cursos</span><span class="spec-val">10% off</span></div><div class="spec-row"><span class="spec-key">Sesiones excedidas</span><span class="spec-val">S/. 60 por hora adicional</span></div><div class="spec-row"><span class="spec-key">Cobro recurrente</span><span class="spec-val">Mensual vía Culqi</span></div><div class="spec-row"><span class="spec-key">Cancelación</span><span class="spec-val">Mes a mes, sin penalidad</span></div><div class="spec-row"><span class="spec-key">Pausa por viaje</span><span class="spec-val">1 vez al año hasta 30 días</span></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Por qué este producto</h2>
+      <div class="features-grid"><div class="feature-card"><h3>Sin contrato anual obligatorio</h3><p>Cancelas cuando quieres con 7 días de aviso.</p></div><div class="feature-card"><h3>Ahorro vs sesión suelta</h3><p>Con 2 sesiones al mes ya recuperás la membresía vs comprar sueltas (S/. 89 c/u).</p></div><div class="feature-card"><h3>Acceso a Comandante upgrade</h3><p>Cuando quieras subir a Comandante (S/. 199/mes), pagas solo la diferencia.</p></div><div class="feature-card"><h3>Pago anual disponible</h3><p>Pagas 10 meses, llévate 12 — ~17% descuento.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-list"><details class="faq-item"><summary>¿Puedo cambiar a otro nivel después?</summary><p>Sí. Bajás a Cadete (S/. 89/mes) o subís a Comandante (S/. 199/mes) cuando quieras desde tu cuenta.</p></details><details class="faq-item"><summary>¿Qué pasa si no uso mis sesiones?</summary><p>Las sesiones se reinician cada mes. No se acumulan al siguiente mes para mantener disponibilidad para todos los miembros.</p></details><details class="faq-item"><summary>¿Puedo llevar un acompañante?</summary><p>Sí, puedes llevar 1 acompañante por mes gratis para que vea una sesión. Si quiere volar, paga sesión suelta o se hace miembro.</p></details><details class="faq-item"><summary>¿Aplican mis sesiones para el curso ATC?</summary><p>El curso ATC tiene sus propias horas; las sesiones de la membresía son aparte y se pueden usar para practicar.</p></details></div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none">
+    <div class="container">
+      <h2>También te puede interesar</h2>
+      <div class="related-grid"><a class="related-card" href="catalogo.html#CLB-MB-001"><span class="related-cat">Membresía</span><span class="related-name">Membresía Cadete</span><span class="related-price">S/. 89/mes</span></a><a class="related-card" href="catalogo.html#CLB-MB-003"><span class="related-cat">Membresía</span><span class="related-name">Membresía Comandante</span><span class="related-price">S/. 199/mes</span></a><a class="related-card" href="producto-bautismo.html"><span class="related-cat">Experiencia</span><span class="related-name">Bautismo aeronáutico</span><span class="related-price">S/. 49</span></a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">            <li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Jirón Oxapampa 243, Breña, Lima
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="cart.js" defer></script>
+</body>
+</html>
