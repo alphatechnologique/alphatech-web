@@ -377,6 +377,41 @@
 .btn-mint:hover { background:#01a882; }
 .btn-teal { background:var(--teal); color:#fff; }
 .btn-teal:hover { background:#007a93; }
+    /* ─── FOOTER PAYMENTS + CULQI (v3 — Culqi compliance) ─── */
+    .footer-payments {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 18px; row-gap: 14px;
+    }
+    .footer-payments-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+    }
+    .footer-payments-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-payments-list span {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: .5px;
+      color: rgba(255,255,255,.7);
+    }
+    .footer-culqi {
+      margin-left: auto;
+      font-size: 11px; color: rgba(255,255,255,.42); font-style: italic;
+    }
+    .footer-culqi strong { color: var(--white); font-style: normal; }
+    @media (max-width: 700px) {
+      .footer-payments { flex-direction: column; align-items: flex-start; }
+      .footer-culqi { margin-left: 0; }
+    }
+
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
   </style>
 </head>
 <body>
@@ -388,13 +423,10 @@
         <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
       </a>
       <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="performance.html">Performance</a></li>
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
           <li><a href="engineering.html" class="active">Engineering</a></li>
           <li><a href="intelligence.html">Intelligence</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>          <li><a href="contacto.html">Contacto</a></li>
         </ul>
         <div class="nav-lang">
           <a href="engineering-en.html">EN</a>
@@ -562,6 +594,34 @@
             <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Líneas de producción lentas, retrabajo frecuente o variabilidad de proceso sin causa raíz identificada.</p></div>
             <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Análisis de tolerancias de proceso, VSM, identificación de cuellos de botella y plan de mejora continua.</p></div>
             <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Reducción de tiempos de ciclo y retrabajo, con estándares de calidad sostenidos en el tiempo.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7v10l9 5 9-5V7l-9-5-9 5z"/><path d="M3 7l9 5 9-5"/><line x1="12" y1="12" x2="12" y2="22"/>
+            </svg>
+          </div>
+          <h3>Ingeniería inversa</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Piezas obsoletas sin planos, repuestos descontinuados que paran la operación o reproducción de partes existentes sin documentación técnica.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Escaneo 3D con luz estructurada, reconstrucción de superficies en CAD paramétrico y validación dimensional contra la pieza original.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Modelo 3D editable, planos completos con tolerancias y archivo STL/STEP listo para fabricar la pieza desde cero.</p></div>
+          </div>
+        </div>
+
+        <div class="service-card" data-animate style="transition-delay:.1s">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
+            </svg>
+          </div>
+          <h3>Prototipado rápido</h3>
+          <div class="pmr">
+            <div class="pmr-row"><span class="pmr-tag p">Problema</span><p>Diseños que llegan a fabricación final sin haberse validado físicamente — errores caros detectados solo al final del proceso.</p></div>
+            <div class="pmr-row"><span class="pmr-tag m">Método</span><p>Impresión 3D en PLA+, ABS o resina técnica para validar ajustes, ergonomía e interferencias antes de invertir en la pieza final.</p></div>
+            <div class="pmr-row res"><span class="pmr-tag r">Resultado</span><p>Iteración rápida (días vs semanas), menos retrabajo y certeza de que la pieza final saldrá bien al primer intento.</p></div>
           </div>
         </div>
 
@@ -873,28 +933,42 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
+
         <div class="footer-brand">
           <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
-          <p>Ingeniería mecánica, aerodinámica,<br>IA industrial y realidad aumentada.<br>Lima, Perú.</p>
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
         </div>
+
         <div class="footer-col">
           <h4>Unidades</h4>
           <ul class="footer-links">
             <li><a href="performance.html">Performance</a></li>
             <li><a href="engineering.html">Engineering</a></li>
             <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Empresa</h4>
-          <ul class="footer-links">
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="aeronautica.html">Alpha Tech Simulations</a></li>
-            <li><a href="gracias.html">Gracias</a></li>
+          <ul class="footer-links">            <li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
           <h4>Contacto</h4>
           <p>
             <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
@@ -902,17 +976,27 @@
             Lima, Perú
           </p>
           <div class="footer-social">
-            <a href="#" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
           </div>
         </div>
+
       </div>
+
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+
       <div class="footer-bottom">
-        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Todos los derechos reservados.</span>
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
         <div class="footer-bottom-lang">
           <a href="engineering.html" class="active">ES</a>
           <span style="color:rgba(255,255,255,.18)">|</span>
@@ -942,5 +1026,6 @@
     setTimeout(() => { const wa = document.getElementById('wa-btn'); if(wa) wa.classList.add('visible'); }, 3000);
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(!t) return; e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth' }); }));
   </script>
+  <script src="cart.js" defer></script>
 </body>
 </html>

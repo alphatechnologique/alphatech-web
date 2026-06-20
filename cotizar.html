@@ -188,6 +188,41 @@
 .btn-mint:hover { background:#01a882; }
 .btn-teal { background:var(--teal); color:#fff; }
 .btn-teal:hover { background:#007a93; }
+    /* ─── FOOTER PAYMENTS + CULQI (v3 — Culqi compliance) ─── */
+    .footer-payments {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 18px; row-gap: 14px;
+    }
+    .footer-payments-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+    }
+    .footer-payments-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-payments-list span {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: .5px;
+      color: rgba(255,255,255,.7);
+    }
+    .footer-culqi {
+      margin-left: auto;
+      font-size: 11px; color: rgba(255,255,255,.42); font-style: italic;
+    }
+    .footer-culqi strong { color: var(--white); font-style: normal; }
+    @media (max-width: 700px) {
+      .footer-payments { flex-direction: column; align-items: flex-start; }
+      .footer-culqi { margin-left: 0; }
+    }
+
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
   </style>
 </head>
 <body>
@@ -199,13 +234,10 @@
         <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
       </a>
       <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="performance.html">Performance</a></li>
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
           <li><a href="engineering.html">Engineering</a></li>
           <li><a href="intelligence.html">Intelligence</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>          <li><a href="contacto.html">Contacto</a></li>
         </ul>
         <a href="aeronautica.html" class="nav-simulations-btn" target="_blank" rel="noopener" aria-label="Alpha Tech Simulations"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Simulations</a>
         <a href="contacto.html" class="nav-cta-btn">Contacto →</a>
@@ -386,15 +418,77 @@
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <div class="container" style="max-width:1100px">
-      <div class="footer-bottom-simple">
-        <span class="footer-copyright">© 2026 Alpha Tech Solutions. Lima, Perú.</span>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Inicio</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="contacto.html">Contacto</a>
-          <a href="gracias.html">Gracias</a>
-        </nav>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">            <li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Perú
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="cotizar.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="cotizar-en.html">EN</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -542,5 +636,6 @@
     const preUN = params.get('un');
     if (preUN && unConfig[preUN]) selectUN(preUN);
   </script>
+  <script src="cart.js" defer></script>
 </body>
 </html>

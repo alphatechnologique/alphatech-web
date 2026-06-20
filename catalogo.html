@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo · Alpha Tech Solutions</title>
+  <meta name="description" content="Catálogo de Alpha Tech: dos mundos a elegir. Simulations — vuelo, ATC, dron, club aeronáutico. Solutions — Performance, Engineering, Intelligence.">
+  <link rel="canonical" href="catalogo.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#008EAA;--orange:#FE5000;--navy:#001540;--navy-dark:#000A20;--navy-deep:#06090F;--white:#FFF;--text-mute:rgba(255,255,255,.65);--max-w:1200px}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:var(--white);background:var(--navy-deep);overflow-x:hidden}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 48px}
+    a{color:var(--teal);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--orange)}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;background:rgba(0,10,32,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 48px;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo img{height:32px;width:auto;display:block}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+    .nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .nav-links a:hover{color:var(--white)}
+    .nav-lang{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1px}
+    .nav-lang a{color:rgba(255,255,255,.4)}
+    .nav-lang a.active{color:var(--teal)}
+    .nav-lang span{color:rgba(255,255,255,.2)}
+    .nav-cta-btn{display:inline-flex;align-items:center;height:38px;padding:0 20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--orange);color:var(--white);border-radius:6px;white-space:nowrap}
+    .nav-cta-btn:hover{background:#e04400;color:var(--white)}
+
+    /* HERO HUB */
+    .hub-hero{padding:140px 0 32px;background:radial-gradient(ellipse at top left,rgba(0,142,170,.10),transparent 55%),var(--navy-dark);border-bottom:1px solid rgba(255,255,255,.06);text-align:center}
+    .hub-eyebrow{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+    .hub-hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-.8px;line-height:1.1;margin-bottom:18px}
+    .hub-hero p{font-size:17px;color:var(--text-mute);max-width:620px;margin:0 auto;line-height:1.7}
+
+    /* CHOICE CARDS */
+    .hub-section{padding:64px 0 100px}
+    .hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+    .hub-card{position:relative;display:block;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.005));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:40px 36px 36px;text-decoration:none;color:var(--white);overflow:hidden;transition:all .3s ease;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+    .hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--teal));opacity:.7;transition:opacity .3s ease}
+    .hub-card:hover{transform:translateY(-4px);border-color:rgba(var(--accent-rgb,0,142,170),.6);box-shadow:0 18px 48px rgba(0,0,0,.4);color:var(--white)}
+    .hub-card:hover::before{opacity:1}
+
+    .hub-card--sim{--accent:#FE5000;--accent-rgb:254,80,0}
+    .hub-card--sol{--accent:#008EAA;--accent-rgb:0,142,170}
+
+    .hub-card-eyebrow{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+    .hub-card h2{font-family:'Orbitron',sans-serif;font-size:clamp(28px,3vw,36px);font-weight:800;letter-spacing:-.5px;line-height:1.1;margin-bottom:20px}
+    .hub-card p{font-size:14.5px;color:var(--text-mute);line-height:1.7;margin-bottom:24px}
+    .hub-card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .hub-card-tag{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);padding:5px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px}
+
+    .hub-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
+    .hub-card-count{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .hub-card-count strong{color:var(--accent);font-size:20px;font-family:'Orbitron',sans-serif;letter-spacing:-.5px;margin-right:6px}
+    .hub-card-cta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);transition:transform .25s ease}
+    .hub-card:hover .hub-card-cta{transform:translateX(4px)}
+    .hub-card-cta svg{width:14px;height:14px}
+
+    /* BANNER UTIL */
+    .hub-util{display:flex;align-items:center;justify-content:center;gap:24px;padding:24px 32px;background:rgba(0,21,64,.32);border:1px dashed rgba(255,255,255,.1);border-radius:12px;flex-wrap:wrap;text-align:center}
+    .hub-util-text{font-size:13.5px;color:var(--text-mute)}
+    .hub-util-text strong{color:var(--white)}
+    .hub-util a{font-weight:700;color:var(--teal)}
+
+    /* FOOTER */
+    footer{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.06);padding:56px 0 0}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.85;margin-top:18px;max-width:240px}
+    .footer-col h4{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:20px}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-links a{font-size:13px;color:rgba(255,255,255,.48);text-decoration:none;transition:color .2s ease}
+    .footer-links a:hover{color:var(--white)}
+    .footer-col p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.85}
+    .footer-col a{color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s ease}
+    .footer-col a:hover{color:var(--teal)}
+    .footer-social{display:flex;gap:10px;margin-top:14px}
+    .footer-social-link{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);border-radius:6px;color:rgba(255,255,255,.55);transition:all .2s}
+    .footer-social-link:hover{background:rgba(255,255,255,.06);color:var(--white);border-color:rgba(255,255,255,.2)}
+    .footer-payments{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;gap:18px;row-gap:14px}
+    .footer-payments-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+    .footer-payments-list{display:flex;flex-wrap:wrap;gap:10px}
+    .footer-payments-list span{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7)}
+    .footer-culqi{margin-left:auto;font-size:11px;color:rgba(255,255,255,.42);font-style:italic}
+    .footer-culqi strong{color:var(--white);font-style:normal}
+    .footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+    .footer-copyright{font-size:12px;color:rgba(255,255,255,.22)}
+    .footer-bottom-lang{display:flex;gap:12px;font-size:11px;font-weight:700}
+    .footer-bottom-lang a{color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
+    .footer-bottom-lang a.active{color:var(--teal)}
+
+    @media (max-width:900px){
+      .nav-inner,.container{padding:0 32px}
+      .nav-links{display:none}
+      .hub-grid{grid-template-columns:1fr;gap:20px}
+      .hub-card{min-height:auto}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+      .footer-culqi{margin-left:0}
+    }
+    @media (max-width:600px){
+      .nav-inner,.container{padding:0 24px}
+      .hub-hero{padding:120px 0 32px}
+      .hub-card{padding:32px 24px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+    }
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions"></a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="aeronautica.html">Simulations</a></li>
+          <li><a href="catalogo.html" style="color:var(--white)">Catálogo</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="catalogo.html" class="active">ES</a><span>|</span><a href="catalogo-en.html">EN</a>
+        </div>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hub-hero">
+    <div class="container">
+      <span class="hub-eyebrow">Catálogo</span>
+      <h1>Elige tu mundo.</h1>
+      <p>Alpha Tech opera dos universos complementarios. Cada catálogo tiene su lógica de compra, sus precios y sus tiempos. Entra al que te interese.</p>
+    </div>
+  </header>
+
+  <main class="hub-section">
+    <div class="container">
+
+      <div class="hub-grid">
+
+        <!-- SIMULATIONS -->
+        <a href="catalogo-simulations.html" class="hub-card hub-card--sim">
+          <div>
+            <span class="hub-card-eyebrow">Alpha Tech Simulations</span>
+            <h2>Vuelo, ATC, dron y club.</h2>
+            <p>El mundo aeronáutico. Reservas una sesión de simulador, te suscribís al Club Aeronáutico, comprás un curso o un producto físico impreso en 3D. Pago directo, agenda inmediata.</p>
+            <div class="hub-card-tags">
+              <span class="hub-card-tag">Membresías</span>
+              <span class="hub-card-tag">Experiencias</span>
+              <span class="hub-card-tag">Productos físicos</span>
+              <span class="hub-card-tag">Educación</span>
+            </div>
+          </div>
+          <div class="hub-card-footer">
+            <span class="hub-card-count"><strong>19</strong>productos</span>
+            <span class="hub-card-cta">
+              Explorar Simulations
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- SOLUTIONS -->
+        <a href="catalogo-solutions.html" class="hub-card hub-card--sol">
+          <div>
+            <span class="hub-card-eyebrow">Alpha Tech Solutions</span>
+            <h2>Performance · Engineering · Intelligence.</h2>
+            <p>El brazo de ingeniería. Servicios directos de diagnóstico y escaneo 3D, más nuestras tres unidades de negocio que se trabajan por cotización a medida según el proyecto.</p>
+            <div class="hub-card-tags">
+              <span class="hub-card-tag">Servicios directos</span>
+              <span class="hub-card-tag">Performance auto</span>
+              <span class="hub-card-tag">Engineering industrial</span>
+              <span class="hub-card-tag">Intelligence IA</span>
+            </div>
+          </div>
+          <div class="hub-card-footer">
+            <span class="hub-card-count"><strong>5</strong>servicios</span>
+            <span class="hub-card-cta">
+              Explorar Solutions
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="hub-util">
+        <span class="hub-util-text">¿Buscas algo puntual? <strong>Cotiza</strong> directo si tu proyecto no entra en el catálogo, o <strong>contáctanos</strong> por WhatsApp.</span>
+        <span>
+          <a href="contacto.html">Formulario de contacto →</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://wa.me/51922877190" target="_blank" rel="noopener">WhatsApp</a>
+        </span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul class="footer-links">
+            <li><a href="catalogo-simulations.html">Catálogo Simulations</a></li>
+            <li><a href="catalogo-solutions.html">Catálogo Solutions</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Jirón Oxapampa 243, Breña, Lima
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="catalogo.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="catalogo-en.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="cart.js" defer></script>
+</body>
+</html>

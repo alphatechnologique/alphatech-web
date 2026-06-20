@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Devoluciones y Reembolsos · Alpha Tech Solutions</title>
+  <meta name="description" content="Política de devoluciones, reembolsos y garantías de Alpha Tech Solutions S.A.C.">
+
+  <link rel="canonical" href="devoluciones.html">
+  <link rel="alternate" hreflang="es" href="devoluciones.html">
+  <link rel="alternate" hreflang="en" href="refunds.html">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #008EAA;
+      --orange:    #FE5000;
+      --navy:      #001540;
+      --navy-dark: #000A20;
+      --navy-deep: #06090F;
+      --white:     #FFFFFF;
+      --text-dark: #0F1B33;
+      --gray-mute: #4B5563;
+      --max-w:     1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.1px;
+      color: var(--white);
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    .eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--teal);
+      display: block; margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800; letter-spacing: -0.8px;
+      line-height: 1.1; margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 700; letter-spacing: -0.3px;
+      line-height: 1.25; margin-top: 56px; margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    h3 {
+      font-size: 17px; font-weight: 700;
+      margin-top: 28px; margin-bottom: 10px;
+      color: var(--teal);
+      letter-spacing: 0.1px;
+    }
+
+    p, li {
+      font-size: 15px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.85;
+    }
+
+    p { margin-bottom: 14px; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+
+    a { color: var(--teal); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--orange); }
+
+    strong { color: var(--white); font-weight: 700; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 50px; padding: 0 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; cursor: pointer;
+      transition: all 0.25s ease; border: 2px solid transparent;
+    }
+
+    .btn-primary { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .btn-primary:hover { background: #e04400; border-color: #e04400; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,80,0,.35); }
+
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.35); }
+    .btn-secondary:hover { border-color: var(--white); }
+
+    /* ─── NAV (copia simplificada del index) ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 72px;
+      display: flex; align-items: center;
+      background: rgba(0,10,32,.94);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 48px; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; text-decoration: none;
+      color: rgba(255,255,255,.65); transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-lang { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .nav-lang a { color: rgba(255,255,255,.4); text-decoration: none; transition: color 0.2s ease; }
+    .nav-lang a:hover { color: var(--white); }
+    .nav-lang a.active { color: var(--teal); }
+    .nav-lang span { color: rgba(255,255,255,.2); }
+
+    .nav-cta-btn {
+      display: inline-flex; align-items: center; height: 38px; padding: 0 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; text-decoration: none;
+      background: var(--orange); color: var(--white);
+      border-radius: 6px; transition: background .2s, transform .2s; white-space: nowrap;
+    }
+    .nav-cta-btn:hover { background: #e04400; transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all .3s ease; border-radius: 1px; }
+
+    /* ─── HERO LEGAL ─── */
+    .legal-hero {
+      padding: 152px 0 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background:
+        radial-gradient(ellipse at top left, rgba(0,142,170,.10), transparent 55%),
+        var(--navy-dark);
+    }
+
+    .legal-hero .meta {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px; letter-spacing: 2px;
+      color: rgba(255,255,255,.45);
+      text-transform: uppercase; margin-top: 18px;
+    }
+
+    /* ─── LEGAL CONTENT ─── */
+    .legal-content {
+      padding: 56px 0 120px;
+    }
+    .legal-content article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    
+
+    .info-box {
+      border-left: 3px solid var(--orange);
+      background: rgba(254,80,0,.04);
+      padding: 18px 22px; margin: 20px 0;
+      font-size: 14px; color: rgba(255,255,255,.75);
+    }
+
+    .back-to-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 56px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--teal);
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 56px 0 0;
+    }
+
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-brand p {
+      font-size: 13px; color: rgba(255,255,255,.35);
+      line-height: 1.85; margin-top: 18px; max-width: 240px;
+    }
+
+    .footer-col h4 {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 20px;
+    }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.48); text-decoration: none; transition: color .2s ease; }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-col p { font-size: 13px; color: rgba(255,255,255,.42); line-height: 1.85; }
+    .footer-col a { color: rgba(255,255,255,.42); text-decoration: none; transition: color .2s ease; }
+    .footer-col a:hover { color: var(--teal); }
+
+    .footer-bottom { padding: 20px 0; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copyright { font-size: 12px; color: rgba(255,255,255,.22); }
+    .footer-bottom-lang { display: flex; gap: 12px; font-size: 11px; font-weight: 700; }
+    .footer-bottom-lang a { color: rgba(255,255,255,.32); text-decoration: none; transition: color .2s; }
+    .footer-bottom-lang a:hover { color: var(--white); }
+    .footer-bottom-lang a.active { color: var(--teal); }
+
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 32px; }
+      .nav-links { display: none; }
+      .nav-cta-btn { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner { padding: 0 24px; }
+      .container { padding: 0 24px; }
+      .legal-hero { padding: 120px 0 40px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    /* ─── FOOTER PAYMENTS + CULQI (v3 — Culqi compliance) ─── */
+    .footer-payments {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 18px; row-gap: 14px;
+    }
+    .footer-payments-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+    }
+    .footer-payments-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-payments-list span {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: .5px;
+      color: rgba(255,255,255,.7);
+    }
+    .footer-culqi {
+      margin-left: auto;
+      font-size: 11px; color: rgba(255,255,255,.42); font-style: italic;
+    }
+    .footer-culqi strong { color: var(--white); font-style: normal; }
+    @media (max-width: 700px) {
+      .footer-payments { flex-direction: column; align-items: flex-start; }
+      .footer-culqi { margin-left: 0; }
+    }
+
+  
+    /* Anchor scroll offset para no quedar debajo del navbar fijo */
+    section[id] { scroll-margin-top: 96px; }
+  
+    /* Back link en hero legal */
+    .legal-hero .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .legal-hero .back-link:hover {
+      color: var(--teal);
+      transform: translateX(-3px);
+    }
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alpha Tech Solutions — Inicio">
+        <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="44" style="display:block;height:44px;width:auto">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="refunds.html">EN</a><span>|</span><a href="devoluciones.html" class="active">ES</a>
+        </div>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+        <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="legal-hero">
+    <div class="container">
+      <a href="index.html" class="back-link" onclick="if(history.length>1){event.preventDefault();history.back();}">← Volver</a>
+          <span class="eyebrow">Documento legal</span>
+      <h1>Política de Devoluciones y Reembolsos</h1>
+      <p class="meta">Última actualización: marzo 2026</p>
+    </div>
+  </header>
+
+  <!-- ─── CONTENT ─── -->
+  <main class="legal-content">
+    <div class="container">
+      <article>
+
+        <section id="s1">
+          <h2>1. Productos físicos</h2>
+          <p>Aplicable a HOTAS adapters, modelos a escala 3D, porta strips, llaveros, mercadería y cualquier otro producto físico.</p>
+          <h3>Plazo de devolución</h3>
+          <ul>
+            <li><strong>7 días calendario</strong> desde la recepción del producto.</li>
+            <li>El producto debe estar sin uso, en su embalaje original y con todos los accesorios.</li>
+            <li>El cliente cubre el costo del envío de devolución, salvo error imputable a Alpha Tech.</li>
+          </ul>
+          <h3>Garantía contra defectos de fabricación</h3>
+          <ul>
+            <li><strong>30 días calendario</strong> desde la recepción.</li>
+            <li>Aplica para defectos no causados por mal uso, golpes, exposición a líquidos o manipulación inadecuada.</li>
+            <li>Alpha Tech reparará o reemplazará el producto sin costo, o reembolsará el importe pagado.</li>
+          </ul>
+        </section>
+
+        <section id="s2">
+          <h2>2. Servicios técnicos</h2>
+          <p>Aplicable a diagnóstico de ingeniería, escaneo para ingeniería inversa y demás servicios profesionales.</p>
+          <ul>
+            <li><strong>Cancelación antes del inicio:</strong> reembolso del 100% si la solicitud se realiza con al menos 24 horas de anticipación.</li>
+            <li><strong>Una vez iniciado el servicio:</strong> no procede reembolso del trabajo ya realizado. Si el cliente cancela en medio del servicio, se descuenta el avance proporcional y se devuelve el saldo restante.</li>
+            <li><strong>Cancelación por causa imputable a Alpha Tech:</strong> reembolso del 100% más reprogramación sin costo o crédito a favor del cliente.</li>
+          </ul>
+        </section>
+
+        <section id="s3">
+          <h2>3. Cursos y formación</h2>
+          <ul>
+            <li><strong>Cancelación con 7 días o más de anticipación</strong> al inicio del cohort: reembolso del 80%.</li>
+            <li><strong>Cancelación con menos de 7 días:</strong> no procede reembolso, pero se puede reasignar el cupo al próximo cohort dentro de los siguientes 6 meses.</li>
+            <li><strong>Una vez iniciado el curso:</strong> no procede reembolso. El alumno puede continuar las clases o, en casos excepcionales documentados, reasignar a un cohort posterior.</li>
+            <li><strong>Materiales didácticos:</strong> son entregados al inicio del curso y no son objeto de reembolso.</li>
+          </ul>
+        </section>
+
+        <section id="s4">
+          <h2>4. Sesiones de simulador y experiencias</h2>
+          <ul>
+            <li><strong>Cancelación con 24 horas o más de anticipación:</strong> reagendamiento sin costo.</li>
+            <li><strong>Cancelación con menos de 24 horas:</strong> se cobra la sesión.</li>
+            <li><strong>No-show (no asistencia sin aviso):</strong> se cobra la totalidad de la sesión sin posibilidad de reembolso ni reprogramación.</li>
+            <li><strong>Fuerza mayor documentada</strong> (emergencia médica, etc.): reembolso o reprogramación según evaluación.</li>
+            <li><strong>Paquete de 11 sesiones:</strong> vigencia de 6 meses desde la compra. No reembolsable. Sesiones no usadas dentro del plazo se pierden.</li>
+          </ul>
+        </section>
+
+        <section id="s5">
+          <h2>5. Membresías del Club Aeronáutico</h2>
+          <ul>
+            <li>Las membresías son <strong>cancelables mes a mes</strong> sin penalidad.</li>
+            <li>El cliente debe notificar la cancelación con al menos 7 días de anticipación al próximo cobro recurrente.</li>
+            <li><strong>No procede reembolso del mes en curso</strong> una vez cobrado.</li>
+            <li><strong>Pausa de membresía:</strong> hasta 1 vez al año por hasta 30 días, sin costo, ante viaje o motivo justificado.</li>
+            <li><strong>Membresía anual (paga 10, llévate 12):</strong> reembolso proporcional descontando los meses ya consumidos al precio mensual regular.</li>
+          </ul>
+        </section>
+
+        <section id="s6">
+          <h2>6. Cómo solicitar una devolución</h2>
+          <ol>
+            <li>Escríbenos a <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a> o por WhatsApp al <a href="https://wa.me/51922877190">+51 922 877 190</a>.</li>
+            <li>Indicá: número de pedido, motivo de la devolución y fotos del producto (si aplica).</li>
+            <li>Nuestro equipo evaluará tu solicitud y responderá en un máximo de <strong>48 horas hábiles</strong>.</li>
+            <li>Si la devolución procede, coordinamos la recolección o el envío de retorno, según corresponda.</li>
+            <li>Recibido y verificado el producto, procesamos el reembolso.</li>
+          </ol>
+        </section>
+
+        <section id="s7">
+          <h2>7. Plazos de reembolso</h2>
+          <p>Los reembolsos se realizan por el mismo medio de pago utilizado en la compra:</p>
+          <ul>
+            <li><strong>Tarjetas de crédito y débito:</strong> entre 5 y 7 días hábiles.</li>
+            <li><strong>Yape y billeteras móviles:</strong> entre 2 y 5 días hábiles.</li>
+            <li><strong>Transferencias bancarias:</strong> hasta 7 días hábiles.</li>
+          </ul>
+          <p>Los plazos exactos dependen del operador de pago; Alpha Tech procesa el reembolso de su lado dentro de las 48 horas hábiles posteriores a la aprobación.</p>
+        </section>
+
+        <section id="s8">
+          <h2>8. Casos excluidos</h2>
+          <p>No procede devolución ni reembolso en los siguientes casos:</p>
+          <ul>
+            <li>Productos personalizados (porta strips con nombre, modelos con configuraciones específicas) una vez producidos.</li>
+            <li>Servicios o sesiones ya prestados conforme a lo pactado.</li>
+            <li>Materiales didácticos abiertos o utilizados.</li>
+            <li>Productos dañados por mal uso, golpes, líquidos o manipulación inadecuada.</li>
+            <li>Productos sin embalaje original o con signos de uso.</li>
+          </ul>
+          <div class="info-box">
+            Esta política respeta los derechos del consumidor establecidos en el <strong>Código de Protección y Defensa del Consumidor</strong> (Ley 29571). Si consideras que tus derechos no fueron respetados, puedes registrar un reclamo en nuestro <a href="reclamaciones.html">Libro de Reclamaciones</a>.
+          </div>
+        </section>
+
+        <a href="index.html" class="back-to-home">← Volver al inicio</a>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">            <li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Lima, Perú
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="devoluciones.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="refunds.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito · Alpha Tech Solutions</title>
+  <meta name="description" content="Revisa tu carrito de Alpha Tech y completa la compra.">
+  <link rel="canonical" href="carrito.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#008EAA;--orange:#FE5000;--navy:#001540;--navy-dark:#000A20;--navy-deep:#06090F;--white:#FFF;--text-mute:rgba(255,255,255,.65);--max-w:1100px}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:var(--white);background:var(--navy-deep);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 48px;width:100%}
+    a{color:var(--teal);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--orange)}
+    strong{color:var(--white)}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;background:rgba(0,10,32,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 48px;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo img{height:32px;width:auto;display:block}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+    .nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta-btn{display:inline-flex;align-items:center;height:38px;padding:0 20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--orange);color:var(--white);border-radius:6px;white-space:nowrap}
+    .nav-cta-btn:hover{background:#e04400;color:var(--white)}
+
+    /* HERO */
+    .cart-hero{padding:140px 0 32px;background:radial-gradient(ellipse at top left,rgba(0,142,170,.10),transparent 55%),var(--navy-dark);border-bottom:1px solid rgba(255,255,255,.06)}
+    .cart-eyebrow{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+    .cart-hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-.6px;line-height:1.15;margin-bottom:10px}
+    .cart-hero p{font-size:15px;color:var(--text-mute)}
+
+    /* LAYOUT */
+    main{flex:1;padding:48px 0 100px}
+    .cart-layout{display:grid;grid-template-columns:1.7fr 1fr;gap:32px;align-items:start}
+
+    /* CART ITEMS LIST */
+    .cart-items{display:flex;flex-direction:column;gap:14px}
+    .cart-row{display:grid;grid-template-columns:80px 1fr auto;gap:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:border-color .2s ease}
+    .cart-row:hover{border-color:rgba(0,142,170,.3)}
+    .cart-thumb{width:80px;height:80px;background:linear-gradient(135deg,var(--navy),var(--navy-deep));border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:rgba(0,142,170,.4)}
+    .cart-thumb img{width:100%;height:100%;object-fit:cover;opacity:.65}
+    .cart-thumb svg{width:36px;height:36px;opacity:.6}
+    .cart-info{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .cart-info-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .cart-info-meta .badge{padding:3px 9px;border:1px solid rgba(0,142,170,.4);color:var(--teal);border-radius:100px;font-size:9px}
+    .cart-info-meta .badge.brand-sim{border-color:rgba(254,80,0,.45);color:#FFB082}
+    .cart-info-meta .sku-tag{padding:2px 8px;background:rgba(0,142,170,.08);border:1px solid rgba(0,142,170,.22);color:rgba(0,142,170,.95);border-radius:4px;font-size:10px;letter-spacing:1.2px;font-family:'Rajdhani',sans-serif}
+    .cart-info h3{font-size:18px;font-weight:700;line-height:1.25;color:var(--white);letter-spacing:-.2px;margin-bottom:2px}
+    .cart-info-desc{font-size:12px;color:rgba(255,255,255,.5)}
+    .cart-controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:120px}
+    .cart-price{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:800;color:var(--white);letter-spacing:-.3px;line-height:1;white-space:nowrap}
+    .cart-price-rec{font-size:9px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:3px;display:block}
+    .qty-row{display:flex;align-items:center;gap:8px}
+    .qty-btn{width:28px;height:28px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--white);border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
+    .qty-btn:hover{border-color:var(--teal);background:rgba(0,142,170,.1)}
+    .qty-val{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;min-width:24px;text-align:center;color:var(--white)}
+    .remove-btn{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);background:transparent;border:0;cursor:pointer;padding:0;transition:color .15s ease}
+    .remove-btn:hover{color:var(--orange)}
+
+    /* EMPTY STATE */
+    .cart-empty{padding:80px 32px;text-align:center;border:1px dashed rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.01)}
+    .cart-empty svg{width:48px;height:48px;color:rgba(255,255,255,.2);margin-bottom:18px}
+    .cart-empty h2{font-family:'Orbitron',sans-serif;font-size:22px;color:rgba(255,255,255,.78);margin-bottom:10px}
+    .cart-empty p{color:rgba(255,255,255,.5);font-size:14.5px;margin-bottom:24px}
+    .cart-empty-cta{display:inline-flex;align-items:center;height:46px;padding:0 28px;background:var(--orange);color:var(--white);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:7px;text-decoration:none;transition:all .2s ease}
+    .cart-empty-cta:hover{background:#e04400;color:var(--white);transform:translateY(-2px)}
+
+    /* SUMMARY (right column) */
+    .cart-summary{position:sticky;top:96px;background:linear-gradient(180deg,rgba(0,142,170,.07),rgba(0,142,170,.02));border:1px solid rgba(0,142,170,.2);border-radius:14px;padding:28px 26px}
+    .cart-summary h4{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+    .cart-summary h4::before{content:'';width:32px;height:1px;background:var(--teal);opacity:.5}
+    .summary-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;font-size:13.5px;color:rgba(255,255,255,.72)}
+    .summary-row strong{color:var(--white)}
+    .summary-row.total{margin-top:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:16px;font-weight:700;color:var(--white)}
+    .summary-row.total .price{font-family:'Orbitron',sans-serif;font-size:22px;letter-spacing:-.3px}
+    .summary-note{margin-top:18px;font-size:11.5px;color:rgba(255,255,255,.42);line-height:1.6}
+
+    .checkout-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;height:50px;margin-top:24px;background:var(--orange);color:var(--white);font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .2s ease}
+    .checkout-btn:hover{background:#e04400;color:var(--white);transform:translateY(-2px);box-shadow:0 12px 28px rgba(254,80,0,.25)}
+    .checkout-btn:disabled{background:rgba(255,255,255,.08);color:rgba(255,255,255,.3);cursor:not-allowed;transform:none;box-shadow:none}
+    .keep-shopping{display:block;text-align:center;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .keep-shopping:hover{color:var(--white)}
+
+    /* FOOTER */
+    footer.cart-footer{padding:24px 0;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.42);text-align:center;background:var(--navy-dark)}
+    footer.cart-footer a{color:rgba(255,255,255,.55)}
+
+    @media (max-width:900px){
+      .nav-inner,.container{padding:0 32px}
+      .nav-links{display:none}
+      .cart-layout{grid-template-columns:1fr;gap:24px}
+      .cart-summary{position:static}
+    }
+    @media (max-width:600px){
+      .nav-inner,.container{padding:0 24px}
+      .cart-hero{padding:120px 0 28px}
+      .cart-row{grid-template-columns:64px 1fr;gap:14px;padding:14px}
+      .cart-thumb{width:64px;height:64px}
+      .cart-controls{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);min-width:0}
+    }
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions"></a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="catalogo-simulations.html">Simulations</a></li>
+          <li><a href="catalogo-solutions.html">Solutions</a></li>
+        </ul>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="cart-hero">
+    <div class="container">
+      <span class="cart-eyebrow">Tu compra</span>
+      <h1>Carrito</h1>
+      <p>Revisa los productos antes de pasar al pago.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="cart-layout">
+
+        <section class="cart-items" id="cartItems">
+          <!-- inyectado por JS -->
+        </section>
+
+        <aside class="cart-summary" id="cartSummary">
+          <h4>Resumen</h4>
+          <div id="summaryBody">
+            <div class="summary-row"><span>Productos directos</span><strong id="sumOneOff">S/. 0</strong></div>
+            <div class="summary-row" id="recurringRow" hidden><span>Suscripciones (al mes)</span><strong id="sumRecurring">S/. 0</strong></div>
+            <div class="summary-row total"><span>Total a pagar hoy</span><span class="price" id="sumTotal">S/. 0</span></div>
+          </div>
+          <p class="summary-note">Precios incluyen IGV. Las suscripciones se renuevan mensualmente y se pueden cancelar cuando quieras.</p>
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Finalizar compra →
+          </button>
+          <a href="catalogo.html" class="keep-shopping">← Seguir comprando</a>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="cart-footer">
+    <div class="container">
+      Alpha Tech Solutions S.A.C. · RUC 20615287203 · <a href="terminos.html">Términos</a> · <a href="privacidad.html">Privacidad</a> · <a href="devoluciones.html">Devoluciones</a>
+    </div>
+  </footer>
+
+  <script src="cart.js" defer></script>
+  <script>
+    // ============================================================
+    // CARRITO PAGE
+    // ============================================================
+    const ICONS = {
+      placeholder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>'
+    };
+
+    function formatPrice(n) {
+      return 'S/. ' + (n || 0).toLocaleString('es-PE');
+    }
+
+    function renderEmpty() {
+      const wrap = document.getElementById('cartItems');
+      wrap.innerHTML = `
+        <div class="cart-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <h2>Tu carrito está vacío</h2>
+          <p>Explorá nuestros catálogos y agrega productos para empezar.</p>
+          <a class="cart-empty-cta" href="catalogo.html">Ir al catálogo →</a>
+        </div>
+      `;
+      document.getElementById('checkoutBtn').disabled = true;
+    }
+
+    function renderRow(item) {
+      const brandClass = item.marca === 'Simulations' ? 'brand-sim' : '';
+      const thumb = item.img
+        ? `<img src="${item.img}" alt="${item.nombre}" loading="lazy">`
+        : ICONS.placeholder;
+      const subtotal = item.precio * item.qty;
+      const recLabel = item.recurrence ? `<span class="cart-price-rec">${item.recurrence === '/mes' ? 'por mes' : item.recurrence}</span>` : '';
+
+      return `
+        <article class="cart-row" data-sku="${item.sku}">
+          <div class="cart-thumb">${thumb}</div>
+          <div class="cart-info">
+            <h3>${item.nombre}</h3>
+            <div class="cart-info-meta">
+              <span class="badge ${brandClass}">${item.marca || 'Alpha Tech'}</span>
+              <span>${item.categoria || '—'}</span>
+              <span class="sku-tag">SKU ${item.sku}</span>
+            </div>
+            <div class="cart-info-desc">${formatPrice(item.precio)} c/u${item.recurrence ? ' · ' + item.recurrence : ''}</div>
+          </div>
+          <div class="cart-controls">
+            <div>
+              <span class="cart-price">${formatPrice(subtotal)}</span>
+              ${recLabel}
+            </div>
+            <div class="qty-row">
+              <button class="qty-btn" data-action="dec" aria-label="Restar">−</button>
+              <span class="qty-val">${item.qty}</span>
+              <button class="qty-btn" data-action="inc" aria-label="Sumar">+</button>
+            </div>
+            <button class="remove-btn" data-action="remove">Eliminar</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderAll() {
+      const items = Cart.items();
+      const wrap = document.getElementById('cartItems');
+
+      if (!items.length) {
+        renderEmpty();
+      } else {
+        wrap.innerHTML = items.map(renderRow).join('');
+        document.getElementById('checkoutBtn').disabled = false;
+      }
+
+      // Summary
+      const oneOff = Cart.totalOneOff();
+      const recurring = Cart.totalRecurring();
+      document.getElementById('sumOneOff').textContent = formatPrice(oneOff);
+      document.getElementById('sumRecurring').textContent = formatPrice(recurring) + '/mes';
+      document.getElementById('recurringRow').hidden = recurring === 0;
+      // Total a pagar hoy = oneOff + primer mes de subs
+      document.getElementById('sumTotal').textContent = formatPrice(oneOff + recurring);
+    }
+
+    // Delegación: clicks en qty buttons + remove
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const row = btn.closest('.cart-row');
+      if (!row) return;
+      const sku = row.dataset.sku;
+      const items = Cart.items();
+      const item = items.find(i => i.sku === sku);
+      if (!item) return;
+
+      if (btn.dataset.action === 'inc') Cart.update(sku, item.qty + 1);
+      else if (btn.dataset.action === 'dec') Cart.update(sku, item.qty - 1);
+      else if (btn.dataset.action === 'remove') {
+        Cart.remove(sku);
+        Cart.toast('✕ ' + item.nombre + ' eliminado');
+      }
+    });
+
+    // Checkout button
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      const items = Cart.items();
+      if (!items.length) return;
+      window.location.href = 'checkout.html?cart=1';
+    });
+
+    // Re-render on Cart changes (wait for cart.js to load)
+    function bootstrap() {
+      if (!window.Cart) return setTimeout(bootstrap, 50);
+      Cart.subscribe(renderAll);
+    }
+    bootstrap();
+  </script>
+</body>
+</html>

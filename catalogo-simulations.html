@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo Simulations · Alpha Tech</title>
+  <meta name="description" content="Catálogo de Alpha Tech Simulations: vuelo, ATC, dron, club aeronáutico, productos físicos impresos 3D y formación.">
+  <link rel="canonical" href="catalogo-simulations.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@800&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#008EAA;--orange:#FE5000;--navy:#001540;--navy-dark:#000A20;--navy-deep:#06090F;--white:#FFF;--text-mute:rgba(255,255,255,.65);--max-w:1200px}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:var(--white);background:var(--navy-deep);overflow-x:hidden}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 48px}
+    a{color:var(--teal);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--orange)}
+    strong{color:var(--white)}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;background:rgba(0,10,32,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 48px;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo img{height:32px;width:auto;display:block}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+    .nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .nav-links a:hover{color:var(--white)}
+    .nav-lang{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1px}
+    .nav-lang a{color:rgba(255,255,255,.4)}
+    .nav-lang a.active{color:var(--teal)}
+    .nav-lang span{color:rgba(255,255,255,.2)}
+    .nav-cta-btn{display:inline-flex;align-items:center;height:38px;padding:0 20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--orange);color:var(--white);border-radius:6px;white-space:nowrap}
+    .nav-cta-btn:hover{background:#e04400;color:var(--white)}
+
+    /* HERO */
+    .cat-hero{padding:140px 0 48px;background:radial-gradient(ellipse at top left,rgba(0,142,170,.10),transparent 55%),var(--navy-dark);border-bottom:1px solid rgba(255,255,255,.06)}
+    .cat-eyebrow{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+    .cat-hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-.8px;line-height:1.1;margin-bottom:18px}
+    .cat-hero p{font-size:17px;color:var(--text-mute);max-width:640px;line-height:1.7}
+
+    /* FILTERS */
+    .cat-filters{padding:32px 0 24px;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.18);position:sticky;top:72px;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .filter-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.42);margin-right:8px}
+    .filter-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.5px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+    .filter-chip:hover{background:rgba(0,142,170,.1);border-color:rgba(0,142,170,.4);color:var(--white)}
+    .filter-chip.active{background:rgba(0,142,170,.18);border-color:var(--teal);color:var(--white)}
+    .filter-chip .count{font-family:'Rajdhani',sans-serif;font-size:10px;color:rgba(255,255,255,.45);font-weight:700;letter-spacing:.5px}
+    .filter-chip.active .count{color:var(--teal)}
+
+    /* GRID */
+    .cat-grid-section{padding:48px 0 100px}
+    .grid-stats{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:24px;font-weight:700}
+    .grid-stats strong{color:var(--white)}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+
+    /* CARD */
+    .pcard{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;transition:all .25s ease;display:flex;flex-direction:column;position:relative}
+    .pcard:hover{border-color:rgba(0,142,170,.4);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+    .pcard-thumb{aspect-ratio:16/10;background:linear-gradient(135deg,var(--navy),var(--navy-deep));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .pcard-thumb svg{opacity:.22;width:50%;height:50%;color:var(--teal)}
+    .pcard-thumb.has-img{padding:0}
+    .pcard-thumb img{width:100%;height:100%;object-fit:cover;opacity:.55}
+    .pcard:hover .pcard-thumb img{opacity:.7}
+    .pcard-badge{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(0,21,64,.85);border:1px solid rgba(0,142,170,.4);border-radius:100px;font-family:'Rajdhani',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);backdrop-filter:blur(8px)}
+    .pcard-badge.brand-sim{border-color:rgba(254,80,0,.45);color:#FFB082;background:rgba(254,80,0,.18)}
+    .pcard-sku{position:absolute;top:12px;right:12px;font-family:'Rajdhani',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.4);background:rgba(0,21,64,.7);padding:3px 8px;border-radius:4px;backdrop-filter:blur(8px)}
+
+    .pcard-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;gap:10px}
+    .pcard-cat{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+    .pcard h3{font-size:16px;font-weight:700;line-height:1.3;letter-spacing:-.1px;color:var(--white)}
+    .pcard-desc{font-size:13px;color:var(--text-mute);line-height:1.55;flex:1}
+    .pcard-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:6px}
+    .pcard-price{display:flex;flex-direction:column;gap:2px}
+    .pcard-price-amount{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.5px;line-height:1}
+    .pcard-price-recurrence{font-size:10px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+    .pcard-cta{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:var(--orange);color:var(--white);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px;border:none;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+    .pcard-cta:hover{background:#e04400;transform:translateX(2px);color:var(--white)}
+    .pcard-cta.quote{background:transparent;border:1.5px solid rgba(0,142,170,.55);color:var(--teal)}
+    
+    .pcard-promo{display:inline-block;background:var(--orange);color:var(--white);font-family:'Rajdhani',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:6px;align-self:flex-start;line-height:1.2}
+    .product-promo-tag{display:inline-block;background:var(--orange);color:var(--white);font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:12px;line-height:1.2}
+    .pcard-cta.quote:hover{background:rgba(0,142,170,.12);border-color:var(--teal);color:var(--white)}
+
+    /* EMPTY STATE */
+    .empty-state{grid-column:1/-1;padding:60px 20px;text-align:center;border:1px dashed rgba(255,255,255,.1);border-radius:12px;color:rgba(255,255,255,.55)}
+    .empty-state h3{margin-bottom:10px;color:rgba(255,255,255,.85);font-size:18px}
+
+    /* FOOTER (heredado) */
+    footer{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.06);padding:56px 0 0}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.85;margin-top:18px;max-width:240px}
+    .footer-col h4{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:20px}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-links a{font-size:13px;color:rgba(255,255,255,.48);text-decoration:none;transition:color .2s ease}
+    .footer-links a:hover{color:var(--white)}
+    .footer-col p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.85}
+    .footer-col a{color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s ease}
+    .footer-col a:hover{color:var(--teal)}
+    .footer-social{display:flex;gap:10px;margin-top:14px}
+    .footer-social-link{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);border-radius:6px;color:rgba(255,255,255,.55);transition:all .2s}
+    .footer-social-link:hover{background:rgba(255,255,255,.06);color:var(--white);border-color:rgba(255,255,255,.2)}
+    .footer-payments{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;gap:18px;row-gap:14px}
+    .footer-payments-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+    .footer-payments-list{display:flex;flex-wrap:wrap;gap:10px}
+    .footer-payments-list span{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7)}
+    .footer-culqi{margin-left:auto;font-size:11px;color:rgba(255,255,255,.42);font-style:italic}
+    .footer-culqi strong{color:var(--white);font-style:normal}
+    .footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+    .footer-copyright{font-size:12px;color:rgba(255,255,255,.22)}
+    .footer-bottom-lang{display:flex;gap:12px;font-size:11px;font-weight:700}
+    .footer-bottom-lang a{color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
+    .footer-bottom-lang a.active{color:var(--teal)}
+
+    @media (max-width:900px){
+      .nav-inner,.container{padding:0 32px}
+      .nav-links{display:none}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+      .footer-culqi{margin-left:0}
+    }
+    @media (max-width:600px){
+      .nav-inner,.container{padding:0 24px}
+      .cat-hero{padding:120px 0 40px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+    }
+  
+    /* Logo clickeable → Inicio */
+    .nav-logo { transition: opacity .2s ease; }
+    .nav-logo:hover { opacity: .75; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions"></a>
+      <div class="nav-right">
+        <ul class="nav-links">          <li><a href="performance.html">Performance</a></li>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="intelligence.html">Intelligence</a></li>
+          <li><a href="aeronautica.html">Simulations</a></li>
+          <li><a href="catalogo.html" style="color:var(--white)">Catálogo</a></li>
+        </ul>
+        <div class="nav-lang">
+          <a href="catalogo.html" class="active">ES</a><span>|</span><a href="catalogo-simulations-en.html">EN</a>
+        </div>
+        <a href="contacto.html" class="nav-cta-btn">Cotizar →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="cat-hero">
+    <div class="container">
+      <span class="cat-eyebrow">Catálogo Simulations</span>
+      <h1>Vuelo, ATC, dron y club aeronáutico.</h1>
+      <p>Membresías del Club Aeronáutico, experiencias de simulador agendables, productos físicos impresos en 3D y cursos. <a href="catalogo-solutions.html">Ver catálogo Solutions →</a></p>
+    </div>
+  </header>
+
+  <section class="cat-filters">
+    <div class="container">
+      <div class="filter-row" id="filterRow">
+        <span class="filter-label">Filtrar:</span>
+        <button class="filter-chip active" data-filter="all">Todo <span class="count">19</span></button>
+        <button class="filter-chip" data-filter="Membresía">Membresías <span class="count">3</span></button>
+        <button class="filter-chip" data-filter="Experiencia">Experiencias <span class="count">7</span></button>
+        <button class="filter-chip" data-filter="Producto físico">Productos físicos <span class="count">6</span></button>
+        <button class="filter-chip" data-filter="Educación">Educación <span class="count">3</span></button>
+      </div>
+    </div>
+  </section>
+
+  <main class="cat-grid-section">
+    <div class="container">
+      <div class="grid-stats">Mostrando <strong id="visibleCount">19</strong> productos</div>
+      <div class="product-grid" id="productGrid">
+        <!-- Cards inyectadas por JS -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-solutions-v2.svg" alt="Alpha Tech Solutions" height="38" style="height:38px;width:auto;display:block">
+          <p>Alpha Tech Solutions S.A.C.<br>RUC 20615287203<br>Lima, Perú.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Unidades</h4>
+          <ul class="footer-links">
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="intelligence.html">Intelligence</a></li>
+            <li><a href="aeronautica.html">Simulations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">            <li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+            <li><a href="cotizar.html">Cotizar</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="devoluciones.html">Devoluciones</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="reclamaciones.html">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <a href="https://wa.me/51922877190" target="_blank" rel="noopener">+51 922 877 190</a><br>
+            <a href="mailto:contacto@alphatechnologique.com">contacto@alphatechnologique.com</a><br>
+            Jirón Oxapampa 243, Breña, Lima
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/alpha-tech-solutions-sac" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.instagram.com/alphatechsolutions.pe?igsh=YnpsbHdrMmtwbGRr" class="footer-social-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-payments">
+        <span class="footer-payments-label">Medios de pago aceptados</span>
+        <div class="footer-payments-list">
+          <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Diners</span><span>Yape</span><span>PagoEfectivo</span><span>Cuotéalo BCP</span>
+        </div>
+        <span class="footer-culqi">Pagos procesados de forma segura por <strong>Culqi</strong>, empresa del grupo BCP.</span>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Alpha Tech Solutions S.A.C. · Todos los derechos reservados.</span>
+        <div class="footer-bottom-lang">
+          <a href="catalogo.html" class="active">ES</a>
+          <span style="color:rgba(255,255,255,.18)">|</span>
+          <a href="catalogo-simulations-en.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// =================== CATÁLOGO ===================
+// Exponemos PRODUCTS al global para que cart.js (handleAddClick) pueda buscar el producto por SKU
+const PRODUCTS = window.PRODUCTS = [
+  // Club Aeronáutico — Membresías
+  { sku:"CLB-MB-001", nombre:"Membresía Cadete", marca:"Simulations", categoria:"Membresía", precio:89, moneda:"S/.", recurrence:"/mes", modelo:"Suscripción", desc:"Acceso al simulador de control de tránsito aéreo (ATC). 8 sesiones/mes max.", icon:"membership", hero:null, img:"producto-membresia-cadete.png" },
+  { sku:"CLB-MB-002", nombre:"Membresía Aviador", marca:"Simulations", categoria:"Membresía", precio:149, moneda:"S/.", recurrence:"/mes", modelo:"Suscripción", desc:"ATC + simulador de vuelo. 12 sesiones/mes + 10% descuento en cursos.", icon:"membership", hero:"producto-membresia-aviador.html", img:"producto-membresia-aviador.png" },
+  { sku:"CLB-MB-003", nombre:"Membresía Comandante", marca:"Simulations", categoria:"Membresía", precio:199, moneda:"S/.", recurrence:"/mes", modelo:"Suscripción", desc:"Todo + 20 sesiones/mes + 1 sesión guiada con instructor + snacks gratis + 20% descuento.", icon:"membership", hero:null, img:"producto-membresia-comandante.png" },
+  // Simulations — Productos físicos
+  { sku:"SIM-PR-001", nombre:"Porta strips personalizado", marca:"Simulations", categoria:"Producto físico", precio:25, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Porta strips impreso en 3D con nombre o call sign personalizable.", icon:"print3d", hero:null, img:"producto-porta-strips.png" },
+  { sku:"SIM-PR-002", nombre:"HOTAS adapter PS5", marca:"Simulations", categoria:"Producto físico", precio:309, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Adapter impreso 3D que convierte el DualShock PS5 en HOTAS. Intercambiable izquierdo / derecho.", icon:"controller", hero:"producto-hotas.html", img:"producto-hotas.png" },
+  { sku:"SIM-PR-003", nombre:"Llavero avión custom", marca:"Simulations", categoria:"Producto físico", precio:39, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Llavero impreso 3D del modelo elegido (9 modelos disponibles).", icon:"print3d", hero:null, img:"producto-llavero.png" },
+  { sku:"SIM-PR-004", nombre:"Modelo escala avión 10cm", marca:"Simulations", categoria:"Producto físico", precio:69, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Réplica escala 10cm impresa en 3D del modelo elegido.", icon:"print3d", hero:null, img:"producto-modelo-10cm.png" },
+  { sku:"SIM-PR-005", nombre:"Modelo escala avión 20cm", marca:"Simulations", categoria:"Producto físico", precio:129, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Réplica escala 20cm con detalle aumentado del modelo elegido.", icon:"print3d", hero:null, img:"producto-modelo-20cm.png" },
+  { sku:"SIM-PR-006", nombre:"Modelo escala avión 40cm+", marca:"Simulations", categoria:"Producto físico", precio:269, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Pieza vitrina con base. Modelo a escala 40cm o más, del modelo elegido.", icon:"print3d", hero:null, img:"producto-modelo-40cm.png" },
+  // Simulations — Experiencias
+  { sku:"SIM-EX-001", nombre:"Sesión simulador de vuelo 1h", marca:"Simulations", categoria:"Experiencia", precio:89, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"1 hora de simulador de vuelo para no-miembros. Agendable inmediato.", icon:"flight", hero:null, img:"producto-sesion-vuelo.png" },
+  { sku:"SIM-EX-002", nombre:"Sesión simulador ATC 1h", marca:"Simulations", categoria:"Experiencia", precio:79, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"1 hora de simulador de control de tránsito aéreo. Agendable inmediato.", icon:"atc", hero:null, img:"producto-sesion-atc.png" },
+  { sku:"SIM-EX-003", nombre:"Bautismo aeronáutico", marca:"Simulations", categoria:"Experiencia", precio:49, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Intro de 30min para principiantes absolutos. Breve teórica + 25min de vuelo o ATC a elección.", icon:"flight", hero:"producto-bautismo.html", img:"producto-bautismo.png" },
+  { sku:"SIM-EX-004", nombre:"Sesión dual vuelo + ATC 2h", marca:"Simulations", categoria:"Experiencia", precio:149, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"2 horas combinando vuelo (1h) + ATC (1h) consecutivas. Ideal para probar ambas disciplinas.", icon:"flight", hero:null, img:"producto-sesion-dual.png" },
+  { sku:"SIM-EX-005", nombre:"Paquete 11 sesiones aeronáuticas", marca:"Simulations", categoria:"Experiencia", precio:449, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"11 sesiones libres entre vuelo y ATC. Vigencia 6 meses desde la compra.", icon:"flight", hero:null, img:"producto-paquete-sesiones.png" },
+  { sku:"SIM-EX-006", nombre:"Workshop Día del Aviador 8h", marca:"Simulations", categoria:"Experiencia", precio:449, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"Programa intensivo 1 día con instructor combinando vuelo + ATC + (futuro) despacho.", icon:"flight", hero:null, img:"producto-workshop-aviador.png" },
+  { sku:"SIM-EX-007", nombre:"Tarifa grupo (5 a 15 personas)", marca:"Simulations", categoria:"Experiencia", precio:109, moneda:"S/.", recurrence:"/persona", modelo:"Directo", desc:"Tarifa especial por persona para grupos de 5 a 15 personas, día completo en nuestras instalaciones. Incluye simulador de vuelo + ATC. Ideal para empresas, escuelas y celebraciones.", icon:"flight", hero:null, img:"producto-tarifa-grupo.png" },
+  // Simulations — Educación
+  { sku:"SIM-ED-001", nombre:"Curso Diseña tu dron 25h", marca:"Simulations", categoria:"Educación", precio:1500, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"25h: 10h diseño + 10h sim avión + 5h sim dron. Incluye material didáctico y de construcción. Cupo 6 alumnos.", icon:"course", hero:"producto-curso-dron.html", img:"producto-curso-dron.png" },
+  { sku:"SIM-ED-002", nombre:"Curso aerodinámica básica 6h", marca:"Simulations", categoria:"Educación", precio:279, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"6h de aerodinámica para entusiastas auto y aviación. Sin pre-requisitos técnicos.", icon:"course", hero:null, img:"producto-curso-aerodinamica.png" },
+  { sku:"SIM-ED-003", nombre:"Curso ATC en simulador 8h", marca:"Simulations", categoria:"Educación", precio:349, moneda:"S/.", recurrence:null, modelo:"Directo", desc:"8h de fundamentos ATC con prácticas en simulador. Para aspirantes o entusiastas.", icon:"course", hero:null, img:"producto-curso-atc.png" }
+];
+
+const ICONS = {
+  engineering: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  scan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`,
+  membership: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  print3d: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>`,
+  controller: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258A4 4 0 0 0 17.32 5z"/></svg>`,
+  flight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>`,
+  atc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/></svg>`,
+  course: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>`
+};
+
+function formatPrice(p, currency, recurrence) {
+  return `${currency} ${p.toLocaleString('es-PE')}${recurrence ? `<span class="pcard-price-recurrence">${recurrence}</span>` : ''}`;
+}
+
+function buildCard(p) {
+  const isSubs = p.modelo === "Suscripción";
+  const isQuote = p.modelo === "Cotización";
+  const brandClass = p.marca === "Simulations" ? "brand-sim" : "brand-sol";
+
+  // CTA logic
+  let ctaHTML;
+  if (isQuote) {
+    const ctaLink = p.hero || 'contacto.html';
+    ctaHTML = `<a class="pcard-cta quote" href="${ctaLink}">Cotizar</a>`;
+  } else if (isSubs) {
+    ctaHTML = `<button class="pcard-cta" data-add-to-cart="${p.sku}">Agregar →</button>`;
+  } else {
+    ctaHTML = `<button class="pcard-cta" data-add-to-cart="${p.sku}">Agregar →</button>`;
+  }
+
+  // Title (link to hero if exists)
+  const titleHTML = p.hero
+    ? `<h3><a href="${p.hero}" style="color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s">${p.nombre}</a></h3>`
+    : `<h3>${p.nombre}</h3>`;
+
+  const thumb = p.img
+    ? `<div class="pcard-thumb has-img">${p.hero ? `<a href="${p.hero}">` : ''}<img src="${p.img}" alt="${p.nombre}" loading="lazy">${p.hero ? '</a>' : ''}</div>`
+    : `<div class="pcard-thumb">${ICONS[p.icon] || ICONS.print3d}</div>`;
+
+  return `
+    <article class="pcard" data-marca="${p.marca}" data-categoria="${p.categoria}">
+      ${thumb}
+      <span class="pcard-badge ${brandClass}">${p.marca}</span>
+      <span class="pcard-sku">${p.sku}</span>
+      <div class="pcard-body">
+        <span class="pcard-cat">${p.categoria}</span>
+        ${titleHTML}
+        <p class="pcard-desc">${p.desc}</p>
+        <div class="pcard-meta">
+          <div class="pcard-price">
+            ${p.precio !== null && p.precio !== undefined ? `<span class="pcard-promo">Promo apertura</span>` : ''}
+            ${p.precio !== null && p.precio !== undefined
+              ? `<span class="pcard-price-amount">${p.moneda} ${p.precio.toLocaleString('es-PE')}</span>${p.recurrence ? `<span class="pcard-price-recurrence">${p.recurrence === '/mes' ? 'por mes' : p.recurrence}</span>` : '<span class="pcard-price-recurrence">incluye IGV</span>'}`
+              : `<span class="pcard-price-amount" style="font-size:16px;color:var(--teal)">A medida</span><span class="pcard-price-recurrence">cotización</span>`
+            }
+          </div>
+          ${ctaHTML}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function render(products) {
+  const grid = document.getElementById('productGrid');
+  if (!products.length) {
+    grid.innerHTML = `<div class="empty-state"><h3>No hay productos con ese filtro</h3><p>Prueba con otro filtro o "Todo".</p></div>`;
+  } else {
+    grid.innerHTML = products.map(buildCard).join('');
+  }
+  document.getElementById('visibleCount').textContent = products.length;
+}
+
+function applyFilter(filter) {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c.dataset.filter === filter));
+  if (filter === 'all') {
+    render(PRODUCTS);
+  } else {
+    render(PRODUCTS.filter(p => p.marca === filter || p.categoria === filter));
+  }
+}
+
+document.getElementById('filterRow').addEventListener('click', (e) => {
+  const chip = e.target.closest('.filter-chip');
+  if (chip) applyFilter(chip.dataset.filter);
+});
+
+// Render inicial
+render(PRODUCTS);
+</script>
+  <script src="cart.js" defer></script>
+</body>
+</html>
