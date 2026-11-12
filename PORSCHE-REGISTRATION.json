@@ -1,0 +1,37 @@
+{
+  "rotation": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "translation": [
+    175,
+    -131,
+    -124
+  ],
+  "scale": 1.0,
+  "method": "Manual landmark alignment: gear lever shaft centred in console aperture in XY; original STL axes retained. Previous ICP rotation removed. Z remains visual reference.",
+  "design_aperture_reference": [
+    0,
+    115,
+    -220
+  ],
+  "scan_lever_reference": [
+    175,
+    -16,
+    -344
+  ],
+  "validation": "XY correspondence of lever and aperture; visual approximation, no mechanical tolerance validation."
+}

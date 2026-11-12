@@ -1,0 +1,65 @@
+{
+  "scan_source": "C:\\Users\\MS1\\Documents\\Alpha tech Proyectos\\porsche 924 board\\porsche 924 board nu 2.stl",
+  "design_source": "C:\\Users\\MS1\\Documents\\Alpha tech Proyectos\\porsche 924 board\\porsche dashboard 1 complet.stl",
+  "orientation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.34289780745545134,
+      0.9393727128473789
+    ],
+    [
+      0.0,
+      0.9393727128473789,
+      0.34289780745545134
+    ]
+  ],
+  "centre_after_rotation": [
+    -144.22213745117188,
+    -188.6983488994403,
+    -149.03014207007027
+  ],
+  "scale": 1461.5557250976562,
+  "design_registration": {
+    "rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "translation": [
+      175,
+      -131,
+      -124
+    ],
+    "scale": 1.0,
+    "method": "Manual landmark alignment: gear lever shaft centred in console aperture in XY; original STL axes retained. Previous ICP rotation removed. Z remains visual reference.",
+    "design_aperture_reference": [
+      0,
+      115,
+      -220
+    ],
+    "scan_lever_reference": [
+      175,
+      -16,
+      -344
+    ],
+    "validation": "XY correspondence of lever and aperture; visual approximation, no mechanical tolerance validation."
+  },
+  "registration": "Approximate rigid visual registration reviewed against video. No nonuniform scaling, no mechanical tolerance validation."
+}

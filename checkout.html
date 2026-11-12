@@ -106,8 +106,8 @@
     <div class="container">
       <div class="checkout-card">
         <span class="checkout-eyebrow">Finalizar compra</span>
-        <h1>Casi listos para procesarte el pago.</h1>
-        <p>Estamos terminando la integración de la pasarela de pago segura con <strong>Culqi</strong> (grupo BCP). Mientras tanto, completa tu compra hablando directamente con nuestro equipo comercial.</p>
+        <h1>Pago seguro con tarjeta.</h1>
+        <p>Procesado por <strong>Culqi</strong> (grupo BCP). Aceptamos Visa, Mastercard, Amex, Diners, Yape, PagoEfectivo y Cuotéalo BCP.</p>
 
         <div class="summary" id="orderSummary">
           <!-- inyectado por JS según modo (cart vs single) -->
@@ -116,15 +116,37 @@
           <div class="summary-row total"><span>Total estimado:</span><strong id="sumTotal">—</strong></div>
         </div>
 
-        <p style="font-size:14px;margin-top:24px"><strong>¿Cómo sigues?</strong></p>
+        <!-- ── Formulario datos del cliente (antifraude + recibo) ── -->
+        <form id="checkoutForm" autocomplete="on" style="margin-top:20px;text-align:left">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div>
+              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px">Nombre</label>
+              <input type="text" id="custFirstName" required autocomplete="given-name" placeholder="Carlos" style="width:100%;padding:11px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:14px">
+            </div>
+            <div>
+              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px">Apellido</label>
+              <input type="text" id="custLastName" required autocomplete="family-name" placeholder="García" style="width:100%;padding:11px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:14px">
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px">Email</label>
+            <input type="email" id="custEmail" required autocomplete="email" placeholder="carlos@email.com" style="width:100%;padding:11px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:14px">
+          </div>
+          <div style="margin-top:10px">
+            <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px">Teléfono (WhatsApp)</label>
+            <input type="tel" id="custPhone" required autocomplete="tel" placeholder="+51 999 999 999" style="width:100%;padding:11px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:14px">
+          </div>
+        </form>
+
         <div class="cta-row">
-          <a id="waLink" href="https://wa.me/51922877190?text=Hola%20Alpha%20Tech%2C%20quiero%20comprar%20un%20producto%20pero%20veo%20que%20la%20pasarela%20a%C3%BAn%20no%20est%C3%A1%20activa." class="btn btn-primary" target="_blank" rel="noopener">
-            Escribir por WhatsApp →
-          </a>
-          <a href="mailto:comercial@alphatechnologique.com?subject=Quiero%20comprar%20un%20producto&body=Hola%2C%20vi%20un%20producto%20en%20alphatechnologique.com%20y%20quiero%20completar%20la%20compra.%20%C2%BFPueden%20ayudarme%3F" class="btn btn-secondary">
-            Email a comercial
+          <button id="payBtn" class="btn btn-primary" style="background:#FE5000;border-color:#FE5000;color:#fff">
+            🔒 Pagar con tarjeta
+          </button>
+          <a id="waLink" href="https://wa.me/51922877190?text=Hola%20Alpha%20Tech%2C%20tuve%20un%20problema%20con%20el%20pago%20online.%20%C2%BFPueden%20ayudarme%3F" class="btn btn-secondary" target="_blank" rel="noopener">
+            ¿Problemas? WhatsApp
           </a>
         </div>
+        <div id="payMsg" style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.7);min-height:18px"></div>
 
         <div class="badges">
           <span>● Visa</span>
@@ -220,7 +242,15 @@
   </footer>
 
   <script src="cart.js"></script>
+  <script src="https://js.culqi.com/checkout-js"></script>
   <script>
+    // ============================================================
+    // CONFIGURACIÓN CULQI
+    // ============================================================
+    // Llave pública — reemplazar por la de TEST/LIVE según entorno
+    // Se puede inyectar en build-time desde env, o pegar acá directo
+    const CULQI_PUBLIC_KEY = 'pk_live_7XiImUQBcE2HgbVU';
+
     // ============================================================
     // CHECKOUT — soporta 2 modos:
     //   1) Single item:  ?producto=X&sku=Y&total=Z       (flujo viejo)
@@ -304,6 +334,180 @@
         document.getElementById('waLink').href = 'https://wa.me/51922877190?text=' + encodeURIComponent(waMsg);
       }
     })();
+
+    // ============================================================
+    // INTEGRACIÓN CULQI — Pago con tarjeta
+    // ============================================================
+    function getCheckoutAmount() {
+      // Modo cart: usar Cart.total() + suscripciones primer mes
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('cart') === '1' && window.Cart) {
+        return Cart.totalOneOff() + Cart.totalRecurring();
+      }
+      // Modo single: usar param total
+      return Number(params.get('total')) || 0;
+    }
+
+    function getCheckoutDescription() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('cart') === '1' && window.Cart) {
+        const items = Cart.items();
+        if (items.length === 1) return items[0].nombre;
+        return `${items.length} productos Alpha Tech`;
+      }
+      return params.get('producto') || params.get('sku') || 'Alpha Tech';
+    }
+
+    function getCheckoutItems() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('cart') === '1' && window.Cart) {
+        return Cart.items();
+      }
+      return [{
+        sku: params.get('sku') || '',
+        nombre: params.get('producto') || '',
+        precio: Number(params.get('total')) || 0,
+        qty: 1,
+      }];
+    }
+
+    function showMsg(text, kind) {
+      const el = document.getElementById('payMsg');
+      el.textContent = text;
+      el.style.color = kind === 'error' ? '#FE5000' : (kind === 'ok' ? '#25D366' : 'rgba(255,255,255,.7)');
+    }
+
+    function validateForm() {
+      const fields = ['custFirstName', 'custLastName', 'custEmail', 'custPhone'];
+      for (const id of fields) {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) {
+          el.focus();
+          showMsg('Completá tus datos antes de continuar.', 'error');
+          return null;
+        }
+      }
+      const email = document.getElementById('custEmail').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('custEmail').focus();
+        showMsg('Email inválido.', 'error');
+        return null;
+      }
+      return {
+        firstName: document.getElementById('custFirstName').value.trim(),
+        lastName: document.getElementById('custLastName').value.trim(),
+        email: email,
+        phone: document.getElementById('custPhone').value.trim(),
+      };
+    }
+
+    // Configurar Culqi widget
+    let culqiInitialized = false;
+    let lastCustomer = null;
+    let lastAmount = 0;
+
+    function initCulqi() {
+      if (!window.Culqi) return false;
+      if (culqiInitialized) return true;
+      Culqi.publicKey = CULQI_PUBLIC_KEY;
+      Culqi.settings({
+        title: 'Alpha Tech',
+        currency: 'PEN',
+        description: getCheckoutDescription(),
+        amount: Math.round(getCheckoutAmount() * 100), // céntimos
+      });
+      Culqi.options({
+        lang: 'es',
+        installments: false,
+        paymentMethods: {
+          tarjeta: true,
+          yape: true,
+          bancaMovil: false,
+          agente: false,
+          billetera: false,
+          cuotealo: true,
+        },
+        style: {
+          logo: 'https://alphatechnologique.com/logo-solutions-v2.svg',
+          bannerColor: '#001540',
+          buttonBackground: '#FE5000',
+          menuColor: '#008EAA',
+          linksColor: '#008EAA',
+          buttonText: 'Pagar',
+          buttonTextColor: '#FFFFFF',
+          priceColor: '#001540',
+        },
+      });
+      culqiInitialized = true;
+      return true;
+    }
+
+    // Callback global que Culqi.js invoca cuando se genera el token
+    window.culqi = function () {
+      if (Culqi.token) {
+        const tokenId = Culqi.token.id;
+        showMsg('Procesando pago…', 'info');
+        document.getElementById('payBtn').disabled = true;
+
+        fetch('/api/culqi-charge', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            token: tokenId,
+            amount: Math.round(lastAmount * 100),
+            currency: 'PEN',
+            email: lastCustomer.email,
+            description: getCheckoutDescription(),
+            items: getCheckoutItems(),
+            customer: lastCustomer,
+          }),
+        })
+          .then(r => r.json().then(data => ({ status: r.status, data })))
+          .then(({ status, data }) => {
+            if (status === 200 && data.success) {
+              // Limpiar carrito y redirigir a gracias
+              if (window.Cart) Cart.clear();
+              window.location.href = `gracias.html?orden=${encodeURIComponent(data.orderId)}&monto=${encodeURIComponent(data.amount)}`;
+            } else {
+              showMsg(data.error || 'No pudimos procesar el pago. Probá con otra tarjeta o WhatsApp.', 'error');
+              document.getElementById('payBtn').disabled = false;
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            showMsg('Error de red. Intentá de nuevo o contactanos por WhatsApp.', 'error');
+            document.getElementById('payBtn').disabled = false;
+          });
+      } else if (Culqi.error) {
+        showMsg(Culqi.error.user_message || 'Error en el pago', 'error');
+        document.getElementById('payBtn').disabled = false;
+      }
+    };
+
+    // Click del botón "Pagar con tarjeta"
+    document.getElementById('payBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const customer = validateForm();
+      if (!customer) return;
+
+      const amount = getCheckoutAmount();
+      if (amount < 1) {
+        showMsg('Tu carrito está vacío.', 'error');
+        return;
+      }
+
+      lastCustomer = customer;
+      lastAmount = amount;
+
+      if (!initCulqi()) {
+        showMsg('Pasarela aún cargando, intentá en 2 segundos…', 'info');
+        setTimeout(() => document.getElementById('payBtn').click(), 1500);
+        return;
+      }
+
+      showMsg('Abriendo pasarela segura…', 'info');
+      Culqi.open();
+    });
   </script>
 </body>
 </html>
