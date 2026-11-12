@@ -1,0 +1,18 @@
+{
+  "amg": {
+    "frames": 425,
+    "fps": 30.0,
+    "width": 576,
+    "height": 1024,
+    "audio": false,
+    "output": "amg-silent.mp4"
+  },
+  "civic": {
+    "frames": 5400,
+    "fps": 30.0,
+    "width": 478,
+    "height": 640,
+    "audio": false,
+    "output": "civic-silent.mp4"
+  }
+}
